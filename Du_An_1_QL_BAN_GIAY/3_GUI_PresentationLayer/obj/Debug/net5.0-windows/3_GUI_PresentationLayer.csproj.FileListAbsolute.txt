@@ -58,6 +58,7 @@ C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Properties.Resources.resources
+<<<<<<< HEAD
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.exe
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.deps.json
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.json
@@ -118,3 +119,15 @@ C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
 C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
+=======
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_trangchu.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_sanpham.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Thongke.resources
+>>>>>>> a0efcc8ebde8d31ebeedb46688337f4446518bbf
+C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
+C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
+C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_sanpham.resources
+C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Thongke.resources
+C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_trangchu.resources

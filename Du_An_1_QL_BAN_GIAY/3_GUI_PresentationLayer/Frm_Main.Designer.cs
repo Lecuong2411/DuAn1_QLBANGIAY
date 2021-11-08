@@ -32,11 +32,11 @@ namespace _3_GUI_PresentationLayer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.pnl_MenuLeft = new System.Windows.Forms.Panel();
             this.fip_Menuleft = new System.Windows.Forms.FlowLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btn_main = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_trangchu = new System.Windows.Forms.Button();
+            this.btn_banhang = new System.Windows.Forms.Button();
+            this.btn_sanpham = new System.Windows.Forms.Button();
+            this.btn_thongke = new System.Windows.Forms.Button();
+            this.btn_nhanvien = new System.Windows.Forms.Button();
             this.pnl_MenuRight = new System.Windows.Forms.Panel();
             this.lbl_user = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,7 @@ namespace _3_GUI_PresentationLayer
             this.lbl_tieude = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_main = new System.Windows.Forms.Panel();
             this.pnl_MenuLeft.SuspendLayout();
             this.fip_Menuleft.SuspendLayout();
             this.pnl_MenuRight.SuspendLayout();
@@ -70,97 +71,107 @@ namespace _3_GUI_PresentationLayer
             // 
             // fip_Menuleft
             // 
-            this.fip_Menuleft.Controls.Add(this.button4);
-            this.fip_Menuleft.Controls.Add(this.btn_main);
-            this.fip_Menuleft.Controls.Add(this.button6);
-            this.fip_Menuleft.Controls.Add(this.label2);
-            this.fip_Menuleft.Controls.Add(this.button5);
+            this.fip_Menuleft.Controls.Add(this.btn_trangchu);
+            this.fip_Menuleft.Controls.Add(this.btn_banhang);
+            this.fip_Menuleft.Controls.Add(this.btn_sanpham);
+            this.fip_Menuleft.Controls.Add(this.btn_thongke);
+            this.fip_Menuleft.Controls.Add(this.btn_nhanvien);
             this.fip_Menuleft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fip_Menuleft.Location = new System.Drawing.Point(0, 301);
             this.fip_Menuleft.Name = "fip_Menuleft";
             this.fip_Menuleft.Size = new System.Drawing.Size(452, 633);
             this.fip_Menuleft.TabIndex = 8;
             // 
-            // button4
+            // btn_trangchu
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(397, 53);
-            this.button4.TabIndex = 5;
-            this.button4.Tag = "Quản lý nhân viên";
-            this.button4.Text = "Quản lý nhân viên";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.MenuClick);
+            this.btn_trangchu.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_trangchu.FlatAppearance.BorderSize = 0;
+            this.btn_trangchu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_trangchu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_trangchu.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_trangchu.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_trangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_trangchu.Location = new System.Drawing.Point(3, 3);
+            this.btn_trangchu.Name = "btn_trangchu";
+            this.btn_trangchu.Size = new System.Drawing.Size(449, 53);
+            this.btn_trangchu.TabIndex = 5;
+            this.btn_trangchu.Tag = "Trang chủ";
+            this.btn_trangchu.Text = "Trang chủ";
+            this.btn_trangchu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_trangchu.UseVisualStyleBackColor = false;
+            this.btn_trangchu.Click += new System.EventHandler(this.MenuClick);
             // 
-            // btn_main
+            // btn_banhang
             // 
-            this.btn_main.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_main.FlatAppearance.BorderSize = 0;
-            this.btn_main.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_main.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_main.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
-            this.btn_main.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_main.Location = new System.Drawing.Point(3, 62);
-            this.btn_main.Name = "btn_main";
-            this.btn_main.Size = new System.Drawing.Size(397, 53);
-            this.btn_main.TabIndex = 4;
-            this.btn_main.Tag = "Main";
-            this.btn_main.Text = "Main";
-            this.btn_main.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_main.UseVisualStyleBackColor = false;
-            this.btn_main.Click += new System.EventHandler(this.MenuClick);
+            this.btn_banhang.FlatAppearance.BorderSize = 0;
+            this.btn_banhang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_banhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_banhang.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_banhang.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_banhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_banhang.Location = new System.Drawing.Point(3, 62);
+            this.btn_banhang.Name = "btn_banhang";
+            this.btn_banhang.Size = new System.Drawing.Size(449, 53);
+            this.btn_banhang.TabIndex = 4;
+            this.btn_banhang.Tag = "Bán hàng";
+            this.btn_banhang.Text = "Bán hàng";
+            this.btn_banhang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_banhang.UseVisualStyleBackColor = false;
+            this.btn_banhang.Click += new System.EventHandler(this.MenuClick);
             // 
-            // button6
+            // btn_sanpham
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 121);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(397, 53);
-            this.button6.TabIndex = 7;
-            this.button6.Tag = "Thống kê";
-            this.button6.Text = "Thống kê";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.MenuClick);
+            this.btn_sanpham.FlatAppearance.BorderSize = 0;
+            this.btn_sanpham.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sanpham.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_sanpham.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_sanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sanpham.Location = new System.Drawing.Point(3, 121);
+            this.btn_sanpham.Name = "btn_sanpham";
+            this.btn_sanpham.Size = new System.Drawing.Size(449, 53);
+            this.btn_sanpham.TabIndex = 7;
+            this.btn_sanpham.Tag = "Sản Phẩm";
+            this.btn_sanpham.Text = "Sản Phẩm";
+            this.btn_sanpham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_sanpham.UseVisualStyleBackColor = true;
+            this.btn_sanpham.Click += new System.EventHandler(this.MenuClick);
             // 
-            // label2
+            // btn_thongke
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(3, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(397, 2);
-            this.label2.TabIndex = 2;
+            this.btn_thongke.FlatAppearance.BorderSize = 0;
+            this.btn_thongke.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_thongke.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_thongke.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongke.Location = new System.Drawing.Point(3, 180);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Size = new System.Drawing.Size(449, 53);
+            this.btn_thongke.TabIndex = 6;
+            this.btn_thongke.Tag = "Thống kê";
+            this.btn_thongke.Text = "Thống kê";
+            this.btn_thongke.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_thongke.UseVisualStyleBackColor = true;
+            this.btn_thongke.Click += new System.EventHandler(this.MenuClick);
             // 
-            // button5
+            // btn_nhanvien
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(397, 53);
-            this.button5.TabIndex = 6;
-            this.button5.Tag = "Quản lý sản phẩm";
-            this.button5.Text = "Quản lý sản phẩm";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.MenuClick);
+            this.btn_nhanvien.FlatAppearance.BorderSize = 0;
+            this.btn_nhanvien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_nhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nhanvien.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_nhanvien.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nhanvien.Location = new System.Drawing.Point(3, 239);
+            this.btn_nhanvien.Name = "btn_nhanvien";
+            this.btn_nhanvien.Size = new System.Drawing.Size(449, 53);
+            this.btn_nhanvien.TabIndex = 8;
+            this.btn_nhanvien.Tag = "Nhân viên";
+            this.btn_nhanvien.Text = "Nhân viên";
+            this.btn_nhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_nhanvien.UseVisualStyleBackColor = true;
+            this.btn_nhanvien.Click += new System.EventHandler(this.MenuClick);
             // 
             // pnl_MenuRight
             // 
@@ -279,12 +290,21 @@ namespace _3_GUI_PresentationLayer
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pnl_main
+            // 
+            this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_main.Location = new System.Drawing.Point(452, 67);
+            this.pnl_main.Name = "pnl_main";
+            this.pnl_main.Size = new System.Drawing.Size(1401, 934);
+            this.pnl_main.TabIndex = 2;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1853, 1001);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.pnl_MenuLeft);
             this.Controls.Add(this.pnl_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -310,11 +330,10 @@ namespace _3_GUI_PresentationLayer
 
         private System.Windows.Forms.Panel pnl_MenuLeft;
       
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_main;
+        private System.Windows.Forms.Button btn_sanpham;
+        private System.Windows.Forms.Button btn_thongke;
+        private System.Windows.Forms.Button btn_trangchu;
+        private System.Windows.Forms.Button btn_banhang;
         private System.Windows.Forms.Panel pnl_MenuRight;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btn_help;
@@ -326,6 +345,8 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_user;
         private System.Windows.Forms.FlowLayoutPanel fip_Menuleft;
+        private System.Windows.Forms.Button btn_nhanvien;
+        private System.Windows.Forms.Panel pnl_main;
     }
 }
 
