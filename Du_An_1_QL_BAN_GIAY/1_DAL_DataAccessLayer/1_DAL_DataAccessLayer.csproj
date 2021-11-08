@@ -6,10 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DatabaseContext\" />
     <Folder Include="DALServices\" />
     <Folder Include="IDALServices\" />
-    <Folder Include="Entityes\" />
   </ItemGroup>
 
   <ItemGroup>
