@@ -12,6 +12,11 @@ namespace _3_GUI_PresentationLayer
 {
     public partial class Frm_Main : Form
     {
+        Frm_trangchu frm_Trangchu = new Frm_trangchu();
+        Frm_banhang frm_Banhang = new Frm_banhang();
+        Frm_sanpham frm_Sanpham = new Frm_sanpham();
+        Frm_Thongke frm_Thongke = new Frm_Thongke();
+        Frm_Nhanvien frm_Nhanvien = new Frm_Nhanvien();
         public Frm_Main()
         {
             InitializeComponent();
@@ -19,7 +24,7 @@ namespace _3_GUI_PresentationLayer
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            btn_main.PerformClick();
+            btn_trangchu.PerformClick();
             foreach (Control x in fip_Menuleft.Controls)
                 x.Width = fip_Menuleft.Width;
              
@@ -36,8 +41,39 @@ namespace _3_GUI_PresentationLayer
                     btn_help.BackColor = fip_Menuleft.BackColor;
                 }
                 btn.BackColor = Color.DodgerBlue;
+
             }
-          
+            if (btn.Name == btn_trangchu.Name)
+            {
+                formshow(frm_Trangchu);
+            }
+            if (btn.Name == btn_banhang.Name)
+            {
+                formshow(frm_Banhang);
+            }
+            if (btn.Name == btn_sanpham.Name)
+            {
+                formshow(frm_Sanpham);
+            }
+            if (btn.Name == btn_thongke.Name)
+            {
+                formshow(frm_Thongke);
+            } 
+            if (btn.Name == btn_nhanvien.Name)
+            {
+                formshow(frm_Nhanvien);
+            }
+            
+
+        }
+        private void formshow(Form form)
+        {
+            pnl_main.Controls.Clear();
+            form.TopLevel = false;
+            pnl_main.Controls.Add(form);
+         
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
