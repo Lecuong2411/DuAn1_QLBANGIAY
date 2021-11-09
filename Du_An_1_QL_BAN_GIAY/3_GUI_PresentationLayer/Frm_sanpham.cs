@@ -15,6 +15,8 @@ namespace _3_GUI_PresentationLayer
         public Frm_sanpham()
         {
             InitializeComponent();
+
+
         }
     }
 }
