@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\DuAn1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {}
+    "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\DuAn1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+    "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\DuAn1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
         "projectName": "1_DAL_DataAccessLayer",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\DuAn1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\DuAn1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
+        "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -76,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
