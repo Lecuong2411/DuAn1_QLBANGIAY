@@ -77,7 +77,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dtp_ngaythang.Location = new System.Drawing.Point(393, 45);
             this.dtp_ngaythang.Name = "dtp_ngaythang";
-            this.dtp_ngaythang.Size = new System.Drawing.Size(173, 23);
+            this.dtp_ngaythang.Size = new System.Drawing.Size(188, 23);
             this.dtp_ngaythang.TabIndex = 4;
             this.dtp_ngaythang.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -98,6 +98,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_danhsach.TabIndex = 6;
             this.btn_danhsach.Text = "Danh Sách";
             this.btn_danhsach.UseVisualStyleBackColor = true;
+            this.btn_danhsach.Click += new System.EventHandler(this.btn_danhsach_Click);
             // 
             // FrmDanhSachHoaDonBanHang
             // 
