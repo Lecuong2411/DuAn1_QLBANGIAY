@@ -34,33 +34,36 @@ namespace _3_GUI_PresentationLayer
         }
         public  void loatdata(List<Danhsachhoadonbanhang>danhsachhoadonbanhangs)
         {
-            dtgv_danhsachhoadonbanhang.ColumnCount = 5;
+            dtgv_danhsachhoadonbanhang.ColumnCount = 6;
             dtgv_danhsachhoadonbanhang.Columns[0].Name = "ID Hóa đơn";
             dtgv_danhsachhoadonbanhang.Columns[1].Name = "Số điện thoại khách hàng";
             dtgv_danhsachhoadonbanhang.Columns[2].Name = "Tổng tiền";
             dtgv_danhsachhoadonbanhang.Columns[3].Name = "Người lập phiếu";
-            dtgv_danhsachhoadonbanhang.Columns[4].Name =  "Ngày tạo";
+            dtgv_danhsachhoadonbanhang.Columns[4].Name = "Tiền nhận";
+            dtgv_danhsachhoadonbanhang.Columns[5].Name = "Ngày tạo"; 
+            
             dtgv_danhsachhoadonbanhang.Rows.Clear();
             danhsachhoadonbanhangs.ForEach(x =>
                 {
                     dtgv_danhsachhoadonbanhang.Rows.Add(x.hoadon.MaHd, x.KhachHang.Sdt, x.hoadon.ThanhTien,
-                        x.NhanVien.MaNv);
+                        x.NhanVien.MaNv,x.hoadon.TienNhan);
                 }
                 );
         }
         public void loatdatatk(string sdt)
         {
-            dtgv_danhsachhoadonbanhang.ColumnCount = 5;
+            dtgv_danhsachhoadonbanhang.ColumnCount = 6 ;
             dtgv_danhsachhoadonbanhang.Columns[0].Name = "ID Hóa đơn";
             dtgv_danhsachhoadonbanhang.Columns[1].Name = "Số điện thoại khách hàng";
             dtgv_danhsachhoadonbanhang.Columns[2].Name = "Tổng tiền";
             dtgv_danhsachhoadonbanhang.Columns[3].Name = "Người lập phiếu";
-            dtgv_danhsachhoadonbanhang.Columns[4].Name = "Ngày tạo";
+            dtgv_danhsachhoadonbanhang.Columns[4].Name = "Tiền nhận";
+            dtgv_danhsachhoadonbanhang.Columns[5].Name = "Ngày tạo";
             dtgv_danhsachhoadonbanhang.Rows.Clear();
            _ChucnangdanhSachHoaDonBanHang.loatdatatk(sdt).ForEach(x =>
                 {
                     dtgv_danhsachhoadonbanhang.Rows.Add(x.hoadon.MaHd, x.KhachHang.Sdt, x.hoadon.ThanhTien,
-                        x.NhanVien.MaNv);
+                        x.NhanVien.MaNv,x.hoadon.TienNhan);
                 }
             );
         }
