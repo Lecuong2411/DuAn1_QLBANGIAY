@@ -48,6 +48,7 @@ namespace _3_GUI_PresentationLayer
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.btn_dsHoadon = new System.Windows.Forms.Button();
             this.pnl_MenuLeft.SuspendLayout();
             this.fip_Menuleft.SuspendLayout();
             this.pnl_MenuRight.SuspendLayout();
@@ -76,6 +77,7 @@ namespace _3_GUI_PresentationLayer
             this.fip_Menuleft.Controls.Add(this.btn_sanpham);
             this.fip_Menuleft.Controls.Add(this.btn_thongke);
             this.fip_Menuleft.Controls.Add(this.btn_nhanvien);
+            this.fip_Menuleft.Controls.Add(this.btn_dsHoadon);
             this.fip_Menuleft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fip_Menuleft.Location = new System.Drawing.Point(0, 301);
             this.fip_Menuleft.Name = "fip_Menuleft";
@@ -298,6 +300,24 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Size = new System.Drawing.Size(1401, 934);
             this.pnl_main.TabIndex = 2;
             // 
+            // btn_dsHoadon
+            // 
+            this.btn_dsHoadon.FlatAppearance.BorderSize = 0;
+            this.btn_dsHoadon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_dsHoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dsHoadon.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_dsHoadon.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_dsHoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dsHoadon.Location = new System.Drawing.Point(3, 298);
+            this.btn_dsHoadon.Name = "btn_dsHoadon";
+            this.btn_dsHoadon.Size = new System.Drawing.Size(449, 53);
+            this.btn_dsHoadon.TabIndex = 9;
+            this.btn_dsHoadon.Tag = "Danh sách hóa đơn bán hàng";
+            this.btn_dsHoadon.Text = "Danh sách hóa đơn bán hàng";
+            this.btn_dsHoadon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_dsHoadon.UseVisualStyleBackColor = true;
+            this.btn_dsHoadon.Click += new System.EventHandler(this.MenuClick);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -347,6 +367,7 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.FlowLayoutPanel fip_Menuleft;
         private System.Windows.Forms.Button btn_nhanvien;
         private System.Windows.Forms.Panel pnl_main;
+        private System.Windows.Forms.Button btn_dsHoadon;
     }
 }
 

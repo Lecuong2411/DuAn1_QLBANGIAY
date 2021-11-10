@@ -17,6 +17,7 @@ namespace _3_GUI_PresentationLayer
         Frm_sanpham frm_Sanpham = new Frm_sanpham();
         Frm_Thongke frm_Thongke = new Frm_Thongke();
         Frm_Nhanvien frm_Nhanvien = new Frm_Nhanvien();
+        FrmDanhSachHoaDonBanHang frmDanhSachHoaDonBanHang = new FrmDanhSachHoaDonBanHang();
         public Frm_Main()
         {
             InitializeComponent();
@@ -63,7 +64,12 @@ namespace _3_GUI_PresentationLayer
             {
                 formshow(frm_Nhanvien);
             }
-            
+            if (btn.Name== btn_dsHoadon.Name)
+            {
+                formshow(frmDanhSachHoaDonBanHang);
+            }
+
+
 
         }
         private void formshow(Form form)
