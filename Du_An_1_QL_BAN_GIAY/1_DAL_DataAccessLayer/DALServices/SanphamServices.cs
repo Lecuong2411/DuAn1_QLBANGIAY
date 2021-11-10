@@ -9,7 +9,7 @@ using _1_DAL_DataAccessLayer.Models;
 
 namespace _1_DAL_DataAccessLayer.DALServices
 {
-    class SanphamServices
+   public class SanphamServices : ISanphamServices
     {
         DBContext _dbContext;
         List<SanPham> _lstsanPhams;

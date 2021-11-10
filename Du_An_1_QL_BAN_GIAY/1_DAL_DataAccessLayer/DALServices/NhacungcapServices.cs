@@ -9,7 +9,7 @@ using _1_DAL_DataAccessLayer.Models;
 
 namespace _1_DAL_DataAccessLayer.DALServices
 {
-   public class NhacungcapServices 
+   public class NhacungcapServices : INhacungcapServices
     {
         DBContext _dbContext;
         List<NhaCungCap> _lstnhaCungCaps;

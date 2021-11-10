@@ -9,7 +9,7 @@ using _1_DAL_DataAccessLayer.Models;
 
 namespace _1_DAL_DataAccessLayer.DALServices
 {
-   public class NhanvienServices
+   public class NhanvienServices : INhanvienServices
     {
         DBContext _dbContext;
         List<NhanVien> _lstnhanViens;
