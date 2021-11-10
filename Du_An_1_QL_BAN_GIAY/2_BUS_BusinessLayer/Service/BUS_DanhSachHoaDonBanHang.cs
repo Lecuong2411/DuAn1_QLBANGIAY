@@ -63,5 +63,10 @@ namespace _2_BUS_BusinessLayer.Service
 
 
         }
+
+        public List<Danhsachhoadonbanhang> loatdatatk(string sdt)
+        {
+            return _dshdbh.Where(c => c.KhachHang.Sdt.StartsWith(sdt)).ToList();
+        }
     }
 }

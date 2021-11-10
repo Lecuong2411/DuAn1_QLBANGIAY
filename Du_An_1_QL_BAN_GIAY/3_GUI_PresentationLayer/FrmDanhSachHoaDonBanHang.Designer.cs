@@ -29,6 +29,7 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dtgv_danhsachhoadonbanhang = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_maphieunhap = new System.Windows.Forms.TextBox();
@@ -36,11 +37,15 @@ namespace _3_GUI_PresentationLayer
             this.dtp_ngaythang = new System.Windows.Forms.DateTimePicker();
             this.btn_timkiem = new System.Windows.Forms.Button();
             this.btn_danhsach = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhoadonbanhang)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgv_danhsachhoadonbanhang
             // 
+            this.dtgv_danhsachhoadonbanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_danhsachhoadonbanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachhoadonbanhang.Location = new System.Drawing.Point(12, 113);
             this.dtgv_danhsachhoadonbanhang.Name = "dtgv_danhsachhoadonbanhang";
@@ -61,8 +66,10 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_maphieunhap.Location = new System.Drawing.Point(128, 48);
             this.txt_maphieunhap.Name = "txt_maphieunhap";
-            this.txt_maphieunhap.Size = new System.Drawing.Size(107, 23);
+            this.txt_maphieunhap.PlaceholderText = "nhập mã phiếu nhập";
+            this.txt_maphieunhap.Size = new System.Drawing.Size(134, 23);
             this.txt_maphieunhap.TabIndex = 2;
+            this.txt_maphieunhap.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_maphieunhap_KeyUp);
             // 
             // label2
             // 
@@ -77,7 +84,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dtp_ngaythang.Location = new System.Drawing.Point(393, 45);
             this.dtp_ngaythang.Name = "dtp_ngaythang";
-            this.dtp_ngaythang.Size = new System.Drawing.Size(188, 23);
+            this.dtp_ngaythang.Size = new System.Drawing.Size(182, 23);
             this.dtp_ngaythang.TabIndex = 4;
             this.dtp_ngaythang.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -100,11 +107,40 @@ namespace _3_GUI_PresentationLayer
             this.btn_danhsach.UseVisualStyleBackColor = true;
             this.btn_danhsach.Click += new System.EventHandler(this.btn_danhsach_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(25, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(139, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmDanhSachHoaDonBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_danhsach);
             this.Controls.Add(this.btn_timkiem);
             this.Controls.Add(this.dtp_ngaythang);
@@ -129,5 +165,8 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.DateTimePicker dtp_ngaythang;
         private System.Windows.Forms.Button btn_timkiem;
         private System.Windows.Forms.Button btn_danhsach;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
