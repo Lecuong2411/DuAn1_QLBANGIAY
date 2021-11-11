@@ -33,6 +33,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public int SoLuong { get; set; }
         public double GiaBan { get; set; }
         public double GiaNhap { get; set; }
+        public int TrangThai { get; set; }
         public Guid MaSize { get; set; }
         [Column("MaCLR")]
         public Guid MaClr { get; set; }
