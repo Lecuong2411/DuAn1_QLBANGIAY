@@ -18,16 +18,40 @@ namespace _3_GUI_PresentationLayer
     public partial class Frm_banhang : Form
     {
         private IBanhangService _banhangService;
+        private FilterInfoCollection filterInfoCollection;
+        private VideoCaptureDevice videoCaptureDevice;
         public Frm_banhang()
         {
             InitializeComponent();
             _banhangService = new BanhangService();
-            loadSpbanhang();
+
 
         }
 
 
+        private void Frm_banhang_Load(object sender, EventArgs e)
+        {
+            loadSpbanhang();
+            loadHoadon();
+            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo x in filterInfoCollection)
+            {
+                cbx_camera.Items.Add(x.Name);
+                cbx_camera.SelectedIndex = 0;
+            }
+        }
 
+
+        void loadHoadon()
+        {
+            dtgview_hoadon.ColumnCount = 5;
+            dtgview_hoadon.Columns[0].HeaderText = "Sản phẩm";
+            dtgview_hoadon.Columns[1].HeaderText = "Số lượng";
+            dtgview_hoadon.Columns[2].HeaderText = "Đơn giá";
+            dtgview_hoadon.Columns[3].HeaderText = "Giảm giá";
+            dtgview_hoadon.Columns[4].HeaderText = "Thành tiền";
+            dtgview_hoadon.Rows.Clear();
+        }
 
         void loadSpbanhang()
         {
@@ -48,19 +72,6 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice videoCaptureDevice;
-
-        private void Frm_banhang_Load(object sender, EventArgs e)
-        {
-            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo x in filterInfoCollection)
-            {
-                cbx_camera.Items.Add(x.Name);
-                cbx_camera.SelectedIndex = 0;
-            }
-        }
-
         private void btn_barcode_Click(object sender, EventArgs e)
         {
             videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbx_camera.SelectedIndex].MonikerString);
@@ -78,7 +89,30 @@ namespace _3_GUI_PresentationLayer
             {
                 tbx_barcode.Invoke(new MethodInvoker(delegate ()
               {
-                  tbx_barcode.Text = result.ToString();
+
+
+
+                  var dulieu = _banhangService.SanphambanViews().FirstOrDefault(c => c.chiTietSanPham.MaQr == result.ToString());
+                  if (dulieu != null)
+                  {
+                      MessageBox.Show("Đã có dữ liệu", "Thông báo");
+                      tbx_barcode.Text = result.ToString();
+                      tbx_tengiay.Text = dulieu.sanPham.TenSp;
+                      cbb_size.Text = (dulieu.size.Size1).ToString();
+                      tbx_thuonghieu.Text = dulieu.sanPham.ThuongHieu;
+                      cbb_mausac.Text = dulieu.color.Color1;
+                      tbx_chatlieu.Text = dulieu.ChatLieu.ChatLieu1;
+                      cbb_loaicoiay.Text = dulieu.loaiCoGiay.LoaiCoGiay1;
+                      tbx_soluong.Text = "1";
+                  }
+                  else
+                  {
+                      MessageBox.Show("Không tìm thấy dữ liệu");
+                  }
+
+
+
+
               }));
             }
 
@@ -100,25 +134,18 @@ namespace _3_GUI_PresentationLayer
 
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int Rowindex = e.RowIndex;
-            //if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
-            //tbx_email.Text = dtgview_nhanvien.Rows[Rowindex].Cells[0].Value.ToString();
-            //_emailvWhenclick = dtgview_nhanvien.Rows[Rowindex].Cells[0].Value.ToString();
-            //tbx_tennv.Text = dtgview_nhanvien.Rows[Rowindex].Cells[1].Value.ToString();
-            //rtb_diachi.Text = dtgview_nhanvien.Rows[Rowindex].Cells[2].Value.ToString();
-            //rbx_quantri.Checked = dtgview_nhanvien.Rows[Rowindex].Cells[3].Value.ToString() == "Quản trị" ? true : false;
-            //rbx_nv.Checked = dtgview_nhanvien.Rows[Rowindex].Cells[3].Value.ToString() == "Nhân viên" ? true : false;
-            //rbx_hd.Checked = dtgview_nhanvien.Rows[Rowindex].Cells[4].Value.ToString() == "Hoạt động" ? true : false;
-            //rbx_khd.Checked = dtgview_nhanvien.Rows[Rowindex].Cells[4].Value.ToString() == "Ngừng hoạt động" ? true : false;
-            //btn_luu.Enabled = false;
-            //btn_sua.Enabled = true;
-            //btn_xoa.Enabled = true;
-            //tbx_email.Enabled = true;
-            //tbx_tennv.Enabled = true;
-            //rtb_diachi.Enabled = true;
-            //groupBox1.Enabled = true;
-            //groupBox2.Enabled = true;
-            //tbx_email.Enabled = false;
+            int Rowindex = e.RowIndex;
+            if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
+            tbx_barcode.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[0].Value.ToString();
+            tbx_tengiay.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString();
+            tbx_thuonghieu.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[2].Value.ToString();
+            cbb_size.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[3].Value.ToString();
+            cbb_mausac.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[4].Value.ToString();
+            tbx_chatlieu.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[5].Value.ToString();
+            cbb_loaicoiay.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[6].Value.ToString();
+            tbx_soluong.Text = "1";
+            pbox_hinhanh.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[8].Value.ToString();
+
         }
     }
 }

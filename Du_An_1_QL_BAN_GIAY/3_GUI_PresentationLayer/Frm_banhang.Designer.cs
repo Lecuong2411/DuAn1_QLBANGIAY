@@ -30,21 +30,23 @@ namespace _3_GUI_PresentationLayer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbx_thuonghieu = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pbox_hinhanh = new System.Windows.Forms.PictureBox();
+            this.tbx_soluong = new System.Windows.Forms.TextBox();
+            this.cbb_loaicoiay = new System.Windows.Forms.ComboBox();
+            this.tbx_chatlieu = new System.Windows.Forms.TextBox();
+            this.cbb_mausac = new System.Windows.Forms.ComboBox();
+            this.cbb_size = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbx_barcode = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbx_tengiay = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_bo = new System.Windows.Forms.Button();
+            this.btn_capnhat = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,44 +59,49 @@ namespace _3_GUI_PresentationLayer
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtgview_thongtinsp = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btn_inhoadon = new System.Windows.Forms.Button();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
+            this.tbx_tongtien = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgview_hoadon = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_themhoadon = new System.Windows.Forms.Button();
+            this.cbb_chuathanhtoan = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_hinhanh)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgview_thongtinsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgview_hoadon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tbx_thuonghieu);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.pbox_hinhanh);
+            this.panel1.Controls.Add(this.tbx_soluong);
+            this.panel1.Controls.Add(this.cbb_loaicoiay);
+            this.panel1.Controls.Add(this.tbx_chatlieu);
+            this.panel1.Controls.Add(this.cbb_mausac);
+            this.panel1.Controls.Add(this.cbb_size);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.tbx_barcode);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.tbx_tengiay);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_bo);
+            this.panel1.Controls.Add(this.btn_capnhat);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -106,6 +113,23 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Size = new System.Drawing.Size(1539, 1375);
             this.panel1.TabIndex = 0;
             // 
+            // tbx_thuonghieu
+            // 
+            this.tbx_thuonghieu.Location = new System.Drawing.Point(242, 1285);
+            this.tbx_thuonghieu.Name = "tbx_thuonghieu";
+            this.tbx_thuonghieu.Size = new System.Drawing.Size(256, 39);
+            this.tbx_thuonghieu.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Historic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(25, 1285);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(185, 37);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Thương hiệu";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.OrangeRed;
@@ -116,51 +140,51 @@ namespace _3_GUI_PresentationLayer
             this.panel4.Size = new System.Drawing.Size(2, 587);
             this.panel4.TabIndex = 20;
             // 
-            // pictureBox1
+            // pbox_hinhanh
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(660, 874);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(325, 365);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pbox_hinhanh.Location = new System.Drawing.Point(660, 874);
+            this.pbox_hinhanh.Name = "pbox_hinhanh";
+            this.pbox_hinhanh.Size = new System.Drawing.Size(325, 365);
+            this.pbox_hinhanh.TabIndex = 19;
+            this.pbox_hinhanh.TabStop = false;
             // 
-            // textBox5
+            // tbx_soluong
             // 
-            this.textBox5.Location = new System.Drawing.Point(242, 1203);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(70, 39);
-            this.textBox5.TabIndex = 18;
+            this.tbx_soluong.Location = new System.Drawing.Point(242, 1203);
+            this.tbx_soluong.Name = "tbx_soluong";
+            this.tbx_soluong.Size = new System.Drawing.Size(70, 39);
+            this.tbx_soluong.TabIndex = 18;
             // 
-            // comboBox3
+            // cbb_loaicoiay
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(242, 1127);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 40);
-            this.comboBox3.TabIndex = 17;
+            this.cbb_loaicoiay.FormattingEnabled = true;
+            this.cbb_loaicoiay.Location = new System.Drawing.Point(242, 1127);
+            this.cbb_loaicoiay.Name = "cbb_loaicoiay";
+            this.cbb_loaicoiay.Size = new System.Drawing.Size(172, 40);
+            this.cbb_loaicoiay.TabIndex = 17;
             // 
-            // textBox4
+            // tbx_chatlieu
             // 
-            this.textBox4.Location = new System.Drawing.Point(242, 1056);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(345, 39);
-            this.textBox4.TabIndex = 16;
+            this.tbx_chatlieu.Location = new System.Drawing.Point(242, 1056);
+            this.tbx_chatlieu.Name = "tbx_chatlieu";
+            this.tbx_chatlieu.Size = new System.Drawing.Size(345, 39);
+            this.tbx_chatlieu.TabIndex = 16;
             // 
-            // comboBox2
+            // cbb_mausac
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(242, 993);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 40);
-            this.comboBox2.TabIndex = 15;
+            this.cbb_mausac.FormattingEnabled = true;
+            this.cbb_mausac.Location = new System.Drawing.Point(242, 993);
+            this.cbb_mausac.Name = "cbb_mausac";
+            this.cbb_mausac.Size = new System.Drawing.Size(172, 40);
+            this.cbb_mausac.TabIndex = 15;
             // 
-            // comboBox1
+            // cbb_size
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(242, 937);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(90, 40);
-            this.comboBox1.TabIndex = 14;
+            this.cbb_size.FormattingEnabled = true;
+            this.cbb_size.Location = new System.Drawing.Point(242, 937);
+            this.cbb_size.Name = "cbb_size";
+            this.cbb_size.Size = new System.Drawing.Size(90, 40);
+            this.cbb_size.TabIndex = 14;
             // 
             // label10
             // 
@@ -179,12 +203,12 @@ namespace _3_GUI_PresentationLayer
             this.tbx_barcode.Size = new System.Drawing.Size(345, 39);
             this.tbx_barcode.TabIndex = 12;
             // 
-            // textBox2
+            // tbx_tengiay
             // 
-            this.textBox2.Location = new System.Drawing.Point(242, 890);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(345, 39);
-            this.textBox2.TabIndex = 11;
+            this.tbx_tengiay.Location = new System.Drawing.Point(242, 890);
+            this.tbx_tengiay.Name = "tbx_tengiay";
+            this.tbx_tengiay.Size = new System.Drawing.Size(345, 39);
+            this.tbx_tengiay.TabIndex = 11;
             // 
             // label9
             // 
@@ -216,23 +240,23 @@ namespace _3_GUI_PresentationLayer
             this.label7.TabIndex = 8;
             this.label7.Text = "Size";
             // 
-            // button2
+            // btn_bo
             // 
-            this.button2.Location = new System.Drawing.Point(1048, 1056);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 46);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Bỏ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_bo.Location = new System.Drawing.Point(1048, 1056);
+            this.btn_bo.Name = "btn_bo";
+            this.btn_bo.Size = new System.Drawing.Size(150, 46);
+            this.btn_bo.TabIndex = 7;
+            this.btn_bo.Text = "Bỏ";
+            this.btn_bo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_capnhat
             // 
-            this.button1.Location = new System.Drawing.Point(1048, 927);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 46);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cập nhật ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_capnhat.Location = new System.Drawing.Point(1048, 927);
+            this.btn_capnhat.Name = "btn_capnhat";
+            this.btn_capnhat.Size = new System.Drawing.Size(150, 46);
+            this.btn_capnhat.TabIndex = 6;
+            this.btn_capnhat.Text = "Cập nhật ";
+            this.btn_capnhat.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -351,9 +375,9 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.btn_inhoadon);
+            this.panel2.Controls.Add(this.btn_thanhtoan);
+            this.panel2.Controls.Add(this.tbx_tongtien);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label12);
@@ -365,30 +389,30 @@ namespace _3_GUI_PresentationLayer
             this.panel2.Size = new System.Drawing.Size(651, 595);
             this.panel2.TabIndex = 1;
             // 
-            // button3
+            // btn_inhoadon
             // 
-            this.button3.Location = new System.Drawing.Point(445, 485);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 46);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "In hóa đơn";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_inhoadon.Location = new System.Drawing.Point(445, 485);
+            this.btn_inhoadon.Name = "btn_inhoadon";
+            this.btn_inhoadon.Size = new System.Drawing.Size(150, 46);
+            this.btn_inhoadon.TabIndex = 20;
+            this.btn_inhoadon.Text = "In hóa đơn";
+            this.btn_inhoadon.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_thanhtoan
             // 
-            this.button4.Location = new System.Drawing.Point(196, 476);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 46);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Thanh toán";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.Location = new System.Drawing.Point(196, 476);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(150, 46);
+            this.btn_thanhtoan.TabIndex = 21;
+            this.btn_thanhtoan.Text = "Thanh toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // tbx_tongtien
             // 
-            this.textBox6.Location = new System.Drawing.Point(246, 347);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(269, 39);
-            this.textBox6.TabIndex = 7;
+            this.tbx_tongtien.Location = new System.Drawing.Point(246, 347);
+            this.tbx_tongtien.Name = "tbx_tongtien";
+            this.tbx_tongtien.Size = new System.Drawing.Size(269, 39);
+            this.tbx_tongtien.TabIndex = 7;
             // 
             // label15
             // 
@@ -441,7 +465,10 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.cbb_chuathanhtoan);
+            this.panel3.Controls.Add(this.btn_themhoadon);
+            this.panel3.Controls.Add(this.dtgview_hoadon);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1539, 0);
@@ -449,16 +476,18 @@ namespace _3_GUI_PresentationLayer
             this.panel3.Size = new System.Drawing.Size(651, 780);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView2
+            // dtgview_hoadon
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 128);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.RowTemplate.Height = 41;
-            this.dataGridView2.Size = new System.Drawing.Size(651, 652);
-            this.dataGridView2.TabIndex = 1;
+            this.dtgview_hoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgview_hoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgview_hoadon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgview_hoadon.Location = new System.Drawing.Point(0, 128);
+            this.dtgview_hoadon.Name = "dtgview_hoadon";
+            this.dtgview_hoadon.RowHeadersWidth = 82;
+            this.dtgview_hoadon.RowTemplate.Height = 41;
+            this.dtgview_hoadon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgview_hoadon.Size = new System.Drawing.Size(651, 652);
+            this.dtgview_hoadon.TabIndex = 1;
             // 
             // label1
             // 
@@ -472,6 +501,32 @@ namespace _3_GUI_PresentationLayer
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn thanh toán";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_themhoadon
+            // 
+            this.btn_themhoadon.Location = new System.Drawing.Point(6, 84);
+            this.btn_themhoadon.Name = "btn_themhoadon";
+            this.btn_themhoadon.Size = new System.Drawing.Size(150, 41);
+            this.btn_themhoadon.TabIndex = 2;
+            this.btn_themhoadon.Text = "New";
+            this.btn_themhoadon.UseVisualStyleBackColor = true;
+            // 
+            // cbb_chuathanhtoan
+            // 
+            this.cbb_chuathanhtoan.FormattingEnabled = true;
+            this.cbb_chuathanhtoan.Location = new System.Drawing.Point(409, 82);
+            this.cbb_chuathanhtoan.Name = "cbb_chuathanhtoan";
+            this.cbb_chuathanhtoan.Size = new System.Drawing.Size(242, 40);
+            this.cbb_chuathanhtoan.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(210, 86);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(193, 32);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Chưa thanh toán";
             // 
             // Frm_banhang
             // 
@@ -490,7 +545,7 @@ namespace _3_GUI_PresentationLayer
             this.Load += new System.EventHandler(this.Frm_banhang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_hinhanh)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).EndInit();
@@ -498,7 +553,8 @@ namespace _3_GUI_PresentationLayer
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgview_hoadon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,29 +568,29 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgview_thongtinsp;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgview_hoadon;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pbox_hinhanh;
+        private System.Windows.Forms.TextBox tbx_soluong;
+        private System.Windows.Forms.ComboBox cbb_loaicoiay;
+        private System.Windows.Forms.TextBox tbx_chatlieu;
+        private System.Windows.Forms.ComboBox cbb_mausac;
+        private System.Windows.Forms.ComboBox cbb_size;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbx_barcode;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbx_tengiay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_bo;
+        private System.Windows.Forms.Button btn_capnhat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btn_inhoadon;
+        private System.Windows.Forms.Button btn_thanhtoan;
+        private System.Windows.Forms.TextBox tbx_tongtien;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
@@ -544,5 +600,10 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.PictureBox ptbox_barcode;
         private System.Windows.Forms.ComboBox cbx_camera;
         private System.Windows.Forms.Button btn_tatbarcode;
+        private System.Windows.Forms.TextBox tbx_thuonghieu;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cbb_chuathanhtoan;
+        private System.Windows.Forms.Button btn_themhoadon;
     }
 }
