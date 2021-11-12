@@ -274,3 +274,8 @@ C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.pdb
 C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CopyComplete
 C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
+C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\BarcodeStandard.dll
+C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Drawing.Common.dll
+C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Text.Json.dll
+C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

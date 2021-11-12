@@ -13,7 +13,9 @@ using _2_BUS_BusinessLayer.Models;
 using _2_BUS_BusinessLayer.Service;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using BarcodeLib;
 using ZXing;
+using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 
 namespace _3_GUI_PresentationLayer
@@ -210,7 +212,8 @@ namespace _3_GUI_PresentationLayer
                 txt_barCode.Invoke(new MethodInvoker(delegate ()
                 {
                     txt_barCode.Text = result.ToString();
-                    _bcode = (string.Format("{0:0000000000000000}", result.ToString()));
+                    _bcode = (string.Format("{0:0000000000000000000}", result.ToString()));
+                    MessageBox.Show(_barcode);
                 }));
             }
         }
@@ -219,10 +222,9 @@ namespace _3_GUI_PresentationLayer
         {
             if (_videoCaptureDevice != null)
             {
-                if (_videoCaptureDevice.IsRunning)
-                {
+               
                     _videoCaptureDevice.Stop();
-                }
+                
             }
         }
 
@@ -273,6 +275,16 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.Image.Images = lbl_anh.Text;
             _iQlSanPhamService.addImage(qlSanPham.Image);
 
+        }
+
+        private void txt_barCode_TextChanged(object sender, EventArgs e)
+        {
+            Barcode barcode = new Barcode();
+            Color forColor = Color.Black;
+            Color backColor = Color.White;
+            Image img = barcode.Encode(TYPE.CODE128A, txt_barCode.Text, forColor, backColor,
+                (int) (pic_webcam.Width * 1), (int) (pic_webcam.Height * 1));
+            pic_webcam.Image = img;
         }
     }
 }

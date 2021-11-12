@@ -115,6 +115,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_barCode.Name = "txt_barCode";
             this.txt_barCode.Size = new System.Drawing.Size(174, 23);
             this.txt_barCode.TabIndex = 21;
+            this.txt_barCode.TextChanged += new System.EventHandler(this.txt_barCode_TextChanged);
             // 
             // cbx_coGiay
             // 

@@ -188,6 +188,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "BarcodeLib": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "ZXing.Net": {
               "target": "Package",
               "version": "[0.16.6, )"

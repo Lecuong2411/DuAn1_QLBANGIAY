@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,12 +36,23 @@ namespace _3_GUI_PresentationLayer
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog fileDialog = new SaveFileDialog() { Filter = "PNG|*.png"})
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save Image As";
+            sfd.Filter = "Image file (*.jpg ,*png) | *.jpg; *.png";
+            ImageFormat imageFormat = ImageFormat.Png;
+            if (sfd.ShowDialog()==DialogResult.OK)
             {
-                if (fileDialog.ShowDialog()==DialogResult.Yes)
+                string ext = System.IO.Path.GetExtension(sfd.FileName);
+                switch (ext)
                 {
-                    pictureBox1.Image.Save(fileDialog.FileName);
-                }   
+                    case ".jpg":
+                        imageFormat = ImageFormat.Jpeg;
+                        break;
+                    case ".bmp":
+                        imageFormat = ImageFormat.Bmp;
+                        break;
+                }
+                pictureBox1.Image.Save(sfd.FileName,imageFormat);
             }
         }
     }
