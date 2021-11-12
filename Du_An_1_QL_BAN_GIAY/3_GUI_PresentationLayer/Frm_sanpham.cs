@@ -23,6 +23,7 @@ namespace _3_GUI_PresentationLayer
         private IQlSanPhamService _iQlSanPhamService;
         public static Guid temb;
         public static string _barcode;
+        public  string _bcode;
         public Frm_sanpham()
         {
             InitializeComponent();
@@ -200,6 +201,7 @@ namespace _3_GUI_PresentationLayer
 
         private void VideoCaptureDevice_name(object sender, NewFrameEventArgs eventargs)
         {
+            pic_webcam.Image= (Bitmap)eventargs.Frame.Clone();
             Bitmap bitmap = (Bitmap)eventargs.Frame.Clone();
             BarcodeReader reader = new BarcodeReader();
             var result = reader.Decode(bitmap);
@@ -208,10 +210,9 @@ namespace _3_GUI_PresentationLayer
                 txt_barCode.Invoke(new MethodInvoker(delegate ()
                 {
                     txt_barCode.Text = result.ToString();
+                    _bcode = (string.Format("{0:0000000000000000}", result.ToString()));
                 }));
             }
-
-            pic_webcam.Image = bitmap;
         }
 
         private void btn_end_Click(object sender, EventArgs e)
