@@ -5,6 +5,10 @@ C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\BarcodeStandard.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -27,8 +31,11 @@ C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Text.Json.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\zxing.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -39,12 +46,17 @@ C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.pdb
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.pdb
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.AssemblyReference.cache
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.FrmDanhSachHoaDonBanHang.resources
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_BarCode.resources
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Login.resources
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Main.resources
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
@@ -62,226 +74,3 @@ C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presentati
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
 C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
-<<<<<<< HEAD
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.AssemblyReference.cache
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\zxing.dll
-=======
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.exe
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.deps.json
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.json
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.dev.json
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Options.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.AssemblyReference.cache
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Login.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Main.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Properties.Resources.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfoInputs.cache
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfo.cs
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CopyComplete
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
->>>>>>> a0efcc8ebde8d31ebeedb46688337f4446518bbf
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_sanpham.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Thongke.resources
-C:\Users\ASUS\Desktop\DuAn1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_trangchu.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.exe
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.deps.json
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.json
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.dev.json
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Memory.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Options.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.AssemblyReference.cache
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.FrmDanhSachHoaDonBanHang.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Login.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Main.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_sanpham.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Thongke.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_trangchu.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Properties.Resources.resources
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.GenerateResource.cache
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfoInputs.cache
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfo.cs
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CoreCompileInputs.cache
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CopyComplete
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
->>>>>>> 4484727fe472d09c8d4e93f09b3802ed09803455
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.FrmDanhSachHoaDonBanHang.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.AssemblyReference.cache
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.FrmDanhSachHoaDonBanHang.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_banhang.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_BarCode.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Login.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Main.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Nhanvien.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_sanpham.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Thongke.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_trangchu.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Properties.Resources.resources
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.GenerateResource.cache
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfoInputs.cache
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.AssemblyInfo.cs
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CoreCompileInputs.cache
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.exe
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.deps.json
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.json
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.runtimeconfig.dev.json
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Options.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\zxing.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\2_BUS_BusinessLayer.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\1_DAL_DataAccessLayer.pdb
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CopyComplete
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\BarcodeStandard.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Drawing.Common.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Text.Json.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\PC\Desktop\js\temp\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_BarCode.resources
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\BarcodeStandard.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Drawing.Common.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Text.Json.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
