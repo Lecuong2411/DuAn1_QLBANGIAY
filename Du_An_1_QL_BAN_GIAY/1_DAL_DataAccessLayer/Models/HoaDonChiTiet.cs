@@ -13,9 +13,11 @@ namespace _1_DAL_DataAccessLayer.Models
     {
         [Key]
         [Column("MaHD")]
-        public Guid MaHd { get; set; }
+        [StringLength(100)]
+        public string MaHd { get; set; }
         [Column("MaCTSP")]
-        public Guid? MaCtsp { get; set; }
+        [StringLength(100)]
+        public string MaCtsp { get; set; }
         public double DonGia { get; set; }
         public int TrangThai { get; set; }
 

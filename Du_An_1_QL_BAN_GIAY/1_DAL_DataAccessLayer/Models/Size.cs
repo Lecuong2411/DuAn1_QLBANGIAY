@@ -17,7 +17,8 @@ namespace _1_DAL_DataAccessLayer.Models
         }
 
         [Key]
-        public Guid MaSize { get; set; }
+        [StringLength(100)]
+        public string? MaSize { get; set; }
         [Column("Size")]
         public int Size1 { get; set; }
         public double ChieuDaiChan { get; set; }

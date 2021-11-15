@@ -90,28 +90,7 @@ namespace _3_GUI_PresentationLayer
                 tbx_barcode.Invoke(new MethodInvoker(delegate ()
               {
 
-
-
-                  var dulieu = _banhangService.SanphambanViews().FirstOrDefault(c => c.chiTietSanPham.MaQr == result.ToString());
-                  if (dulieu != null)
-                  {
-                      MessageBox.Show("Đã có dữ liệu", "Thông báo");
-                      tbx_barcode.Text = result.ToString();
-                      tbx_tengiay.Text = dulieu.sanPham.TenSp;
-                      cbb_size.Text = (dulieu.size.Size1).ToString();
-                      tbx_thuonghieu.Text = dulieu.sanPham.ThuongHieu;
-                      cbb_mausac.Text = dulieu.color.Color1;
-                      tbx_chatlieu.Text = dulieu.ChatLieu.ChatLieu1;
-                      cbb_loaicoiay.Text = dulieu.loaiCoGiay.LoaiCoGiay1;
-                      tbx_soluong.Text = "1";
-                  }
-                  else
-                  {
-                      MessageBox.Show("Không tìm thấy dữ liệu");
-                  }
-
-
-
+                  tbx_barcode.Text = result.ToString();
 
               }));
             }
@@ -134,17 +113,7 @@ namespace _3_GUI_PresentationLayer
 
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int Rowindex = e.RowIndex;
-            if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
-            tbx_barcode.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[0].Value.ToString();
-            tbx_tengiay.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString();
-            tbx_thuonghieu.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[2].Value.ToString();
-            cbb_size.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[3].Value.ToString();
-            cbb_mausac.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[4].Value.ToString();
-            tbx_chatlieu.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[5].Value.ToString();
-            cbb_loaicoiay.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[6].Value.ToString();
-            tbx_soluong.Text = "1";
-            pbox_hinhanh.Text = dtgview_thongtinsp.Rows[Rowindex].Cells[8].Value.ToString();
+         
 
         }
     }

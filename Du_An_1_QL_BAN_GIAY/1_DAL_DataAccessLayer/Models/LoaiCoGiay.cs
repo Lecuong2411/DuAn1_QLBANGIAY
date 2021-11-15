@@ -17,10 +17,11 @@ namespace _1_DAL_DataAccessLayer.Models
         }
 
         [Key]
-        public Guid MaCo { get; set; }
+        [StringLength(100)]
+        public string MaCo { get; set; }
         [Required]
         [Column("LoaiCoGiay")]
-        [StringLength(20)]
+        [StringLength(100)]
         public string LoaiCoGiay1 { get; set; }
         public int TrangThai { get; set; }
 

@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="BarcodeLib" Version="2.4.0" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
     <PackageReference Include="ZXing.Net" Version="0.16.6" />
   </ItemGroup>
 

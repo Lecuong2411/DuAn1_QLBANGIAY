@@ -17,10 +17,11 @@ namespace _1_DAL_DataAccessLayer.Models
         }
 
         [Key]
-        public Guid MaChatLieu { get; set; }
+        [StringLength(100)]
+        public string MaChatLieu { get; set; }
         [Required]
         [Column("ChatLieu")]
-        [StringLength(30)]
+        [StringLength(100)]
         public string ChatLieu1 { get; set; }
         public int TrangThai { get; set; }
 

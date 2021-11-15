@@ -11,10 +11,12 @@ namespace _1_DAL_DataAccessLayer.Models
     public partial class Image
     {
         [Key]
-        public Guid MaImage { get; set; }
+        [StringLength(100)]
+        public string MaImage { get; set; }
         [Column("MaCTSP")]
-        public Guid? MaCtsp { get; set; }
-        [StringLength(30)]
+        [StringLength(100)]
+        public string MaCtsp { get; set; }
+        [StringLength(100)]
         public string Images { get; set; }
         public int? TrangThai { get; set; }
 

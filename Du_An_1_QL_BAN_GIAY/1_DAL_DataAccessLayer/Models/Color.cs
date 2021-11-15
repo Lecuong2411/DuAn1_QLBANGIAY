@@ -18,10 +18,11 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [Key]
         [Column("MaCLR")]
-        public Guid MaClr { get; set; }
+        [StringLength(100)]
+        public string MaClr { get; set; }
         [Required]
         [Column("Color")]
-        [StringLength(20)]
+        [StringLength(100)]
         public string Color1 { get; set; }
         public int TrangThai { get; set; }
 

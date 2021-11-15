@@ -18,27 +18,29 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [Key]
         [Column("MaNV")]
-        public Guid MaNv { get; set; }
+        [StringLength(100)]
+        public string MaNv { get; set; }
         [Required]
         [Column("TenNV")]
-        [StringLength(30)]
+        [StringLength(100)]
         public string TenNv { get; set; }
         [Required]
-        [StringLength(12)]
+        [StringLength(100)]
         public string Sdt { get; set; }
         [Required]
-        [StringLength(40)]
+        [StringLength(100)]
         public string DiaChi { get; set; }
         [Required]
-        [StringLength(25)]
+        [StringLength(100)]
         public string Email { get; set; }
         [Required]
-        [StringLength(25)]
+        [StringLength(100)]
         public string MatKhau { get; set; }
         public int? GioiTinh { get; set; }
         public int? NamSinh { get; set; }
-        public Guid? MaChucVu { get; set; }
-        [StringLength(40)]
+        [StringLength(100)]
+        public string MaChucVu { get; set; }
+        [StringLength(100)]
         public string HinhAnh { get; set; }
         public int TrangThai { get; set; }
 

@@ -18,18 +18,21 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [Key]
         [Column("MaSP")]
-        public Guid MaSp { get; set; }
+        [StringLength(100)]
+        public string MaSp { get; set; }
         [Required]
         [Column("TenSP")]
-        [StringLength(25)]
+        [StringLength(100)]
         public string TenSp { get; set; }
         [Required]
-        [StringLength(25)]
+        [StringLength(100)]
         public string ThuongHieu { get; set; }
         public int TrangThai { get; set; }
-        public Guid? MaDanhMuc { get; set; }
+        [StringLength(100)]
+        public string MaDanhMuc { get; set; }
         [Column("MaNCC")]
-        public Guid? MaNcc { get; set; }
+        [StringLength(100)]
+        public string MaNcc { get; set; }
 
         [ForeignKey(nameof(MaDanhMuc))]
         [InverseProperty(nameof(DanhMuc.SanPhams))]

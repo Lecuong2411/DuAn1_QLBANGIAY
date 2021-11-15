@@ -18,30 +18,36 @@ namespace _1_DAL_DataAccessLayer.Models
             Images = new HashSet<Image>();
         }
 
-        public Guid? MaCo { get; set; }
-        public Guid? MaChatLieu { get; set; }
+        [StringLength(100)]
+        public string MaCo { get; set; }
+        [StringLength(100)]
+        public string MaChatLieu { get; set; }
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string GhiChu { get; set; }
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string Mota { get; set; }
         [Required]
         [Column("MaQR")]
-        [StringLength(30)]
+        [StringLength(100)]
         public string MaQr { get; set; }
         public int SoLuong { get; set; }
         public double GiaBan { get; set; }
         public double GiaNhap { get; set; }
         public int TrangThai { get; set; }
-        public Guid MaSize { get; set; }
+        [StringLength(100)]
+        public string MaSize { get; set; }
         [Column("MaCLR")]
-        public Guid MaClr { get; set; }
+        [StringLength(100)]
+        public string MaClr { get; set; }
         [Column("MaSP")]
-        public Guid MaSp { get; set; }
+        [StringLength(100)]
+        public string MaSp { get; set; }
         [Key]
         [Column("MaCTSP")]
-        public Guid MaCtsp { get; set; }
+        [StringLength(100)]
+        public string MaCtsp { get; set; }
 
         [ForeignKey(nameof(MaChatLieu))]
         [InverseProperty(nameof(ChatLieu.ChiTietSanPhams))]

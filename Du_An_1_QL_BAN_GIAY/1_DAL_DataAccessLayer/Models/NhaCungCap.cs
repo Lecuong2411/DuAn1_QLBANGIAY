@@ -18,21 +18,22 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [Key]
         [Column("MaNCC")]
-        public Guid MaNcc { get; set; }
+        [StringLength(100)]
+        public string MaNcc { get; set; }
         [Required]
         [Column("NguoiCC")]
-        [StringLength(20)]
+        [StringLength(100)]
         public string NguoiCc { get; set; }
         [Required]
         [Column("congTyCC")]
-        [StringLength(25)]
+        [StringLength(100)]
         public string CongTyCc { get; set; }
         [Column("SDT")]
-        [StringLength(12)]
+        [StringLength(100)]
         public string Sdt { get; set; }
-        [StringLength(30)]
+        [StringLength(100)]
         public string DiaChi { get; set; }
-        [StringLength(30)]
+        [StringLength(100)]
         public string GhiChu { get; set; }
 
         [InverseProperty(nameof(SanPham.MaNccNavigation))]

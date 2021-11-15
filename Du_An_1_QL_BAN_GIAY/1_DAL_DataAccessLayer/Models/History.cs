@@ -12,12 +12,15 @@ namespace _1_DAL_DataAccessLayer.Models
     public partial class History
     {
         [Column("MaCTSP")]
-        public Guid? MaCtsp { get; set; }
+        [StringLength(100)]
+        public string MaCtsp { get; set; }
         [Key]
         [Column("MaHIS")]
-        public Guid MaHis { get; set; }
+        [StringLength(100)]
+        public string MaHis { get; set; }
         [Column("MaNV")]
-        public Guid? MaNv { get; set; }
+        [StringLength(100)]
+        public string MaNv { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? NgayNhap { get; set; }
 

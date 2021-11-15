@@ -17,7 +17,8 @@ namespace _1_DAL_DataAccessLayer.Models
         }
 
         [Key]
-        public Guid MaChucVu { get; set; }
+        [StringLength(100)]
+        public string MaChucVu { get; set; }
         public int Roles { get; set; }
         public int TrangThai { get; set; }
 

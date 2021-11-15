@@ -180,6 +180,10 @@
               "target": "Package",
               "version": "[2.4.0, )"
             },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1000, )"
+            },
             "ZXing.Net": {
               "target": "Package",
               "version": "[0.16.6, )"

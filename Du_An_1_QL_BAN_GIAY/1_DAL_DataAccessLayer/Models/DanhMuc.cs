@@ -17,11 +17,12 @@ namespace _1_DAL_DataAccessLayer.Models
         }
 
         [Key]
-        public Guid MaDanhMuc { get; set; }
+        [StringLength(100)]
+        public string MaDanhMuc { get; set; }
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string TenDanhMuc { get; set; }
-        [StringLength(30)]
+        [StringLength(100)]
         public string GhiChu { get; set; }
         public int TrangThai { get; set; }
 

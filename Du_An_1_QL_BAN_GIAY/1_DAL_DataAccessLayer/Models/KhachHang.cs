@@ -18,13 +18,14 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [Key]
         [Column("MaKH")]
-        public Guid MaKh { get; set; }
+        [StringLength(100)]
+        public string MaKh { get; set; }
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string TenKh { get; set; }
         [Required]
         [Column("SDT")]
-        [StringLength(12)]
+        [StringLength(100)]
         public string Sdt { get; set; }
 
         [InverseProperty(nameof(HoaDon.MaKhNavigation))]
