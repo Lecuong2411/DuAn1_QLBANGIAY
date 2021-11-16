@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <ProjectReference Include="..\1_DAL_DataAccessLayer\1_DAL_DataAccessLayer.csproj" />
 	  <ProjectReference Include="..\2_BUS_BusinessLayer\2_BUS_BusinessLayer.csproj" />
   </ItemGroup>
 

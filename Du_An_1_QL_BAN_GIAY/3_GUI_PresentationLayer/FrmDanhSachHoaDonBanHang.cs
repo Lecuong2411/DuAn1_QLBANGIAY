@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using _2_BUS_BusinessLayer;
 using _2_BUS_BusinessLayer.Models;
 using _2_BUS_BusinessLayer.Service;
+using Excel=Microsoft.Office.Interop.Excel;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -21,11 +22,10 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _ChucnangdanhSachHoaDonBanHang = new BUS_DanhSachHoaDonBanHang();
-            DateTime t=DateTime.Now;
-            label3.Text = t.ToString("dd/MM/yyyy");
+           
             timer1.Enabled = true;
             timer1.Start();
-            label4.Text = DateTime.Now.ToLongTimeString();
+            label4.Text =DateTime.Now.ToLongDateString()+"\n"+ DateTime.Now.ToLongTimeString();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -80,7 +80,52 @@ namespace _3_GUI_PresentationLayer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label4.Text = DateTime.Now.ToLongTimeString();
+            label4.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
         }
+
+        private void btn_xuatexcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    xuatExcel(saveFileDialog.FileName);
+                    MessageBox.Show("Xuất file thành công");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất file không thành công \n " + ex.Message);
+                }
+            }
+        }
+        public void xuatExcel(string path)
+        {
+
+            if (dtgv_danhsachhoadonbanhang.Rows.Count > 0)
+            {
+                Excel.Application application = new Excel.Application();
+                application.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dtgv_danhsachhoadonbanhang.Columns.Count + 1; i++)
+                {
+                    application.Cells[1, i] = dtgv_danhsachhoadonbanhang.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < dtgv_danhsachhoadonbanhang.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgv_danhsachhoadonbanhang.Columns.Count; j++)
+                    {
+                        application.Cells[i + 2, j + 1] = dtgv_danhsachhoadonbanhang.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                application.Columns.AutoFit();
+                application.Visible = true;
+                application.ActiveWorkbook.SaveCopyAs(path);
+                application.ActiveWorkbook.Saved = true;
+            }
+
+        } 
     }
 }

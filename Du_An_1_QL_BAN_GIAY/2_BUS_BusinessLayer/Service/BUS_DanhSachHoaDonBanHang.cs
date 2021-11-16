@@ -16,20 +16,47 @@ namespace _2_BUS_BusinessLayer.Service
         private List<HoaDon> _hd;
         private List<KhachHang> _kh;
         private List<NhanVien> _nv;
+        private List<HoaDonChiTiet> _hdct;
+        private List<SanPham> _sp;
+        private List<LoaiCoGiay> _lcg;
+        private List<ChiTietSanPham> _ctsp;
+        private List<ChatLieu> _cl;
+        private List<Color> _clr;
+        private List<Size> _sz;
         private List<Danhsachhoadonbanhang> _dshdbh;
         private INhanvienServices _chunangnv;
         private IHoadonServices _chucnanghd;
         private IKhachhangServices _chucnangkhachhang;
-
+        private IHoadonchitietServices _hoadonchitietServices;
+        private IChitietSanPhamServices _chitietSanPhamServices;
+        private ISanphamServices _sanphamServices;
+        private ILoaicogiayServices _loaicogiayServices;
+        private IChatlieuServices _chatlieuServices;
+        private IColorServices _colorServices;
+        private ISizeServices _sizeServices;
         public BUS_DanhSachHoaDonBanHang()
         {
             _hd = new List<HoaDon>();
             _kh = new List<KhachHang>();
             _nv = new List<NhanVien>();
+            _hdct = new List<HoaDonChiTiet>();
+            _ctsp = new List<ChiTietSanPham>();
+            _sp = new List<SanPham>();
+            _lcg = new List<LoaiCoGiay>();
+            _cl = new List<ChatLieu>();
+            _clr = new List<Color>();
+            _sz = new List<Size>();
             _chucnanghd = new HoadonServices();
             _chucnangkhachhang = new KhachhangServices();
             _chunangnv = new NhanvienServices();
             _dshdbh = new List<Danhsachhoadonbanhang>();
+            _hoadonchitietServices = new HoadonchitietServices();
+            _chitietSanPhamServices = new ChitietSanPhamServices();
+            _sanphamServices = new SanphamServices();
+            _loaicogiayServices = new LoaicogiayServices();
+            _chatlieuServices = new ChatlieuServices();
+            _colorServices = new ColorServices();
+            _sizeServices = new SizeServices();
             loatdata();
 
         }
@@ -43,23 +70,51 @@ namespace _2_BUS_BusinessLayer.Service
             _kh = _chucnangkhachhang.Getlst();
             _nv = _chunangnv.Getlst();
             _hd = _chucnanghd.Getlst();
+            _hdct = _hoadonchitietServices.Getlst();
+            _ctsp = _chitietSanPhamServices.Getlst();
+            _sp = _sanphamServices.Getlst();
+            _lcg = _loaicogiayServices.Getlst();
+            _cl = _chatlieuServices.Getlst();
+            _clr = _colorServices.Getlst();
+            _sz = _sizeServices.Getlst();
             var tame = (from a in _kh
-                join b in _hd on a.MaKh equals b.MaKh
-                join c in _nv on b.MaNv equals c.MaNv
-                select new
-                {
-                    KhachHang = a,
-                    HoaDon = b,
-                    NhanVien = c
-                }).ToList();
+                        join b in _hd on a.MaKh equals b.MaKh
+                        join c in _nv on b.MaNv equals c.MaNv
+                        join d in _hdct on b.MaHd equals d.MaHd
+                        join f in _ctsp on d.MaCtsp equals f.MaCtsp
+                        join g in _sp on f.MaSp equals g.MaSp
+                        join h in _lcg on f.MaCo equals h.MaCo
+                        join j in _cl on f.MaChatLieu equals j.MaChatLieu
+                        join k in _clr on f.MaClr equals k.MaClr
+                        join l in _sz on f.MaSize equals l.MaSize
+                        select new
+                        {
+                            KhachHang = a,
+                            HoaDon = b,
+                            NhanVien = c,
+                            HoaDonChiTiet = d,
+                            ChiTietSanPham = f,
+                            SanPham = g,
+                            LoaiCoGiay = h,
+                            ChatLieu = j,
+                            Color = k,
+                            Size = l
+                        }).ToList();
             tame.ForEach(x =>
-                {
-                    Danhsachhoadonbanhang A = new Danhsachhoadonbanhang();
-                    A.hoadon = x.HoaDon;
-                    A.KhachHang = x.KhachHang;
-                    A.NhanVien = x.NhanVien;
-                    _dshdbh.Add(A);
-                });
+            {
+                Danhsachhoadonbanhang A = new Danhsachhoadonbanhang();
+                A.hoadon = x.HoaDon;
+                A.KhachHang = x.KhachHang;
+                A.NhanVien = x.NhanVien;
+                A.hoaDonChiTiet = x.HoaDonChiTiet;
+                A.ChiTietSanPham = x.ChiTietSanPham;
+                A.SanPham = x.SanPham;
+                A.LoaiCoGiay = x.LoaiCoGiay;
+                A.ChatLieu = x.ChatLieu;
+                A.Color = x.Color;
+                A.Size = x.Size;
+                _dshdbh.Add(A);
+            });
 
 
         }
