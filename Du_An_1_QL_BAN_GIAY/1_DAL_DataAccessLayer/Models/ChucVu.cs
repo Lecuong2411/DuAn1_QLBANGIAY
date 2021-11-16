@@ -9,12 +9,8 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("ChucVu")]
-    public partial class ChucVu
+    public class ChucVu
     {
-        public ChucVu()
-        {
-            NhanViens = new HashSet<NhanVien>();
-        }
 
         [Key]
         [StringLength(100)]
@@ -22,7 +18,5 @@ namespace _1_DAL_DataAccessLayer.Models
         public int Roles { get; set; }
         public int TrangThai { get; set; }
 
-        [InverseProperty(nameof(NhanVien.MaChucVuNavigation))]
-        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

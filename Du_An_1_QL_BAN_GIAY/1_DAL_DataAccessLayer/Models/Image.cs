@@ -8,20 +8,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL_DataAccessLayer.Models
 {
-    public partial class Image
+    public class Image
     {
         [Key]
         [StringLength(100)]
         public string MaImage { get; set; }
-        [Column("MaCTSP")]
-        [StringLength(100)]
-        public string MaCtsp { get; set; }
+        public string MaCTSP { get; set; }
+        [ForeignKey("MaCTSP")]
+        public ChiTietSanPham chiTietSanPham { get; set; }
         [StringLength(100)]
         public string Images { get; set; }
         public int? TrangThai { get; set; }
 
-        [ForeignKey(nameof(MaCtsp))]
-        [InverseProperty(nameof(ChiTietSanPham.Images))]
-        public virtual ChiTietSanPham MaCtspNavigation { get; set; }
     }
 }

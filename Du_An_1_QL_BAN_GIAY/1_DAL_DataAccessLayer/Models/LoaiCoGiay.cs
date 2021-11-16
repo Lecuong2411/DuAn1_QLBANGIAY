@@ -9,23 +9,16 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("LoaiCoGiay")]
-    public partial class LoaiCoGiay
+    public  class LoaiCoGiay
     {
-        public LoaiCoGiay()
-        {
-            ChiTietSanPhams = new HashSet<ChiTietSanPham>();
-        }
+  
 
         [Key]
         [StringLength(100)]
         public string MaCo { get; set; }
-        [Required]
-        [Column("LoaiCoGiay")]
         [StringLength(100)]
-        public string LoaiCoGiay1 { get; set; }
+        public string LoaiCoGiaySP { get; set; }
         public int TrangThai { get; set; }
 
-        [InverseProperty(nameof(ChiTietSanPham.MaCoNavigation))]
-        public virtual ICollection<ChiTietSanPham> ChiTietSanPhams { get; set; }
     }
 }

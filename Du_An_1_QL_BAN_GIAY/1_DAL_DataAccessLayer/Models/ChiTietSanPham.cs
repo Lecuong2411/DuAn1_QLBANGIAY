@@ -9,66 +9,38 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("ChiTietSanPham")]
-    public partial class ChiTietSanPham
+    public class ChiTietSanPham
     {
-        public ChiTietSanPham()
-        {
-            Histories = new HashSet<History>();
-            HoaDonChiTiets = new HashSet<HoaDonChiTiet>();
-            Images = new HashSet<Image>();
-        }
-
+        [Key]
         [StringLength(100)]
+        public string MaCTSP { get; set; }
         public string MaCo { get; set; }
-        [StringLength(100)]
+        [ForeignKey("MaCo")]
+      
+        public LoaiCoGiay loaiCoGiay { get; set; }
         public string MaChatLieu { get; set; }
-        [Required]
+        [ForeignKey("MaChatLieu")]
+        public ChatLieu chatLieu { get; set; }
         [StringLength(100)]
         public string GhiChu { get; set; }
-        [Required]
         [StringLength(100)]
         public string Mota { get; set; }
-        [Required]
-        [Column("MaQR")]
         [StringLength(100)]
-        public string MaQr { get; set; }
-        public int SoLuong { get; set; }
-        public double GiaBan { get; set; }
-        public double GiaNhap { get; set; }
+        public string MaQR { get; set; }
+        public int soluong { get; set; }
+        public int giaban { get; set; }
+        public int GiaNhap { get; set; }
         public int TrangThai { get; set; }
-        [StringLength(100)]
         public string MaSize { get; set; }
-        [Column("MaCLR")]
-        [StringLength(100)]
-        public string MaClr { get; set; }
-        [Column("MaSP")]
-        [StringLength(100)]
-        public string MaSp { get; set; }
-        [Key]
-        [Column("MaCTSP")]
-        [StringLength(100)]
-        public string MaCtsp { get; set; }
+        [ForeignKey("MaSize")]
+        public Size size { get; set; }
+        public string MaCLR { get; set; }
+        [ForeignKey("MaCLR")]
+        public Color color { get; set; }
+        public string MaSP { get; set; }
+        [ForeignKey("MaSP")]
+        public SanPham sanPham { get; set; }
 
-        [ForeignKey(nameof(MaChatLieu))]
-        [InverseProperty(nameof(ChatLieu.ChiTietSanPhams))]
-        public virtual ChatLieu MaChatLieuNavigation { get; set; }
-        [ForeignKey(nameof(MaClr))]
-        [InverseProperty(nameof(Color.ChiTietSanPhams))]
-        public virtual Color MaClrNavigation { get; set; }
-        [ForeignKey(nameof(MaCo))]
-        [InverseProperty(nameof(LoaiCoGiay.ChiTietSanPhams))]
-        public virtual LoaiCoGiay MaCoNavigation { get; set; }
-        [ForeignKey(nameof(MaSize))]
-        [InverseProperty(nameof(Size.ChiTietSanPhams))]
-        public virtual Size MaSizeNavigation { get; set; }
-        [ForeignKey(nameof(MaSp))]
-        [InverseProperty(nameof(SanPham.ChiTietSanPhams))]
-        public virtual SanPham MaSpNavigation { get; set; }
-        [InverseProperty(nameof(History.MaCtspNavigation))]
-        public virtual ICollection<History> Histories { get; set; }
-        [InverseProperty(nameof(HoaDonChiTiet.MaCtspNavigation))]
-        public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
-        [InverseProperty(nameof(Image.MaCtspNavigation))]
-        public virtual ICollection<Image> Images { get; set; }
+
     }
 }

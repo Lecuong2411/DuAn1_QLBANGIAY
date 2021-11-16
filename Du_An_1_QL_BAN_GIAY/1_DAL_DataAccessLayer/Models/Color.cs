@@ -9,24 +9,16 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("Color")]
-    public partial class Color
+    public  class Color
     {
-        public Color()
-        {
-            ChiTietSanPhams = new HashSet<ChiTietSanPham>();
-        }
+      
 
         [Key]
-        [Column("MaCLR")]
         [StringLength(100)]
         public string MaClr { get; set; }
-        [Required]
-        [Column("Color")]
         [StringLength(100)]
-        public string Color1 { get; set; }
+        public string ColorSP { get; set; }
         public int TrangThai { get; set; }
 
-        [InverseProperty(nameof(ChiTietSanPham.MaClrNavigation))]
-        public virtual ICollection<ChiTietSanPham> ChiTietSanPhams { get; set; }
     }
 }

@@ -24,15 +24,15 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _banhangService = new BanhangService();
-
+            loadSpbanhang();
+            loadHoadon();
 
         }
 
 
         private void Frm_banhang_Load(object sender, EventArgs e)
         {
-            loadSpbanhang();
-            loadHoadon();
+          
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo x in filterInfoCollection)
             {
@@ -68,7 +68,7 @@ namespace _3_GUI_PresentationLayer
             dtgview_thongtinsp.Rows.Clear();
             foreach (var x in _banhangService.SanphambanViews())
             {
-                dtgview_thongtinsp.Rows.Add(x.chiTietSanPham.MaQr, x.sanPham.TenSp, x.sanPham.ThuongHieu, x.size.Size1, x.color.Color1, x.ChatLieu.ChatLieu1, x.loaiCoGiay.LoaiCoGiay1, x.chiTietSanPham.SoLuong, x.image.Images);
+              //  dtgview_thongtinsp.Rows.Add(x.chiTietSanPham.MaQr, x.sanPham.TenSp, x.sanPham.ThuongHieu, x.size.Size1, x.color.Color1, x.ChatLieu.ChatLieu1, x.loaiCoGiay.LoaiCoGiay1, x.chiTietSanPham.SoLuong, x.image.Images);
             }
         }
 
@@ -91,6 +91,14 @@ namespace _3_GUI_PresentationLayer
               {
 
                   tbx_barcode.Text = result.ToString();
+                  foreach (var x in _banhangService.SanphambanViews())
+                  {
+                      //if (x.chiTietSanPham.MaQr==result.ToString())
+                      //{
+                      //    dtgview_hoadon.Rows.Add(x.sanPham.TenSp, x.chiTietSanPham.SoLuong);
+                      //}
+                  }
+                  
 
               }));
             }

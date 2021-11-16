@@ -9,23 +9,19 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("history")]
-    public partial class History
+    public class History
     {
-        [Column("MaCTSP")]
-        [StringLength(100)]
-        public string MaCtsp { get; set; }
+
         [Key]
-        [Column("MaHIS")]
         [StringLength(100)]
         public string MaHis { get; set; }
-        [Column("MaNV")]
-        [StringLength(100)]
-        public string MaNv { get; set; }
-        [Column(TypeName = "datetime")]
+        public string MaCTSP { get; set; }
+        [ForeignKey("MaCTSP")]
+        public ChiTietSanPham chiTietSanPham { get; set; }
+        public string MaNV { get; set; }
+        [ForeignKey("MaNV")]
+        public NhanVien nhanVien { get; set; }
         public DateTime? NgayNhap { get; set; }
 
-        [ForeignKey(nameof(MaCtsp))]
-        [InverseProperty(nameof(ChiTietSanPham.Histories))]
-        public virtual ChiTietSanPham MaCtspNavigation { get; set; }
     }
 }

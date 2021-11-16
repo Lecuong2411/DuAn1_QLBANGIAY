@@ -9,23 +9,19 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL_DataAccessLayer.Models
 {
     [Table("HoaDonChiTiet")]
-    public partial class HoaDonChiTiet
+    public  class HoaDonChiTiet
     {
         [Key]
-        [Column("MaHD")]
         [StringLength(100)]
         public string MaHd { get; set; }
-        [Column("MaCTSP")]
-        [StringLength(100)]
-        public string MaCtsp { get; set; }
+        [ForeignKey("MaHd")]
+        public HoaDon hoaDon { get; set; }
+        public string MaCTSP { get; set; }
+        [ForeignKey("MaCTSP")]
+        public ChiTietSanPham chiTietSanPham { get; set; }
         public double DonGia { get; set; }
         public int TrangThai { get; set; }
+       
 
-        [ForeignKey(nameof(MaCtsp))]
-        [InverseProperty(nameof(ChiTietSanPham.HoaDonChiTiets))]
-        public virtual ChiTietSanPham MaCtspNavigation { get; set; }
-        [ForeignKey(nameof(MaHd))]
-        [InverseProperty(nameof(HoaDon.HoaDonChiTiet))]
-        public virtual HoaDon MaHdNavigation { get; set; }
     }
 }
