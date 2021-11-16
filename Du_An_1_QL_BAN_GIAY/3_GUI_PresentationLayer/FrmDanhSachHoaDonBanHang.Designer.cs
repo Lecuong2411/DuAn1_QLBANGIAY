@@ -48,10 +48,10 @@ namespace _3_GUI_PresentationLayer
             this.label3 = new System.Windows.Forms.Label();
             this.btn_xuatExcelct = new System.Windows.Forms.Button();
             this.txt_timkiemct = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dtp_ct = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_hdct = new System.Windows.Forms.Button();
+            this.cbb_timkiem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhoadonbanhang)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -188,12 +188,12 @@ namespace _3_GUI_PresentationLayer
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbb_timkiem);
             this.tabPage2.Controls.Add(this.btn_dsct);
             this.tabPage2.Controls.Add(this.dtgv_dshdct);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.btn_xuatExcelct);
             this.tabPage2.Controls.Add(this.txt_timkiemct);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.dtp_ct);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.btn_hdct);
@@ -214,6 +214,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_dsct.TabIndex = 16;
             this.btn_dsct.Text = "Danh Sách";
             this.btn_dsct.UseVisualStyleBackColor = true;
+            this.btn_dsct.Click += new System.EventHandler(this.btn_dsct_Click);
             // 
             // dtgv_dshdct
             // 
@@ -245,6 +246,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_xuatExcelct.TabIndex = 18;
             this.btn_xuatExcelct.Text = "Xuất Excel ";
             this.btn_xuatExcelct.UseVisualStyleBackColor = true;
+            this.btn_xuatExcelct.Click += new System.EventHandler(this.btn_xuatExcelct_Click);
             // 
             // txt_timkiemct
             // 
@@ -254,16 +256,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_timkiemct.PlaceholderText = "nhập số điện thoại";
             this.txt_timkiemct.Size = new System.Drawing.Size(134, 23);
             this.txt_timkiemct.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(59, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "  Tìm kiếm SĐT:";
+            this.txt_timkiemct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_timkiemct_KeyUp);
             // 
             // dtp_ct
             // 
@@ -292,6 +285,14 @@ namespace _3_GUI_PresentationLayer
             this.btn_hdct.TabIndex = 15;
             this.btn_hdct.Text = "Tìm kiếm";
             this.btn_hdct.UseVisualStyleBackColor = true;
+            // 
+            // cbb_timkiem
+            // 
+            this.cbb_timkiem.FormattingEnabled = true;
+            this.cbb_timkiem.Location = new System.Drawing.Point(35, 53);
+            this.cbb_timkiem.Name = "cbb_timkiem";
+            this.cbb_timkiem.Size = new System.Drawing.Size(121, 25);
+            this.cbb_timkiem.TabIndex = 19;
             // 
             // FrmDanhSachHoaDonBanHang
             // 
@@ -332,9 +333,9 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_xuatExcelct;
         private System.Windows.Forms.TextBox txt_timkiemct;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtp_ct;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_hdct;
+        private System.Windows.Forms.ComboBox cbb_timkiem;
     }
 }

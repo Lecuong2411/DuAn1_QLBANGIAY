@@ -152,3 +152,5 @@ C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presen
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
+C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.ResolveComReference.cache

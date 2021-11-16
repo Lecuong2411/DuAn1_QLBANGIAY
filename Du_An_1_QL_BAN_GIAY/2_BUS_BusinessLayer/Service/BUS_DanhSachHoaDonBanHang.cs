@@ -78,14 +78,14 @@ namespace _2_BUS_BusinessLayer.Service
             _clr = _colorServices.Getlst();
             _sz = _sizeServices.Getlst();
             var tame = (from a in _kh
-                        join b in _hd on a.MaKh equals b.MaKh
-                        join c in _nv on b.MaNv equals c.MaNv
+                        join b in _hd on a.MaKh equals b.MaKH
+                        join c in _nv on b.MaNV equals c.MaNv
                         join d in _hdct on b.MaHd equals d.MaHd
-                        join f in _ctsp on d.MaCtsp equals f.MaCtsp
-                        join g in _sp on f.MaSp equals g.MaSp
+                        join f in _ctsp on d.MaCTSP equals f.MaCTSP
+                        join g in _sp on f.MaSP equals g.MaSp
                         join h in _lcg on f.MaCo equals h.MaCo
                         join j in _cl on f.MaChatLieu equals j.MaChatLieu
-                        join k in _clr on f.MaClr equals k.MaClr
+                        join k in _clr on f.MaCLR equals k.MaClr
                         join l in _sz on f.MaSize equals l.MaSize
                         select new
                         {
@@ -119,7 +119,12 @@ namespace _2_BUS_BusinessLayer.Service
 
         }
 
-        public List<Danhsachhoadonbanhang> loatdatatk(string sdt)
+        public List<Danhsachhoadonbanhang> timkiemkh(string kh)
+        {
+            return _dshdbh.Where(c => c.KhachHang.TenKh.StartsWith(kh)).ToList();
+        }
+
+        public List<Danhsachhoadonbanhang> timkiemsdt(string sdt)
         {
             return _dshdbh.Where(c => c.KhachHang.Sdt.StartsWith(sdt)).ToList();
         }

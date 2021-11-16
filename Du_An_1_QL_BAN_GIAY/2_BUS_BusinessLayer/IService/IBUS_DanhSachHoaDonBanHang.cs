@@ -13,6 +13,7 @@ namespace _2_BUS_BusinessLayer
         public List<Danhsachhoadonbanhang> ListdDanhsachhoadonbanhang();
         //dùng để đẩy dữ liệu của 3 bảng nhân viên , khách hàng , hóa đơn 
         public void loatdata();
-        public List<Danhsachhoadonbanhang> loatdatatk(string sdt);
+        public List<Danhsachhoadonbanhang> timkiemsdt(string sdt);
+        public List<Danhsachhoadonbanhang> timkiemkh(string kh);
     }
 }

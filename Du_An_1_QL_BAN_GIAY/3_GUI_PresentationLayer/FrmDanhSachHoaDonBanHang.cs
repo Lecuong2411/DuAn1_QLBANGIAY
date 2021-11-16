@@ -26,10 +26,91 @@ namespace _3_GUI_PresentationLayer
             timer1.Enabled = true;
             timer1.Start();
             label4.Text =DateTime.Now.ToLongDateString()+"\n"+ DateTime.Now.ToLongTimeString();
+            label3.Text =DateTime.Now.ToLongDateString()+"\n"+ DateTime.Now.ToLongTimeString();
+            cbb_timkiem.Items.Add("SĐT");
+            cbb_timkiem.Items.Add("Tên khách hàng");
+            loatdata(_ChucnangdanhSachHoaDonBanHang.ListdDanhsachhoadonbanhang());
+            loatdatahdct(_ChucnangdanhSachHoaDonBanHang.ListdDanhsachhoadonbanhang());
+
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+
+        }
+        public void loatdatahdct(List<Danhsachhoadonbanhang> danhsachhoadonbanhangs)
+        {
+            dtgv_dshdct.ColumnCount = 13;
+            dtgv_dshdct.Columns[0].Name = "Tên khách hàng";
+            dtgv_dshdct.Columns[1].Name = "Số điện thoại khách hàng";
+            dtgv_dshdct.Columns[2].Name = "Size";
+            dtgv_dshdct.Columns[3].Name = "Color";
+            dtgv_dshdct.Columns[4].Name = "Loại cổ giày";
+            dtgv_dshdct.Columns[5].Name = "Chất liệu";
+            dtgv_dshdct.Columns[6].Name = "Ghi chú";
+            dtgv_dshdct.Columns[7].Name = "Tên Giày";
+            dtgv_dshdct.Columns[8].Name = "Đơn Giá";
+            dtgv_dshdct.Columns[9].Name = "Số lượng ";
+            dtgv_dshdct.Columns[10].Name = "Tổng tiền";
+            dtgv_dshdct.Columns[11].Name = "Người lập phiếu";
+            dtgv_dshdct.Columns[12].Name = "Ngày bán";
+            dtgv_dshdct.Rows.Clear();
+            danhsachhoadonbanhangs.ForEach(x =>
+            {
+                dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
+                    x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+            });
+
+        }
+        public void loatdatahdtimkiemsdt(string sdt)
+        {
+            dtgv_dshdct.ColumnCount = 13;
+            dtgv_dshdct.Columns[0].Name = "Tên khách hàng";
+            dtgv_dshdct.Columns[1].Name = "Số điện thoại khách hàng";
+            dtgv_dshdct.Columns[2].Name = "Size";
+            dtgv_dshdct.Columns[3].Name = "Color";
+            dtgv_dshdct.Columns[4].Name = "Loại cổ giày";
+            dtgv_dshdct.Columns[5].Name = "Chất liệu";
+            dtgv_dshdct.Columns[6].Name = "Ghi chú";
+            dtgv_dshdct.Columns[7].Name = "Tên Giày";
+            dtgv_dshdct.Columns[8].Name = "Đơn Giá";
+            dtgv_dshdct.Columns[9].Name = "Số lượng ";
+            dtgv_dshdct.Columns[10].Name = "Tổng tiền";
+            dtgv_dshdct.Columns[11].Name = "Người lập phiếu";
+            dtgv_dshdct.Columns[12].Name = "Ngày bán";
+            dtgv_dshdct.Rows.Clear();
+            _ChucnangdanhSachHoaDonBanHang.timkiemsdt(sdt).ForEach(x =>
+            {
+                dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
+                    x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+            });
+
+        }
+        public void loatdatahdtimkiemtenkh(string namkh)
+        {
+            dtgv_dshdct.ColumnCount = 13;
+            dtgv_dshdct.Columns[0].Name = "Tên khách hàng";
+            dtgv_dshdct.Columns[1].Name = "Số điện thoại khách hàng";
+            dtgv_dshdct.Columns[2].Name = "Size";
+            dtgv_dshdct.Columns[3].Name = "Color";
+            dtgv_dshdct.Columns[4].Name = "Loại cổ giày";
+            dtgv_dshdct.Columns[5].Name = "Chất liệu";
+            dtgv_dshdct.Columns[6].Name = "Ghi chú";
+            dtgv_dshdct.Columns[7].Name = "Tên Giày";
+            dtgv_dshdct.Columns[8].Name = "Đơn Giá";
+            dtgv_dshdct.Columns[9].Name = "Số lượng ";
+            dtgv_dshdct.Columns[10].Name = "Tổng tiền";
+            dtgv_dshdct.Columns[11].Name = "Người lập phiếu";
+            dtgv_dshdct.Columns[12].Name = "Ngày bán";
+            dtgv_dshdct.Rows.Clear();
+            _ChucnangdanhSachHoaDonBanHang.timkiemkh(namkh).ForEach(x =>
+            {
+                dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
+                    x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+            });
 
         }
         public  void loatdata(List<Danhsachhoadonbanhang>danhsachhoadonbanhangs)
@@ -60,7 +141,7 @@ namespace _3_GUI_PresentationLayer
             dtgv_danhsachhoadonbanhang.Columns[4].Name = "Tiền nhận";
             dtgv_danhsachhoadonbanhang.Columns[5].Name = "Ngày tạo";
             dtgv_danhsachhoadonbanhang.Rows.Clear();
-           _ChucnangdanhSachHoaDonBanHang.loatdatatk(sdt).ForEach(x =>
+           _ChucnangdanhSachHoaDonBanHang.timkiemsdt(sdt).ForEach(x =>
                 {
                     dtgv_danhsachhoadonbanhang.Rows.Add(x.hoadon.MaHd, x.KhachHang.Sdt, x.hoadon.ThanhTien,
                         x.NhanVien.MaNv,x.hoadon.TienNhan);
@@ -81,6 +162,7 @@ namespace _3_GUI_PresentationLayer
         private void timer1_Tick(object sender, EventArgs e)
         {
             label4.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
+            label3.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
         }
 
         private void btn_xuatexcel_Click(object sender, EventArgs e)
@@ -92,7 +174,7 @@ namespace _3_GUI_PresentationLayer
             {
                 try
                 {
-                    xuatExcel(saveFileDialog.FileName);
+                    xuatExcel(saveFileDialog.FileName,dtgv_danhsachhoadonbanhang);
                     MessageBox.Show("Xuất file thành công");
                 }
                 catch (Exception ex)
@@ -101,7 +183,7 @@ namespace _3_GUI_PresentationLayer
                 }
             }
         }
-        public void xuatExcel(string path)
+        public void xuatExcel(string path, DataGridView dtgv_danhsachhoadonbanhang)
         {
 
             if (dtgv_danhsachhoadonbanhang.Rows.Count > 0)
@@ -126,6 +208,42 @@ namespace _3_GUI_PresentationLayer
                 application.ActiveWorkbook.Saved = true;
             }
 
-        } 
+        }
+
+        private void btn_xuatExcelct_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    xuatExcel(saveFileDialog.FileName, dtgv_dshdct);
+                    MessageBox.Show("Xuất file thành công");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất file không thành công \n " + ex.Message);
+                }
+            }
+        }
+
+        private void txt_timkiemct_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (cbb_timkiem.Text == "SĐT")
+            {
+                loatdatahdtimkiemsdt(txt_timkiemct.Text);
+            }
+            else if (cbb_timkiem.Text == "Tên khách hàng")
+            {
+                loatdatahdtimkiemtenkh(txt_timkiemct.Text);
+            }
+        }
+
+        private void btn_dsct_Click(object sender, EventArgs e)
+        {
+            loatdatahdct(_ChucnangdanhSachHoaDonBanHang.ListdDanhsachhoadonbanhang()); 
+        }
     }
 }

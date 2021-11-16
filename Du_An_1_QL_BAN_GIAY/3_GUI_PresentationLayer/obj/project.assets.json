@@ -396,15 +396,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
-        "type": "package",
-        "compile": {
-          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
-        },
-        "runtime": {
-          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
-        }
-      },
       "Microsoft.Win32.Registry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -2222,18 +2213,6 @@
         "microsoft.netcore.targets.1.1.3.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
-      ]
-    },
-    "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
-      "sha512": "DfceS96ustwfL8EOJNNRtpk6b0RylhjNpgeeemuvi9X4GYks2UTeAimjSrdFEfuqRo5ibZ4Sd0gJIeDr9gMa6Q==",
-      "type": "package",
-      "path": "microsoft.office.interop.excel/15.0.4795.1000",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net20/Microsoft.Office.Interop.Excel.dll",
-        "microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512",
-        "microsoft.office.interop.excel.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.7.0": {
@@ -5976,24 +5955,28 @@
       "2_BUS_BusinessLayer >= 1.0.0",
       "AForge.Video.DirectShow >= 2.2.5",
       "BarcodeLib >= 2.4.0",
-      "Microsoft.Office.Interop.Excel >= 15.0.4795.1000",
       "ZXing.Net >= 0.16.6"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
+      "projectUniqueName": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
       "projectName": "3_GUI_PresentationLayer",
-      "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\obj\\",
+      "projectPath": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6007,11 +5990,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
-              "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
+            "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+              "projectPath": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
             },
-            "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
-              "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj"
+            "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
+              "projectPath": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj"
             }
           }
         }
@@ -6033,10 +6016,6 @@
           "BarcodeLib": {
             "target": "Package",
             "version": "[2.4.0, )"
-          },
-          "Microsoft.Office.Interop.Excel": {
-            "target": "Package",
-            "version": "[15.0.4795.1000, )"
           },
           "ZXing.Net": {
             "target": "Package",
@@ -6061,7 +6040,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6092,16 +6071,6 @@
       "warningLevel": 1,
       "message": "Package 'AForge.Video.DirectShow 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "AForge.Video.DirectShow",
-      "targetGraphs": [
-        "net5.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Office.Interop.Excel 15.0.4795.1000' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Office.Interop.Excel",
       "targetGraphs": [
         "net5.0-windows7.0"
       ]
