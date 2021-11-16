@@ -10,5 +10,6 @@ namespace _2_BUS_BusinessLayer.IService
    public interface IBanhangService
     {
         List<SanphambanViewModel> SanphambanViews();
+
     }
 }

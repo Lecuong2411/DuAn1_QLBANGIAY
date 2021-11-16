@@ -9,27 +9,27 @@ namespace _2_BUS_BusinessLayer.Models
 {
     public class SanphambanViewModel
     {
-        //public int Ma { get; set; }
-        //public string Ten { get; set; }
-        //public int Size { get; set; }
-        //public string Thuonghieu { get; set; }
-        //public int Soluong { get; set; }
-        //public string Mausac { get; set; }
-        //public string Loaicogiay { get; set; }
-        //public float Giaban { get; set; }
-        //public string Img { get; set; }
+        //public int ma { get; set; }
+        //public string ten { get; set; }
+        //public int size { get; set; }
+        //public string thuonghieu { get; set; }
+        //public int soluong { get; set; }
+        //public string mausac { get; set; }
+        //public string loaicogiay { get; set; }
+        //public float giaban { get; set; }
+        //public string img { get; set; }
 
-        //public SanphambanViewModel(int ma, string ten, int size, string thuonghieu, int soluong, string mausac, string loaicogiay, float giaban, string img)
+        //public sanphambanviewmodel(int ma, string ten, int size, string thuonghieu, int soluong, string mausac, string loaicogiay, float giaban, string img)
         //{
-        //    Ma = ma;
-        //    Ten = ten;
-        //    Size = size;
-        //    Thuonghieu = thuonghieu;
-        //    Soluong = soluong;
-        //    Mausac = mausac;
-        //    Loaicogiay = loaicogiay;
-        //    Giaban = giaban;
-        //    Img = img;
+        //    ma = ma;
+        //    ten = ten;
+        //    size = size;
+        //    thuonghieu = thuonghieu;
+        //    soluong = soluong;
+        //    mausac = mausac;
+        //    loaicogiay = loaicogiay;
+        //    giaban = giaban;
+        //    img = img;
         //}
         public SanPham  sanPham { get; set; }
         public NhaCungCap nhaCungCap { get; set; }

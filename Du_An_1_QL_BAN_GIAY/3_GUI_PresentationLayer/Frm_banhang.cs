@@ -50,6 +50,26 @@ namespace _3_GUI_PresentationLayer
             dtgview_hoadon.Columns[2].HeaderText = "Đơn giá";
             dtgview_hoadon.Columns[3].HeaderText = "Giảm giá";
             dtgview_hoadon.Columns[4].HeaderText = "Thành tiền";
+            DataGridViewComboBoxColumn dtgvcmm = new DataGridViewComboBoxColumn();
+            dtgvcmm.Name = "cmm";
+            dtgvcmm.HeaderText = "Chức năng";
+            dtgvcmm.Items.Add("Sửa");
+            dtgvcmm.Items.Add("xóa");
+            int indexcmm = 5;
+            if (dtgview_hoadon.Columns["cmm"] == null)
+            {
+                dtgview_hoadon.Columns.Insert(indexcmm, dtgvcmm);
+            }
+            DataGridViewButtonColumn dtgvbt = new DataGridViewButtonColumn();
+            dtgvbt.Name = "bt";
+            dtgvbt.HeaderText = "Xác nhận";
+            dtgvbt.Text = "Xác nhận";
+            dtgvbt.UseColumnTextForButtonValue = true;
+            int index = 6;
+            if (dtgview_hoadon.Columns["bt"] == null)
+            {
+                dtgview_hoadon.Columns.Insert(index, dtgvbt);
+            }
             dtgview_hoadon.Rows.Clear();
         }
 
@@ -68,7 +88,7 @@ namespace _3_GUI_PresentationLayer
             dtgview_thongtinsp.Rows.Clear();
             foreach (var x in _banhangService.SanphambanViews())
             {
-              //  dtgview_thongtinsp.Rows.Add(x.chiTietSanPham.MaQr, x.sanPham.TenSp, x.sanPham.ThuongHieu, x.size.Size1, x.color.Color1, x.ChatLieu.ChatLieu1, x.loaiCoGiay.LoaiCoGiay1, x.chiTietSanPham.SoLuong, x.image.Images);
+               dtgview_thongtinsp.Rows.Add(x.chiTietSanPham.MaQR, x.sanPham.TenSp, x.sanPham.ThuongHieu, x.size.SizeSp, x.color.ColorSP, x.ChatLieu.ChatLieuSP, x.loaiCoGiay.LoaiCoGiaySP, x.chiTietSanPham.soluong, x.image.Images);
             }
         }
 
@@ -93,10 +113,11 @@ namespace _3_GUI_PresentationLayer
                   tbx_barcode.Text = result.ToString();
                   foreach (var x in _banhangService.SanphambanViews())
                   {
-                      //if (x.chiTietSanPham.MaQr==result.ToString())
-                      //{
-                      //    dtgview_hoadon.Rows.Add(x.sanPham.TenSp, x.chiTietSanPham.SoLuong);
-                      //}
+                      if (x.chiTietSanPham.MaQR == result.ToString())
+                      {
+                          MessageBox.Show("Thành công");
+                          dtgview_hoadon.Rows.Add(x.sanPham.TenSp, x.chiTietSanPham.soluong);
+                      }
                   }
                   
 
@@ -121,7 +142,15 @@ namespace _3_GUI_PresentationLayer
 
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+            int Rowindex = e.RowIndex;
+            if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
+            var tensp = dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()+ " SIZE : "+ dtgview_thongtinsp.Rows[Rowindex].Cells[3].Value.ToString();
+            var soluong= 1;
+            if (true)
+            {
+
+            }
+            dtgview_hoadon.Rows.Add(tensp,soluong);
 
         }
     }
