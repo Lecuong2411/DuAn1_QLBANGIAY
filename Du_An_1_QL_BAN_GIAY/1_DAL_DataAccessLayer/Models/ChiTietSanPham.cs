@@ -40,6 +40,10 @@ namespace _1_DAL_DataAccessLayer.Models
         public string MaSP { get; set; }
         [ForeignKey("MaSP")]
         public SanPham sanPham { get; set; }
+        public string MaPB { get; set; }
+        [ForeignKey("MaPB")]
+        public ProductBack productBack { get; set; }
+
 
 
     }

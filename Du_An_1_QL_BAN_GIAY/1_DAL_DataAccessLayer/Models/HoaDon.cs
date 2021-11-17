@@ -24,6 +24,9 @@ namespace _1_DAL_DataAccessLayer.Models
         public string MaNV { get; set; }
         [ForeignKey("MaNV")]
         public NhanVien nhanVien { get; set; }
+        public string MaVouCher { get; set; }
+        [ForeignKey("MaVouCher")]
+        public Voucher voucher { get; set; }
         public int TrangThaiHd { get; set; }
     }
 }
