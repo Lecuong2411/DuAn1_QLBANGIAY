@@ -27,6 +27,9 @@ namespace _1_DAL_DataAccessLayer.Models
         public string MaVouCher { get; set; }
         [ForeignKey("MaVouCher")]
         public Voucher voucher { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime thoigian { get; set; }
         public int TrangThaiHd { get; set; }
     }
 }

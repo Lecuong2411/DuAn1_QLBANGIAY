@@ -13,7 +13,9 @@ namespace _1_DAL_DataAccessLayer.Models
         [StringLength(100)]
         public string MaKM { get; set; }
         public string TenChuongTrinh { get; set; }
+        [DataType(DataType.Date)]
         public DateTime NgayDau { get; set; }
+        [DataType(DataType.Date)]
         public DateTime NgayHet { get; set; }
         public int GiamGia { get; set; }
         public int TrangThai { get; set; }
