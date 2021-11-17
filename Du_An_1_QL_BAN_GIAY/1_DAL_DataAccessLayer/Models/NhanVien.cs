@@ -28,6 +28,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public string MatKhau { get; set; }
         public int? GioiTinh { get; set; }
         public int? NamSinh { get; set; }
+        public string MaChucVu { get; set; }
         [ForeignKey("MaChucVu")]
         public ChucVu chucVu { get; set; }
         [StringLength(100)]

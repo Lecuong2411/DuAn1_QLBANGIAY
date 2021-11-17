@@ -11,6 +11,7 @@ using _2_BUS_BusinessLayer.IService;
 using _2_BUS_BusinessLayer.Service;
 using AForge.Video.DirectShow;
 using ZXing;
+using _1_DAL_DataAccessLayer.Models;
 
 
 namespace _3_GUI_PresentationLayer
@@ -142,16 +143,29 @@ namespace _3_GUI_PresentationLayer
 
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+         
+            
             int Rowindex = e.RowIndex;
             if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
             var tensp = dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()+ " SIZE : "+ dtgview_thongtinsp.Rows[Rowindex].Cells[3].Value.ToString();
             var soluong= 1;
-            if (true)
-            {
+            var masp = _banhangService.SanphambanViews().Where(c => c.sanPham.TenSp == dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()).Select(c => c.sanPham.MaSp).FirstOrDefault();
+            var chitietsp = _banhangService.SanphambanViews().Where(c => c.chiTietSanPham.MaSP == masp).Select(c => c.chiTietSanPham.giaban).FirstOrDefault();
+            var dongia = chitietsp;
+            var thanhtien = dongia * soluong;
+            dtgview_hoadon.Rows.Add(tensp,soluong,chitietsp,0,thanhtien);
 
-            }
-            dtgview_hoadon.Rows.Add(tensp,soluong);
+        }
 
+        private void btn_taohoadon_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = new HoaDon();
+            HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
+            hoaDon.MaHd = "HD" + _banhangService.addHoadons().Count+2;
+            NhanVien nhanVien = new NhanVien();
+          
+            //    hoaDon.ThanhTien=
+          
         }
     }
 }

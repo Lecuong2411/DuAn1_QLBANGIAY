@@ -20,8 +20,9 @@ namespace _1_DAL_DataAccessLayer.Models
         [ForeignKey("MaCTSP")]
         public ChiTietSanPham chiTietSanPham { get; set; }
         public double DonGia { get; set; }
+        public int soluong { get; set; }
         public int TrangThai { get; set; }
        
-
+        
     }
 }

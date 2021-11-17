@@ -37,6 +37,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_sanpham = new System.Windows.Forms.Button();
             this.btn_thongke = new System.Windows.Forms.Button();
             this.btn_nhanvien = new System.Windows.Forms.Button();
+            this.btn_dsHoadon = new System.Windows.Forms.Button();
             this.pnl_MenuRight = new System.Windows.Forms.Panel();
             this.lbl_user = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,6 @@ namespace _3_GUI_PresentationLayer
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_main = new System.Windows.Forms.Panel();
-            this.btn_dsHoadon = new System.Windows.Forms.Button();
             this.pnl_MenuLeft.SuspendLayout();
             this.fip_Menuleft.SuspendLayout();
             this.pnl_MenuRight.SuspendLayout();
@@ -91,7 +91,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_trangchu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btn_trangchu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_trangchu.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_trangchu.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_trangchu.Image = global::_3_GUI_PresentationLayer.Properties.Resources.home__2_;
             this.btn_trangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_trangchu.Location = new System.Drawing.Point(3, 3);
             this.btn_trangchu.Name = "btn_trangchu";
@@ -109,7 +109,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_banhang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btn_banhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_banhang.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_banhang.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_banhang.Image = global::_3_GUI_PresentationLayer.Properties.Resources.cart__1_;
             this.btn_banhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_banhang.Location = new System.Drawing.Point(3, 62);
             this.btn_banhang.Name = "btn_banhang";
@@ -127,7 +127,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_sanpham.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sanpham.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_sanpham.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_sanpham.Image = global::_3_GUI_PresentationLayer.Properties.Resources.packet;
             this.btn_sanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sanpham.Location = new System.Drawing.Point(3, 121);
             this.btn_sanpham.Name = "btn_sanpham";
@@ -145,7 +145,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_thongke.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_thongke.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_thongke.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_thongke.Image = global::_3_GUI_PresentationLayer.Properties.Resources.bar_chart__1_;
             this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thongke.Location = new System.Drawing.Point(3, 180);
             this.btn_thongke.Name = "btn_thongke";
@@ -163,7 +163,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_nhanvien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btn_nhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nhanvien.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_nhanvien.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
+            this.btn_nhanvien.Image = global::_3_GUI_PresentationLayer.Properties.Resources.team__1_;
             this.btn_nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nhanvien.Location = new System.Drawing.Point(3, 239);
             this.btn_nhanvien.Name = "btn_nhanvien";
@@ -174,6 +174,24 @@ namespace _3_GUI_PresentationLayer
             this.btn_nhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_nhanvien.UseVisualStyleBackColor = true;
             this.btn_nhanvien.Click += new System.EventHandler(this.MenuClick);
+            // 
+            // btn_dsHoadon
+            // 
+            this.btn_dsHoadon.FlatAppearance.BorderSize = 0;
+            this.btn_dsHoadon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_dsHoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dsHoadon.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_dsHoadon.Image = global::_3_GUI_PresentationLayer.Properties.Resources.clipboard;
+            this.btn_dsHoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dsHoadon.Location = new System.Drawing.Point(3, 298);
+            this.btn_dsHoadon.Name = "btn_dsHoadon";
+            this.btn_dsHoadon.Size = new System.Drawing.Size(449, 53);
+            this.btn_dsHoadon.TabIndex = 9;
+            this.btn_dsHoadon.Tag = "Danh sách hóa đơn bán hàng";
+            this.btn_dsHoadon.Text = "Danh sách hóa đơn bán hàng";
+            this.btn_dsHoadon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_dsHoadon.UseVisualStyleBackColor = true;
+            this.btn_dsHoadon.Click += new System.EventHandler(this.MenuClick);
             // 
             // pnl_MenuRight
             // 
@@ -191,11 +209,11 @@ namespace _3_GUI_PresentationLayer
             // 
             this.lbl_user.AutoSize = true;
             this.lbl_user.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_user.Location = new System.Drawing.Point(222, 210);
+            this.lbl_user.Location = new System.Drawing.Point(89, 204);
             this.lbl_user.Name = "lbl_user";
-            this.lbl_user.Size = new System.Drawing.Size(138, 55);
+            this.lbl_user.Size = new System.Drawing.Size(306, 55);
             this.lbl_user.TabIndex = 6;
-            this.lbl_user.Text = "label1";
+            this.lbl_user.Text = "Lê Văn Cường";
             // 
             // pictureBox4
             // 
@@ -299,24 +317,6 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Name = "pnl_main";
             this.pnl_main.Size = new System.Drawing.Size(1401, 934);
             this.pnl_main.TabIndex = 2;
-            // 
-            // btn_dsHoadon
-            // 
-            this.btn_dsHoadon.FlatAppearance.BorderSize = 0;
-            this.btn_dsHoadon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_dsHoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dsHoadon.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_dsHoadon.Image = global::_3_GUI_PresentationLayer.Properties.Resources.xxx;
-            this.btn_dsHoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dsHoadon.Location = new System.Drawing.Point(3, 298);
-            this.btn_dsHoadon.Name = "btn_dsHoadon";
-            this.btn_dsHoadon.Size = new System.Drawing.Size(449, 53);
-            this.btn_dsHoadon.TabIndex = 9;
-            this.btn_dsHoadon.Tag = "Danh sách hóa đơn bán hàng";
-            this.btn_dsHoadon.Text = "Danh sách hóa đơn bán hàng";
-            this.btn_dsHoadon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_dsHoadon.UseVisualStyleBackColor = true;
-            this.btn_dsHoadon.Click += new System.EventHandler(this.MenuClick);
             // 
             // Frm_Main
             // 

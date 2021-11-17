@@ -22,8 +22,13 @@ namespace _2_BUS_BusinessLayer.Service
         private ILoaicogiayServices _loaicogiayServices;
         private IColorServices _colorServices;
         private IDanhmucServices _danhmucServices;
+        private IHoadonchitietServices _hoadonchitietServices;
+        private INhanvienServices _nhanvienServices;
+        private IKhachhangServices _khachhangServices;
+        private IHoadonServices _hoadonServices;
 
         private List<SanphambanViewModel> _lstSanphambanViews;
+        private List<AddHoadon> _lstaddHoadons;
 
         private List<SanPham> _lstsanPhams;
         private List<ChiTietSanPham> _lstChiTietSanPhams;
@@ -34,11 +39,15 @@ namespace _2_BUS_BusinessLayer.Service
         private List<LoaiCoGiay> _lstloaiCoGiays;
         private List<Color> _lstcolors;
         private List<DanhMuc> _lstdanhMucs;
+        private List<HoaDonChiTiet> _lsthoaDonChiTiets;
+        private List<NhanVien> _lstnhanViens;
+        private List<KhachHang> _lstkhachHangs;
+        private List<HoaDon> _lsthoaDons;
 
 
 
-       
-       
+
+
 
         public BanhangService()
         {
@@ -51,8 +60,13 @@ namespace _2_BUS_BusinessLayer.Service
             _loaicogiayServices = new LoaicogiayServices();
             _colorServices = new ColorServices();
             _danhmucServices = new DanhmucServices();
+            _hoadonchitietServices = new HoadonchitietServices();
+            _nhanvienServices = new NhanvienServices();
+            _khachhangServices = new KhachhangServices();
+            _hoadonServices = new HoadonServices();
 
             _lstSanphambanViews = new List<SanphambanViewModel>();
+            _lstaddHoadons = new List<AddHoadon>();
 
             _lstsanPhams = _sanphamServices.Getlst();
             _lstChiTietSanPhams = _chitietSanPhamServices.Getlst();
@@ -63,7 +77,52 @@ namespace _2_BUS_BusinessLayer.Service
             _lstloaiCoGiays = _loaicogiayServices.Getlst();
             _lstcolors = _colorServices.Getlst();
             _lstdanhMucs = _danhmucServices.Getlst();
+            _lsthoaDonChiTiets = _hoadonchitietServices.Getlst();
+            _lstnhanViens = _nhanvienServices.Getlst();
+            _lstkhachHangs = _khachhangServices.Getlst();
+            _lsthoaDons = _hoadonServices.Getlst();
+
         }
+
+        #region loaddata
+
+     
+
+        public List<SanPham> loadsp()
+        {
+            return _lstsanPhams;
+        }  
+        public List<ChiTietSanPham> loadspct()
+        {
+            return _lstChiTietSanPhams;
+        } 
+        public List<NhanVien> loadnv()
+        {
+            return _lstnhanViens;
+        }
+        public List<KhachHang> loadkh()
+        {
+            return _lstkhachHangs;
+        }
+        public List<HoaDon> loadhd()
+        {
+            return _lsthoaDons;
+        } public List<HoaDonChiTiet> loadhdct()
+        {
+            return _lsthoaDonChiTiets;
+        }
+
+        #endregion
+
+
+
+        public List<AddHoadon> addHoadons()
+        {
+             
+
+            return _lstaddHoadons;
+        }
+
         public List<SanphambanViewModel> SanphambanViews()
         {
 
@@ -92,9 +151,12 @@ namespace _2_BUS_BusinessLayer.Service
             return _lstSanphambanViews;
         }
 
-
-       
-
-
+        public string addhoadon(HoaDonChiTiet hoaDonChiTiet, HoaDon hoaDon, KhachHang khachHang)
+        {
+            _hoadonServices.add(hoaDon);
+            _hoadonchitietServices.add(hoaDonChiTiet);
+            _khachhangServices.add(khachHang);
+            return "thành công";
+        }
     }
 }
