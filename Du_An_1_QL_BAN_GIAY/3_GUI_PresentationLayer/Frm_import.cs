@@ -72,22 +72,22 @@ namespace _3_GUI_PresentationLayer
                 for (int i = 0; i < dgv.Rows.Count; i++)
                 {
                     _iQlSanPhamService = new QlSanPhamService();
-                    _qlSanPham.ChiTietSanPham.MaCtsp = Guid.NewGuid();
-                    _qlSanPham.ChiTietSanPham.MaSp = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == dgv.Rows[i].Cells[0].Value.ToString()).Select(c => c.MaSp).FirstOrDefault();
-                    _qlSanPham.ChiTietSanPham.MaClr = _iQlSanPhamService.GetLstColor().Where(c => c.Color1 == dgv.Rows[i].Cells[1].Value.ToString())
+                    _qlSanPham.ChiTietSanPham.MaCTSP ="SPCT" +_iQlSanPhamService.GetLstCTSanPham().Count+1;
+                    _qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == dgv.Rows[i].Cells[0].Value.ToString()).Select(c => c.MaSp).FirstOrDefault();
+                    _qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == dgv.Rows[i].Cells[1].Value.ToString())
                         .Select(c => c.MaClr).FirstOrDefault();
-                    _qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.Size1 == int.Parse(dgv.Rows[i].Cells[2].Value.ToString()))
+                    _qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.SizeSp == int.Parse(dgv.Rows[i].Cells[2].Value.ToString()))
                         .Select(c => c.MaSize).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.GiaNhap = int.Parse(dgv.Rows[i].Cells[3].Value.ToString());
-                    _qlSanPham.ChiTietSanPham.GiaBan = int.Parse(dgv.Rows[i].Cells[4].Value.ToString());
-                    _qlSanPham.ChiTietSanPham.SoLuong = int.Parse(dgv.Rows[i].Cells[5].Value.ToString());
-                    _qlSanPham.ChiTietSanPham.MaQr = dgv.Rows[i].Cells[6].Value.ToString();
+                    _qlSanPham.ChiTietSanPham.giaban = int.Parse(dgv.Rows[i].Cells[4].Value.ToString());
+                    _qlSanPham.ChiTietSanPham.soluong = int.Parse(dgv.Rows[i].Cells[5].Value.ToString());
+                    _qlSanPham.ChiTietSanPham.MaQR = dgv.Rows[i].Cells[6].Value.ToString();
                     _qlSanPham.ChiTietSanPham.Mota = dgv.Rows[i].Cells[7].Value.ToString();
                     _qlSanPham.ChiTietSanPham.GhiChu = dgv.Rows[i].Cells[8].Value.ToString();
-                    _qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieu1 == dgv.Rows[i].Cells[9].Value.ToString()).
+                    _qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieuSP == dgv.Rows[i].Cells[9].Value.ToString()).
                         Select(c => c.MaChatLieu).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.MaCo = _iQlSanPhamService.GetLstLoaiCoGiay()
-                        .Where(c => c.LoaiCoGiay1 == dgv.Rows[i].Cells[10].Value.ToString()).Select(c => c.MaCo).FirstOrDefault();
+                        .Where(c => c.LoaiCoGiaySP == dgv.Rows[i].Cells[10].Value.ToString()).Select(c => c.MaCo).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.TrangThai = dgv.Rows[i].Cells[11].Value.ToString() == "Còn hàng" ? 1 : 0;
                     _iQlSanPhamService.addCTSanPham(_qlSanPham.ChiTietSanPham);
                 }

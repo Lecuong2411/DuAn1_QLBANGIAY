@@ -23,7 +23,7 @@ namespace _3_GUI_PresentationLayer
     public partial class Frm_sanpham : Form
     {
         private IQlSanPhamService _iQlSanPhamService;
-        public static Guid temb;
+        public static string temb;
         public static string _barcode;
         public  string _bcode;
         public Frm_sanpham()
@@ -59,7 +59,7 @@ namespace _3_GUI_PresentationLayer
             foreach (var x in _iQlSanPhamService.GetSPAll())
             {
                 dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
-                    x.DanhMuc.TenDanhMuc, x.Size.Size1, x.Color.Color1, x.ChatLieu.ChatLieu1, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCtsp);
+                    x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
             }
         }
 
@@ -67,7 +67,7 @@ namespace _3_GUI_PresentationLayer
         {
             foreach (var x in _iQlSanPhamService.GetLstChatLieu())
             {
-                txt_chatLieu.Items.Add(x.ChatLieu1);
+                txt_chatLieu.Items.Add(x.ChatLieuSP);
             }
 
             txt_chatLieu.SelectedIndex = 0;
@@ -96,7 +96,7 @@ namespace _3_GUI_PresentationLayer
         {
             foreach (var x in _iQlSanPhamService.GetLstSize())
             {
-                cbx_size.Items.Add(x.Size1);
+                cbx_size.Items.Add(x.SizeSp);
             }
 
             cbx_size.SelectedIndex = 0;
@@ -106,7 +106,7 @@ namespace _3_GUI_PresentationLayer
         {
             foreach (var x in _iQlSanPhamService.GetLstColor())
             {
-                cbx_mau.Items.Add(x.Color1);
+                cbx_mau.Items.Add(x.ColorSP);
             }
 
             cbx_mau.SelectedIndex = 0;
@@ -121,29 +121,29 @@ namespace _3_GUI_PresentationLayer
         {
             foreach (var x in _iQlSanPhamService.GetLstLoaiCoGiay())
             {
-                cbx_coGiay.Items.Add(x.LoaiCoGiay1);
+                cbx_coGiay.Items.Add(x.LoaiCoGiaySP);
             }
             cbx_coGiay.SelectedIndex = 0;
         }
         private void Thêm_Click(object sender, EventArgs e)
         {
             QLSanPham qlSanPham = new QLSanPham();
-            qlSanPham.ChiTietSanPham.MaCtsp = Guid.NewGuid();
-            qlSanPham.ChiTietSanPham.MaSp = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.MaClr = _iQlSanPhamService.GetLstColor().Where(c => c.Color1 == cbx_mau.Text)
+            qlSanPham.ChiTietSanPham.MaCTSP = "CTSP"+ _iQlSanPhamService.GetLstCTSanPham().Count+1;
+            qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
+            qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == cbx_mau.Text)
                 .Select(c => c.MaClr).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.Size1 == int.Parse(cbx_size.Text))
+            qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.SizeSp == int.Parse(cbx_size.Text))
                 .Select(c => c.MaSize).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.GiaNhap = Convert.ToDouble(txt_gianhap.Text);
-            qlSanPham.ChiTietSanPham.GiaBan = Convert.ToDouble(txt_giaban.Text);
-            qlSanPham.ChiTietSanPham.SoLuong = Convert.ToInt32(txt_soluong.Text);
+            qlSanPham.ChiTietSanPham.GiaNhap = Convert.ToInt32(txt_gianhap.Text);
+            qlSanPham.ChiTietSanPham.giaban = Convert.ToInt32(txt_giaban.Text);
+            qlSanPham.ChiTietSanPham.soluong = Convert.ToInt32(txt_soluong.Text);
             qlSanPham.ChiTietSanPham.Mota = txt_tspct.Text;
-            qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieu1 == txt_chatLieu.Text).
+            qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieuSP == txt_chatLieu.Text).
                 Select(c => c.MaChatLieu).FirstOrDefault();
             qlSanPham.ChiTietSanPham.MaCo = _iQlSanPhamService.GetLstLoaiCoGiay()
-                .Where(c => c.LoaiCoGiay1 == cbx_coGiay.Text).Select(c => c.MaCo).FirstOrDefault();
+                .Where(c => c.LoaiCoGiaySP == cbx_coGiay.Text).Select(c => c.MaCo).FirstOrDefault();
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
-            qlSanPham.ChiTietSanPham.MaQr = txt_barCode.Text;
+            qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
             load();
@@ -152,23 +152,23 @@ namespace _3_GUI_PresentationLayer
         private void dgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
-            temb = new Guid(dgrid.Rows[row].Cells[7].Value.ToString());
+            temb = dgrid.Rows[row].Cells[7].Value.ToString();
             ChiTietSanPham1.SelectedIndex = 1;
-            var tembSp = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCtsp == temb).FirstOrDefault();
+            var tembSp = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
             txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
             txt_tsp.Text = tembSp.SanPham.TenSp;
             txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
-            txt_giaban.Text = (tembSp.ChiTietSanPham.GiaBan).ToString();
+            txt_giaban.Text = (tembSp.ChiTietSanPham.giaban).ToString();
             txt_gianhap.Text = (tembSp.ChiTietSanPham.GiaNhap).ToString();
-            cbx_mau.Text = tembSp.Color.Color1;
-            cbx_size.Text = tembSp.Size.Size1.ToString();
+            cbx_mau.Text = tembSp.Color.ColorSP;
+            cbx_size.Text = tembSp.Size.SizeSp.ToString();
             txt_ghi.Text = tembSp.ChiTietSanPham.GhiChu;
-            txt_barCode.Text = tembSp.ChiTietSanPham.MaQr;
-            txt_chatLieu.Text = tembSp.ChatLieu.ChatLieu1;
-            txt_soluong.Text = (tembSp.ChiTietSanPham.SoLuong).ToString();
-            cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiay1;
+            txt_barCode.Text = tembSp.ChiTietSanPham.MaQR;
+            txt_chatLieu.Text = tembSp.ChatLieu.ChatLieuSP;
+            txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
+            cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
             cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
-            var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCtsp == temb).Select(c => c.Images).FirstOrDefault();
+            var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
             if (temb1 != null) 
             {
                 lbl_anh.Text = temb1;
@@ -232,23 +232,23 @@ namespace _3_GUI_PresentationLayer
 
         private void Sửa_Click(object sender, EventArgs e)
         {
-            var qlSanPham = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCtsp == temb).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.MaCtsp = Guid.NewGuid();
-            qlSanPham.ChiTietSanPham.MaSp = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.MaClr = _iQlSanPhamService.GetLstColor().Where(c => c.Color1 == cbx_mau.Text)
+            var qlSanPham = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
+            qlSanPham.ChiTietSanPham.MaCTSP = temb;
+            qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
+            qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == cbx_mau.Text)
                 .Select(c => c.MaClr).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.Size1 == int.Parse(cbx_size.Text))
+            qlSanPham.ChiTietSanPham.MaSize = _iQlSanPhamService.GetLstSize().Where(c => c.SizeSp == int.Parse(cbx_size.Text))
                 .Select(c => c.MaSize).FirstOrDefault();
-            qlSanPham.ChiTietSanPham.GiaNhap = Convert.ToDouble(txt_gianhap.Text);
-            qlSanPham.ChiTietSanPham.GiaBan = Convert.ToDouble(txt_giaban.Text);
-            qlSanPham.ChiTietSanPham.SoLuong = Convert.ToInt32(txt_soluong.Text);
+            qlSanPham.ChiTietSanPham.GiaNhap = Convert.ToInt32(txt_gianhap.Text);
+            qlSanPham.ChiTietSanPham.giaban = Convert.ToInt32(txt_giaban.Text);
+            qlSanPham.ChiTietSanPham.soluong = Convert.ToInt32(txt_soluong.Text);
             qlSanPham.ChiTietSanPham.Mota = txt_tspct.Text;
-            qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieu1 == txt_chatLieu.Text).
+            qlSanPham.ChiTietSanPham.MaChatLieu = _iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieuSP == txt_chatLieu.Text).
                 Select(c => c.MaChatLieu).FirstOrDefault();
             qlSanPham.ChiTietSanPham.MaCo = _iQlSanPhamService.GetLstLoaiCoGiay()
-                .Where(c => c.LoaiCoGiay1 == cbx_coGiay.Text).Select(c => c.MaCo).FirstOrDefault();
+                .Where(c => c.LoaiCoGiaySP == cbx_coGiay.Text).Select(c => c.MaCo).FirstOrDefault();
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
-            qlSanPham.ChiTietSanPham.MaQr = txt_barCode.Text;
+            qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
             load();
@@ -270,8 +270,8 @@ namespace _3_GUI_PresentationLayer
 
             QLSanPham qlSanPham = new QLSanPham();
             qlSanPham.Image.TrangThai = 1;
-            qlSanPham.Image.MaImage = Guid.NewGuid();
-            qlSanPham.Image.MaCtsp = temb;
+            qlSanPham.Image.MaImage = "Img"+ _iQlSanPhamService.GetLstImage().Count+1;
+            qlSanPham.Image.MaCTSP = temb;
             qlSanPham.Image.Images = lbl_anh.Text;
             _iQlSanPhamService.addImage(qlSanPham.Image);
 

@@ -331,13 +331,13 @@ namespace _2_BUS_BusinessLayer.Service
         public List<QLSanPham> GetSPAll()
         {
             _lstQlSanPhams = (from a in _LstSanPham
-                join b in _lstChiTietSanPhams on a.MaSp equals b.MaSp
-                join c in _lstCungCaps on a.MaNcc equals c.MaNcc
+                join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP
+                join c in _lstCungCaps on a.MaNCC equals c.MaNcc
               
                 join e in _lstChatLieus on b.MaChatLieu equals e.MaChatLieu
                 join f in _LstSize on b.MaSize equals f.MaSize
                 join g in _lstLoaiCoGiays on b.MaCo equals g.MaCo
-                join h in _lstColors on b.MaClr equals h.MaClr
+                join h in _lstColors on b.MaCLR equals h.MaClr
                 join j in _lstDanhMucs on a.MaDanhMuc equals j.MaDanhMuc 
                 select new QLSanPham()
                 {
