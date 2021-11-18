@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {}
+    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
         "projectName": "1_DAL_DataAccessLayer",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
+    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
         "projectName": "2_BUS_BusinessLayer",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,8 +106,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
+              "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
               }
             }
           }
