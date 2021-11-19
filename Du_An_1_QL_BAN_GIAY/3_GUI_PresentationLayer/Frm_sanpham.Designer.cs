@@ -46,6 +46,7 @@ namespace _3_GUI_PresentationLayer
             this.tabSanpham = new System.Windows.Forms.TabPage();
             this.tabCTSP = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.btn_end = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
             this.pic_webcam = new System.Windows.Forms.PictureBox();
@@ -76,9 +77,10 @@ namespace _3_GUI_PresentationLayer
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnl_main = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.ChiTietSanPham1.SuspendLayout();
@@ -199,34 +201,38 @@ namespace _3_GUI_PresentationLayer
             // 
             this.ChiTietSanPham1.Controls.Add(this.tabSanpham);
             this.ChiTietSanPham1.Controls.Add(this.tabCTSP);
+            this.ChiTietSanPham1.Controls.Add(this.tabPage1);
             this.ChiTietSanPham1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChiTietSanPham1.Location = new System.Drawing.Point(0, 0);
             this.ChiTietSanPham1.Name = "ChiTietSanPham1";
             this.ChiTietSanPham1.SelectedIndex = 0;
-            this.ChiTietSanPham1.Size = new System.Drawing.Size(943, 516);
+            this.ChiTietSanPham1.Size = new System.Drawing.Size(1079, 834);
             this.ChiTietSanPham1.TabIndex = 1;
             // 
             // tabSanpham
             // 
+            this.tabSanpham.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabSanpham.Controls.Add(this.button3);
             this.tabSanpham.Controls.Add(this.comboBox2);
             this.tabSanpham.Controls.Add(this.comboBox1);
             this.tabSanpham.Controls.Add(this.groupBox1);
             this.tabSanpham.Location = new System.Drawing.Point(4, 24);
             this.tabSanpham.Name = "tabSanpham";
-            this.tabSanpham.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabSanpham.Size = new System.Drawing.Size(935, 488);
+            this.tabSanpham.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSanpham.Size = new System.Drawing.Size(1071, 806);
             this.tabSanpham.TabIndex = 0;
             this.tabSanpham.Text = "Sản phẩm";
             this.tabSanpham.UseVisualStyleBackColor = true;
             // 
             // tabCTSP
             // 
+            this.tabCTSP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabCTSP.Controls.Add(this.groupBox3);
             this.tabCTSP.Controls.Add(this.groupBox2);
             this.tabCTSP.Location = new System.Drawing.Point(4, 24);
             this.tabCTSP.Name = "tabCTSP";
-            this.tabCTSP.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabCTSP.Size = new System.Drawing.Size(935, 488);
+            this.tabCTSP.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCTSP.Size = new System.Drawing.Size(1071, 806);
             this.tabCTSP.TabIndex = 1;
             this.tabCTSP.Text = "Chi tiết sản phẩm";
             this.tabCTSP.UseVisualStyleBackColor = true;
@@ -240,10 +246,20 @@ namespace _3_GUI_PresentationLayer
             this.groupBox3.Controls.Add(this.cbx_webcam);
             this.groupBox3.Location = new System.Drawing.Point(21, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(889, 243);
+            this.groupBox3.Size = new System.Drawing.Size(927, 243);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(579, 211);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Import";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_end
             // 
@@ -547,6 +563,17 @@ namespace _3_GUI_PresentationLayer
             this.label5.TabIndex = 3;
             this.label5.Text = "Giá bán";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1071, 806);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -560,27 +587,27 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Location = new System.Drawing.Point(0, 0);
             this.pnl_main.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(943, 516);
+            this.pnl_main.Size = new System.Drawing.Size(1079, 834);
             this.pnl_main.TabIndex = 13;
             // 
-            // button2
+            // button3
             // 
-            this.button2.Location = new System.Drawing.Point(579, 211);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Import";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Location = new System.Drawing.Point(908, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Frm_sanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 516);
+            this.ClientSize = new System.Drawing.Size(1079, 834);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_main);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Frm_sanpham";
             this.Text = "Frm_sanpham";
             this.Load += new System.EventHandler(this.Frm_sanpham_Load);
@@ -649,5 +676,7 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label lbl_anh;
         private System.Windows.Forms.ComboBox txt_chatLieu;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button3;
     }
 }

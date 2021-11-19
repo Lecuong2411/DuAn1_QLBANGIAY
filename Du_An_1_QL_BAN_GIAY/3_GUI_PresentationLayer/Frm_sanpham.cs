@@ -58,7 +58,7 @@ namespace _3_GUI_PresentationLayer
             dgrid.Rows.Clear();
             foreach (var x in _iQlSanPhamService.GetSPAll())
             {
-                dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+                dgrid.Rows.Add(x.SanPham.TenSp +' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
                     x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
                 
@@ -158,6 +158,7 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
+            load();
             //History history = new History();
             //history.MaCTSP = qlSanPham.ChiTietSanPham.MaCTSP;
             //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
@@ -167,7 +168,7 @@ namespace _3_GUI_PresentationLayer
 
             // chạy chương trình sẽ mở
 
-            load();
+         
   
         }
 
@@ -330,6 +331,11 @@ namespace _3_GUI_PresentationLayer
         {
             Frm_import frmImport = new Frm_import();
             frmImport.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+load();
         }
     }
 }

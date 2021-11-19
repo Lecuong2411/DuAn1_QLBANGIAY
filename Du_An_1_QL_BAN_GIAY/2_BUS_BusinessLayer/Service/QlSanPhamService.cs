@@ -286,7 +286,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string updateCTSanPham(ChiTietSanPham sanPham)
         {
-            throw new NotImplementedException();
+            _iChitietSanPhamServices.update(sanPham);
+            return "";
         }
 
         public string RemoveCTSanPham(ChiTietSanPham sanPham)
