@@ -61,7 +61,7 @@ namespace _3_GUI_PresentationLayer
             {
                 dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
                     x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
-                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv,x.hoadon.thoigian);
             });
 
         }
@@ -86,7 +86,7 @@ namespace _3_GUI_PresentationLayer
             {
                 dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
                     x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
-                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv, x.hoadon.thoigian);
             });
 
         }
@@ -111,7 +111,7 @@ namespace _3_GUI_PresentationLayer
             {
                 dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
                     x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
-                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv, x.hoadon.thoigian);
             });
 
         }
@@ -136,7 +136,7 @@ namespace _3_GUI_PresentationLayer
             {
                 dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
                     x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
-                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv, x.hoadon.thoigian);
             });
 
         }
@@ -161,7 +161,7 @@ namespace _3_GUI_PresentationLayer
             {
                 dtgv_dshdct.Rows.Add(x.KhachHang.TenKh, x.KhachHang.Sdt, x.Size.SizeSp, x.Color.ColorSP,
                     x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.GhiChu, x.SanPham.TenSp,
-                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv);
+                    x.ChiTietSanPham.giaban, x.ChiTietSanPham.soluong, x.hoadon.ThanhTien, x.NhanVien.TenNv, x.hoadon.thoigian);
             });
 
         }
