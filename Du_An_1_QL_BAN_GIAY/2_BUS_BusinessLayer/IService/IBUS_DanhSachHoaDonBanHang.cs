@@ -15,5 +15,7 @@ namespace _2_BUS_BusinessLayer
         public void loatdata();
         public List<Danhsachhoadonbanhang> timkiemsdt(string sdt);
         public List<Danhsachhoadonbanhang> timkiemkh(string kh);
+        public List<Danhsachhoadonbanhang> timkiemtg(string tg);
+        public List<Danhsachhoadonbanhang> timkiemnguoilapphieu(string kh);
     }
 }

@@ -128,5 +128,14 @@ namespace _2_BUS_BusinessLayer.Service
         {
             return _dshdbh.Where(c => c.KhachHang.Sdt.StartsWith(sdt)).ToList();
         }
+        public List<Danhsachhoadonbanhang> timkiemtg(string tg)
+        {
+            return _dshdbh.Where(c => c.SanPham.TenSp.StartsWith(tg)).ToList();
+        }
+
+        public List<Danhsachhoadonbanhang> timkiemnguoilapphieu(string kh)
+        {
+            return _dshdbh.Where(c => c.NhanVien.TenNv.StartsWith(kh)).ToList();
+        }
     }
 }

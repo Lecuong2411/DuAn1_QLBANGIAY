@@ -105,7 +105,6 @@ C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_Presen
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Microsoft.Office.Interop.Excel.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\bin\Debug\net5.0-windows\System.Drawing.Common.dll
@@ -314,3 +313,5 @@ C:\Users\PC\Desktop\Git\New folder\New folder\DuAn1_QLBANGIAY1\Du_An_1_QL_BAN_GI
 C:\Users\PC\Desktop\Git\New folder\New folder\DuAn1_QLBANGIAY1\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.csproj.CopyComplete
 C:\Users\PC\Desktop\Git\New folder\New folder\DuAn1_QLBANGIAY1\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
 C:\Users\PC\Desktop\Git\New folder\New folder\DuAn1_QLBANGIAY1\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_KhuyenMai.resources
+C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_import.resources
+C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_KhuyenMai.resources

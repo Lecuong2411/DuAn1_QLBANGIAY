@@ -43,6 +43,7 @@ namespace _3_GUI_PresentationLayer
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbb_timkiem = new System.Windows.Forms.ComboBox();
             this.btn_dsct = new System.Windows.Forms.Button();
             this.dtgv_dshdct = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace _3_GUI_PresentationLayer
             this.dtp_ct = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_hdct = new System.Windows.Forms.Button();
-            this.cbb_timkiem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhoadonbanhang)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,7 +93,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(337, 57);
+            this.label2.Location = new System.Drawing.Point(393, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 3;
@@ -102,9 +102,10 @@ namespace _3_GUI_PresentationLayer
             // dtp_ngaythang
             // 
             this.dtp_ngaythang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtp_ngaythang.Location = new System.Drawing.Point(437, 54);
+            this.dtp_ngaythang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ngaythang.Location = new System.Drawing.Point(493, 57);
             this.dtp_ngaythang.Name = "dtp_ngaythang";
-            this.dtp_ngaythang.Size = new System.Drawing.Size(182, 23);
+            this.dtp_ngaythang.Size = new System.Drawing.Size(88, 23);
             this.dtp_ngaythang.TabIndex = 4;
             this.dtp_ngaythang.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -117,6 +118,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_timkiem.TabIndex = 5;
             this.btn_timkiem.Text = "Tìm kiếm";
             this.btn_timkiem.UseVisualStyleBackColor = true;
+            this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
             // btn_danhsach
             // 
@@ -148,11 +150,11 @@ namespace _3_GUI_PresentationLayer
             // btn_xuatexcel
             // 
             this.btn_xuatexcel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_xuatexcel.Location = new System.Drawing.Point(688, 85);
+            this.btn_xuatexcel.Image = global::_3_GUI_PresentationLayer.Properties.Resources.Excel_icon;
+            this.btn_xuatexcel.Location = new System.Drawing.Point(702, 85);
             this.btn_xuatexcel.Name = "btn_xuatexcel";
-            this.btn_xuatexcel.Size = new System.Drawing.Size(75, 23);
+            this.btn_xuatexcel.Size = new System.Drawing.Size(46, 39);
             this.btn_xuatexcel.TabIndex = 9;
-            this.btn_xuatexcel.Text = "Xuất Excel ";
             this.btn_xuatexcel.UseVisualStyleBackColor = true;
             this.btn_xuatexcel.Click += new System.EventHandler(this.btn_xuatexcel_Click);
             // 
@@ -205,6 +207,14 @@ namespace _3_GUI_PresentationLayer
             this.tabPage2.Text = "DS hóa đơn chi tiết";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbb_timkiem
+            // 
+            this.cbb_timkiem.FormattingEnabled = true;
+            this.cbb_timkiem.Location = new System.Drawing.Point(35, 53);
+            this.cbb_timkiem.Name = "cbb_timkiem";
+            this.cbb_timkiem.Size = new System.Drawing.Size(121, 25);
+            this.cbb_timkiem.TabIndex = 19;
+            // 
             // btn_dsct
             // 
             this.btn_dsct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -240,11 +250,11 @@ namespace _3_GUI_PresentationLayer
             // btn_xuatExcelct
             // 
             this.btn_xuatExcelct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_xuatExcelct.Location = new System.Drawing.Point(694, 86);
+            this.btn_xuatExcelct.Image = global::_3_GUI_PresentationLayer.Properties.Resources.Excel_icon;
+            this.btn_xuatExcelct.Location = new System.Drawing.Point(712, 86);
             this.btn_xuatExcelct.Name = "btn_xuatExcelct";
-            this.btn_xuatExcelct.Size = new System.Drawing.Size(75, 23);
+            this.btn_xuatExcelct.Size = new System.Drawing.Size(47, 41);
             this.btn_xuatExcelct.TabIndex = 18;
-            this.btn_xuatExcelct.Text = "Xuất Excel ";
             this.btn_xuatExcelct.UseVisualStyleBackColor = true;
             this.btn_xuatExcelct.Click += new System.EventHandler(this.btn_xuatExcelct_Click);
             // 
@@ -261,9 +271,10 @@ namespace _3_GUI_PresentationLayer
             // dtp_ct
             // 
             this.dtp_ct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dtp_ct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_ct.Location = new System.Drawing.Point(443, 55);
             this.dtp_ct.Name = "dtp_ct";
-            this.dtp_ct.Size = new System.Drawing.Size(182, 23);
+            this.dtp_ct.Size = new System.Drawing.Size(107, 23);
             this.dtp_ct.TabIndex = 14;
             // 
             // label6
@@ -285,14 +296,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_hdct.TabIndex = 15;
             this.btn_hdct.Text = "Tìm kiếm";
             this.btn_hdct.UseVisualStyleBackColor = true;
-            // 
-            // cbb_timkiem
-            // 
-            this.cbb_timkiem.FormattingEnabled = true;
-            this.cbb_timkiem.Location = new System.Drawing.Point(35, 53);
-            this.cbb_timkiem.Name = "cbb_timkiem";
-            this.cbb_timkiem.Size = new System.Drawing.Size(121, 25);
-            this.cbb_timkiem.TabIndex = 19;
+            this.btn_hdct.Click += new System.EventHandler(this.btn_hdct_Click);
             // 
             // FrmDanhSachHoaDonBanHang
             // 

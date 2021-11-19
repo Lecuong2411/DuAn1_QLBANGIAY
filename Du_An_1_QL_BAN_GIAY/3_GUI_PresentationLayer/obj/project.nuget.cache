@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RWeC92Fn1Fr4j955hlkto9Z42zeCtT2D4o/MV2BpRzAS7AAj8MkkH4rSeBTfz/AsQ9qkabjkhZ0QXO45+YNZWw==",
+  "dgSpecHash": "otMfxSckpkD5eEyV/RQO2lTPBqLu3cueMIlYGYIQwJXYRxFZB3g0nz9n31r5C8cBCbs+fx4plS15/vJKwmcKRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY1\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
+  "projectFilePath": "C:\\HỌC TẬP\\KÌ 4\\Dự Án 1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\3_GUI_PresentationLayer\\3_GUI_PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
