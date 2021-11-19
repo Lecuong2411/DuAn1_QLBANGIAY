@@ -158,6 +158,15 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
+            //History history = new History();
+            //history.MaCTSP = qlSanPham.ChiTietSanPham.MaCTSP;
+            //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
+            //history.MaNV = "";
+            //history.NgayNhap=DateTime.Now;
+            //_iQlSanPhamService.addHistory(history);
+
+            // chạy chương trình sẽ mở
+
             load();
   
         }
@@ -268,6 +277,14 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+            //History history = new History();
+            //history.MaCTSP = temb;
+            //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
+            //history.MaNV = "";
+            //history.NgayNhap=DateTime.Now;
+            //_iQlSanPhamService.addHistory(history);
+
+            // chạy chương trình sẽ mở
             load();
 
 

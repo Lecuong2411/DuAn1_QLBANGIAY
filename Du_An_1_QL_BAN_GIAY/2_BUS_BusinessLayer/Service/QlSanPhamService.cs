@@ -202,7 +202,8 @@ namespace _2_BUS_BusinessLayer.Service
       
         public string addHistory(History sanPham)
         {
-            throw new NotImplementedException();
+            _iHistoryServices.add(sanPham);
+            return "";
         }
 
         public string updateHistory(History sanPham)
@@ -332,7 +333,6 @@ namespace _2_BUS_BusinessLayer.Service
         {
             _lstQlSanPhams = (from a in _LstSanPham
                 join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP
-
                 join c in _lstCungCaps on a.MaNCC equals c.MaNcc
                 join e in _lstChatLieus on b.MaChatLieu equals e.MaChatLieu
                 join f in _LstSize on b.MaSize equals f.MaSize

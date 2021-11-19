@@ -13,6 +13,9 @@
     <Compile Update="Frm_import.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_KhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
