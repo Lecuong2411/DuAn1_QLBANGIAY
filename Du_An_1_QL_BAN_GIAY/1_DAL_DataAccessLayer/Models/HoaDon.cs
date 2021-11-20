@@ -20,13 +20,17 @@ namespace _1_DAL_DataAccessLayer.Models
         public string GhiChu { get; set; }
         public string MaKH { get; set; }
         [ForeignKey("MaKH")]
-        public KhachHang khachHang { get; set; }
+        [Required]
+        public virtual KhachHang khachHang { get; set; }
         public string MaNV { get; set; }
         [ForeignKey("MaNV")]
-        public NhanVien nhanVien { get; set; }
+        [Required]
+        public virtual NhanVien nhanVien { get; set; }
+
         public string MaVouCher { get; set; }
         [ForeignKey("MaVouCher")]
-        public Voucher voucher { get; set; }
+        [Required]
+        public virtual Voucher voucher { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime thoigian { get; set; }

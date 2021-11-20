@@ -29,6 +29,7 @@ namespace _1_DAL_DataAccessLayer.DALServices
 
         public List<NhanVien> Getlst()
         {
+            
             return _lstnhanViens;
         }
 

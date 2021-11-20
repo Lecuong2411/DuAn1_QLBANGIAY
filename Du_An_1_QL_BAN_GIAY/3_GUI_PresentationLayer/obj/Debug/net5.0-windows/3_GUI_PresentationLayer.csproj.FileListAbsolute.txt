@@ -316,3 +316,7 @@ C:\Users\PC\Desktop\Git\New folder\New folder\DuAn1_QLBANGIAY1\Du_An_1_QL_BAN_GI
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_import.resources
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_KhuyenMai.resources
 C:\HỌC TẬP\KÌ 4\Dự Án 1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Vouchers.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.FrmThongtinVoucher.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_import.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_KhuyenMai.resources
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Vouchers.resources

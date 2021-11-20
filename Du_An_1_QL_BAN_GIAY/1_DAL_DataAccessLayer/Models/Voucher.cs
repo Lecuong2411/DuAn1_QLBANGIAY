@@ -23,7 +23,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public float MenhGia { get; set; }
         public int TrangThai { get; set; }
         [StringLength(100)]
-        public int GhiChu { get; set; }
+        public string GhiChu { get; set; }
 
     }
 }

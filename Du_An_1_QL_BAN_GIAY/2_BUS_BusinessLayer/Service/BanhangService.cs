@@ -64,6 +64,7 @@ namespace _2_BUS_BusinessLayer.Service
             _nhanvienServices = new NhanvienServices();
             _khachhangServices = new KhachhangServices();
             _hoadonServices = new HoadonServices();
+           
 
             _lstSanphambanViews = new List<SanphambanViewModel>();
             _lstaddHoadons = new List<AddHoadon>();

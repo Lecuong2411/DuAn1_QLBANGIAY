@@ -21,12 +21,25 @@ namespace _3_GUI_PresentationLayer
         private IBanhangService _banhangService;
         private FilterInfoCollection filterInfoCollection;
         private VideoCaptureDevice videoCaptureDevice;
+        KhachHang khachHang;
+        HoaDon hoaDon;
+        ChiTietSanPham chiTietSanPham;
+        HoaDonChiTiet hoaDonChiTiet;
+        NhanVien nhanVien;
+        Voucher voucher;
         public Frm_banhang()
         {
             InitializeComponent();
             _banhangService = new BanhangService();
+            khachHang = new KhachHang();
+            hoaDon = new HoaDon();
+            hoaDonChiTiet = new HoaDonChiTiet();
+            chiTietSanPham = new ChiTietSanPham();
+            nhanVien = new NhanVien();
+            voucher = new Voucher();
             loadSpbanhang();
             loadHoadon();
+
 
         }
 
@@ -143,16 +156,51 @@ namespace _3_GUI_PresentationLayer
 
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-         
-            
+
             int Rowindex = e.RowIndex;
             if (Rowindex == _banhangService.SanphambanViews().Count || Rowindex == -1) return;
+
+            var ok = _banhangService.loadnv().FirstOrDefault(c => c.MaNv == "NV01");
+
+
+            khachHang.TenKh = "OK";
+            khachHang.Sdt = "Không có";
+            khachHang.MaKh = "KH06";
+            hoaDon.MaHd = "hd06";
+            hoaDon.MaKH = khachHang.MaKh;
+            hoaDon.MaNV = "NV01";
+            hoaDon.TrangThaiHd = 0;
+            hoaDon.thoigian = DateTime.Now;
+            hoaDon.MaVouCher = "VC01";
+         
+            hoaDonChiTiet.MaHd = hoaDon.MaHd;
+            hoaDonChiTiet.MaCTSP= _banhangService.SanphambanViews().Where(c => c.sanPham.TenSp == dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()).Select(c => c.sanPham.MaSp).FirstOrDefault();
+            var masp = _banhangService.SanphambanViews().Where(c => c.sanPham.TenSp == dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()).Select(c => c.sanPham.MaSp).FirstOrDefault();
+            hoaDonChiTiet.DonGia = _banhangService.SanphambanViews().Where(c => c.chiTietSanPham.MaSP == masp).Select(c => c.chiTietSanPham.giaban).FirstOrDefault();
+            hoaDonChiTiet.TrangThai = 1;
+            hoaDonChiTiet.soluong = 2;
+          
+            hoaDon.ThanhTien = (hoaDonChiTiet.DonGia * hoaDonChiTiet.soluong);
+            hoaDon.TienNhan = 400000;
+            hoaDon.GhiChu = "OK";
+            hoaDonChiTiet.hoaDon = hoaDon;
+            var spct = _banhangService.loadspct().FirstOrDefault(c => c.MaCTSP == hoaDonChiTiet.MaCTSP);
+            hoaDonChiTiet.chiTietSanPham = spct;//
+            hoaDon.khachHang = khachHang;
+            var nv = _banhangService.loadnv().FirstOrDefault(c => c.MaNv == hoaDon.MaNV);
+            hoaDon.nhanVien = nhanVien;//
+            hoaDon.khachHang = khachHang;
+            
+            hoaDon.voucher = voucher;//
+             
+            MessageBox.Show(_banhangService.addhoadon(hoaDonChiTiet, hoaDon, khachHang), "Thông báo");
             var tensp = dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()+ " SIZE : "+ dtgview_thongtinsp.Rows[Rowindex].Cells[3].Value.ToString();
             var soluong= 1;
-            var masp = _banhangService.SanphambanViews().Where(c => c.sanPham.TenSp == dtgview_thongtinsp.Rows[Rowindex].Cells[1].Value.ToString()).Select(c => c.sanPham.MaSp).FirstOrDefault();
+         
             var chitietsp = _banhangService.SanphambanViews().Where(c => c.chiTietSanPham.MaSP == masp).Select(c => c.chiTietSanPham.giaban).FirstOrDefault();
             var dongia = chitietsp;
             var thanhtien = dongia * soluong;
+
             dtgview_hoadon.Rows.Add(tensp,soluong,chitietsp,0,thanhtien);
 
         }
@@ -167,5 +215,7 @@ namespace _3_GUI_PresentationLayer
             //    hoaDon.ThanhTien=
           
         }
+
+    
     }
 }

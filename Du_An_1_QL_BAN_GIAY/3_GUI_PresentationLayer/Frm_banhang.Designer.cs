@@ -33,7 +33,6 @@ namespace _3_GUI_PresentationLayer
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_taohoadon = new System.Windows.Forms.Button();
             this.btn_themhoadon = new System.Windows.Forms.Button();
             this.tbx_barcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,24 +44,27 @@ namespace _3_GUI_PresentationLayer
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbx_ghichu = new System.Windows.Forms.TextBox();
+            this.tbx_giamgia = new System.Windows.Forms.TextBox();
+            this.tbx_khachtra = new System.Windows.Forms.TextBox();
+            this.tbx_tienthua = new System.Windows.Forms.TextBox();
+            this.tbx_tongtien = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbx_camera = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_mahoadon = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgview_thongtinsp)).BeginInit();
@@ -77,24 +79,12 @@ namespace _3_GUI_PresentationLayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.btn_taohoadon);
             this.panel1.Controls.Add(this.btn_themhoadon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 1375);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_taohoadon
-            // 
-            this.btn_taohoadon.AutoSize = true;
-            this.btn_taohoadon.Location = new System.Drawing.Point(12, 136);
-            this.btn_taohoadon.Name = "btn_taohoadon";
-            this.btn_taohoadon.Size = new System.Drawing.Size(74, 42);
-            this.btn_taohoadon.TabIndex = 3;
-            this.btn_taohoadon.Text = "tạo";
-            this.btn_taohoadon.UseVisualStyleBackColor = true;
-            this.btn_taohoadon.Click += new System.EventHandler(this.btn_taohoadon_Click);
             // 
             // btn_themhoadon
             // 
@@ -112,7 +102,7 @@ namespace _3_GUI_PresentationLayer
             // tbx_barcode
             // 
             this.tbx_barcode.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbx_barcode.Location = new System.Drawing.Point(3, 216);
+            this.tbx_barcode.Location = new System.Drawing.Point(-2, 155);
             this.tbx_barcode.Multiline = true;
             this.tbx_barcode.Name = "tbx_barcode";
             this.tbx_barcode.Size = new System.Drawing.Size(285, 41);
@@ -131,9 +121,9 @@ namespace _3_GUI_PresentationLayer
             // btn_tatbarcode
             // 
             this.btn_tatbarcode.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_tatbarcode.Location = new System.Drawing.Point(6, 88);
+            this.btn_tatbarcode.Location = new System.Drawing.Point(6, 60);
             this.btn_tatbarcode.Name = "btn_tatbarcode";
-            this.btn_tatbarcode.Size = new System.Drawing.Size(282, 76);
+            this.btn_tatbarcode.Size = new System.Drawing.Size(282, 40);
             this.btn_tatbarcode.TabIndex = 23;
             this.btn_tatbarcode.Text = "Tắt";
             this.btn_tatbarcode.UseVisualStyleBackColor = true;
@@ -143,7 +133,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_barcode.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_barcode.Location = new System.Drawing.Point(6, 3);
             this.btn_barcode.Name = "btn_barcode";
-            this.btn_barcode.Size = new System.Drawing.Size(282, 79);
+            this.btn_barcode.Size = new System.Drawing.Size(282, 51);
             this.btn_barcode.TabIndex = 21;
             this.btn_barcode.Text = "Quét";
             this.btn_barcode.UseVisualStyleBackColor = true;
@@ -154,7 +144,7 @@ namespace _3_GUI_PresentationLayer
             this.ptbox_barcode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbox_barcode.Location = new System.Drawing.Point(289, 0);
             this.ptbox_barcode.Name = "ptbox_barcode";
-            this.ptbox_barcode.Size = new System.Drawing.Size(1277, 257);
+            this.ptbox_barcode.Size = new System.Drawing.Size(1277, 196);
             this.ptbox_barcode.TabIndex = 2;
             this.ptbox_barcode.TabStop = false;
             // 
@@ -234,13 +224,14 @@ namespace _3_GUI_PresentationLayer
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.tbx_ghichu);
+            this.tabPage1.Controls.Add(this.tbx_giamgia);
+            this.tabPage1.Controls.Add(this.tbx_khachtra);
+            this.tabPage1.Controls.Add(this.tbx_tienthua);
+            this.tabPage1.Controls.Add(this.tbx_tongtien);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
@@ -253,6 +244,109 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.Size = new System.Drawing.Size(490, 1266);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thanh toán tại cửa hàng";
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(163, 1175);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(324, 85);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Thanh toán";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(19, 1175);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 85);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "In";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // tbx_ghichu
+            // 
+            this.tbx_ghichu.Location = new System.Drawing.Point(120, 729);
+            this.tbx_ghichu.Name = "tbx_ghichu";
+            this.tbx_ghichu.Size = new System.Drawing.Size(273, 41);
+            this.tbx_ghichu.TabIndex = 10;
+            this.tbx_ghichu.Text = "Ghi chú";
+            // 
+            // tbx_giamgia
+            // 
+            this.tbx_giamgia.Location = new System.Drawing.Point(246, 224);
+            this.tbx_giamgia.Name = "tbx_giamgia";
+            this.tbx_giamgia.Size = new System.Drawing.Size(200, 41);
+            this.tbx_giamgia.TabIndex = 8;
+            // 
+            // tbx_khachtra
+            // 
+            this.tbx_khachtra.Location = new System.Drawing.Point(246, 489);
+            this.tbx_khachtra.Name = "tbx_khachtra";
+            this.tbx_khachtra.Size = new System.Drawing.Size(200, 41);
+            this.tbx_khachtra.TabIndex = 7;
+            // 
+            // tbx_tienthua
+            // 
+            this.tbx_tienthua.Location = new System.Drawing.Point(246, 584);
+            this.tbx_tienthua.Name = "tbx_tienthua";
+            this.tbx_tienthua.Size = new System.Drawing.Size(200, 41);
+            this.tbx_tienthua.TabIndex = 6;
+            // 
+            // tbx_tongtien
+            // 
+            this.tbx_tongtien.Location = new System.Drawing.Point(236, 112);
+            this.tbx_tongtien.Name = "tbx_tongtien";
+            this.tbx_tongtien.Size = new System.Drawing.Size(200, 41);
+            this.tbx_tongtien.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 489);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(132, 34);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Khách trả";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(42, 591);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 34);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Tiền thừa";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(182, 5);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 41);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 224);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 34);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Giảm giá";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 34);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tổng tiền";
             // 
             // tabPage2
             // 
@@ -281,6 +375,8 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbl_mahoadon);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.dtgview_hoadon);
             this.panel3.Controls.Add(this.btn_barcode);
             this.panel3.Controls.Add(this.ptbox_barcode);
@@ -298,7 +394,7 @@ namespace _3_GUI_PresentationLayer
             this.cbx_camera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_camera.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbx_camera.FormattingEnabled = true;
-            this.cbx_camera.Location = new System.Drawing.Point(3, 170);
+            this.cbx_camera.Location = new System.Drawing.Point(3, 106);
             this.cbx_camera.Name = "cbx_camera";
             this.cbx_camera.Size = new System.Drawing.Size(285, 43);
             this.cbx_camera.TabIndex = 22;
@@ -326,108 +422,33 @@ namespace _3_GUI_PresentationLayer
             this.label1.Text = "Sản phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 34);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tổng tiền";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(133, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 41);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "tiền phải trả";
             // 
-            // label5
+            // label9
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 224);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 34);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Giảm giá";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 32);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Mã hóa đơn";
             // 
-            // dateTimePicker1
+            // lbl_mahoadon
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(288, 6);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 41);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 452);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 34);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Tiền thừa";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 350);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 34);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Khách trả";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(236, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 41);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(246, 445);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 41);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(246, 350);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 41);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(246, 224);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 41);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(120, 590);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(273, 41);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Text = "Ghi chú";
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(19, 1175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 85);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(163, 1175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(324, 85);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Thanh toán";
-            this.button2.UseVisualStyleBackColor = false;
+            this.lbl_mahoadon.AutoSize = true;
+            this.lbl_mahoadon.Location = new System.Drawing.Point(209, 213);
+            this.lbl_mahoadon.Name = "lbl_mahoadon";
+            this.lbl_mahoadon.Size = new System.Drawing.Size(91, 32);
+            this.lbl_mahoadon.TabIndex = 25;
+            this.lbl_mahoadon.Text = "label10";
             // 
             // Frm_banhang
             // 
@@ -447,7 +468,6 @@ namespace _3_GUI_PresentationLayer
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_banhang_FormClosed);
             this.Load += new System.EventHandler(this.Frm_banhang_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgview_thongtinsp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgview_hoadon)).EndInit();
@@ -483,18 +503,20 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btn_taohoadon;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbx_ghichu;
+        private System.Windows.Forms.TextBox tbx_giamgia;
+        private System.Windows.Forms.TextBox tbx_khachtra;
+        private System.Windows.Forms.TextBox tbx_tienthua;
+        private System.Windows.Forms.TextBox tbx_tongtien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_mahoadon;
+        private System.Windows.Forms.Label label9;
     }
 }

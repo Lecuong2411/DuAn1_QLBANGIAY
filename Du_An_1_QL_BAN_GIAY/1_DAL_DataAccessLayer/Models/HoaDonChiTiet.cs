@@ -11,14 +11,17 @@ namespace _1_DAL_DataAccessLayer.Models
     [Table("HoaDonChiTiet")]
     public  class HoaDonChiTiet
     {
-        [Key]
+        [Key,Column(Order =1)]
         [StringLength(100)]
         public string MaHd { get; set; }
         [ForeignKey("MaHd")]
-        public HoaDon hoaDon { get; set; }
+        [Required]
+        public virtual HoaDon hoaDon { get; set; }
+        [Key,Column(Order =2)]
         public string MaCTSP { get; set; }
         [ForeignKey("MaCTSP")]
-        public ChiTietSanPham chiTietSanPham { get; set; }
+        [Required]
+        public virtual ChiTietSanPham chiTietSanPham { get; set; }
         public double DonGia { get; set; }
         public int soluong { get; set; }
         public int TrangThai { get; set; }
