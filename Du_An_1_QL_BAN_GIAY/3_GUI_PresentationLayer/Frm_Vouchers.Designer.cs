@@ -52,6 +52,7 @@ namespace _3_GUI_PresentationLayer
             this.dtgv_vorcher.RowTemplate.Height = 25;
             this.dtgv_vorcher.Size = new System.Drawing.Size(856, 337);
             this.dtgv_vorcher.TabIndex = 5;
+            this.dtgv_vorcher.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_vorcher_CellClick);
             // 
             // Frm_Vouchers
             // 
@@ -62,6 +63,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.label5);
             this.Name = "Frm_Vouchers";
             this.Text = "Frm_Voucher";
+            this.Load += new System.EventHandler(this.Frm_Vouchers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_vorcher)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
