@@ -13,5 +13,6 @@ namespace _1_DAL_DataAccessLayer.IDALServices
         string update(HoaDonChiTiet hoaDonChiTiet);
         List<HoaDonChiTiet> Getlst();
         void GetlstFromDB();
+        string  delete(string hd, string msp);
     }
 }

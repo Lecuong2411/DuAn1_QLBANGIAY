@@ -12,9 +12,7 @@ namespace _2_BUS_BusinessLayer.IService
    public interface IBanhangService
     {
         List<SanphambanViewModel> SanphambanViews();
-        List<AddHoadon> addHoadons();
-
-        string addhoadon(HoaDonChiTiet hoaDonChiTiet,HoaDon hoaDon,KhachHang khachHang);
+        List<AddHoadon> viewHoadons();
         public List<SanPham> loadsp();
 
         public List<ChiTietSanPham> loadspct();
@@ -26,7 +24,11 @@ namespace _2_BUS_BusinessLayer.IService
         public List<HoaDon> loadhd();
 
         public List<HoaDonChiTiet> loadhdct();
-    
+        string addhoadon(HoaDon hoaDon, KhachHang khachHang);
+        string updatehoadon(HoaDon hoaDon);
+        string addHoadonchitiet(HoaDonChiTiet hoaDonChiTiet);
+        string updatehoadonchitiet(HoaDonChiTiet hoaDonChiTiet);
+        string deletedhoadonchitiet(string hd, string msp);
 
     }
 }

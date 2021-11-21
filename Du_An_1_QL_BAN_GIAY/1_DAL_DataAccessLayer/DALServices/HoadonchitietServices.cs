@@ -44,5 +44,14 @@ namespace _1_DAL_DataAccessLayer.DALServices
             GetlstFromDB();
             return "Cập nhật dữ liệu thành công";
         }
+        public string delete( string hd,string msp)
+        {
+
+            var spxoa = _lsthoaDonChiTiets.Where(c => c.MaHd==hd&&c.MaCTSP==msp).FirstOrDefault();
+            _dbContext.HoaDonChiTiets.Remove(spxoa);
+            _dbContext.SaveChanges();
+            GetlstFromDB();
+            return "Cập nhật dữ liệu thành công";
+        }
     }
 }

@@ -9,10 +9,11 @@ namespace _2_BUS_BusinessLayer.Models
 {
   public   class AddHoadon
     {
-        public ChiTietSanPham   chiTietSanPham { get; set; }
+       
         public HoaDonChiTiet hoaDonChiTiet { get; set; }
         public HoaDon hoaDon { get; set; }
-        public KhachHang khachHang { get; set; }
-        public NhanVien nhanVien { get; set; }
+        public SanPham sanPham { get; set; }
+        public ChiTietSanPham chiTietSanPham { get; set; }
+
     }
 }

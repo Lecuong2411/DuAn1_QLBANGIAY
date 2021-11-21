@@ -16,8 +16,10 @@ namespace _1_DAL_DataAccessLayer.Models
         [StringLength(100)]
         public string MaKh { get; set; }
         [StringLength(100)]
+        [Required]
         public string TenKh { get; set; }
         [StringLength(100)]
+        [Required]
         public string Sdt { get; set; }
     }
 }

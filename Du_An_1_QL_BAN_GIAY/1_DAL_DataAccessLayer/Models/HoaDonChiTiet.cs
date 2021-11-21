@@ -15,16 +15,17 @@ namespace _1_DAL_DataAccessLayer.Models
         [StringLength(100)]
         public string MaHd { get; set; }
         [ForeignKey("MaHd")]
-        [Required]
         public virtual HoaDon hoaDon { get; set; }
         [Key,Column(Order =2)]
-        public string MaCTSP { get; set; }
-        [ForeignKey("MaCTSP")]
         [Required]
+        public string MaCTSP { get; set; }
+        [ForeignKey("MaCTSP")]    
         public virtual ChiTietSanPham chiTietSanPham { get; set; }
-        public double DonGia { get; set; }
-        public int soluong { get; set; }
-        public int TrangThai { get; set; }
+       
+        public double? DonGia { get; set; }
+      
+        public int? soluong { get; set; }
+        public int? TrangThai { get; set; }
        
         
     }

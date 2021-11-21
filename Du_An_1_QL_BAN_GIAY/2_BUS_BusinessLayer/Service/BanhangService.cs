@@ -117,10 +117,20 @@ namespace _2_BUS_BusinessLayer.Service
 
 
 
-        public List<AddHoadon> addHoadons()
+        public List<AddHoadon> viewHoadons()
         {
-             
 
+            _lstaddHoadons = (from a in _lstsanPhams
+                              join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP
+                              join c in _lsthoaDonChiTiets on b.MaCTSP equals c.MaCTSP
+                              join d in _lsthoaDons on c.MaHd equals d.MaHd
+                              select new AddHoadon()
+                              {
+                                  sanPham = a,
+                                  chiTietSanPham=b,
+                                  hoaDonChiTiet=c,
+                                  hoaDon=d
+                              }).ToList();
             return _lstaddHoadons;
         }
 
@@ -152,12 +162,34 @@ namespace _2_BUS_BusinessLayer.Service
             return _lstSanphambanViews;
         }
 
-        public string addhoadon(HoaDonChiTiet hoaDonChiTiet, HoaDon hoaDon, KhachHang khachHang)
+       
+        public string addhoadon(HoaDon hoaDon, KhachHang khachHang)
         {
-            _hoadonServices.add(hoaDon);
-            _hoadonchitietServices.add(hoaDonChiTiet);
             _khachhangServices.add(khachHang);
-            return "thành công";
+            _hoadonServices.add(hoaDon);
+            return "tạo thành công";
+        }
+
+        public string updatehoadon(HoaDon hoaDon)
+        {
+            _hoadonServices.update(hoaDon);
+            return "Thanh toán thành công";
+        }
+
+        public string addHoadonchitiet(HoaDonChiTiet hoaDonChiTiet)
+        {
+            _hoadonchitietServices.add(hoaDonChiTiet);
+            return null;
+        }
+        public string updatehoadonchitiet(HoaDonChiTiet hoaDonChiTiet)
+        {
+            _hoadonchitietServices.update(hoaDonChiTiet);
+            return null;
+        }
+        public string deletedhoadonchitiet(string hd, string msp)
+        {
+            _hoadonchitietServices.delete(hd, msp);
+            return null;
         }
     }
 }

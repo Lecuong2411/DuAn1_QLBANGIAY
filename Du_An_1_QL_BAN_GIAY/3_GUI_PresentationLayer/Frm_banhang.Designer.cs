@@ -29,10 +29,25 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bn_hoadon15 = new System.Windows.Forms.Button();
+            this.bn_hoadon14 = new System.Windows.Forms.Button();
+            this.bn_hoadon13 = new System.Windows.Forms.Button();
+            this.bn_hoadon12 = new System.Windows.Forms.Button();
+            this.bn_hoadon11 = new System.Windows.Forms.Button();
+            this.bn_hoadon10 = new System.Windows.Forms.Button();
+            this.bn_hoadon9 = new System.Windows.Forms.Button();
+            this.bn_hoadon8 = new System.Windows.Forms.Button();
+            this.bn_hoadon7 = new System.Windows.Forms.Button();
+            this.bn_hoadon6 = new System.Windows.Forms.Button();
+            this.bn_hoadon5 = new System.Windows.Forms.Button();
+            this.bn_hoadon4 = new System.Windows.Forms.Button();
+            this.bn_hoadon3 = new System.Windows.Forms.Button();
+            this.bn_hoadon2 = new System.Windows.Forms.Button();
+            this.bn_hoadon1 = new System.Windows.Forms.Button();
             this.btn_themhoadon = new System.Windows.Forms.Button();
             this.tbx_barcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +59,8 @@ namespace _3_GUI_PresentationLayer
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tbx_ghichu = new System.Windows.Forms.TextBox();
             this.tbx_giamgia = new System.Windows.Forms.TextBox();
@@ -59,12 +75,13 @@ namespace _3_GUI_PresentationLayer
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tbx_sdtkh = new System.Windows.Forms.TextBox();
+            this.tbx_tenkh = new System.Windows.Forms.TextBox();
+            this.lbl_mahoadon = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.cbx_camera = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbl_mahoadon = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgview_thongtinsp)).BeginInit();
@@ -79,12 +96,178 @@ namespace _3_GUI_PresentationLayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.bn_hoadon15);
+            this.panel1.Controls.Add(this.bn_hoadon14);
+            this.panel1.Controls.Add(this.bn_hoadon13);
+            this.panel1.Controls.Add(this.bn_hoadon12);
+            this.panel1.Controls.Add(this.bn_hoadon11);
+            this.panel1.Controls.Add(this.bn_hoadon10);
+            this.panel1.Controls.Add(this.bn_hoadon9);
+            this.panel1.Controls.Add(this.bn_hoadon8);
+            this.panel1.Controls.Add(this.bn_hoadon7);
+            this.panel1.Controls.Add(this.bn_hoadon6);
+            this.panel1.Controls.Add(this.bn_hoadon5);
+            this.panel1.Controls.Add(this.bn_hoadon4);
+            this.panel1.Controls.Add(this.bn_hoadon3);
+            this.panel1.Controls.Add(this.bn_hoadon2);
+            this.panel1.Controls.Add(this.bn_hoadon1);
             this.panel1.Controls.Add(this.btn_themhoadon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 1375);
             this.panel1.TabIndex = 0;
+            // 
+            // bn_hoadon15
+            // 
+            this.bn_hoadon15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon15.Location = new System.Drawing.Point(0, 1203);
+            this.bn_hoadon15.Name = "bn_hoadon15";
+            this.bn_hoadon15.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon15.TabIndex = 40;
+            this.bn_hoadon15.Text = "15";
+            this.bn_hoadon15.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon14
+            // 
+            this.bn_hoadon14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon14.Location = new System.Drawing.Point(0, 1120);
+            this.bn_hoadon14.Name = "bn_hoadon14";
+            this.bn_hoadon14.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon14.TabIndex = 39;
+            this.bn_hoadon14.Text = "14";
+            this.bn_hoadon14.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon13
+            // 
+            this.bn_hoadon13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon13.Location = new System.Drawing.Point(0, 1037);
+            this.bn_hoadon13.Name = "bn_hoadon13";
+            this.bn_hoadon13.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon13.TabIndex = 38;
+            this.bn_hoadon13.Text = "13";
+            this.bn_hoadon13.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon12
+            // 
+            this.bn_hoadon12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon12.Location = new System.Drawing.Point(0, 954);
+            this.bn_hoadon12.Name = "bn_hoadon12";
+            this.bn_hoadon12.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon12.TabIndex = 37;
+            this.bn_hoadon12.Text = "12";
+            this.bn_hoadon12.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon11
+            // 
+            this.bn_hoadon11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon11.Location = new System.Drawing.Point(0, 871);
+            this.bn_hoadon11.Name = "bn_hoadon11";
+            this.bn_hoadon11.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon11.TabIndex = 36;
+            this.bn_hoadon11.Text = "11";
+            this.bn_hoadon11.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon10
+            // 
+            this.bn_hoadon10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon10.Location = new System.Drawing.Point(0, 788);
+            this.bn_hoadon10.Name = "bn_hoadon10";
+            this.bn_hoadon10.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon10.TabIndex = 35;
+            this.bn_hoadon10.Text = "10";
+            this.bn_hoadon10.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon9
+            // 
+            this.bn_hoadon9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon9.Location = new System.Drawing.Point(0, 705);
+            this.bn_hoadon9.Name = "bn_hoadon9";
+            this.bn_hoadon9.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon9.TabIndex = 34;
+            this.bn_hoadon9.Text = "9";
+            this.bn_hoadon9.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon8
+            // 
+            this.bn_hoadon8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon8.Location = new System.Drawing.Point(0, 622);
+            this.bn_hoadon8.Name = "bn_hoadon8";
+            this.bn_hoadon8.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon8.TabIndex = 33;
+            this.bn_hoadon8.Text = "8";
+            this.bn_hoadon8.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon7
+            // 
+            this.bn_hoadon7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon7.Location = new System.Drawing.Point(0, 539);
+            this.bn_hoadon7.Name = "bn_hoadon7";
+            this.bn_hoadon7.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon7.TabIndex = 32;
+            this.bn_hoadon7.Text = "7";
+            this.bn_hoadon7.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon6
+            // 
+            this.bn_hoadon6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon6.Location = new System.Drawing.Point(0, 456);
+            this.bn_hoadon6.Name = "bn_hoadon6";
+            this.bn_hoadon6.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon6.TabIndex = 31;
+            this.bn_hoadon6.Text = "6";
+            this.bn_hoadon6.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon5
+            // 
+            this.bn_hoadon5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon5.Location = new System.Drawing.Point(0, 373);
+            this.bn_hoadon5.Name = "bn_hoadon5";
+            this.bn_hoadon5.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon5.TabIndex = 30;
+            this.bn_hoadon5.Text = "5";
+            this.bn_hoadon5.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon4
+            // 
+            this.bn_hoadon4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon4.Location = new System.Drawing.Point(0, 290);
+            this.bn_hoadon4.Name = "bn_hoadon4";
+            this.bn_hoadon4.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon4.TabIndex = 29;
+            this.bn_hoadon4.Text = "4";
+            this.bn_hoadon4.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon3
+            // 
+            this.bn_hoadon3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon3.Location = new System.Drawing.Point(0, 207);
+            this.bn_hoadon3.Name = "bn_hoadon3";
+            this.bn_hoadon3.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon3.TabIndex = 28;
+            this.bn_hoadon3.Text = "3";
+            this.bn_hoadon3.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon2
+            // 
+            this.bn_hoadon2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon2.Location = new System.Drawing.Point(0, 124);
+            this.bn_hoadon2.Name = "bn_hoadon2";
+            this.bn_hoadon2.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon2.TabIndex = 27;
+            this.bn_hoadon2.Text = "2";
+            this.bn_hoadon2.UseVisualStyleBackColor = true;
+            // 
+            // bn_hoadon1
+            // 
+            this.bn_hoadon1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bn_hoadon1.Location = new System.Drawing.Point(0, 41);
+            this.bn_hoadon1.Name = "bn_hoadon1";
+            this.bn_hoadon1.Size = new System.Drawing.Size(112, 83);
+            this.bn_hoadon1.TabIndex = 26;
+            this.bn_hoadon1.Text = "1";
+            this.bn_hoadon1.UseVisualStyleBackColor = true;
+            this.bn_hoadon1.Click += new System.EventHandler(this.bn_hoadon1_Click);
             // 
             // btn_themhoadon
             // 
@@ -98,6 +281,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_themhoadon.TabIndex = 2;
             this.btn_themhoadon.Text = "New";
             this.btn_themhoadon.UseVisualStyleBackColor = false;
+            this.btn_themhoadon.Click += new System.EventHandler(this.btn_themhoadon_Click);
             // 
             // tbx_barcode
             // 
@@ -151,26 +335,26 @@ namespace _3_GUI_PresentationLayer
             // dtgview_thongtinsp
             // 
             this.dtgview_thongtinsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgview_thongtinsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgview_thongtinsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgview_thongtinsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgview_thongtinsp.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgview_thongtinsp.Location = new System.Drawing.Point(0, 111);
             this.dtgview_thongtinsp.Name = "dtgview_thongtinsp";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgview_thongtinsp.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgview_thongtinsp.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgview_thongtinsp.RowHeadersWidth = 82;
             this.dtgview_thongtinsp.RowTemplate.Height = 41;
             this.dtgview_thongtinsp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -181,14 +365,14 @@ namespace _3_GUI_PresentationLayer
             // dtgview_hoadon
             // 
             this.dtgview_hoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgview_hoadon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgview_hoadon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgview_hoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgview_hoadon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgview_hoadon.Location = new System.Drawing.Point(0, 263);
@@ -225,7 +409,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btn_thanhtoan);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.tbx_ghichu);
             this.tabPage1.Controls.Add(this.tbx_giamgia);
@@ -245,17 +429,28 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thanh toán tại cửa hàng";
             // 
-            // button2
+            // label8
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(163, 1175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(324, 85);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Thanh toán";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(133, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 41);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "tiền phải trả";
+            // 
+            // btn_thanhtoan
+            // 
+            this.btn_thanhtoan.AutoSize = true;
+            this.btn_thanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_thanhtoan.ForeColor = System.Drawing.Color.White;
+            this.btn_thanhtoan.Location = new System.Drawing.Point(163, 1175);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(324, 85);
+            this.btn_thanhtoan.TabIndex = 12;
+            this.btn_thanhtoan.Text = "Thanh toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = false;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
             // 
             // button1
             // 
@@ -375,6 +570,8 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tbx_sdtkh);
+            this.panel3.Controls.Add(this.tbx_tenkh);
             this.panel3.Controls.Add(this.lbl_mahoadon);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.dtgview_hoadon);
@@ -388,6 +585,38 @@ namespace _3_GUI_PresentationLayer
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1572, 770);
             this.panel3.TabIndex = 25;
+            // 
+            // tbx_sdtkh
+            // 
+            this.tbx_sdtkh.Location = new System.Drawing.Point(861, 216);
+            this.tbx_sdtkh.Name = "tbx_sdtkh";
+            this.tbx_sdtkh.Size = new System.Drawing.Size(290, 39);
+            this.tbx_sdtkh.TabIndex = 27;
+            // 
+            // tbx_tenkh
+            // 
+            this.tbx_tenkh.Location = new System.Drawing.Point(506, 215);
+            this.tbx_tenkh.Name = "tbx_tenkh";
+            this.tbx_tenkh.Size = new System.Drawing.Size(290, 39);
+            this.tbx_tenkh.TabIndex = 26;
+            // 
+            // lbl_mahoadon
+            // 
+            this.lbl_mahoadon.AutoSize = true;
+            this.lbl_mahoadon.Location = new System.Drawing.Point(209, 213);
+            this.lbl_mahoadon.Name = "lbl_mahoadon";
+            this.lbl_mahoadon.Size = new System.Drawing.Size(91, 32);
+            this.lbl_mahoadon.TabIndex = 25;
+            this.lbl_mahoadon.Text = "label10";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 32);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Mã hóa đơn";
             // 
             // cbx_camera
             // 
@@ -421,34 +650,6 @@ namespace _3_GUI_PresentationLayer
             this.label1.TabIndex = 1;
             this.label1.Text = "Sản phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(133, 351);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(196, 41);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "tiền phải trả";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 32);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Mã hóa đơn";
-            // 
-            // lbl_mahoadon
-            // 
-            this.lbl_mahoadon.AutoSize = true;
-            this.lbl_mahoadon.Location = new System.Drawing.Point(209, 213);
-            this.lbl_mahoadon.Name = "lbl_mahoadon";
-            this.lbl_mahoadon.Size = new System.Drawing.Size(91, 32);
-            this.lbl_mahoadon.TabIndex = 25;
-            this.lbl_mahoadon.Text = "label10";
             // 
             // Frm_banhang
             // 
@@ -503,7 +704,7 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_thanhtoan;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbx_ghichu;
         private System.Windows.Forms.TextBox tbx_giamgia;
@@ -518,5 +719,22 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_mahoadon;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button bn_hoadon15;
+        private System.Windows.Forms.Button bn_hoadon14;
+        private System.Windows.Forms.Button bn_hoadon13;
+        private System.Windows.Forms.Button bn_hoadon12;
+        private System.Windows.Forms.Button bn_hoadon11;
+        private System.Windows.Forms.Button bn_hoadon10;
+        private System.Windows.Forms.Button bn_hoadon9;
+        private System.Windows.Forms.Button bn_hoadon8;
+        private System.Windows.Forms.Button bn_hoadon7;
+        private System.Windows.Forms.Button bn_hoadon6;
+        private System.Windows.Forms.Button bn_hoadon5;
+        private System.Windows.Forms.Button bn_hoadon4;
+        private System.Windows.Forms.Button bn_hoadon3;
+        private System.Windows.Forms.Button bn_hoadon2;
+        private System.Windows.Forms.Button bn_hoadon1;
+        private System.Windows.Forms.TextBox tbx_sdtkh;
+        private System.Windows.Forms.TextBox tbx_tenkh;
     }
 }
