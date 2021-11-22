@@ -23,9 +23,11 @@ namespace _1_DAL_DataAccessLayer.Models
         public virtual ChiTietSanPham chiTietSanPham { get; set; }
        
         public double? DonGia { get; set; }
-      
+
+        public double? Thanhtien { get; set; }
         public int? soluong { get; set; }
         public int? TrangThai { get; set; }
+
        
         
     }

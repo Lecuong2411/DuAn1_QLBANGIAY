@@ -103,11 +103,11 @@ namespace _2_BUS_BusinessLayer.Service
         }
         public List<KhachHang> loadkh()
         {
-            return _lstkhachHangs;
+            return _lstkhachHangs=_khachhangServices.Getlst();
         }
         public List<HoaDon> loadhd()
         {
-            return _lsthoaDons;
+            return _lsthoaDons=_hoadonServices.Getlst();
         } public List<HoaDonChiTiet> loadhdct()
         {
             return _lsthoaDonChiTiets;
@@ -119,7 +119,10 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<AddHoadon> viewHoadons()
         {
-
+            _lstsanPhams = _sanphamServices.Getlst();
+            _lstChiTietSanPhams = _chitietSanPhamServices.Getlst();
+            _lsthoaDonChiTiets = _hoadonchitietServices.Getlst();
+            _lsthoaDons = _hoadonServices.Getlst();
             _lstaddHoadons = (from a in _lstsanPhams
                               join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP
                               join c in _lsthoaDonChiTiets on b.MaCTSP equals c.MaCTSP

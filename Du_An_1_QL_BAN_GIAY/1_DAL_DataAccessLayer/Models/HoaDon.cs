@@ -14,7 +14,7 @@ namespace _1_DAL_DataAccessLayer.Models
         [Key]
         [StringLength(100)]
         public string MaHd { get; set; }
-        public double? ThanhTien { get; set; }
+        public double? Tongtien { get; set; }
         public double? TienNhan { get; set; }
         [StringLength(100)]
         public string GhiChu { get; set; }
@@ -34,6 +34,7 @@ namespace _1_DAL_DataAccessLayer.Models
 
         [DataType(DataType.DateTime)]
         public DateTime thoigian { get; set; }
+
         public int TrangThaiHd { get; set; }
     }
 }
