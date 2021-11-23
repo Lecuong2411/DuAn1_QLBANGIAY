@@ -25,7 +25,7 @@ namespace _3_GUI_PresentationLayer
         private IQlSanPhamService _iQlSanPhamService;
         public static string temb;
         public static string _barcode;
-        public  string _bcode;
+        public string _bcode;
         public Frm_sanpham()
         {
             InitializeComponent();
@@ -58,10 +58,10 @@ namespace _3_GUI_PresentationLayer
             dgrid.Rows.Clear();
             foreach (var x in _iQlSanPhamService.GetSPAll())
             {
-                dgrid.Rows.Add(x.SanPham.TenSp +' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+                dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
                     x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
-                
+
 
             }
         }
@@ -73,7 +73,7 @@ namespace _3_GUI_PresentationLayer
 
                 txt_chatLieu.Items.Add(x.ChatLieuSP);
 
-              txt_chatLieu.Items.Add(x.ChatLieuSP);
+                txt_chatLieu.Items.Add(x.ChatLieuSP);
 
             }
 
@@ -131,7 +131,7 @@ namespace _3_GUI_PresentationLayer
 
                 cbx_coGiay.Items.Add(x.LoaiCoGiaySP);
 
-               cbx_coGiay.Items.Add(x.LoaiCoGiaySP);
+                cbx_coGiay.Items.Add(x.LoaiCoGiaySP);
 
             }
             cbx_coGiay.SelectedIndex = 0;
@@ -140,7 +140,7 @@ namespace _3_GUI_PresentationLayer
         {
 
             QLSanPham qlSanPham = new QLSanPham();
-            qlSanPham.ChiTietSanPham.MaCTSP = "CTSP"+ _iQlSanPhamService.GetLstCTSanPham().Count+1;
+            qlSanPham.ChiTietSanPham.MaCTSP = "CTSP" + (_iQlSanPhamService.GetLstCTSanPham().Count + 1);
             qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
             qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == cbx_mau.Text)
                 .Select(c => c.MaClr).FirstOrDefault();
@@ -168,8 +168,8 @@ namespace _3_GUI_PresentationLayer
 
             // chạy chương trình sẽ mở
 
-         
-  
+
+
         }
 
         private void dgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -193,7 +193,7 @@ namespace _3_GUI_PresentationLayer
             cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
             cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
             var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
-            if (temb1 != null) 
+            if (temb1 != null)
             {
                 lbl_anh.Text = temb1;
                 pic.Image = Image.FromFile(lbl_anh.Text);
@@ -229,7 +229,7 @@ namespace _3_GUI_PresentationLayer
 
         private void VideoCaptureDevice_name(object sender, NewFrameEventArgs eventargs)
         {
-            pic_webcam.Image= (Bitmap)eventargs.Frame.Clone();
+            pic_webcam.Image = (Bitmap)eventargs.Frame.Clone();
             Bitmap bitmap = (Bitmap)eventargs.Frame.Clone();
             BarcodeReader reader = new BarcodeReader();
             var result = reader.Decode(bitmap);
@@ -248,9 +248,9 @@ namespace _3_GUI_PresentationLayer
         {
             if (_videoCaptureDevice != null)
             {
-               
-                    _videoCaptureDevice.Stop();
-                
+
+                _videoCaptureDevice.Stop();
+
             }
         }
 
@@ -277,6 +277,7 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
+            qlSanPham.ChiTietSanPham.MaPB = "PB2";
             _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
             //History history = new History();
             //history.MaCTSP = temb;
@@ -304,38 +305,53 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_anh_Click(object sender, EventArgs e)
         {
-         
+
             QLSanPham qlSanPham = new QLSanPham();
             qlSanPham.Image.TrangThai = 1;
-            qlSanPham.Image.MaImage = "Img"+ _iQlSanPhamService.GetLstImage().Count+1;
+            qlSanPham.Image.MaImage = "Img" + _iQlSanPhamService.GetLstImage().Count + 1;
             qlSanPham.Image.MaCTSP = temb;
             qlSanPham.Image.Images = lbl_anh.Text;
             _iQlSanPhamService.addImage(qlSanPham.Image);
-
-         
-
-
         }
 
         private void txt_barCode_TextChanged(object sender, EventArgs e)
         {
-            Barcode barcode = new Barcode();
-            Color forColor = Color.Black;
-            Color backColor = Color.White;
-            Image img = barcode.Encode(TYPE.CODE128A, txt_barCode.Text, forColor, backColor,
-                (int) (pic_webcam.Width * 1), (int) (pic_webcam.Height * 1));
-            pic_webcam.Image = img;
+            bool result = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text) != null;
+            if (result)
+            {
+                var dt = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).FirstOrDefault();
+                var tembSp = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham == dt).FirstOrDefault();
+                txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
+                txt_tsp.Text = tembSp.SanPham.TenSp;
+                txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
+                txt_giaban.Text = (tembSp.ChiTietSanPham.giaban).ToString();
+                txt_gianhap.Text = (tembSp.ChiTietSanPham.GiaNhap).ToString();
+                cbx_mau.Text = tembSp.Color.ColorSP;
+                cbx_size.Text = tembSp.Size.SizeSp.ToString();
+                txt_ghi.Text = tembSp.ChiTietSanPham.GhiChu;
+                txt_barCode.Text = tembSp.ChiTietSanPham.MaQR;
+                txt_chatLieu.Text = tembSp.ChatLieu.ChatLieuSP;
+                txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
+                cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
+                cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
+                var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
+                if (temb1 != null)
+                {
+                    lbl_anh.Text = temb1;
+                    pic.Image = Image.FromFile(lbl_anh.Text);
+                }
+               
+            }
+            else 
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Frm_import frmImport = new Frm_import();
             frmImport.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-load();
         }
     }
 }

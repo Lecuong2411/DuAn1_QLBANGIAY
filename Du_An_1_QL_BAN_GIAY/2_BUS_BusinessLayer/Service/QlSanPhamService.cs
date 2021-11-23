@@ -332,6 +332,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<QLSanPham> GetSPAll()
         {
+            _lstChiTietSanPhams = _iChitietSanPhamServices.Getlst();
             _lstQlSanPhams = (from a in _LstSanPham
                 join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP
                 join c in _lstCungCaps on a.MaNCC equals c.MaNcc

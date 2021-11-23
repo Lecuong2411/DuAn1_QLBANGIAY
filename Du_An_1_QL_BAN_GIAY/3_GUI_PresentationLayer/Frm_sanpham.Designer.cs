@@ -77,10 +77,8 @@ namespace _3_GUI_PresentationLayer
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnl_main = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.ChiTietSanPham1.SuspendLayout();
@@ -201,7 +199,6 @@ namespace _3_GUI_PresentationLayer
             // 
             this.ChiTietSanPham1.Controls.Add(this.tabSanpham);
             this.ChiTietSanPham1.Controls.Add(this.tabCTSP);
-            this.ChiTietSanPham1.Controls.Add(this.tabPage1);
             this.ChiTietSanPham1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChiTietSanPham1.Location = new System.Drawing.Point(0, 0);
             this.ChiTietSanPham1.Name = "ChiTietSanPham1";
@@ -212,7 +209,6 @@ namespace _3_GUI_PresentationLayer
             // tabSanpham
             // 
             this.tabSanpham.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabSanpham.Controls.Add(this.button3);
             this.tabSanpham.Controls.Add(this.comboBox2);
             this.tabSanpham.Controls.Add(this.comboBox1);
             this.tabSanpham.Controls.Add(this.groupBox1);
@@ -563,17 +559,6 @@ namespace _3_GUI_PresentationLayer
             this.label5.TabIndex = 3;
             this.label5.Text = "Giá bán";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1071, 806);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -589,16 +574,6 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Name = "pnl_main";
             this.pnl_main.Size = new System.Drawing.Size(1079, 834);
             this.pnl_main.TabIndex = 13;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(908, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Frm_sanpham
             // 
@@ -676,7 +651,5 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label lbl_anh;
         private System.Windows.Forms.ComboBox txt_chatLieu;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button3;
     }
 }

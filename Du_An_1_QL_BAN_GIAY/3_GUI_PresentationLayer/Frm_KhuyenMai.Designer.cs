@@ -31,11 +31,10 @@ namespace _3_GUI_PresentationLayer
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_danhMuc = new System.Windows.Forms.Button();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btm_tao = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.rdo_khd = new System.Windows.Forms.RadioButton();
             this.rdo_hd = new System.Windows.Forms.RadioButton();
             this.dtp_end = new System.Windows.Forms.DateTimePicker();
@@ -53,14 +52,12 @@ namespace _3_GUI_PresentationLayer
             this.btn_loc = new System.Windows.Forms.Button();
             this.cbo_danhmuc = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giamgia)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,10 +72,10 @@ namespace _3_GUI_PresentationLayer
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_danhMuc);
             this.tabPage1.Controls.Add(this.btn_huy);
             this.tabPage1.Controls.Add(this.btn_sua);
             this.tabPage1.Controls.Add(this.btm_tao);
-            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.rdo_khd);
             this.tabPage1.Controls.Add(this.rdo_hd);
             this.tabPage1.Controls.Add(this.dtp_end);
@@ -99,6 +96,17 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Khuyến mại";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_danhMuc
+            // 
+            this.btn_danhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_danhMuc.Image = global::_3_GUI_PresentationLayer.Properties.Resources.clipboard;
+            this.btn_danhMuc.Location = new System.Drawing.Point(355, 182);
+            this.btn_danhMuc.Name = "btn_danhMuc";
+            this.btn_danhMuc.Size = new System.Drawing.Size(50, 51);
+            this.btn_danhMuc.TabIndex = 18;
+            this.btn_danhMuc.UseVisualStyleBackColor = true;
+            this.btn_danhMuc.Click += new System.EventHandler(this.btn_danhMuc_Click);
             // 
             // btn_huy
             // 
@@ -129,26 +137,7 @@ namespace _3_GUI_PresentationLayer
             this.btm_tao.TabIndex = 15;
             this.btm_tao.Text = "Tạo ";
             this.btm_tao.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgv);
-            this.groupBox1.Location = new System.Drawing.Point(17, 225);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(755, 245);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            // 
-            // dgv
-            // 
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.Location = new System.Drawing.Point(3, 19);
-            this.dgv.Name = "dgv";
-            this.dgv.RowTemplate.Height = 25;
-            this.dgv.Size = new System.Drawing.Size(749, 223);
-            this.dgv.TabIndex = 13;
+            this.btm_tao.Click += new System.EventHandler(this.btm_tao_Click);
             // 
             // rdo_khd
             // 
@@ -267,7 +256,7 @@ namespace _3_GUI_PresentationLayer
             this.tabPage2.Controls.Add(this.btn_loc);
             this.tabPage2.Controls.Add(this.cbo_danhmuc);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.dgv);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -293,6 +282,7 @@ namespace _3_GUI_PresentationLayer
             this.cbo_danhmuc.Name = "cbo_danhmuc";
             this.cbo_danhmuc.Size = new System.Drawing.Size(165, 23);
             this.cbo_danhmuc.TabIndex = 2;
+            this.cbo_danhmuc.TextChanged += new System.EventHandler(this.cbo_danhmuc_TextChanged);
             // 
             // label7
             // 
@@ -303,14 +293,17 @@ namespace _3_GUI_PresentationLayer
             this.label7.TabIndex = 1;
             this.label7.Text = "Danh mục";
             // 
-            // dataGridView1
+            // dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(774, 336);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(6, 84);
+            this.dgv.Name = "dgv";
+            this.dgv.RowTemplate.Height = 25;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(774, 336);
+            this.dgv.TabIndex = 0;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // Frm_KhuyenMai
             // 
@@ -329,12 +322,10 @@ namespace _3_GUI_PresentationLayer
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_giamgia)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,7 +340,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.RadioButton rdo_khd;
         private System.Windows.Forms.RadioButton rdo_hd;
         private System.Windows.Forms.DateTimePicker dtp_end;
@@ -358,13 +348,13 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.NumericUpDown nud_giamgia;
         private System.Windows.Forms.TextBox txt_tct;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ComboBox cbo_danhmuc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_loc;
         private System.Windows.Forms.Button btn_huy;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btm_tao;
+        private System.Windows.Forms.Button btn_danhMuc;
     }
 }

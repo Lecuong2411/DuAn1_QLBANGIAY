@@ -72,7 +72,7 @@ namespace _3_GUI_PresentationLayer
                 for (int i = 0; i < dgv.Rows.Count; i++)
                 {
                     _iQlSanPhamService = new QlSanPhamService();
-                    _qlSanPham.ChiTietSanPham.MaCTSP ="SPCT"+_iQlSanPhamService.GetLstCTSanPham().Count+1;
+                    _qlSanPham.ChiTietSanPham.MaCTSP ="SPCT"+(_iQlSanPhamService.GetLstCTSanPham().Count+1);
                     _qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == dgv.Rows[i].Cells[0].Value.ToString()).Select(c => c.MaSp).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == dgv.Rows[i].Cells[1].Value.ToString())
                         .Select(c => c.MaClr).FirstOrDefault();
@@ -89,6 +89,7 @@ namespace _3_GUI_PresentationLayer
                     _qlSanPham.ChiTietSanPham.MaCo = _iQlSanPhamService.GetLstLoaiCoGiay()
                         .Where(c => c.LoaiCoGiaySP == dgv.Rows[i].Cells[10].Value.ToString()).Select(c => c.MaCo).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.TrangThai = dgv.Rows[i].Cells[11].Value.ToString() == "Còn hàng" ? 1 : 0;
+                    _qlSanPham.ChiTietSanPham.MaPB = "PB2";
                     _iQlSanPhamService.addCTSanPham(_qlSanPham.ChiTietSanPham);
                     //History history = new History();
                     //history.MaCTSP = _qlSanPham.ChiTietSanPham.MaCTSP;
