@@ -7,24 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _1_DAL_DataAccessLayer.Models;
 using _2_BUS_BusinessLayer.IService;
 using _2_BUS_BusinessLayer.Service;
+using Color = System.Drawing.Color;
 
 namespace _3_GUI_PresentationLayer
 {
     public partial class Frm_Vouchers : Form
     {
         private IBUS_VoucherService _voucherService;
-
+        
         public Frm_Vouchers()
         {
             InitializeComponent();
             _voucherService = new BUS_VoucherService();
-            loatdata();
         }
-
+       
         public void loatdata()
         {
+          
             dtgv_vorcher.ColumnCount = 9;
             dtgv_vorcher.Columns[0].Name = "ID";
             dtgv_vorcher.Columns[0].Visible = false;
@@ -48,32 +50,35 @@ namespace _3_GUI_PresentationLayer
             dtgv_bt.Name = "bt";
             dtgv_bt.Text = "Xác nhận";
             dtgv_bt.UseColumnTextForButtonValue = true;
-            dtgv_vorcher.Rows.Clear();
             dtgv_vorcher.Columns.Add(dtgv_cbb);
             dtgv_vorcher.Columns.Add(dtgv_bt);
+            dtgv_vorcher.Rows.Clear();
             foreach (var x in _voucherService.ListvVouchers())
             {
                 dtgv_vorcher.Rows.Add(x.MaVouCher,x.Vouchers, x.NSD, x.HSD, x.SoLuong, x.SoLuongDSD, x.MenhGia,
                     x.TrangThai == 1 ? "Hoạt động" : "Kết thúc", x.GhiChu);
             }
         }
+       
         private void dtgv_vorcher_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             var index = e.RowIndex;
             if (index < 0 || _voucherService.ListvVouchers().Count == index) return;
             if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString()=="Thêm")
             {
                 FrmThongtinVoucher a = new FrmThongtinVoucher();
                 a.Show();
-                a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
-               
+                a.FormClosing += new FormClosingEventHandler(Frm_Vouchers_Load);
 
             }
             else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Sửa")
             {
-                FrmThongtinVoucher b = new FrmThongtinVoucher(dtgv_vorcher.Rows[index].Cells[0].Value.ToString(),dtgv_vorcher.Rows[index].Cells[1].Value.ToString(), dtgv_vorcher.Rows[index].Cells[2].Value.ToString(), dtgv_vorcher.Rows[index].Cells[3].Value.ToString(),dtgv_vorcher.Rows[index].Cells[4].Value.ToString(), dtgv_vorcher.Rows[index].Cells[5].Value.ToString(), dtgv_vorcher.Rows[index].Cells[6].Value.ToString(), dtgv_vorcher.Rows[index].Cells[7].Value.ToString(), dtgv_vorcher.Rows[index].Cells[8].Value.ToString());
-                b.Show();
-                b.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
+
+                FrmThongtinVoucher _a = new FrmThongtinVoucher(dtgv_vorcher.Rows[index].Cells[0].Value.ToString(),dtgv_vorcher.Rows[index].Cells[1].Value.ToString(), dtgv_vorcher.Rows[index].Cells[2].Value.ToString(), dtgv_vorcher.Rows[index].Cells[3].Value.ToString(),dtgv_vorcher.Rows[index].Cells[4].Value.ToString(), dtgv_vorcher.Rows[index].Cells[5].Value.ToString(), dtgv_vorcher.Rows[index].Cells[6].Value.ToString(), dtgv_vorcher.Rows[index].Cells[7].Value.ToString(), dtgv_vorcher.Rows[index].Cells[8].Value.ToString());
+                _a.Show();
+                _a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
+                
 
             }
             else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Loat danh sách")
@@ -83,7 +88,11 @@ namespace _3_GUI_PresentationLayer
             }
             else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Kết thúc voucher")
             {
-               
+                Voucher a = new Voucher();
+                a = _voucherService.ListvVouchers().Find(c => c.MaVouCher == dtgv_vorcher.Rows[index].Cells[0].Value.ToString());
+                a.TrangThai = 0;
+                MessageBox.Show(_voucherService.update(a), "Thông báo", MessageBoxButtons.OK);
+                loatdata();
 
             }
         }
@@ -91,6 +100,36 @@ namespace _3_GUI_PresentationLayer
         private void Frm_Vouchers_Load(object sender, EventArgs e)
         {
             loatdata();
+            loatdata();
+            loatdata();
+            loatdata();
+            loatdata();
+                
         }
+
+
+
+        //private int x = 12, y = 10, a = 1;
+
+
+
+        //private Random random = new Random();
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+
+        //    x += a;
+        //    label1.Location = new Point(x, y);
+        //    if (x >= 564)
+        //    {
+        //        a = -1;
+        //        label1.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+        //    }
+        //    if (x <= 116)
+        //    {
+        //        a = 1;
+        //        label1.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+        //    }
+
+        //}
     }
 }

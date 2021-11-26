@@ -36,20 +36,10 @@ namespace _2_BUS_BusinessLayer.Service
         private ISizeServices _sizeServices;
         public BUS_DanhSachHoaDonBanHang()
         {
-            _hd = new List<HoaDon>();
-            _kh = new List<KhachHang>();
-            _nv = new List<NhanVien>();
-            _hdct = new List<HoaDonChiTiet>();
-            _ctsp = new List<ChiTietSanPham>();
-            _sp = new List<SanPham>();
-            _lcg = new List<LoaiCoGiay>();
-            _cl = new List<ChatLieu>();
-            _clr = new List<Color>();
-            _sz = new List<Size>();
+            
             _chucnanghd = new HoadonServices();
             _chucnangkhachhang = new KhachhangServices();
             _chunangnv = new NhanvienServices();
-            _dshdbh = new List<Danhsachhoadonbanhang>();
             _hoadonchitietServices = new HoadonchitietServices();
             _chitietSanPhamServices = new ChitietSanPhamServices();
             _sanphamServices = new SanphamServices();
@@ -57,16 +47,9 @@ namespace _2_BUS_BusinessLayer.Service
             _chatlieuServices = new ChatlieuServices();
             _colorServices = new ColorServices();
             _sizeServices = new SizeServices();
-            loatdata();
 
-        }
-        public List<Danhsachhoadonbanhang> ListdDanhsachhoadonbanhang()
-        {
-            return _dshdbh;
-        }
+            _dshdbh = new List<Danhsachhoadonbanhang>();
 
-        public void loatdata()
-        {
             _kh = _chucnangkhachhang.Getlst();
             _nv = _chunangnv.Getlst();
             _hd = _chucnanghd.Getlst();
@@ -77,7 +60,17 @@ namespace _2_BUS_BusinessLayer.Service
             _cl = _chatlieuServices.Getlst();
             _clr = _colorServices.Getlst();
             _sz = _sizeServices.Getlst();
-            var tame = (from a in _kh
+
+            loatdatachitiet();
+            loatdatahd();
+
+        }
+       
+
+        public List<Danhsachhoadonbanhang> loatdatachitiet()
+        {
+
+            _dshdbh = (from a in _kh
                         join b in _hd on a.MaKh equals b.MaKH
                         join c in _nv on b.MaNV equals c.MaNv
                         join d in _hdct on b.MaHd equals d.MaHd
@@ -87,12 +80,12 @@ namespace _2_BUS_BusinessLayer.Service
                         join j in _cl on f.MaChatLieu equals j.MaChatLieu
                         join k in _clr on f.MaCLR equals k.MaClr
                         join l in _sz on f.MaSize equals l.MaSize
-                        select new
+                        select new Danhsachhoadonbanhang()
                         {
                             KhachHang = a,
-                            HoaDon = b,
+                            hoadon = b,
                             NhanVien = c,
-                            HoaDonChiTiet = d,
+                            hoaDonChiTiet = d,
                             ChiTietSanPham = f,
                             SanPham = g,
                             LoaiCoGiay = h,
@@ -100,21 +93,7 @@ namespace _2_BUS_BusinessLayer.Service
                             Color = k,
                             Size = l
                         }).ToList();
-            tame.ForEach(x =>
-            {
-                Danhsachhoadonbanhang A = new Danhsachhoadonbanhang();
-                A.hoadon = x.HoaDon;
-                A.KhachHang = x.KhachHang;
-                A.NhanVien = x.NhanVien;
-                A.hoaDonChiTiet = x.HoaDonChiTiet;
-                A.ChiTietSanPham = x.ChiTietSanPham;
-                A.SanPham = x.SanPham;
-                A.LoaiCoGiay = x.LoaiCoGiay;
-                A.ChatLieu = x.ChatLieu;
-                A.Color = x.Color;
-                A.Size = x.Size;
-                _dshdbh.Add(A);
-            });
+            return _dshdbh;
 
 
         }
@@ -122,6 +101,20 @@ namespace _2_BUS_BusinessLayer.Service
         public List<Danhsachhoadonbanhang> timkiemkh(string kh)
         {
             return _dshdbh.Where(c => c.KhachHang.TenKh.StartsWith(kh)).ToList();
+        }
+
+        public List<Danhsachhoadonbanhang> loatdatahd()
+        {
+            _dshdbh = (from a in _kh
+                join b in _hd on a.MaKh equals b.MaKH
+                join c in _nv on b.MaNV equals c.MaNv
+                select new Danhsachhoadonbanhang()
+                {
+                    KhachHang = a,
+                    hoadon = b,
+                    NhanVien =c
+                }).ToList();
+            return _dshdbh;
         }
 
         public List<Danhsachhoadonbanhang> timkiemsdt(string sdt)

@@ -10,9 +10,10 @@ namespace _2_BUS_BusinessLayer
 {
     public interface IBUS_DanhSachHoaDonBanHang
     {
-        public List<Danhsachhoadonbanhang> ListdDanhsachhoadonbanhang();
+        
         //dùng để đẩy dữ liệu của 3 bảng nhân viên , khách hàng , hóa đơn 
-        public void loatdata();
+        public List<Danhsachhoadonbanhang> loatdatachitiet();
+        public List<Danhsachhoadonbanhang> loatdatahd();
         public List<Danhsachhoadonbanhang> timkiemsdt(string sdt);
         public List<Danhsachhoadonbanhang> timkiemkh(string kh);
         public List<Danhsachhoadonbanhang> timkiemtg(string tg);

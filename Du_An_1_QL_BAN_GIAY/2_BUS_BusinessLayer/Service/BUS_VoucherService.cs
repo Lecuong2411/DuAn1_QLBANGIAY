@@ -13,9 +13,13 @@ namespace _2_BUS_BusinessLayer.Service
     public class BUS_VoucherService:IBUS_VoucherService
     {
         private IVouCherServices _vouCherServices;
+        private List<Voucher> _vouchers;
         public BUS_VoucherService()
         {
             _vouCherServices = new VouCherServices();
+            _vouchers = _vouCherServices.Getlst();
+
+            
         }
         public string add(Voucher voucher)
         {
@@ -36,7 +40,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Voucher> ListvVouchers()
         {
-            return _vouCherServices.Getlst();
+            return _vouchers;
         }
     }
 }

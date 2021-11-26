@@ -71,6 +71,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // dtp_nsd
             // 
+            this.dtp_nsd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_nsd.Location = new System.Drawing.Point(157, 85);
             this.dtp_nsd.Name = "dtp_nsd";
             this.dtp_nsd.Size = new System.Drawing.Size(124, 23);
@@ -78,6 +79,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // dtp_hsd
             // 
+            this.dtp_hsd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_hsd.Location = new System.Drawing.Point(157, 124);
             this.dtp_hsd.Name = "dtp_hsd";
             this.dtp_hsd.Size = new System.Drawing.Size(124, 23);
@@ -258,6 +260,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.btn_close);
             this.Name = "FrmThongtinVoucher";
             this.Text = "FrmThongtinVoucher";
+            this.Load += new System.EventHandler(this.FrmThongtinVoucher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_menhgia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
