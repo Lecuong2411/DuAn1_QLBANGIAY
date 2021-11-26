@@ -31,6 +31,9 @@
     <Compile Update="Frm_sanpham.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_soluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Thongke.cs">
       <SubType>Form</SubType>
     </Compile>

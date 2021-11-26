@@ -23,7 +23,11 @@ namespace _2_BUS_BusinessLayer.IService
 
         public List<HoaDon> loadhd();
 
+        List<Voucher> loadVoucher();
+
         public List<HoaDonChiTiet> loadhdct();
+        public string updatevoucher(Voucher voucher);
+        public string updatectsp(ChiTietSanPham chiTietSanPham);
         string addhoadon(HoaDon hoaDon, KhachHang khachHang);
         string updatehoadon(HoaDon hoaDon);
         string addHoadonchitiet(HoaDonChiTiet hoaDonChiTiet);

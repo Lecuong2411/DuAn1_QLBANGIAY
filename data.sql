@@ -102,7 +102,7 @@ VALUES
 ('KH02','LÊ VĂN B','03892839000'),
 ('KH03','LÊ VĂN C','03892839999');
 
-INSERT INTO HoaDon(MaHd,ThanhTien,TienNhan,GhiChu,MaKH,MaNV,TrangThaiHd,MaVouCher,thoigian)
+INSERT INTO HoaDon(MaHd,Tongtien,TienNhan,GhiChu,MaKH,MaNV,TrangThaiHd,MaVouCher,thoigian)
 VALUES 
 ('HD01',300000,400000,'HOÀN THÀNH','KH01','NV03',1,'VC01','2021-11-11'),
 ('HD02',300000,600000,'HOÀN THÀNH','KH02','NV01',1,'VC02','2021-11-29'),
@@ -117,4 +117,11 @@ VALUES
 insert into Voucher (MaVouCher,Vouchers,NSD,HSD,SoLuong,SoLuongDSD,MenhGia,TrangThai,GhiChu)
 values 
 ('VC01','039182738','11-01-2021','11-30-2021',10,10,20000,1,'merry'),
-('VC02','090082738','11-01-2021','11-30-2021',10,10,30000,1,'happy');
+('VC02','090082738','11-01-2021','11-30-2021',10,10,30000,1,'happy'),
+('VC03','039111738','11-01-2021','11-20-2021',10,10,20000,1,'merry');
+
+
+insert into ProductBack(MaPB,ProductStatus,TrangThai)
+values
+('PB1',1,1),
+('PB2',0,0);

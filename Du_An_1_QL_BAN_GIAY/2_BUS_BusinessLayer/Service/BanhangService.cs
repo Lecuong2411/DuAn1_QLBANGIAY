@@ -26,6 +26,7 @@ namespace _2_BUS_BusinessLayer.Service
         private INhanvienServices _nhanvienServices;
         private IKhachhangServices _khachhangServices;
         private IHoadonServices _hoadonServices;
+        private IVouCherServices _vouCherServices;
 
         private List<SanphambanViewModel> _lstSanphambanViews;
         private List<AddHoadon> _lstaddHoadons;
@@ -43,6 +44,7 @@ namespace _2_BUS_BusinessLayer.Service
         private List<NhanVien> _lstnhanViens;
         private List<KhachHang> _lstkhachHangs;
         private List<HoaDon> _lsthoaDons;
+        private List<Voucher> _lstvouchers;
 
 
 
@@ -64,6 +66,7 @@ namespace _2_BUS_BusinessLayer.Service
             _nhanvienServices = new NhanvienServices();
             _khachhangServices = new KhachhangServices();
             _hoadonServices = new HoadonServices();
+            _vouCherServices = new VouCherServices();
            
 
             _lstSanphambanViews = new List<SanphambanViewModel>();
@@ -82,6 +85,7 @@ namespace _2_BUS_BusinessLayer.Service
             _lstnhanViens = _nhanvienServices.Getlst();
             _lstkhachHangs = _khachhangServices.Getlst();
             _lsthoaDons = _hoadonServices.Getlst();
+            _lstvouchers = _vouCherServices.Getlst();
 
         }
 
@@ -108,9 +112,15 @@ namespace _2_BUS_BusinessLayer.Service
         public List<HoaDon> loadhd()
         {
             return _lsthoaDons=_hoadonServices.Getlst();
-        } public List<HoaDonChiTiet> loadhdct()
+        }
+        public List<HoaDonChiTiet> loadhdct()
         {
-            return _lsthoaDonChiTiets;
+            return _lsthoaDonChiTiets=_hoadonchitietServices.Getlst();
+        }
+
+        public List<Voucher> loadVoucher()
+        {
+            return _lstvouchers = _vouCherServices.Getlst();
         }
 
         #endregion
@@ -192,6 +202,17 @@ namespace _2_BUS_BusinessLayer.Service
         public string deletedhoadonchitiet(string hd, string msp)
         {
             _hoadonchitietServices.delete(hd, msp);
+            return null;
+        }
+
+        public string updatectsp(ChiTietSanPham chiTietSanPham)
+        {
+            _chitietSanPhamServices.update(chiTietSanPham);
+            return null;
+        }
+        public string updatevoucher(Voucher voucher)
+        {
+            _vouCherServices.update(voucher);
             return null;
         }
     }
