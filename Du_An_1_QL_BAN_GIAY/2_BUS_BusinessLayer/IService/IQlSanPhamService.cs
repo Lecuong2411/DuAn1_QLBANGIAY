@@ -86,5 +86,7 @@ namespace _2_BUS_BusinessLayer.IService
         #endregion
 
         public List<QLSanPham> GetSPAll();
+        public List<QLSanPham> GetSPAllLoad();
+        //public List<ChiTietSanPham> _LsTietSanPhams();
     }
 }

@@ -24,7 +24,7 @@ namespace _3_GUI_PresentationLayer
             InitializeComponent();
             _iQlKhuyenMai = new QlKhuyenMai();
             _tendanhMuc = new List<string>();
-            //load();
+            load();
             loadDanhMuc();
             rdo_hd.Checked = true;
         }
@@ -46,9 +46,9 @@ namespace _3_GUI_PresentationLayer
         //    DTThem.HeaderText = "";
         //    DTThem.UseColumnTextForButtonValue = true;
         //    int indexAdd = 6;
-        //    if (dgv.Columns["btn_add"]==null)
+        //    if (dgv.Columns["btn_add"] == null)
         //    {
-        //        dgv.Columns.Insert(indexAdd,DTThem);
+        //        dgv.Columns.Insert(indexAdd, DTThem);
         //    }
         //    DataGridViewButtonColumn DTRemove = new DataGridViewButtonColumn();
         //    DTRemove.Name = "btn_remove";
@@ -65,7 +65,7 @@ namespace _3_GUI_PresentationLayer
         //    {
         //        dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
         //            x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP,
-        //            x.ProductBack.ProductStatus==1 ?"Đã ẩn":"Chưa ẩn",x.ChiTietSanPham.MaCTSP);
+        //            x.ProductBack.ProductStatus == 1 ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
         //    }
 
         //}

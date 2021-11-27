@@ -13,7 +13,10 @@ namespace _2_BUS_BusinessLayer.Models
         public LoaiCoGiay LoaiCoGiay { get; set; }
         public Color Color { get; set; }
         public DanhMuc DanhMuc { get; set; }
-
+        public ChiTietGiamGia ChiTietGiamGia { get; set; }
+        public ProductBack ProductBack { get; set; }
+        public KhuyenMai KhuyenMai { get; set; }
+        public float TienKM { get; set; }
         public QLSanPham()
         {
             SanPham = new SanPham();
@@ -24,8 +27,10 @@ namespace _2_BUS_BusinessLayer.Models
             Size = new Size();
             LoaiCoGiay = new LoaiCoGiay();
             Color = new Color();
-            DanhMuc = new DanhMuc();
-
+            DanhMuc = new DanhMuc(); 
+            ChiTietGiamGia = new ChiTietGiamGia();
+            ProductBack = new ProductBack();
+            KhuyenMai = new KhuyenMai();
         }
     }
 

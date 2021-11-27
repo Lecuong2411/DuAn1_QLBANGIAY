@@ -90,35 +90,40 @@ namespace _2_BUS_BusinessLayer.Service
         {
             List<KhuyenMai_Bus> GetLstCTSP = new List<KhuyenMai_Bus>();
             GetLstCTSP = (from a in _lstChiTietSanPhams
-                join b in _lstSanPhams on a.MaSP equals b.MaSp
-                join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
-                join d in _lstProductBacks on a.MaPB equals d.MaPB
-                join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
-                join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
-                join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
-                from f in CtggDm.DefaultIfEmpty()
-                join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
-                from n in KMCTKM.DefaultIfEmpty()
-                select new KhuyenMai_Bus()
-                {
-                    ChiTietSanPham = a,
-                    SanPham = b,
-                    DanhMuc = c,
-                    ProductBack = d,
-                    ChiTietGiamGia = f == null ? null : f,
-                    KhuyenMai = n == null ? null : n,
-                    ChatLieu = ff,
-                    LoaiCoGiay = l
-                }).ToList();
+                          join b in _lstSanPhams on a.MaSP equals b.MaSp
+                          join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
+                          join d in _lstProductBacks on a.MaPB equals d.MaPB
+                          join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
+                          join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
+                          join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
+                          from f in CtggDm.DefaultIfEmpty()
+                          join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
+                          from n in KMCTKM.DefaultIfEmpty()
+                          select new KhuyenMai_Bus()
+                          {
+                              ChiTietSanPham = a,
+                              SanPham = b,
+                              DanhMuc = c,
+                              ProductBack = d,
+                              ChiTietGiamGia = f == null ? null : f,
+                              KhuyenMai = n == null ? null : n,
+                              ChatLieu = ff,
+                              LoaiCoGiay = l
+                          }).ToList();
             foreach (var x in GetLstCTSP)
             {
-                if (x.KhuyenMai != null && x.KhuyenMai.NgayDau<=DateTime.Now && x.KhuyenMai.NgayHet>=DateTime.Now && x.KhuyenMai.TrangThai==1 && x.ProductBack.ProductStatus==0)
+                if (x.KhuyenMai != null && x.KhuyenMai.NgayDau <= DateTime.Now && x.KhuyenMai.NgayHet >= DateTime.Now && x.KhuyenMai.TrangThai == 1 && x.ProductBack.ProductStatus == 0)
                 {
-                    x.ChiTietSanPham.giaban =( x.ChiTietSanPham.giaban * (100-x.KhuyenMai.GiamGia))/100;
+                    x.ChiTietSanPham.giaban = (x.ChiTietSanPham.giaban * (100 - x.KhuyenMai.GiamGia)) / 100;
                 }
             }
+
+
+
             return GetLstCTSP;
         }
+
+
 
         public List<KhuyenMai_Bus> GetKhuyenMaisSearch(string text)
         {
@@ -181,7 +186,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<KhuyenMai> GetlstKhuyenMais()
         {
-            return _lstKhuyenMais ; 
+            return _lstKhuyenMais;
         }
 
         public List<ProductBack> GetProductBacks()
@@ -223,5 +228,7 @@ namespace _2_BUS_BusinessLayer.Service
         {
             return _lstChatLieuss;
         }
+
+      
     }
 }
