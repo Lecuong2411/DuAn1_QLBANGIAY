@@ -22,7 +22,6 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _ChucnangdanhSachHoaDonBanHang = new BUS_DanhSachHoaDonBanHang();
-           
             timer1.Enabled = true;
             timer1.Start();
             label4.Text =DateTime.Now.ToLongDateString()+"\n"+ DateTime.Now.ToLongTimeString();
@@ -31,9 +30,8 @@ namespace _3_GUI_PresentationLayer
             cbb_timkiem.Items.Add("Tên khách hàng");
             cbb_timkiem.Items.Add("Tên Giày");
             cbb_timkiem.Items.Add("Người lập phiếu");
-            loatdata(_ChucnangdanhSachHoaDonBanHang.loatdatahd());
+           loatdata(_ChucnangdanhSachHoaDonBanHang.loatdatahd());
             loatdatahdct(_ChucnangdanhSachHoaDonBanHang.loatdatachitiet());
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -319,5 +317,12 @@ namespace _3_GUI_PresentationLayer
                 .Where(c => c.hoadon.thoigian.ToShortDateString().StartsWith(dtp_ct.Text)).ToList();
             loatdatahdct(listtkn);
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

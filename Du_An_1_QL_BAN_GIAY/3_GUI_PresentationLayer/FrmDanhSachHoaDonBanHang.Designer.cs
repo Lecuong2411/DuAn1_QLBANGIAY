@@ -63,6 +63,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dtgv_danhsachhoadonbanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_danhsachhoadonbanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_danhsachhoadonbanhang.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dtgv_danhsachhoadonbanhang.Location = new System.Drawing.Point(53, 155);
             this.dtgv_danhsachhoadonbanhang.Name = "dtgv_danhsachhoadonbanhang";
             this.dtgv_danhsachhoadonbanhang.RowTemplate.Height = 25;
@@ -187,6 +188,7 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DS hóa đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -306,6 +308,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmDanhSachHoaDonBanHang";
             this.Text = "FrmDanhSachHoaDonBanHang";
+          
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhoadonbanhang)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

@@ -49,6 +49,16 @@ namespace _2_BUS_BusinessLayer.Service
             _sizeServices = new SizeServices();
 
             _dshdbh = new List<Danhsachhoadonbanhang>();
+            _kh = new List<KhachHang>();
+            _nv = new List<NhanVien>();
+            _hd = new List<HoaDon>();
+            _hdct = new List<HoaDonChiTiet>();
+            _ctsp = new List<ChiTietSanPham>();
+            _sp = new List<SanPham>();
+            _lcg = new List<LoaiCoGiay>();
+            _cl = new List<ChatLieu>();
+            _clr = new List<Color>();
+            _sz = new List<Size>();
 
             _kh = _chucnangkhachhang.Getlst();
             _nv = _chunangnv.Getlst();
@@ -69,6 +79,16 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Danhsachhoadonbanhang> loatdatachitiet()
         {
+            _kh = _chucnangkhachhang.Getlst();
+            _nv = _chunangnv.Getlst();
+            _hd = _chucnanghd.Getlst();
+            _hdct = _hoadonchitietServices.Getlst();
+            _ctsp = _chitietSanPhamServices.Getlst();
+            _sp = _sanphamServices.Getlst();
+            _lcg = _loaicogiayServices.Getlst();
+            _cl = _chatlieuServices.Getlst();
+            _clr = _colorServices.Getlst();
+            _sz = _sizeServices.Getlst();
 
             _dshdbh = (from a in _kh
                         join b in _hd on a.MaKh equals b.MaKH
@@ -105,6 +125,9 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Danhsachhoadonbanhang> loatdatahd()
         {
+            _kh = _chucnangkhachhang.Getlst();
+            _nv = _chunangnv.Getlst();
+            _hd = _chucnanghd.Getlst();
             _dshdbh = (from a in _kh
                 join b in _hd on a.MaKh equals b.MaKH
                 join c in _nv on b.MaNV equals c.MaNv

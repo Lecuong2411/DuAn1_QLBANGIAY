@@ -21,9 +21,10 @@ namespace _3_GUI_PresentationLayer
         public Frm_Vouchers()
         {
             InitializeComponent();
+
             _voucherService = new BUS_VoucherService();
+
         }
-       
         public void loatdata()
         {
           
@@ -65,49 +66,56 @@ namespace _3_GUI_PresentationLayer
             
             var index = e.RowIndex;
             if (index < 0 || _voucherService.ListvVouchers().Count == index) return;
-            if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString()=="Thêm")
+            try
             {
-                FrmThongtinVoucher a = new FrmThongtinVoucher();
-                a.Show();
-                a.FormClosing += new FormClosingEventHandler(Frm_Vouchers_Load);
+                if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Thêm")
+                {
+                    FrmThongtinVoucher a = new FrmThongtinVoucher();
+                    a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
+                    a.Show();
+                   
 
+                }
+                else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Sửa")
+                {
+
+                    FrmThongtinVoucher _a = new FrmThongtinVoucher(dtgv_vorcher.Rows[index].Cells[0].Value.ToString(), dtgv_vorcher.Rows[index].Cells[1].Value.ToString(), dtgv_vorcher.Rows[index].Cells[2].Value.ToString(), dtgv_vorcher.Rows[index].Cells[3].Value.ToString(), dtgv_vorcher.Rows[index].Cells[4].Value.ToString(), dtgv_vorcher.Rows[index].Cells[5].Value.ToString(), dtgv_vorcher.Rows[index].Cells[6].Value.ToString(), dtgv_vorcher.Rows[index].Cells[7].Value.ToString(), dtgv_vorcher.Rows[index].Cells[8].Value.ToString());
+                    _a.Show();
+
+                    _a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
+
+
+                }
+                else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Loat danh sách")
+                {
+                    loatdata();
+
+                }
+                else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Kết thúc voucher")
+                {
+                    Voucher a = new Voucher();
+                    a = _voucherService.ListvVouchers().Find(c => c.MaVouCher == dtgv_vorcher.Rows[index].Cells[0].Value.ToString());
+                    a.TrangThai = 0;
+                    MessageBox.Show(_voucherService.update(a), "Thông báo", MessageBoxButtons.OK);
+                    loatdata();
+
+                }
             }
-            else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Sửa")
+            catch (Exception exception)
             {
 
-                FrmThongtinVoucher _a = new FrmThongtinVoucher(dtgv_vorcher.Rows[index].Cells[0].Value.ToString(),dtgv_vorcher.Rows[index].Cells[1].Value.ToString(), dtgv_vorcher.Rows[index].Cells[2].Value.ToString(), dtgv_vorcher.Rows[index].Cells[3].Value.ToString(),dtgv_vorcher.Rows[index].Cells[4].Value.ToString(), dtgv_vorcher.Rows[index].Cells[5].Value.ToString(), dtgv_vorcher.Rows[index].Cells[6].Value.ToString(), dtgv_vorcher.Rows[index].Cells[7].Value.ToString(), dtgv_vorcher.Rows[index].Cells[8].Value.ToString());
-                _a.Show();
-                _a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
-                
-
-            }
-            else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Loat danh sách")
-            {
-              loatdata();
-
-            }
-            else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Kết thúc voucher")
-            {
-                Voucher a = new Voucher();
-                a = _voucherService.ListvVouchers().Find(c => c.MaVouCher == dtgv_vorcher.Rows[index].Cells[0].Value.ToString());
-                a.TrangThai = 0;
-                MessageBox.Show(_voucherService.update(a), "Thông báo", MessageBoxButtons.OK);
-                loatdata();
-
+                MessageBox.Show(exception.Message);
             }
         }
 
         private void Frm_Vouchers_Load(object sender, EventArgs e)
         {
             loatdata();
-            loatdata();
-            loatdata();
-            loatdata();
-            loatdata();
+           
                 
         }
 
-
+       
 
         //private int x = 12, y = 10, a = 1;
 

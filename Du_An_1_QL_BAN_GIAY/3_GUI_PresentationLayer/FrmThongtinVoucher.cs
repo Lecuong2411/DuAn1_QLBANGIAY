@@ -19,9 +19,11 @@ namespace _3_GUI_PresentationLayer
         private Voucher _voucher;
         public string _mavoucher;
        
+       
         public FrmThongtinVoucher()
         {
             InitializeComponent();
+           
             _voucher = new Voucher();
             _voucherService = new BUS_VoucherService();
             btn_fix.Visible = false;

@@ -12,8 +12,8 @@ namespace _2_BUS_BusinessLayer.Service
 {
     public class BUS_VoucherService:IBUS_VoucherService
     {
-        private IVouCherServices _vouCherServices;
-        private List<Voucher> _vouchers;
+        public IVouCherServices _vouCherServices;
+        public List<Voucher> _vouchers;
         public BUS_VoucherService()
         {
             _vouCherServices = new VouCherServices();
