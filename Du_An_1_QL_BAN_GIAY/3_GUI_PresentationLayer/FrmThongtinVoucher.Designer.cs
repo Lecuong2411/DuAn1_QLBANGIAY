@@ -29,7 +29,6 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_close = new System.Windows.Forms.Button();
             this.txt_namevoucher = new System.Windows.Forms.TextBox();
             this.dtp_nsd = new System.Windows.Forms.DateTimePicker();
             this.dtp_hsd = new System.Windows.Forms.DateTimePicker();
@@ -51,16 +50,6 @@ namespace _3_GUI_PresentationLayer
             this.btn_fix = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_menhgia)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_close
-            // 
-            this.btn_close.Location = new System.Drawing.Point(553, 305);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 23);
-            this.btn_close.TabIndex = 1;
-            this.btn_close.Text = "Đóng";
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // txt_namevoucher
             // 
@@ -215,28 +204,33 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(553, 276);
+            this.btn_add.BackColor = System.Drawing.Color.White;
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_add.Image = global::_3_GUI_PresentationLayer.Properties.Resources.icons8_plus___30;
+            this.btn_add.Location = new System.Drawing.Point(545, 291);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.Size = new System.Drawing.Size(54, 37);
             this.btn_add.TabIndex = 19;
-            this.btn_add.Text = "Thêm";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_fix
             // 
-            this.btn_fix.Location = new System.Drawing.Point(461, 305);
+            this.btn_fix.BackColor = System.Drawing.Color.White;
+            this.btn_fix.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_fix.Image = global::_3_GUI_PresentationLayer.Properties.Resources.technical_wrench;
+            this.btn_fix.Location = new System.Drawing.Point(481, 291);
             this.btn_fix.Name = "btn_fix";
-            this.btn_fix.Size = new System.Drawing.Size(75, 23);
+            this.btn_fix.Size = new System.Drawing.Size(55, 37);
             this.btn_fix.TabIndex = 20;
-            this.btn_fix.Text = "Sửa";
-            this.btn_fix.UseVisualStyleBackColor = true;
+            this.btn_fix.UseVisualStyleBackColor = false;
             this.btn_fix.Click += new System.EventHandler(this.btn_fix_Click);
             // 
             // FrmThongtinVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(691, 350);
             this.Controls.Add(this.btn_fix);
             this.Controls.Add(this.btn_add);
@@ -257,7 +251,6 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.dtp_hsd);
             this.Controls.Add(this.dtp_nsd);
             this.Controls.Add(this.txt_namevoucher);
-            this.Controls.Add(this.btn_close);
             this.Name = "FrmThongtinVoucher";
             this.Text = "FrmThongtinVoucher";
             this.Load += new System.EventHandler(this.FrmThongtinVoucher_Load);
@@ -268,7 +261,6 @@ namespace _3_GUI_PresentationLayer
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.TextBox txt_namevoucher;
         private System.Windows.Forms.DateTimePicker dtp_nsd;
         private System.Windows.Forms.DateTimePicker dtp_hsd;

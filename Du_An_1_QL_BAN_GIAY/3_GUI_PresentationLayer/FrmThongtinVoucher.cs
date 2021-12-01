@@ -61,10 +61,6 @@ namespace _3_GUI_PresentationLayer
 
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {

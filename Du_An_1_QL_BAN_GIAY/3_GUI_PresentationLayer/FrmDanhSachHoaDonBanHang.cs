@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _2_BUS_BusinessLayer;
+using _2_BUS_BusinessLayer.IService;
 using _2_BUS_BusinessLayer.Models;
 using _2_BUS_BusinessLayer.Service;
 using Excel=Microsoft.Office.Interop.Excel;
@@ -17,6 +18,7 @@ namespace _3_GUI_PresentationLayer
     public partial class FrmDanhSachHoaDonBanHang : Form
     {
         private IBUS_DanhSachHoaDonBanHang _ChucnangdanhSachHoaDonBanHang;
+        
 
         public FrmDanhSachHoaDonBanHang()
         {
@@ -32,7 +34,10 @@ namespace _3_GUI_PresentationLayer
             cbb_timkiem.Items.Add("Người lập phiếu");
            loatdata(_ChucnangdanhSachHoaDonBanHang.loatdatahd());
             loatdatahdct(_ChucnangdanhSachHoaDonBanHang.loatdatachitiet());
+            
         }
+
+       
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -163,7 +168,7 @@ namespace _3_GUI_PresentationLayer
             });
 
         }
-        public  void loatdata(List<Danhsachhoadonbanhang>danhsachhoadonbanhangs)
+        public void loatdata(List<Danhsachhoadonbanhang> danhsachhoadonbanhangs)
         {
             dtgv_danhsachhoadonbanhang.ColumnCount = 6;
             dtgv_danhsachhoadonbanhang.Columns[0].Name = "ID Hóa đơn";
@@ -171,16 +176,17 @@ namespace _3_GUI_PresentationLayer
             dtgv_danhsachhoadonbanhang.Columns[2].Name = "Tổng tiền";
             dtgv_danhsachhoadonbanhang.Columns[3].Name = "Người lập phiếu";
             dtgv_danhsachhoadonbanhang.Columns[4].Name = "Tiền nhận";
-            dtgv_danhsachhoadonbanhang.Columns[5].Name = "Ngày tạo"; 
-            
+            dtgv_danhsachhoadonbanhang.Columns[5].Name = "Ngày tạo";
+
             dtgv_danhsachhoadonbanhang.Rows.Clear();
             danhsachhoadonbanhangs.ForEach(x =>
                 {
                     dtgv_danhsachhoadonbanhang.Rows.Add(x.hoadon.MaHd, x.KhachHang.Sdt, x.hoadon.Tongtien,
-                        x.NhanVien.MaNv,x.hoadon.TienNhan,x.hoadon.thoigian);
+                        x.NhanVien.MaNv, x.hoadon.TienNhan, x.hoadon.thoigian);
                 }
                 );
         }
+
         public void loatdatatk(string sdt)
         {
             dtgv_danhsachhoadonbanhang.ColumnCount = 6 ;

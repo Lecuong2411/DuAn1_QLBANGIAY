@@ -74,7 +74,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(53, 50);
+            this.label1.Location = new System.Drawing.Point(53, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace _3_GUI_PresentationLayer
             // txt_maphieunhap
             // 
             this.txt_maphieunhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_maphieunhap.Location = new System.Drawing.Point(168, 47);
+            this.txt_maphieunhap.Location = new System.Drawing.Point(168, 64);
             this.txt_maphieunhap.Name = "txt_maphieunhap";
             this.txt_maphieunhap.PlaceholderText = "nhập số điện thoại";
             this.txt_maphieunhap.Size = new System.Drawing.Size(191, 23);
@@ -94,7 +94,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(388, 50);
+            this.label2.Location = new System.Drawing.Point(388, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 3;
@@ -104,7 +104,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dtp_ngaythang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtp_ngaythang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ngaythang.Location = new System.Drawing.Point(506, 47);
+            this.dtp_ngaythang.Location = new System.Drawing.Point(506, 64);
             this.dtp_ngaythang.Name = "dtp_ngaythang";
             this.dtp_ngaythang.Size = new System.Drawing.Size(112, 23);
             this.dtp_ngaythang.TabIndex = 4;
@@ -112,24 +112,29 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_timkiem
             // 
+            this.btn_timkiem.BackColor = System.Drawing.Color.White;
             this.btn_timkiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_timkiem.Location = new System.Drawing.Point(624, 41);
+            this.btn_timkiem.Image = global::_3_GUI_PresentationLayer.Properties.Resources.zoom;
+            this.btn_timkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_timkiem.Location = new System.Drawing.Point(624, 58);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(117, 36);
+            this.btn_timkiem.Size = new System.Drawing.Size(43, 36);
             this.btn_timkiem.TabIndex = 5;
-            this.btn_timkiem.Text = "Tìm kiếm";
-            this.btn_timkiem.UseVisualStyleBackColor = true;
+            this.btn_timkiem.UseVisualStyleBackColor = false;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
             // btn_danhsach
             // 
+            this.btn_danhsach.BackColor = System.Drawing.Color.White;
             this.btn_danhsach.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_danhsach.Location = new System.Drawing.Point(820, 38);
+            this.btn_danhsach.Image = global::_3_GUI_PresentationLayer.Properties.Resources.clipboard;
+            this.btn_danhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_danhsach.Location = new System.Drawing.Point(803, 55);
             this.btn_danhsach.Name = "btn_danhsach";
-            this.btn_danhsach.Size = new System.Drawing.Size(112, 39);
+            this.btn_danhsach.Size = new System.Drawing.Size(129, 39);
             this.btn_danhsach.TabIndex = 6;
             this.btn_danhsach.Text = "Danh Sách";
-            this.btn_danhsach.UseVisualStyleBackColor = true;
+            this.btn_danhsach.UseVisualStyleBackColor = false;
             this.btn_danhsach.Click += new System.EventHandler(this.btn_danhsach_Click);
             // 
             // label4
@@ -150,13 +155,14 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_xuatexcel
             // 
+            this.btn_xuatexcel.BackColor = System.Drawing.Color.White;
             this.btn_xuatexcel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_xuatexcel.Image = global::_3_GUI_PresentationLayer.Properties.Resources.Excel_icon;
-            this.btn_xuatexcel.Location = new System.Drawing.Point(858, 92);
+            this.btn_xuatexcel.Location = new System.Drawing.Point(844, 100);
             this.btn_xuatexcel.Name = "btn_xuatexcel";
             this.btn_xuatexcel.Size = new System.Drawing.Size(46, 39);
             this.btn_xuatexcel.TabIndex = 9;
-            this.btn_xuatexcel.UseVisualStyleBackColor = true;
+            this.btn_xuatexcel.UseVisualStyleBackColor = false;
             this.btn_xuatexcel.Click += new System.EventHandler(this.btn_xuatexcel_Click);
             // 
             // tabControl1
@@ -172,6 +178,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPage1.Controls.Add(this.btn_danhsach);
             this.tabPage1.Controls.Add(this.dtgv_danhsachhoadonbanhang);
             this.tabPage1.Controls.Add(this.label4);
@@ -187,11 +194,11 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.Size = new System.Drawing.Size(973, 503);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DS hóa đơn";
-            this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPage2.Controls.Add(this.cbb_timkiem);
             this.tabPage2.Controls.Add(this.btn_dsct);
             this.tabPage2.Controls.Add(this.dtgv_dshdct);
@@ -207,7 +214,6 @@ namespace _3_GUI_PresentationLayer
             this.tabPage2.Size = new System.Drawing.Size(973, 503);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DS hóa đơn chi tiết";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // cbb_timkiem
             // 
@@ -219,13 +225,16 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_dsct
             // 
+            this.btn_dsct.BackColor = System.Drawing.Color.White;
             this.btn_dsct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_dsct.Location = new System.Drawing.Point(832, 31);
+            this.btn_dsct.Image = global::_3_GUI_PresentationLayer.Properties.Resources.clipboard;
+            this.btn_dsct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dsct.Location = new System.Drawing.Point(792, 38);
             this.btn_dsct.Name = "btn_dsct";
-            this.btn_dsct.Size = new System.Drawing.Size(91, 42);
+            this.btn_dsct.Size = new System.Drawing.Size(128, 41);
             this.btn_dsct.TabIndex = 16;
             this.btn_dsct.Text = "Danh Sách";
-            this.btn_dsct.UseVisualStyleBackColor = true;
+            this.btn_dsct.UseVisualStyleBackColor = false;
             this.btn_dsct.Click += new System.EventHandler(this.btn_dsct_Click);
             // 
             // dtgv_dshdct
@@ -251,13 +260,14 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_xuatExcelct
             // 
+            this.btn_xuatExcelct.BackColor = System.Drawing.Color.White;
             this.btn_xuatExcelct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_xuatExcelct.Image = global::_3_GUI_PresentationLayer.Properties.Resources.Excel_icon;
-            this.btn_xuatExcelct.Location = new System.Drawing.Point(849, 84);
+            this.btn_xuatExcelct.Location = new System.Drawing.Point(834, 85);
             this.btn_xuatExcelct.Name = "btn_xuatExcelct";
             this.btn_xuatExcelct.Size = new System.Drawing.Size(47, 41);
             this.btn_xuatExcelct.TabIndex = 18;
-            this.btn_xuatExcelct.UseVisualStyleBackColor = true;
+            this.btn_xuatExcelct.UseVisualStyleBackColor = false;
             this.btn_xuatExcelct.Click += new System.EventHandler(this.btn_xuatExcelct_Click);
             // 
             // txt_timkiemct
@@ -272,6 +282,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // dtp_ct
             // 
+            this.dtp_ct.CalendarTitleBackColor = System.Drawing.Color.White;
             this.dtp_ct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtp_ct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_ct.Location = new System.Drawing.Point(478, 50);
@@ -291,13 +302,15 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_hdct
             // 
+            this.btn_hdct.BackColor = System.Drawing.Color.White;
             this.btn_hdct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_hdct.Location = new System.Drawing.Point(610, 37);
+            this.btn_hdct.Image = global::_3_GUI_PresentationLayer.Properties.Resources.zoom;
+            this.btn_hdct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_hdct.Location = new System.Drawing.Point(591, 42);
             this.btn_hdct.Name = "btn_hdct";
-            this.btn_hdct.Size = new System.Drawing.Size(133, 42);
+            this.btn_hdct.Size = new System.Drawing.Size(46, 37);
             this.btn_hdct.TabIndex = 15;
-            this.btn_hdct.Text = "Tìm kiếm";
-            this.btn_hdct.UseVisualStyleBackColor = true;
+            this.btn_hdct.UseVisualStyleBackColor = false;
             this.btn_hdct.Click += new System.EventHandler(this.btn_hdct_Click);
             // 
             // FrmDanhSachHoaDonBanHang
@@ -308,7 +321,6 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmDanhSachHoaDonBanHang";
             this.Text = "FrmDanhSachHoaDonBanHang";
-          
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhoadonbanhang)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

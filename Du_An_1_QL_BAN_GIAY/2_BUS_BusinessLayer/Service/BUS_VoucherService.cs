@@ -40,6 +40,9 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Voucher> ListvVouchers()
         {
+            _vouCherServices = new VouCherServices();
+            _vouchers = _vouCherServices.Getlst();
+
             return _vouchers;
         }
     }
