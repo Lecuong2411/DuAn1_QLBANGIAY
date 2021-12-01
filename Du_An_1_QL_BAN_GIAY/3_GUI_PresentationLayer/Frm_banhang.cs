@@ -421,5 +421,7 @@ namespace _3_GUI_PresentationLayer
         {
             loadSpbanhang(tbx_timkiem.Text);
         }
+
+    
     }
 }

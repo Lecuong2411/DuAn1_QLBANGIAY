@@ -358,6 +358,11 @@ namespace _2_BUS_BusinessLayer.Service
 
         
         }
+
+        public List<QLSanPham> GetSPAllLoad()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

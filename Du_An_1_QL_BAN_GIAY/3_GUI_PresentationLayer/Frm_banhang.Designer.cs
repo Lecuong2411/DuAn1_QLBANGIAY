@@ -83,7 +83,6 @@ namespace _3_GUI_PresentationLayer
             this.tbx_timkiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).BeginInit();
@@ -103,7 +102,7 @@ namespace _3_GUI_PresentationLayer
             this.pnl_newhoadon.Location = new System.Drawing.Point(0, 0);
             this.pnl_newhoadon.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pnl_newhoadon.Name = "pnl_newhoadon";
-            this.pnl_newhoadon.Size = new System.Drawing.Size(111, 1410);
+            this.pnl_newhoadon.Size = new System.Drawing.Size(111, 1383);
             this.pnl_newhoadon.TabIndex = 0;
             // 
             // btn_themhoadon
@@ -170,7 +169,7 @@ namespace _3_GUI_PresentationLayer
             this.ptbox_barcode.Location = new System.Drawing.Point(290, 0);
             this.ptbox_barcode.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ptbox_barcode.Name = "ptbox_barcode";
-            this.ptbox_barcode.Size = new System.Drawing.Size(1276, 196);
+            this.ptbox_barcode.Size = new System.Drawing.Size(894, 196);
             this.ptbox_barcode.TabIndex = 2;
             this.ptbox_barcode.TabStop = false;
             // 
@@ -187,7 +186,7 @@ namespace _3_GUI_PresentationLayer
             this.dtgview_thongtinsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgview_thongtinsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgview_thongtinsp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgview_thongtinsp.Location = new System.Drawing.Point(0, 160);
+            this.dtgview_thongtinsp.Location = new System.Drawing.Point(0, 323);
             this.dtgview_thongtinsp.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dtgview_thongtinsp.Name = "dtgview_thongtinsp";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -201,7 +200,7 @@ namespace _3_GUI_PresentationLayer
             this.dtgview_thongtinsp.RowHeadersWidth = 82;
             this.dtgview_thongtinsp.RowTemplate.Height = 41;
             this.dtgview_thongtinsp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgview_thongtinsp.Size = new System.Drawing.Size(1243, 446);
+            this.dtgview_thongtinsp.Size = new System.Drawing.Size(1196, 286);
             this.dtgview_thongtinsp.TabIndex = 0;
             this.dtgview_thongtinsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgview_thongtinsp_CellClick);
             // 
@@ -224,7 +223,7 @@ namespace _3_GUI_PresentationLayer
             this.dtgview_hoadon.RowHeadersWidth = 82;
             this.dtgview_hoadon.RowTemplate.Height = 41;
             this.dtgview_hoadon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgview_hoadon.Size = new System.Drawing.Size(1243, 508);
+            this.dtgview_hoadon.Size = new System.Drawing.Size(1196, 508);
             this.dtgview_hoadon.TabIndex = 1;
             this.dtgview_hoadon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgview_hoadon_CellContentClick);
             this.dtgview_hoadon.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgview_hoadon_CellValueChanged);
@@ -234,10 +233,10 @@ namespace _3_GUI_PresentationLayer
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1354, 0);
+            this.panel2.Location = new System.Drawing.Point(1307, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(505, 1410);
+            this.panel2.Size = new System.Drawing.Size(497, 1383);
             this.panel2.TabIndex = 24;
             // 
             // tabControl1
@@ -250,7 +249,7 @@ namespace _3_GUI_PresentationLayer
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(505, 1346);
+            this.tabControl1.Size = new System.Drawing.Size(497, 1319);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -285,14 +284,14 @@ namespace _3_GUI_PresentationLayer
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tabPage1.Size = new System.Drawing.Size(489, 1301);
+            this.tabPage1.Size = new System.Drawing.Size(481, 1274);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thanh toán tại cửa hàng";
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(176, 796);
+            this.panel10.Location = new System.Drawing.Point(176, 725);
             this.panel10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(293, 2);
@@ -344,7 +343,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(188, 958);
+            this.label10.Location = new System.Drawing.Point(188, 887);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 41);
@@ -354,7 +353,7 @@ namespace _3_GUI_PresentationLayer
             // tbx_khachtra
             // 
             this.tbx_khachtra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbx_khachtra.Location = new System.Drawing.Point(176, 758);
+            this.tbx_khachtra.Location = new System.Drawing.Point(176, 687);
             this.tbx_khachtra.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbx_khachtra.Name = "tbx_khachtra";
             this.tbx_khachtra.Size = new System.Drawing.Size(292, 34);
@@ -365,7 +364,7 @@ namespace _3_GUI_PresentationLayer
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 760);
+            this.label7.Location = new System.Drawing.Point(25, 689);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 34);
@@ -375,7 +374,7 @@ namespace _3_GUI_PresentationLayer
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(121, 1067);
+            this.panel8.Location = new System.Drawing.Point(121, 996);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(293, 2);
@@ -384,7 +383,7 @@ namespace _3_GUI_PresentationLayer
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(178, 790);
+            this.panel7.Location = new System.Drawing.Point(178, 719);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(293, 2);
@@ -393,7 +392,7 @@ namespace _3_GUI_PresentationLayer
             // tbx_ghichu
             // 
             this.tbx_ghichu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbx_ghichu.Location = new System.Drawing.Point(119, 1035);
+            this.tbx_ghichu.Location = new System.Drawing.Point(119, 964);
             this.tbx_ghichu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbx_ghichu.Name = "tbx_ghichu";
             this.tbx_ghichu.Size = new System.Drawing.Size(292, 34);
@@ -402,7 +401,7 @@ namespace _3_GUI_PresentationLayer
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(175, 877);
+            this.panel6.Location = new System.Drawing.Point(175, 806);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(293, 2);
@@ -413,7 +412,7 @@ namespace _3_GUI_PresentationLayer
             this.tbx_tienthua.BackColor = System.Drawing.Color.White;
             this.tbx_tienthua.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbx_tienthua.Enabled = false;
-            this.tbx_tienthua.Location = new System.Drawing.Point(175, 845);
+            this.tbx_tienthua.Location = new System.Drawing.Point(175, 774);
             this.tbx_tienthua.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbx_tienthua.Name = "tbx_tienthua";
             this.tbx_tienthua.Size = new System.Drawing.Size(292, 34);
@@ -464,7 +463,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(163, 649);
+            this.label8.Location = new System.Drawing.Point(163, 578);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(203, 41);
@@ -476,7 +475,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_thanhtoan.AutoSize = true;
             this.btn_thanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_thanhtoan.ForeColor = System.Drawing.Color.White;
-            this.btn_thanhtoan.Location = new System.Drawing.Point(163, 1175);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(145, 1011);
             this.btn_thanhtoan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btn_thanhtoan.Name = "btn_thanhtoan";
             this.btn_thanhtoan.Size = new System.Drawing.Size(323, 94);
@@ -490,7 +489,7 @@ namespace _3_GUI_PresentationLayer
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(19, 1175);
+            this.button1.Location = new System.Drawing.Point(1, 1011);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 94);
@@ -514,7 +513,7 @@ namespace _3_GUI_PresentationLayer
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 845);
+            this.label6.Location = new System.Drawing.Point(22, 774);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(126, 34);
@@ -548,7 +547,7 @@ namespace _3_GUI_PresentationLayer
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tabPage2.Size = new System.Drawing.Size(489, 1301);
+            this.tabPage2.Size = new System.Drawing.Size(481, 1274);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thanh toán online";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -563,7 +562,7 @@ namespace _3_GUI_PresentationLayer
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 64);
+            this.label2.Size = new System.Drawing.Size(497, 64);
             this.label2.TabIndex = 0;
             this.label2.Text = "Thanh toán";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -587,7 +586,7 @@ namespace _3_GUI_PresentationLayer
             this.panel3.Location = new System.Drawing.Point(111, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1243, 770);
+            this.panel3.Size = new System.Drawing.Size(1196, 770);
             this.panel3.TabIndex = 25;
             // 
             // label12
@@ -662,19 +661,18 @@ namespace _3_GUI_PresentationLayer
             this.panel4.Controls.Add(this.tbx_timkiem);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.panel1);
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.dtgview_thongtinsp);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(111, 804);
+            this.panel4.Location = new System.Drawing.Point(111, 774);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1243, 606);
+            this.panel4.Size = new System.Drawing.Size(1196, 609);
             this.panel4.TabIndex = 26;
             // 
             // tbx_timkiem
             // 
             this.tbx_timkiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbx_timkiem.Location = new System.Drawing.Point(198, 110);
+            this.tbx_timkiem.Location = new System.Drawing.Point(123, 214);
             this.tbx_timkiem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbx_timkiem.Name = "tbx_timkiem";
             this.tbx_timkiem.Size = new System.Drawing.Size(292, 32);
@@ -684,7 +682,7 @@ namespace _3_GUI_PresentationLayer
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(96, 110);
+            this.label9.Location = new System.Drawing.Point(21, 214);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 32);
@@ -694,25 +692,11 @@ namespace _3_GUI_PresentationLayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(198, 146);
+            this.panel1.Location = new System.Drawing.Point(123, 250);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 2);
             this.panel1.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1243, 75);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sản phẩm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // printDocument1
             // 
@@ -732,7 +716,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1859, 1410);
+            this.ClientSize = new System.Drawing.Size(1804, 1383);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -744,6 +728,7 @@ namespace _3_GUI_PresentationLayer
             this.Name = "Frm_banhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_banhang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_banhang_FormClosed);
             this.Load += new System.EventHandler(this.Frm_banhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbox_barcode)).EndInit();
@@ -778,7 +763,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbx_camera;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
