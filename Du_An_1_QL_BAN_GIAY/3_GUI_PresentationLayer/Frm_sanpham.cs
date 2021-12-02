@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL_DataAccessLayer.Models;
@@ -50,6 +51,9 @@ namespace _3_GUI_PresentationLayer
 
         void load()
         {
+         
+            dgrid.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dgrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
             dgrid.ColumnCount = 9;
             dgrid.Columns[0].Name = "Tên sản phẩm";
             dgrid.Columns[1].Name = "Thương hiệu";
@@ -272,9 +276,9 @@ namespace _3_GUI_PresentationLayer
         {
             if (_videoCaptureDevice != null)
             {
-
-                _videoCaptureDevice.Stop();
-
+                _videoCaptureDevice.SignalToStop();
+                Thread.Sleep(1000);
+              
             }
         }
 
@@ -401,19 +405,18 @@ namespace _3_GUI_PresentationLayer
         private void cbo_chatLieu_TextChanged(object sender, EventArgs e)
         {
             dgrid.Rows.Clear();
-            if (cbo_chatLieu.Text != "Tất cả")
+            if (cbo_chatLieu.Text == "Tất cả")
             {
-                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ChatLieu.ChatLieuSP==cbo_chatLieu.Text))
+                foreach (var x in _iQlSanPhamService.GetSPAll())
                 {
                     dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
                         x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
                 }
-
             }
             else
             {
-                foreach (var x in _iQlSanPhamService.GetSPAll())
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChatLieu.ChatLieuSP == cbo_chatLieu.Text))
                 {
                     dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
@@ -432,7 +435,7 @@ namespace _3_GUI_PresentationLayer
         private void cbo_dkm_TextChanged(object sender, EventArgs e)
         {
             dgrid.Rows.Clear();
-            if (cbo_dkm.Text != "Tất cả")
+            if (cbo_dkm.Text == "Tất cả")
             {
                 foreach (var x in _iQlSanPhamService.GetSPAll())
                 {
@@ -442,7 +445,7 @@ namespace _3_GUI_PresentationLayer
                 }
 
             }
-            else if (cbo_dkm.Text != "Đang sale")
+            else if (cbo_dkm.Text == "Đang sale")
             {
                 foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ProductBack.TrangThai==3))
                 {
@@ -451,7 +454,7 @@ namespace _3_GUI_PresentationLayer
                         x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
                 }
             }
-            else if (cbo_dkm.Text != "Không sale")
+            else if (cbo_dkm.Text == "Không sale")
             {
                 foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ProductBack.TrangThai == 0 || c.ProductBack.TrangThai == 1))
                 {
@@ -476,7 +479,66 @@ namespace _3_GUI_PresentationLayer
 
         private void cbo_giaBan_TextChanged(object sender, EventArgs e)
         {
+            dgrid.Rows.Clear();
+            if (cbo_giaBan.Text == "Tất cả")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll())
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+
+            }
+            else if (cbo_giaBan.Text == "Từ 0-500k")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ChiTietSanPham.giaban>0 && c.ChiTietSanPham.giaban <=500000))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else if (cbo_giaBan.Text == "500k-1tr")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.giaban > 500000 && c.ChiTietSanPham.giaban <= 1000000))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else if (cbo_giaBan.Text == "Từ 1tr-2tr")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.giaban > 1000000 && c.ChiTietSanPham.giaban <= 2000000))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else if (cbo_giaBan.Text == "Từ 2tr-5tr")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.giaban > 2000000 && c.ChiTietSanPham.giaban <= 5000000))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else if (cbo_giaBan.Text == "Trên 5tr")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.giaban > 5000000))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+
 
         }
+
+      
     }
 }

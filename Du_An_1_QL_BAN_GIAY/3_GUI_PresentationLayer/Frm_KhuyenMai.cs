@@ -27,6 +27,8 @@ namespace _3_GUI_PresentationLayer
             load();
             loadDanhMuc();
             rdo_hd.Checked = true;
+            dgv.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
         }
 
 
@@ -89,7 +91,7 @@ namespace _3_GUI_PresentationLayer
             {
                 temb = new List<string>();
                 Button btn = new Button() { Name = "btn" + x.TenDanhMuc, Text = x.TenDanhMuc };
-                btn.Size = new System.Drawing.Size(100, 25);
+                btn.Size = new System.Drawing.Size(88, 37);
                 if (a >= tabPage1.Size.Width)
                 {
                     a = 30;
@@ -99,11 +101,14 @@ namespace _3_GUI_PresentationLayer
                 temb.Add("1");
                 btn.Location = new Point(a, b);
                 a = a + 120;
+                btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
                 btn.BackColor = Color.WhiteSmoke;
                 btn.Click += Btn_Click;
+                btn.UseVisualStyleBackColor = false;
                 tabPage1.Controls.Add(btn);
 
                 _temb.Add(temb);
+
             }
         }
 

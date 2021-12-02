@@ -46,10 +46,12 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_thoat
             // 
-            this.btn_thoat.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_thoat.Location = new System.Drawing.Point(38, 202);
+            this.btn_thoat.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_thoat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_thoat.ForeColor = System.Drawing.Color.White;
+            this.btn_thoat.Location = new System.Drawing.Point(29, 202);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(75, 23);
+            this.btn_thoat.Size = new System.Drawing.Size(91, 35);
             this.btn_thoat.TabIndex = 1;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = false;
@@ -57,18 +59,22 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(185, 202);
+            this.btn_save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(168, 202);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.Size = new System.Drawing.Size(95, 35);
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Lưu";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // Frm_BarCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(292, 249);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_thoat);

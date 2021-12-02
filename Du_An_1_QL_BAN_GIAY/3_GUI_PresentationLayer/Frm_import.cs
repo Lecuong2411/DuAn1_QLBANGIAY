@@ -23,6 +23,8 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _iQlSanPhamService = new QlSanPhamService();
+            dgv.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
         }
 
         private void btn_importExcel_Click(object sender, EventArgs e)

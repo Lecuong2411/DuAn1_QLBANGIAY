@@ -392,6 +392,7 @@ namespace _2_BUS_BusinessLayer.Service
                 {
                     var dt = _iChitietSanPhamServices.Getlst().Where(c => c.MaCTSP == x.ChiTietSanPham.MaCTSP).FirstOrDefault();
                     x.ChiTietSanPham.giaban = (dt.giaban * (100 - x.KhuyenMai.GiamGia)) / 100;
+                    x.ProductBack.TrangThai = 3;
                 }
             }
             return _lstQlSanPhams;

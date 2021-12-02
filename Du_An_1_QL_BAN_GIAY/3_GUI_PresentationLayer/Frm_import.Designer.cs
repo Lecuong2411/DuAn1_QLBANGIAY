@@ -66,12 +66,12 @@ namespace _3_GUI_PresentationLayer
             this.Column11,
             this.Column12,
             this.Column13});
-            this.dgv.Location = new System.Drawing.Point(12, 59);
+            this.dgv.Location = new System.Drawing.Point(31, 85);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 25;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(775, 379);
+            this.dgv.Size = new System.Drawing.Size(909, 423);
             this.dgv.TabIndex = 0;
             // 
             // Column1
@@ -161,32 +161,37 @@ namespace _3_GUI_PresentationLayer
             // btn_importExcel
             // 
             this.btn_importExcel.AutoEllipsis = true;
-            this.btn_importExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_importExcel.Location = new System.Drawing.Point(12, 12);
+            this.btn_importExcel.BackColor = System.Drawing.Color.Blue;
+            this.btn_importExcel.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_importExcel.ForeColor = System.Drawing.Color.White;
+            this.btn_importExcel.Location = new System.Drawing.Point(62, 12);
             this.btn_importExcel.Name = "btn_importExcel";
-            this.btn_importExcel.Size = new System.Drawing.Size(109, 28);
+            this.btn_importExcel.Size = new System.Drawing.Size(114, 40);
             this.btn_importExcel.TabIndex = 1;
             this.btn_importExcel.Text = "Import Excel";
-            this.btn_importExcel.UseVisualStyleBackColor = true;
+            this.btn_importExcel.UseVisualStyleBackColor = false;
             this.btn_importExcel.Click += new System.EventHandler(this.btn_importExcel_Click);
             // 
             // btn_save
             // 
             this.btn_save.AutoEllipsis = true;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(144, 12);
+            this.btn_save.BackColor = System.Drawing.Color.Blue;
+            this.btn_save.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(194, 12);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(109, 28);
+            this.btn_save.Size = new System.Drawing.Size(120, 40);
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // Frm_import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ClientSize = new System.Drawing.Size(986, 572);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_importExcel);
             this.Controls.Add(this.dgv);
