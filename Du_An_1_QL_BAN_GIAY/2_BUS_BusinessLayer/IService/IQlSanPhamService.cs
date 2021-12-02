@@ -85,7 +85,7 @@ namespace _2_BUS_BusinessLayer.IService
         public List<ChatLieu> GetLstChatLieu();
         #endregion
 
-        public List<QLSanPham> GetSPAll();
+        public List<QLSanPham> GetSPAll();// list để km
         public List<QLSanPham> GetSPAllLoad();
         //public List<ChiTietSanPham> _LsTietSanPhams();
     }

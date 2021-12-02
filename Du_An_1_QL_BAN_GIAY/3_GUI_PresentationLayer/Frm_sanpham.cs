@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,10 @@ namespace _3_GUI_PresentationLayer
             loaddanhMuc();
             trangThai();
             loadChatLieu();
+            loadanhMucSP();
+            loadChatLieuSP();
+            Km();
+            giaBan();
         }
 
         private FilterInfoCollection _filterInfoCollection;
@@ -71,14 +76,32 @@ namespace _3_GUI_PresentationLayer
         {
             foreach (var x in _iQlSanPhamService.GetLstChatLieu())
             {
-
                 txt_chatLieu.Items.Add(x.ChatLieuSP);
-
-                txt_chatLieu.Items.Add(x.ChatLieuSP);
-
             }
 
             txt_chatLieu.SelectedIndex = 0;
+        }
+        void loadChatLieuSP()
+        {
+            cbo_chatLieu.Items.Add("Tất cả");
+            foreach (var x in _iQlSanPhamService.GetLstChatLieu())
+            {
+
+               cbo_chatLieu.Items.Add(x.ChatLieuSP);
+
+            }
+
+            cbo_chatLieu.SelectedIndex = 0;
+        }
+        void loadanhMucSP()
+        {
+            cbo_loadDanhMuc.Items.Add("Tất cả");
+            foreach (var x in _iQlSanPhamService.GetLstDanhMuc())
+            {
+               cbo_loadDanhMuc.Items.Add(x.TenDanhMuc);
+            }
+
+            cbo_loadDanhMuc.SelectedIndex = 0;
         }
         void loaddanhMuc()
         {
@@ -349,6 +372,111 @@ namespace _3_GUI_PresentationLayer
         {
             Frm_import frmImport = new Frm_import();
             frmImport.Show();
+        }
+
+        private void cbo_loadDanhMuc_TextChanged(object sender, EventArgs e)
+        {
+            dgrid.Rows.Clear();
+            if (cbo_loadDanhMuc.Text != "Tất cả")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.DanhMuc.TenDanhMuc == cbo_loadDanhMuc.Text))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+
+            }
+            else
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll())
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+        }
+
+        private void cbo_chatLieu_TextChanged(object sender, EventArgs e)
+        {
+            dgrid.Rows.Clear();
+            if (cbo_chatLieu.Text != "Tất cả")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ChatLieu.ChatLieuSP==cbo_chatLieu.Text))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+
+            }
+            else
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll())
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+        }
+
+        void Km()
+        {
+            cbo_dkm.Items.Add("Tất cả");
+            cbo_dkm.Items.Add("Đang sale");
+            cbo_dkm.Items.Add("Không sale");
+            cbo_dkm.SelectedIndex = 0;
+        }
+        private void cbo_dkm_TextChanged(object sender, EventArgs e)
+        {
+            dgrid.Rows.Clear();
+            if (cbo_dkm.Text != "Tất cả")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll())
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+
+            }
+            else if (cbo_dkm.Text != "Đang sale")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ProductBack.TrangThai==3))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else if (cbo_dkm.Text != "Không sale")
+            {
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ProductBack.TrangThai == 0 || c.ProductBack.TrangThai == 1))
+                {
+                    dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+
+                        x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+        }
+
+        void giaBan()
+        {
+            cbo_giaBan.Items.Add("Tất cả");
+            cbo_giaBan.Items.Add("Từ 0-500k");
+            cbo_giaBan.Items.Add("Từ 500k-1tr");
+            cbo_giaBan.Items.Add("Từ 1tr-2tr");
+            cbo_giaBan.Items.Add("Từ 2tr-5tr");
+            cbo_giaBan.Items.Add("Trên 5tr");
+            cbo_giaBan.SelectedIndex = 0;
+
+        }
+
+        private void cbo_giaBan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

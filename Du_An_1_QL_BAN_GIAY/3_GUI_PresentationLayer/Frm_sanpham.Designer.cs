@@ -38,12 +38,20 @@ namespace _3_GUI_PresentationLayer
             this.cbx_size = new System.Windows.Forms.ComboBox();
             this.txt_soluong = new System.Windows.Forms.TextBox();
             this.txt_giaban = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgrid = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.ChiTietSanPham1 = new System.Windows.Forms.TabControl();
             this.tabSanpham = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripTextBox8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbo_loadDanhMuc = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbo_dkm = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbo_giaBan = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbo_chatLieu = new System.Windows.Forms.ToolStripComboBox();
             this.tabCTSP = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -83,6 +91,8 @@ namespace _3_GUI_PresentationLayer
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.ChiTietSanPham1.SuspendLayout();
             this.tabSanpham.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.tabCTSP.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_webcam)).BeginInit();
@@ -156,23 +166,14 @@ namespace _3_GUI_PresentationLayer
             this.txt_giaban.Size = new System.Drawing.Size(159, 23);
             this.txt_giaban.TabIndex = 15;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(735, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 2;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgrid);
-            this.groupBox1.Location = new System.Drawing.Point(2, 56);
+            this.groupBox1.Location = new System.Drawing.Point(6, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(913, 471);
+            this.groupBox1.Size = new System.Drawing.Size(804, 534);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // dgrid
             // 
@@ -183,17 +184,9 @@ namespace _3_GUI_PresentationLayer
             this.dgrid.Name = "dgrid";
             this.dgrid.RowHeadersWidth = 82;
             this.dgrid.RowTemplate.Height = 25;
-            this.dgrid.Size = new System.Drawing.Size(907, 449);
+            this.dgrid.Size = new System.Drawing.Size(798, 512);
             this.dgrid.TabIndex = 0;
             this.dgrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_CellDoubleClick);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(575, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 3;
             // 
             // ChiTietSanPham1
             // 
@@ -203,22 +196,109 @@ namespace _3_GUI_PresentationLayer
             this.ChiTietSanPham1.Location = new System.Drawing.Point(0, 0);
             this.ChiTietSanPham1.Name = "ChiTietSanPham1";
             this.ChiTietSanPham1.SelectedIndex = 0;
-            this.ChiTietSanPham1.Size = new System.Drawing.Size(1079, 834);
+            this.ChiTietSanPham1.Size = new System.Drawing.Size(988, 834);
             this.ChiTietSanPham1.TabIndex = 1;
             // 
             // tabSanpham
             // 
             this.tabSanpham.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabSanpham.Controls.Add(this.comboBox2);
-            this.tabSanpham.Controls.Add(this.comboBox1);
+            this.tabSanpham.Controls.Add(this.groupBox4);
             this.tabSanpham.Controls.Add(this.groupBox1);
             this.tabSanpham.Location = new System.Drawing.Point(4, 24);
             this.tabSanpham.Name = "tabSanpham";
             this.tabSanpham.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSanpham.Size = new System.Drawing.Size(1071, 806);
+            this.tabSanpham.Size = new System.Drawing.Size(980, 806);
             this.tabSanpham.TabIndex = 0;
             this.tabSanpham.Text = "Sản phẩm";
             this.tabSanpham.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.menuStrip1);
+            this.groupBox4.Location = new System.Drawing.Point(813, 79);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(162, 515);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox8,
+            this.cbo_loadDanhMuc,
+            this.toolStripTextBox6,
+            this.cbo_dkm,
+            this.toolStripTextBox3,
+            this.cbo_giaBan,
+            this.toolStripTextBox4,
+            this.cbo_chatLieu});
+            this.menuStrip1.Location = new System.Drawing.Point(6, 19);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(153, 493);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripTextBox8
+            // 
+            this.toolStripTextBox8.AutoSize = false;
+            this.toolStripTextBox8.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripTextBox8.ForeColor = System.Drawing.Color.Blue;
+            this.toolStripTextBox8.Name = "toolStripTextBox8";
+            this.toolStripTextBox8.Size = new System.Drawing.Size(146, 35);
+            this.toolStripTextBox8.Text = "Danh mục";
+            // 
+            // cbo_loadDanhMuc
+            // 
+            this.cbo_loadDanhMuc.Name = "cbo_loadDanhMuc";
+            this.cbo_loadDanhMuc.Size = new System.Drawing.Size(144, 23);
+            this.cbo_loadDanhMuc.TextChanged += new System.EventHandler(this.cbo_loadDanhMuc_TextChanged);
+            // 
+            // toolStripTextBox6
+            // 
+            this.toolStripTextBox6.AutoSize = false;
+            this.toolStripTextBox6.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripTextBox6.ForeColor = System.Drawing.Color.Blue;
+            this.toolStripTextBox6.Name = "toolStripTextBox6";
+            this.toolStripTextBox6.Size = new System.Drawing.Size(146, 35);
+            this.toolStripTextBox6.Text = "Đang Sale";
+            // 
+            // cbo_dkm
+            // 
+            this.cbo_dkm.Name = "cbo_dkm";
+            this.cbo_dkm.Size = new System.Drawing.Size(144, 23);
+            this.cbo_dkm.TextChanged += new System.EventHandler(this.cbo_dkm_TextChanged);
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.AutoSize = false;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripTextBox3.ForeColor = System.Drawing.Color.Blue;
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(144, 35);
+            this.toolStripTextBox3.Text = "Khoảng giá";
+            // 
+            // cbo_giaBan
+            // 
+            this.cbo_giaBan.Name = "cbo_giaBan";
+            this.cbo_giaBan.Size = new System.Drawing.Size(144, 23);
+            this.cbo_giaBan.TextChanged += new System.EventHandler(this.cbo_giaBan_TextChanged);
+            // 
+            // toolStripTextBox4
+            // 
+            this.toolStripTextBox4.AutoSize = false;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripTextBox4.ForeColor = System.Drawing.Color.Blue;
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(146, 35);
+            this.toolStripTextBox4.Text = "Chất liệu";
+            // 
+            // cbo_chatLieu
+            // 
+            this.cbo_chatLieu.Name = "cbo_chatLieu";
+            this.cbo_chatLieu.Size = new System.Drawing.Size(144, 23);
+            this.cbo_chatLieu.TextChanged += new System.EventHandler(this.cbo_chatLieu_TextChanged);
             // 
             // tabCTSP
             // 
@@ -228,7 +308,7 @@ namespace _3_GUI_PresentationLayer
             this.tabCTSP.Location = new System.Drawing.Point(4, 24);
             this.tabCTSP.Name = "tabCTSP";
             this.tabCTSP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCTSP.Size = new System.Drawing.Size(1071, 806);
+            this.tabCTSP.Size = new System.Drawing.Size(980, 806);
             this.tabCTSP.TabIndex = 1;
             this.tabCTSP.Text = "Chi tiết sản phẩm";
             this.tabCTSP.UseVisualStyleBackColor = true;
@@ -572,14 +652,14 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Location = new System.Drawing.Point(0, 0);
             this.pnl_main.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(1079, 834);
+            this.pnl_main.Size = new System.Drawing.Size(988, 834);
             this.pnl_main.TabIndex = 13;
             // 
             // Frm_sanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 834);
+            this.ClientSize = new System.Drawing.Size(988, 834);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -590,6 +670,9 @@ namespace _3_GUI_PresentationLayer
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).EndInit();
             this.ChiTietSanPham1.ResumeLayout(false);
             this.tabSanpham.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabCTSP.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_webcam)).EndInit();
@@ -610,10 +693,8 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.ComboBox cbx_size;
         private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.TextBox txt_giaban;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgrid;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TabControl ChiTietSanPham1;
         private System.Windows.Forms.TabPage tabSanpham;
         private System.Windows.Forms.TabPage tabCTSP;
@@ -651,5 +732,15 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label lbl_anh;
         private System.Windows.Forms.ComboBox txt_chatLieu;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripComboBox cbo_loadDanhMuc;
+        private System.Windows.Forms.ToolStripComboBox cbo_dkm;
+        private System.Windows.Forms.ToolStripComboBox cbo_giaBan;
+        private System.Windows.Forms.ToolStripComboBox cbo_chatLieu;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox3;
     }
 }
