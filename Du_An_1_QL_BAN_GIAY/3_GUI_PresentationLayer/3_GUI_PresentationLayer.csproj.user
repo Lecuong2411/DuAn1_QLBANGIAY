@@ -28,6 +28,9 @@
     <Compile Update="Frm_Nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frm_Processing.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_sanpham.cs">
       <SubType>Form</SubType>
     </Compile>

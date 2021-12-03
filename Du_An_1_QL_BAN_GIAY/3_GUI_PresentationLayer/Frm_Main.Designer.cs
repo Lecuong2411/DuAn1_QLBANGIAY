@@ -29,6 +29,7 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_dangxuat = new System.Windows.Forms.Button();
             this.btn_thongke = new System.Windows.Forms.Button();
@@ -41,10 +42,13 @@ namespace _3_GUI_PresentationLayer
             this.pal_logo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.lbl_tille = new System.Windows.Forms.Label();
             this.pal_destop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pal_logo.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -229,13 +233,34 @@ namespace _3_GUI_PresentationLayer
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_close);
             this.panel2.Controls.Add(this.lbl_tille);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(321, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1532, 109);
+            this.panel2.Size = new System.Drawing.Size(1619, 109);
             this.panel2.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Image = global::_3_GUI_PresentationLayer.Properties.Resources.deadline__2_;
+            this.label4.Location = new System.Drawing.Point(1396, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 72);
+            this.label4.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(1519, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 34);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
             // 
             // btn_close
             // 
@@ -258,7 +283,7 @@ namespace _3_GUI_PresentationLayer
             this.lbl_tille.AutoSize = true;
             this.lbl_tille.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_tille.ForeColor = System.Drawing.Color.White;
-            this.lbl_tille.Location = new System.Drawing.Point(694, 22);
+            this.lbl_tille.Location = new System.Drawing.Point(781, 28);
             this.lbl_tille.Name = "lbl_tille";
             this.lbl_tille.Size = new System.Drawing.Size(140, 59);
             this.lbl_tille.TabIndex = 0;
@@ -271,7 +296,7 @@ namespace _3_GUI_PresentationLayer
             this.pal_destop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pal_destop.Location = new System.Drawing.Point(321, 109);
             this.pal_destop.Name = "pal_destop";
-            this.pal_destop.Size = new System.Drawing.Size(1532, 988);
+            this.pal_destop.Size = new System.Drawing.Size(1619, 988);
             this.pal_destop.TabIndex = 2;
             // 
             // pictureBox1
@@ -280,22 +305,26 @@ namespace _3_GUI_PresentationLayer
             this.pictureBox1.ErrorImage = global::_3_GUI_PresentationLayer.Properties.Resources.logo;
             this.pictureBox1.Image = global::_3_GUI_PresentationLayer.Properties.Resources.logo;
             this.pictureBox1.InitialImage = global::_3_GUI_PresentationLayer.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(562, 120);
+            this.pictureBox1.Location = new System.Drawing.Point(602, 152);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(547, 547);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1853, 1097);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1940, 1097);
             this.Controls.Add(this.pal_destop);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -330,6 +359,9 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Panel pal_destop;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }
 

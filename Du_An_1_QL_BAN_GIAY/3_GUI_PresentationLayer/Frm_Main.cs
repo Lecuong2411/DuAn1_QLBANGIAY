@@ -26,6 +26,10 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             btn_close.Visible = false;
+            timer1.Enabled = true;
+            timer1.Start();
+            label2.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
+           
         }
 
 
@@ -120,6 +124,12 @@ namespace _3_GUI_PresentationLayer
             lbl_tille.Text = "HOME";
             corenbutton = null;
             btn_close.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
+           
         }
     }
 }

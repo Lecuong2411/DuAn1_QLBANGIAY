@@ -13,7 +13,7 @@ namespace _3_GUI_PresentationLayer
     public partial class Frm_soluong : Form
     {
         public static int soluong =1;
-        public Frm_soluong()
+        public Frm_soluong(int sl)
         {
             InitializeComponent();
         }
