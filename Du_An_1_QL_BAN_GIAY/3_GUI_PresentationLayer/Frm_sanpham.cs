@@ -267,7 +267,6 @@ namespace _3_GUI_PresentationLayer
                 {
                     txt_barCode.Text = result.ToString();
                     _bcode = (string.Format("{0:0000000000000000000}", result.ToString()));
-                    MessageBox.Show(_barcode);
                 }));
             }
         }
@@ -343,33 +342,47 @@ namespace _3_GUI_PresentationLayer
 
         private void txt_barCode_TextChanged(object sender, EventArgs e)
         {
-            bool result = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text) != null;
-            if (result)
+            //_iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text) != null;
+            MessageBox.Show(txt_barCode.Text);
+            var result = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text)
+                .Select(c => c.MaCTSP)
+                .FirstOrDefault();
+            try
             {
-                var dt = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c=>c.MaCTSP).FirstOrDefault();
-                var tembSp = _iQlSanPhamService.GetSPAllLoad().Where(c => c.ChiTietSanPham.MaCTSP == dt).FirstOrDefault();
-                txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
-                txt_tsp.Text = tembSp.SanPham.TenSp;
-                txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
-                txt_giaban.Text = (tembSp.ChiTietSanPham.giaban).ToString();
-                txt_gianhap.Text = (tembSp.ChiTietSanPham.GiaNhap).ToString();
-                cbx_mau.Text = tembSp.Color.ColorSP;
-                cbx_size.Text = tembSp.Size.SizeSp.ToString();
-                txt_ghi.Text = tembSp.ChiTietSanPham.GhiChu;
-                txt_barCode.Text = tembSp.ChiTietSanPham.MaQR;
-                txt_chatLieu.Text = tembSp.ChatLieu.ChatLieuSP;
-                txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
-                cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
-                cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
-                var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
-                if (_iQlSanPhamService.GetLstImage().Where(c => c.Images == temb1) != null)
+                if (  _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP)
+                    .FirstOrDefault() != null) 
                 {
-                    //lbl_anh.Text = temb1;
-                    //pic.Image = Image.FromFile(lbl_anh.Text);
+
+                    var dt = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP).FirstOrDefault();
+                    var tembSp = _iQlSanPhamService.GetSPAllLoad().Where(c => c.ChiTietSanPham.MaCTSP == dt).FirstOrDefault();
+                    txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
+                    txt_tsp.Text = tembSp.SanPham.TenSp;
+                    txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
+                    txt_giaban.Text = (tembSp.ChiTietSanPham.giaban).ToString();
+                    txt_gianhap.Text = (tembSp.ChiTietSanPham.GiaNhap).ToString();
+                    cbx_mau.Text = tembSp.Color.ColorSP;
+                    cbx_size.Text = tembSp.Size.SizeSp.ToString();
+                    txt_ghi.Text = tembSp.ChiTietSanPham.GhiChu;
+                    txt_barCode.Text = tembSp.ChiTietSanPham.MaQR;
+                    txt_chatLieu.Text = tembSp.ChatLieu.ChatLieuSP;
+                    txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
+                    cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
+                    cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
+                    var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
+                    if (_iQlSanPhamService.GetLstImage().Where(c => c.Images == temb1) != null)
+                    {
+                        //lbl_anh.Text = temb1;
+                        //pic.Image = Image.FromFile(lbl_anh.Text);
+                    }
+
                 }
 
             }
-         
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
