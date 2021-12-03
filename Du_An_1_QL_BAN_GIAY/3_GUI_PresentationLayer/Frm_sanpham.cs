@@ -354,7 +354,7 @@ namespace _3_GUI_PresentationLayer
                 {
 
                     var dt = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP).FirstOrDefault();
-                    var tembSp = _iQlSanPhamService.GetSPAllLoad().Where(c => c.ChiTietSanPham.MaCTSP == dt).FirstOrDefault();
+                    var tembSp = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == dt).FirstOrDefault();
                     txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
                     txt_tsp.Text = tembSp.SanPham.TenSp;
                     txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
@@ -378,10 +378,10 @@ namespace _3_GUI_PresentationLayer
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
