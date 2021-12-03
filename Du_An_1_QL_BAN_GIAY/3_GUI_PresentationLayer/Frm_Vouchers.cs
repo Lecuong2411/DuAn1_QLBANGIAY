@@ -63,19 +63,23 @@ namespace _3_GUI_PresentationLayer
        
         private void dtgv_vorcher_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            var index = e.RowIndex;
-            if (index < 0 || _voucherService.ListvVouchers().Count == index) return;
+
             try
             {
-                if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Thêm")
-                {
-                    FrmThongtinVoucher a = new FrmThongtinVoucher();
-                    a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
-                    a.Show();
-                   
+                var index = e.RowIndex;
+                if (index < 0 || _voucherService.ListvVouchers().Count == index) return;
 
-                }
+
+               
+                    if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Thêm")
+                    {
+                        FrmThongtinVoucher a = new FrmThongtinVoucher();
+                        a.FormClosed += new FormClosedEventHandler(Frm_Vouchers_Load);
+                        a.Show();
+
+
+                    }
+               
                 else if (e.ColumnIndex == dtgv_vorcher.Columns["bt"].Index && dtgv_vorcher.Rows[index].Cells["cbb"].Value.ToString() == "Sửa")
                 {
 
@@ -100,12 +104,14 @@ namespace _3_GUI_PresentationLayer
                     loatdata();
 
                 }
+
             }
-            catch (Exception exception)
+            catch (Exception exception )
             {
 
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("lỗi ",exception.Message);
             }
+           
         }
 
         private void Frm_Vouchers_Load(object sender, EventArgs e)

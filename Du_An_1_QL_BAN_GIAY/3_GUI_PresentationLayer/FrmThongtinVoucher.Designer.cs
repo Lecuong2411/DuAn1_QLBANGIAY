@@ -48,6 +48,7 @@ namespace _3_GUI_PresentationLayer
             this.label8 = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_fix = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_menhgia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,12 +220,23 @@ namespace _3_GUI_PresentationLayer
             this.btn_fix.BackColor = System.Drawing.Color.White;
             this.btn_fix.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_fix.Image = global::_3_GUI_PresentationLayer.Properties.Resources.technical_wrench;
-            this.btn_fix.Location = new System.Drawing.Point(481, 291);
+            this.btn_fix.Location = new System.Drawing.Point(604, 248);
             this.btn_fix.Name = "btn_fix";
             this.btn_fix.Size = new System.Drawing.Size(55, 37);
             this.btn_fix.TabIndex = 20;
             this.btn_fix.UseVisualStyleBackColor = false;
             this.btn_fix.Click += new System.EventHandler(this.btn_fix_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = global::_3_GUI_PresentationLayer.Properties.Resources.icons8_close_302;
+            this.button1.Location = new System.Drawing.Point(605, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 37);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FrmThongtinVoucher
             // 
@@ -232,6 +244,7 @@ namespace _3_GUI_PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(691, 350);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_fix);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label8);
@@ -280,5 +293,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_fix;
+        private System.Windows.Forms.Button button1;
     }
 }
