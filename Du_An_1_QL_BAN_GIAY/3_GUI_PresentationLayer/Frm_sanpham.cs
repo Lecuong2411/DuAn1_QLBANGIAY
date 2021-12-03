@@ -304,8 +304,7 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
-            qlSanPham.ChiTietSanPham.MaPB = "PB2";
-            _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+               _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
             //History history = new History();
             //history.MaCTSP = temb;
             //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
