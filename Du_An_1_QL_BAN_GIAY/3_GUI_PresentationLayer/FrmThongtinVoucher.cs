@@ -97,5 +97,10 @@ namespace _3_GUI_PresentationLayer
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

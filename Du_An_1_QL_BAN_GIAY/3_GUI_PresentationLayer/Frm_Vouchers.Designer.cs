@@ -40,7 +40,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(384, 39);
+            this.label5.Location = new System.Drawing.Point(493, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 32);
             this.label5.TabIndex = 4;
@@ -49,10 +49,10 @@ namespace _3_GUI_PresentationLayer
             // dtgv_vorcher
             // 
             this.dtgv_vorcher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_vorcher.Location = new System.Drawing.Point(12, 91);
+            this.dtgv_vorcher.Location = new System.Drawing.Point(115, 92);
             this.dtgv_vorcher.Name = "dtgv_vorcher";
             this.dtgv_vorcher.RowTemplate.Height = 25;
-            this.dtgv_vorcher.Size = new System.Drawing.Size(856, 337);
+            this.dtgv_vorcher.Size = new System.Drawing.Size(856, 439);
             this.dtgv_vorcher.TabIndex = 5;
             this.dtgv_vorcher.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_vorcher_CellClick);
             // 
@@ -65,8 +65,8 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(1100, 666);
             this.Controls.Add(this.dtgv_vorcher);
             this.Controls.Add(this.label5);
             this.Name = "Frm_Vouchers";
