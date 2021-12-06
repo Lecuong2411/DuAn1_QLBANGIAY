@@ -24,5 +24,6 @@ namespace _2_BUS_BusinessLayer.IService
         public List<LoaiCoGiay> GetLoaiCoGiayss();
         public List<ChatLieu> GetChatLieuss();
         public List<KhuyenMai_Bus> GetLstCTSP();
+        public List<KhuyenMai_Bus> GetLstCTSP2();
     }
 }

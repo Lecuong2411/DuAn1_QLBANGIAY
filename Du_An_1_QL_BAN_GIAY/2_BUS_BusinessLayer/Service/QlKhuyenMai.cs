@@ -58,8 +58,11 @@ namespace _2_BUS_BusinessLayer.Service
             _lstLoaiCoGiayss = _iLoaicogiayServices.Getlst();
             _lstChatLieuss = _iChatlieuServices.Getlst();
             _lstChiTietGiamGias = _iChiTietGiamGiaService.Getlst();
+            _lstKhuyenMai = GetKhuyenMais();
 
         }
+
+
         public List<KhuyenMai_Bus> GetKhuyenMais()
         {
             _lstKhuyenMai = (from a in _lstChiTietSanPhams
@@ -68,10 +71,10 @@ namespace _2_BUS_BusinessLayer.Service
                              join d in _lstProductBacks on a.MaPB equals d.MaPB
                              join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
                              join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
-                             join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
-                             from f in CtggDm.DefaultIfEmpty()
-                             join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
-                             from n in KMCTKM.DefaultIfEmpty()
+                             //join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
+                             //from f in CtggDm.DefaultIfEmpty()
+                             //join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
+                             //from n in KMCTKM.DefaultIfEmpty()
 
                              select new KhuyenMai_Bus()
                              {
@@ -79,8 +82,13 @@ namespace _2_BUS_BusinessLayer.Service
                                  SanPham = b,
                                  DanhMuc = c,
                                  ProductBack = d,
-                                 ChiTietGiamGia = f == null ? null : f,
-                                 KhuyenMai = n == null ? null : n,
+                                 //ChiTietGiamGia = f == null ? null : f,
+                                 //KhuyenMai = n == null ? null : n,
+                                 //KhuyenMai= (from km in _lstKhuyenMais
+                                 //            join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+                                 //            where ctkm.MaDanhMuc == c.MaDanhMuc
+                                 //            select km
+                                 //    ).FirstOrDefault(),
                                  ChatLieu = ff,
                                  LoaiCoGiay = l
                              }).ToList();
@@ -95,18 +103,23 @@ namespace _2_BUS_BusinessLayer.Service
                           join d in _lstProductBacks on a.MaPB equals d.MaPB
                           join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
                           join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
-                          join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
-                          from f in CtggDm.DefaultIfEmpty()
-                          join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
-                          from n in KMCTKM.DefaultIfEmpty()
+                          //join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
+                          //from f in CtggDm.DefaultIfEmpty()
+                          //join n in _lstKhuyenMais on f.MaKM equals n.MaKM into KMCTKM
+                          //from n in KMCTKM.DefaultIfEmpty()
                           select new KhuyenMai_Bus()
                           {
                               ChiTietSanPham = a,
                               SanPham = b,
                               DanhMuc = c,
                               ProductBack = d,
-                              ChiTietGiamGia = f == null ? null : f,
-                              KhuyenMai = n == null ? null : n,
+                              //ChiTietGiamGia = f == null ? null : f,
+                              //KhuyenMai = n == null ? null : n,
+                              KhuyenMai = (from km in _lstKhuyenMais
+                                           join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+                                           where ctkm.MaDanhMuc == c.MaDanhMuc
+                                           select km
+                                     ).FirstOrDefault(),
                               ChatLieu = ff,
                               LoaiCoGiay = l
                           }).ToList();
@@ -117,9 +130,6 @@ namespace _2_BUS_BusinessLayer.Service
                     x.ChiTietSanPham.giaban = (x.ChiTietSanPham.giaban * (100 - x.KhuyenMai.GiamGia)) / 100;
                 }
             }
-
-
-
             return GetLstCTSP;
         }
 
@@ -127,28 +137,34 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<KhuyenMai_Bus> GetKhuyenMaisSearch(string text)
         {
-            _lstKhuyenMai = (from a in _lstChiTietSanPhams
-                             join b in _lstSanPhams on a.MaSP equals b.MaSp
-                             join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
-                             join d in _lstProductBacks on a.MaPB equals d.MaPB
-                             join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
-                             join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
-                             //join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
-                             //from leftDM in CtggDm
-                             //join n in _lstKhuyenMais on leftDM.MaKM equals n.MaKM into KMCTKM
-                             //from kmcttt in KMCTKM.DefaultIfEmpty()
-                             select new KhuyenMai_Bus()
-                             {
-                                 ChiTietSanPham = a,
-                                 SanPham = b,
-                                 DanhMuc = c,
-                                 ProductBack = d,
-                                 //ChiTietGiamGia = leftDM,
-                                 //KhuyenMai = kmcttt,
-                                 ChatLieu = ff,
-                                 LoaiCoGiay = l
-                             }).ToList();
-            return _lstKhuyenMai.Where(x => x.DanhMuc.TenDanhMuc == text).ToList();
+            List<KhuyenMai_Bus> _lstKhuyenMai1 = new List<KhuyenMai_Bus>();
+            _lstKhuyenMai1 = (from a in _lstChiTietSanPhams
+                              join b in _lstSanPhams on a.MaSP equals b.MaSp
+                              join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
+                              join d in _lstProductBacks on a.MaPB equals d.MaPB
+                              join ff in _lstChatLieuss on a.MaChatLieu equals ff.MaChatLieu
+                              join l in _lstLoaiCoGiayss on a.MaCo equals l.MaCo
+                              //join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc into CtggDm
+                              //from leftDM in CtggDm
+                              //join n in _lstKhuyenMais on leftDM.MaKM equals n.MaKM into KMCTKM
+                              //from kmcttt in KMCTKM.DefaultIfEmpty()
+                              select new KhuyenMai_Bus()
+                              {
+                                  ChiTietSanPham = a,
+                                  SanPham = b,
+                                  DanhMuc = c,
+                                  ProductBack = d,
+                                  //ChiTietGiamGia = leftDM,
+                                  //KhuyenMai = kmcttt,
+                                  KhuyenMai = (from km in _lstKhuyenMais
+                                               join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+                                               where ctkm.MaDanhMuc == c.MaDanhMuc
+                                               select km
+                                      ).FirstOrDefault(),
+                                  ChatLieu = ff,
+                                  LoaiCoGiay = l
+                              }).ToList();
+            return _lstKhuyenMai1.Where(x => x.DanhMuc.TenDanhMuc == text).ToList();
         }
 
         public string addPB(ProductBack productBack)
@@ -229,6 +245,44 @@ namespace _2_BUS_BusinessLayer.Service
             return _lstChatLieuss;
         }
 
-      
+        public List<KhuyenMai_Bus> GetLstCTSP2()
+        {
+            List<KhuyenMai_Bus> GetLstCTSP2 = new List<KhuyenMai_Bus>();
+            GetLstCTSP2 = (from a in _lstChiTietSanPhams
+                           join b in _lstSanPhams on a.MaSP equals b.MaSp
+                           join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
+                           join d in _lstProductBacks on a.MaPB equals d.MaPB
+
+                           join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc
+                           //from f in CtggDm.DefaultIfEmpty()
+                           join n in _lstKhuyenMais on f.MaKM equals n.MaKM
+                           //from n in KMCTKM.DefaultIfEmpty()
+                           select new KhuyenMai_Bus()
+                           {
+                               ChiTietSanPham = (from km in _lstKhuyenMais
+                                                 join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+
+                                                 join dm in _lstDanhMucs on ctkm.MaDanhMuc equals dm.MaDanhMuc
+                                                 join sp in _lstSanPhams on dm.MaDanhMuc equals sp.MaDanhMuc
+                                                 join ctsp in _lstChiTietSanPhams on sp.MaSp equals ctsp.MaSP
+                                                 where ctsp.MaPB == "PB2"
+                                                 select ctsp).FirstOrDefault()
+                                                ,
+                               SanPham = b,
+                               DanhMuc = c,
+                               ProductBack = d,
+                               ChiTietGiamGia = f,
+                               KhuyenMai = n
+                               ,
+                               //KhuyenMai = (from km in _lstKhuyenMais
+                               //             join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+                               //             where ctkm.MaDanhMuc == c.MaDanhMuc
+                               //             select km
+                               //       ).FirstOrDefault(),
+
+                           }).ToList();
+
+            return GetLstCTSP2;
+        }
     }
 }

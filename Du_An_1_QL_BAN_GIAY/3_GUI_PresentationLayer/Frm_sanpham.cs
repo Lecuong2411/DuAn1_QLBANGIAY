@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ using BarcodeLib;
 using ZXing;
 using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
+using Timer = System.Threading.Timer;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -28,6 +30,7 @@ namespace _3_GUI_PresentationLayer
         public static string temb;
         public static string _barcode;
         public string _bcode;
+        private System.Windows.Forms.Timer _timer;
         public Frm_sanpham()
         {
             InitializeComponent();
@@ -44,14 +47,16 @@ namespace _3_GUI_PresentationLayer
             loadChatLieuSP();
             Km();
             giaBan();
+
         }
 
         private FilterInfoCollection _filterInfoCollection;
         private VideoCaptureDevice _videoCaptureDevice;
 
+
         void load()
         {
-         
+
             dgrid.RowsDefaultCellStyle.BackColor = Color.LightBlue;
             dgrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
             dgrid.ColumnCount = 9;
@@ -69,10 +74,7 @@ namespace _3_GUI_PresentationLayer
             foreach (var x in _iQlSanPhamService.GetSPAll())
             {
                 dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
-
-                    x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP,x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
-
-
+                    x.DanhMuc.TenDanhMuc, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.ChiTietSanPham.giaban, x.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng", x.ChiTietSanPham.MaCTSP);
             }
         }
 
@@ -91,7 +93,7 @@ namespace _3_GUI_PresentationLayer
             foreach (var x in _iQlSanPhamService.GetLstChatLieu())
             {
 
-               cbo_chatLieu.Items.Add(x.ChatLieuSP);
+                cbo_chatLieu.Items.Add(x.ChatLieuSP);
 
             }
 
@@ -102,7 +104,7 @@ namespace _3_GUI_PresentationLayer
             cbo_loadDanhMuc.Items.Add("Tất cả");
             foreach (var x in _iQlSanPhamService.GetLstDanhMuc())
             {
-               cbo_loadDanhMuc.Items.Add(x.TenDanhMuc);
+                cbo_loadDanhMuc.Items.Add(x.TenDanhMuc);
             }
 
             cbo_loadDanhMuc.SelectedIndex = 0;
@@ -184,9 +186,24 @@ namespace _3_GUI_PresentationLayer
                 .Where(c => c.LoaiCoGiaySP == cbx_coGiay.Text).Select(c => c.MaCo).FirstOrDefault();
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
+            qlSanPham.ChiTietSanPham.MaPB = "PB1";
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
-            _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
-            load();
+            if (txt_tsp.Text != null || cbx_mau.Text != null || cbx_size.Text != null || txt_gianhap.Text != null ||
+                txt_giaban.Text != null || txt_soluong.Text != null || txt_tspct.Text != null || txt_chatLieu.Text != null || txt_chatLieu.Text != null
+                || cbx_coGiay.Text != null || txt_ghi.Text != null || txt_barCode.Text != null || cbx_trangThai.Text != null
+                )
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
+                    load();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thông tin không được để trống", "Thông báo");
+            }
             //History history = new History();
             //history.MaCTSP = qlSanPham.ChiTietSanPham.MaCTSP;
             //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
@@ -206,7 +223,7 @@ namespace _3_GUI_PresentationLayer
             int row = e.RowIndex;
             temb = dgrid.Rows[row].Cells[8].Value.ToString();
             ChiTietSanPham1.SelectedIndex = 1;
-            var tembSp = _iQlSanPhamService.GetSPAllLoad().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
+            var tembSp = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
             txt_danhmuc.Text = tembSp.DanhMuc.TenDanhMuc;
             txt_tsp.Text = tembSp.SanPham.TenSp;
             txt_tspct.Text = tembSp.ChiTietSanPham.Mota;
@@ -220,14 +237,46 @@ namespace _3_GUI_PresentationLayer
             txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
             cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
             cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
-            var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
-            if (_iQlSanPhamService.GetLstImage().Where(c=>c.Images==temb1) !=null)
+            //var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
+            //if (_iQlSanPhamService.GetLstImage().Where(c => c.Images == temb1) != null)
+            //{
+            //    lbl_anh.Text = temb1;
+            //    pic.Image = Image.FromFile(lbl_anh.Text);
+            //}
+            lbl_anh.Text = "";
+            //var img = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).ToList();
+            //lbl_anh.Text = img[0].Images;
+            //pic.Image = Image.FromFile(lbl_anh.Text);
+            _timer = new System.Windows.Forms.Timer();
+            _timer.Interval = 2000;//2 s
+            _timer.Tick += new System.EventHandler(timer1_Tick);
+            _timer.Start();
+
+        }
+        int a = 0;
+        private void timer1_Tick(object? sender, EventArgs e)
+        {
+
+            var img = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).ToList();
+            if (_iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).FirstOrDefault() != null)
             {
-                //lbl_anh.Text = temb1;
-                //pic.Image = Image.FromFile(lbl_anh.Text);
+
+                if (img.Count > a)
+                {
+                    lbl_anh.Text = img[a].Images;
+                    pic.Image = Image.FromFile(lbl_anh.Text);
+
+
+                }
+                else
+                {
+                    a = 0;
+                    lbl_anh.Text = img[a].Images;
+                    pic.Image = Image.FromFile(lbl_anh.Text);
+                    return;
+                }
             }
-
-
+            a++;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -277,7 +326,7 @@ namespace _3_GUI_PresentationLayer
             {
                 _videoCaptureDevice.SignalToStop();
                 Thread.Sleep(1000);
-              
+
             }
         }
 
@@ -286,7 +335,7 @@ namespace _3_GUI_PresentationLayer
         private void Sửa_Click(object sender, EventArgs e)
         {
 
-            var qlSanPham = _iQlSanPhamService.GetSPAllLoad().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
+            var qlSanPham = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
             qlSanPham.ChiTietSanPham.MaCTSP = temb;
             qlSanPham.ChiTietSanPham.MaSP = _iQlSanPhamService.GetLstSP().Where(c => c.TenSp == txt_tsp.Text).Select(c => c.MaSp).FirstOrDefault();
             qlSanPham.ChiTietSanPham.MaCLR = _iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == cbx_mau.Text)
@@ -304,7 +353,18 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
-               _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+            qlSanPham.ChiTietSanPham.MaPB = "PB2";
+            if (txt_tsp.Text != null || cbx_mau.Text != null || cbx_size.Text != null || txt_gianhap.Text != null ||
+                txt_giaban.Text != null || txt_soluong.Text != null || txt_tspct.Text != null || txt_chatLieu.Text != null || txt_chatLieu.Text != null
+                || cbx_coGiay.Text != null || txt_ghi.Text != null || txt_barCode.Text != null || cbx_trangThai.Text != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+                    load();
+                }
+            }
             //History history = new History();
             //history.MaCTSP = temb;
             //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
@@ -313,12 +373,14 @@ namespace _3_GUI_PresentationLayer
             //_iQlSanPhamService.addHistory(history);
 
             // chạy chương trình sẽ mở
-            load();
-           
+
+
         }
 
         private void upload_Click(object sender, EventArgs e)
         {
+            _timer.Stop();
+            lbl_anh.Text = "";
             OpenFileDialog opnfd = new OpenFileDialog();
             opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
             if (opnfd.ShowDialog() == DialogResult.OK)
@@ -326,6 +388,7 @@ namespace _3_GUI_PresentationLayer
                 pic.Image = new Bitmap(opnfd.FileName);
                 lbl_anh.Text = opnfd.FileName;
             }
+
         }
 
         private void btn_anh_Click(object sender, EventArgs e)
@@ -337,19 +400,21 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.Image.MaCTSP = temb;
             qlSanPham.Image.Images = lbl_anh.Text;
             _iQlSanPhamService.addImage(qlSanPham.Image);
+            MessageBox.Show("successful");
+            _timer.Start();
         }
 
         private void txt_barCode_TextChanged(object sender, EventArgs e)
         {
             //_iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text) != null;
-            MessageBox.Show(txt_barCode.Text);
-            var result = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text)
-                .Select(c => c.MaCTSP)
-                .FirstOrDefault();
+            //MessageBox.Show(txt_barCode.Text);
+            //var result = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text)
+            //    .Select(c => c.MaCTSP)
+            //    .FirstOrDefault();
             try
             {
-                if (  _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP)
-                    .FirstOrDefault() != null) 
+                if (_iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP)
+                    .FirstOrDefault() != null)
                 {
 
                     var dt = _iQlSanPhamService.GetLstCTSanPham().Where(c => c.MaQR == txt_barCode.Text).Select(c => c.MaCTSP).FirstOrDefault();
@@ -367,20 +432,19 @@ namespace _3_GUI_PresentationLayer
                     txt_soluong.Text = (tembSp.ChiTietSanPham.soluong).ToString();
                     cbx_coGiay.Text = tembSp.LoaiCoGiay.LoaiCoGiaySP;
                     cbx_trangThai.Text = tembSp.ChiTietSanPham.TrangThai == 1 ? "Còn hàng" : "Hết hàng";
-                    var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
-                    if (_iQlSanPhamService.GetLstImage().Where(c => c.Images == temb1) != null)
-                    {
-                        //lbl_anh.Text = temb1;
-                        //pic.Image = Image.FromFile(lbl_anh.Text);
-                    }
-
+                    //var temb1 = _iQlSanPhamService.GetLstImage().Where(c => c.MaCTSP == temb).Select(c => c.Images).FirstOrDefault();
+                    //if (_iQlSanPhamService.GetLstImage().Where(c => c.Images == temb1) != null)
+                    //{
+                    //    //lbl_anh.Text = temb1;
+                    //    //pic.Image = Image.FromFile(lbl_anh.Text);
+                    //}
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 
@@ -459,7 +523,7 @@ namespace _3_GUI_PresentationLayer
             }
             else if (cbo_dkm.Text == "Đang sale")
             {
-                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ProductBack.TrangThai==3))
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ProductBack.TrangThai == 3))
                 {
                     dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
@@ -504,7 +568,7 @@ namespace _3_GUI_PresentationLayer
             }
             else if (cbo_giaBan.Text == "Từ 0-500k")
             {
-                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c=>c.ChiTietSanPham.giaban>0 && c.ChiTietSanPham.giaban <=500000))
+                foreach (var x in _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.giaban > 0 && c.ChiTietSanPham.giaban <= 500000))
                 {
                     dgrid.Rows.Add(x.SanPham.TenSp + ' ' + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
 
@@ -551,6 +615,59 @@ namespace _3_GUI_PresentationLayer
 
         }
 
-      
+        private void txt_giaban_Leave(object sender, EventArgs e)
+        {
+            Regex regex = new Regex("[a-z]");
+            if (regex.IsMatch(txt_giaban.Text))
+            {
+                MessageBox.Show("Giá bán không thể nhập chữ", " Thông báo");
+                txt_giaban.Text = "";
+            }
+        }
+
+        private void txt_gianhap_Leave(object sender, EventArgs e)
+        {
+            Regex regex = new Regex("[a-z]");
+            if (regex.IsMatch(txt_gianhap.Text))
+            {
+                MessageBox.Show("Giá bán không thể nhập chữ", " Thông báo");
+                txt_gianhap.Text = "";
+            }
+        }
+
+        private void txt_soluong_Leave(object sender, EventArgs e)
+        {
+            Regex regex = new Regex("[a-z]");
+            if (regex.IsMatch(txt_soluong.Text))
+            {
+                MessageBox.Show("Giá bán không thể nhập chữ", " Thông báo");
+                txt_soluong.Text = "";
+            }
+        }
+
+        private void cbx_size_Leave(object sender, EventArgs e)
+        {
+            Regex regex = new Regex("[a-z]");
+            if (regex.IsMatch(cbx_size.Text))
+            {
+                MessageBox.Show("Giá bán không thể nhập chữ", " Thông báo");
+                cbx_size.Text = "";
+            }
+        }
+
+        private void btn_xóa_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var qlSanPham = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
+                qlSanPham.ChiTietSanPham.TrangThai = 0;
+                _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+                load();
+            }
+
+
+
+        }
     }
 }

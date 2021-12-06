@@ -87,6 +87,7 @@ namespace _3_GUI_PresentationLayer
             this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.btn_xóa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.ChiTietSanPham1.SuspendLayout();
@@ -156,6 +157,7 @@ namespace _3_GUI_PresentationLayer
             this.cbx_size.Name = "cbx_size";
             this.cbx_size.Size = new System.Drawing.Size(159, 23);
             this.cbx_size.TabIndex = 18;
+            this.cbx_size.Leave += new System.EventHandler(this.cbx_size_Leave);
             // 
             // txt_soluong
             // 
@@ -163,6 +165,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(159, 23);
             this.txt_soluong.TabIndex = 16;
+            this.txt_soluong.Leave += new System.EventHandler(this.txt_soluong_Leave);
             // 
             // txt_giaban
             // 
@@ -170,6 +173,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_giaban.Name = "txt_giaban";
             this.txt_giaban.Size = new System.Drawing.Size(159, 23);
             this.txt_giaban.TabIndex = 15;
+            this.txt_giaban.Leave += new System.EventHandler(this.txt_giaban_Leave);
             // 
             // groupBox1
             // 
@@ -381,7 +385,6 @@ namespace _3_GUI_PresentationLayer
             this.pic_webcam.Size = new System.Drawing.Size(876, 154);
             this.pic_webcam.TabIndex = 1;
             this.pic_webcam.TabStop = false;
-            //this.pic_webcam.Click += new System.EventHandler(this.pic_webcam_Click);
             // 
             // cbx_webcam
             // 
@@ -395,6 +398,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_xóa);
             this.groupBox2.Controls.Add(this.txt_chatLieu);
             this.groupBox2.Controls.Add(this.lbl_anh);
             this.groupBox2.Controls.Add(this.btn_anh);
@@ -537,6 +541,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_gianhap.Name = "txt_gianhap";
             this.txt_gianhap.Size = new System.Drawing.Size(159, 23);
             this.txt_gianhap.TabIndex = 28;
+            this.txt_gianhap.Leave += new System.EventHandler(this.txt_gianhap_Leave);
             // 
             // label1
             // 
@@ -554,7 +559,7 @@ namespace _3_GUI_PresentationLayer
             this.Sửa.BackColor = System.Drawing.Color.Blue;
             this.Sửa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Sửa.ForeColor = System.Drawing.Color.White;
-            this.Sửa.Location = new System.Drawing.Point(679, 425);
+            this.Sửa.Location = new System.Drawing.Point(615, 425);
             this.Sửa.Name = "Sửa";
             this.Sửa.Size = new System.Drawing.Size(99, 38);
             this.Sửa.TabIndex = 26;
@@ -567,7 +572,7 @@ namespace _3_GUI_PresentationLayer
             this.Thêm.BackColor = System.Drawing.Color.Blue;
             this.Thêm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Thêm.ForeColor = System.Drawing.Color.White;
-            this.Thêm.Location = new System.Drawing.Point(549, 425);
+            this.Thêm.Location = new System.Drawing.Point(481, 425);
             this.Thêm.Name = "Thêm";
             this.Thêm.Size = new System.Drawing.Size(106, 38);
             this.Thêm.TabIndex = 25;
@@ -710,6 +715,19 @@ namespace _3_GUI_PresentationLayer
             this.pnl_main.Size = new System.Drawing.Size(988, 834);
             this.pnl_main.TabIndex = 13;
             // 
+            // btn_xóa
+            // 
+            this.btn_xóa.BackColor = System.Drawing.Color.Blue;
+            this.btn_xóa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_xóa.ForeColor = System.Drawing.Color.White;
+            this.btn_xóa.Location = new System.Drawing.Point(741, 425);
+            this.btn_xóa.Name = "btn_xóa";
+            this.btn_xóa.Size = new System.Drawing.Size(99, 38);
+            this.btn_xóa.TabIndex = 39;
+            this.btn_xóa.Text = "Xóa";
+            this.btn_xóa.UseVisualStyleBackColor = false;
+            this.btn_xóa.Click += new System.EventHandler(this.btn_xóa_Click);
+            // 
             // Frm_sanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -797,5 +815,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox6;
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox4;
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox3;
+        private System.Windows.Forms.Button btn_xóa;
     }
 }

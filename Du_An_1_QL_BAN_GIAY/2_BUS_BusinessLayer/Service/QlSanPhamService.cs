@@ -197,7 +197,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addImage(Image sanPham)
         {
-            _lstImages.Add(sanPham);
+            _imgServices.add(sanPham);
             return "";
         }
 
@@ -213,7 +213,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Image> GetLstImage()
         {
-            return _lstImages;
+            return _lstImages=_imgServices.Getlst();
         }
 
         #endregion
@@ -388,11 +388,11 @@ namespace _2_BUS_BusinessLayer.Service
             _iChitietSanPhamServices = new ChitietSanPhamServices();
             foreach (var x in _lstQlSanPhams)
             {
-                if (x.KhuyenMai != null && x.KhuyenMai.NgayDau <= DateTime.Now && x.KhuyenMai.NgayHet >= DateTime.Now && x.KhuyenMai.TrangThai == 1 && x.ProductBack.ProductStatus == 0)
+                if (x.KhuyenMai != null && x.KhuyenMai.NgayDau <= DateTime.Now && x.KhuyenMai.NgayHet >= DateTime.Now && x.KhuyenMai.TrangThai == 1 && x.ProductBack.MaPB == "PB2")
                 {
                     var dt = _iChitietSanPhamServices.Getlst().Where(c => c.MaCTSP == x.ChiTietSanPham.MaCTSP).FirstOrDefault();
                     x.ChiTietSanPham.giaban = (dt.giaban * (100 - x.KhuyenMai.GiamGia)) / 100;
-                    x.ProductBack.TrangThai = 3;
+                    //x.ProductBack.TrangThai = 3;
                 }
             }
             return _lstQlSanPhams;
@@ -412,20 +412,24 @@ namespace _2_BUS_BusinessLayer.Service
                               join g in _lstLoaiCoGiays on b.MaCo equals g.MaCo
                               join h in _lstColors on b.MaCLR equals h.MaClr
                               join j in _lstDanhMucs on a.MaDanhMuc equals j.MaDanhMuc
-                              join k in _lstChiTietGiamGias on j.MaDanhMuc equals k.MaDanhMuc into CtggDm
+                              //join k in _lstChiTietGiamGias on j.MaDanhMuc equals k.MaDanhMuc into CtggDm
                               join d in _lstProductBacks on b.MaPB equals d.MaPB
-                              from k in CtggDm.DefaultIfEmpty()
-                              join n in _lstKhuyenMais on k.MaKM equals n.MaKM into KMCTKM
-                              from n in KMCTKM.DefaultIfEmpty()
+                              //from k in CtggDm.DefaultIfEmpty()
+                              //join n in _lstKhuyenMais on k.MaKM equals n.MaKM into KMCTKM
+                              //from n in KMCTKM.DefaultIfEmpty()
                               select new QLSanPham()
                               {
                                   SanPham = a,
                                   ChiTietSanPham = b,
                                   NhaCungCap = c,
-                                  KhuyenMai = n,
+                                  KhuyenMai = (from km in _lstKhuyenMais
+                                               join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
+                                               where ctkm.MaDanhMuc == j.MaDanhMuc
+                                               select km
+                                     ).FirstOrDefault(),
                                   ChatLieu = e,
                                   Size = f,
-                                  ChiTietGiamGia = k,
+                                  //ChiTietGiamGia = k,
                                   ProductBack = d,
                                   LoaiCoGiay = g,
                                   Color = h,

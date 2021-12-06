@@ -19,6 +19,7 @@ namespace _3_GUI_PresentationLayer
     {
         private IQlKhuyenMai _iQlKhuyenMai;
         private List<string> _tendanhMuc;
+        int temb2 = 0;
         public Frm_KhuyenMai()
         {
             InitializeComponent();
@@ -87,57 +88,73 @@ namespace _3_GUI_PresentationLayer
         private List<List<string>> _temb = new List<List<string>>();
         private void btn_danhMuc_Click(object sender, EventArgs e)
         {
-            foreach (var x in _iQlKhuyenMai.GetDanhMucs())
+            if (temb2 == 0)
             {
-                temb = new List<string>();
-                Button btn = new Button() { Name = "btn" + x.TenDanhMuc, Text = x.TenDanhMuc };
-                btn.Size = new System.Drawing.Size(88, 37);
-                if (a >= tabPage1.Size.Width)
+                foreach (var x in _iQlKhuyenMai.GetDanhMucs())
                 {
-                    a = 30;
-                    b = b + 50;
+                    temb = new List<string>();
+                    Button btn = new Button() { Name = "btn" + x.TenDanhMuc, Text = x.TenDanhMuc };
+                    btn.Size = new System.Drawing.Size(88, 37);
+                    if (a >= tabPage1.Size.Width)
+                    {
+                        a = 30;
+                        b = b + 50;
+                    }
+                    temb.Add(x.TenDanhMuc);
+                    temb.Add("1");
+                    btn.Location = new Point(a, b);
+                    a = a + 120;
+                    btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                    btn.BackColor = Color.WhiteSmoke;
+                    btn.Click += Btn_Click;
+                    btn.UseVisualStyleBackColor = false;
+                    tabPage1.Controls.Add(btn);
+
+                    _temb.Add(temb);
+
                 }
-                temb.Add(x.TenDanhMuc);
-                temb.Add("1");
-                btn.Location = new Point(a, b);
-                a = a + 120;
-                btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-                btn.BackColor = Color.WhiteSmoke;
-                btn.Click += Btn_Click;
-                btn.UseVisualStyleBackColor = false;
-                tabPage1.Controls.Add(btn);
-
-                _temb.Add(temb);
-
+                temb2++;
             }
         }
 
         private void btm_tao_Click(object sender, EventArgs e)
         {
-            KhuyenMai_Bus khuyenMai = new KhuyenMai_Bus();
-            khuyenMai.KhuyenMai.GhiChu = txt_ghichu.Text;
-            khuyenMai.KhuyenMai.GiamGia = Convert.ToInt32(nud_giamgia.Text);
-            khuyenMai.KhuyenMai.MaKM = "KM" + (_iQlKhuyenMai.GetlstKhuyenMais().Count + 1);
-            string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
-            khuyenMai.KhuyenMai.NgayDau = Convert.ToDateTime(dateStart);
-            string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
-            khuyenMai.KhuyenMai.NgayHet = Convert.ToDateTime(dateEnd);
-            khuyenMai.KhuyenMai.TenChuongTrinh = txt_tct.Text;
-            khuyenMai.KhuyenMai.TrangThai = rdo_hd.Checked ? 1 : 0;
-            _iQlKhuyenMai.addKM(khuyenMai.KhuyenMai);
-            string tembKM = khuyenMai.KhuyenMai.MaKM;
-            for (int i = 0; i < _tendanhMuc.Count; i++)
+            if (txt_ghichu.Text != null || nud_giamgia.Text != null || txt_tct.Text != null)
             {
-                khuyenMai = new KhuyenMai_Bus();
-                khuyenMai.ChiTietGiamGia.MaCTGG = "CTGG" + (_iQlKhuyenMai.GetChiTietGiamGias().Count + 1);
-                khuyenMai.ChiTietGiamGia.MaDanhMuc = _iQlKhuyenMai.GetDanhMucs().Where(c => c.TenDanhMuc == _tendanhMuc[i])
-                    .Select(c => c.MaDanhMuc).FirstOrDefault();
-                khuyenMai.ChiTietGiamGia.MaKM = tembKM;
-                _iQlKhuyenMai.addCTGG(khuyenMai.ChiTietGiamGia);
-            }
 
-            _tendanhMuc = new List<string>();
-            MessageBox.Show("Tạo khuyến mại thành công");
+                //if (dateStart != dateEnd)
+                //{
+                KhuyenMai_Bus khuyenMai = new KhuyenMai_Bus();
+                khuyenMai.KhuyenMai.GhiChu = txt_ghichu.Text;
+                khuyenMai.KhuyenMai.GiamGia = Convert.ToInt32(nud_giamgia.Text);
+                khuyenMai.KhuyenMai.MaKM = "KM" + (_iQlKhuyenMai.GetlstKhuyenMais().Count + 1);
+                string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
+                khuyenMai.KhuyenMai.NgayDau = Convert.ToDateTime(dateStart);
+                string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
+                khuyenMai.KhuyenMai.NgayHet = Convert.ToDateTime(dateEnd);
+                khuyenMai.KhuyenMai.TenChuongTrinh = txt_tct.Text;
+                khuyenMai.KhuyenMai.TrangThai = rdo_hd.Checked ? 1 : 0;
+                _iQlKhuyenMai.addKM(khuyenMai.KhuyenMai);
+                string tembKM = khuyenMai.KhuyenMai.MaKM;
+                for (int i = 0; i < _tendanhMuc.Count; i++)
+                {
+                    khuyenMai = new KhuyenMai_Bus();
+                    khuyenMai.ChiTietGiamGia.MaCTGG = "CTGG" + (_iQlKhuyenMai.GetChiTietGiamGias().Count + 1);
+                    khuyenMai.ChiTietGiamGia.MaDanhMuc = _iQlKhuyenMai.GetDanhMucs().Where(c => c.TenDanhMuc == _tendanhMuc[i])
+                        .Select(c => c.MaDanhMuc).FirstOrDefault();
+                    khuyenMai.ChiTietGiamGia.MaKM = tembKM;
+                    _iQlKhuyenMai.addCTGG(khuyenMai.ChiTietGiamGia);
+                }
+
+                _tendanhMuc = new List<string>();
+                MessageBox.Show("Tạo khuyến mại thành công");
+                temb2 = 0;
+                //}
+            }
+            else
+            {
+                MessageBox.Show("Không được bỏ trống thông tin nào");
+            }
         }
 
         void load()
@@ -172,40 +189,39 @@ namespace _3_GUI_PresentationLayer
             }
             dgv.Rows.Clear();
 
-            if (cbo_danhmuc.Text != "Tất cả")
+            if (cbo_danhmuc.Text == "Tất cả")
+            {
+
+                foreach (var x in _iQlKhuyenMai.GetKhuyenMais())
+                {
+                    dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
+                        x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP,
+                        x.ProductBack.MaPB == "PB1" ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
+                }
+            }
+            else
             {
                 foreach (var x in _iQlKhuyenMai.GetKhuyenMaisSearch(cbo_danhmuc.Text))
                 {
                     dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
                         x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP,
-                        x.ProductBack.ProductStatus == 1 ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
+                        x.ProductBack.MaPB == "PB1" ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
                 }
-            }
-            else
-            {
-                foreach (var x in _iQlKhuyenMai.GetKhuyenMais())
-                {
-                    dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
-                        x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP,
-                        x.ProductBack.ProductStatus == 1 ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
-                }
-
             }
 
         }
 
         private void cbo_danhmuc_TextChanged(object sender, EventArgs e)
         {
-        load();
+            load();
         }
-
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int column = e.ColumnIndex;
             int row = e.RowIndex;
             string id = dgv.Rows[row].Cells[5].Value.ToString();
             var dt = _iQlKhuyenMai.GetChiTietSanPhams().Where(c => c.MaCTSP == id).FirstOrDefault();
-            if (column==dgv.Columns["btn_add"].Index)
+            if (column == dgv.Columns["btn_add"].Index)
             {
                 dt.MaPB = "PB1";
                 _iQlKhuyenMai.updateCTSP(dt);
@@ -217,6 +233,61 @@ namespace _3_GUI_PresentationLayer
             }
             load();
 
+        }
+        void loadkm()
+        {
+            dgv.ColumnCount = 6;
+            dgv.Columns[0].Name = "Tên sản phẩm";
+            dgv.Columns[1].Name = "Thương hiệu";
+            dgv.Columns[2].Name = "Danh mục";
+            dgv.Columns[3].Name = "Giảm giá";
+            dgv.Columns[4].Name = "Trạng thái";
+            dgv.Columns[5].Name = "mã";
+            dgv.Columns[5].Visible = false;
+            DataGridViewButtonColumn DTThem = new DataGridViewButtonColumn();
+            DTThem.Name = "btn_add";
+            DTThem.Text = "Sửa";
+            DTThem.HeaderText = "";
+            DTThem.UseColumnTextForButtonValue = true;
+            int indexAdd = 6;
+            if (dgv.Columns["btn_add"] == null)
+            {
+                dgv.Columns.Insert(indexAdd, DTThem);
+            }
+            DataGridViewButtonColumn DTRemove = new DataGridViewButtonColumn();
+            DTRemove.Name = "btn_remove";
+            DTRemove.Text = "Dừng";
+            DTRemove.HeaderText = "";
+            DTRemove.UseColumnTextForButtonValue = true;
+            int indexRemove = 7;
+            if (dgv.Columns["btn_remove"] == null)
+            {
+                dgv.Columns.Insert(indexRemove, DTRemove);
+            }
+            dgv.Rows.Clear();
+            foreach (var x in _iQlKhuyenMai.GetLstCTSP2())
+            {
+                dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu, x.DanhMuc.TenDanhMuc, x.KhuyenMai.GiamGia, x.ChiTietSanPham.MaPB=="PB2"?"Đang Khuyến mại":"Không khuyến mại", x.ChiTietSanPham.MaCTSP);
+            }
+
+        }
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+        int temb3 = 0;
+        private void btn_loc_Click(object sender, EventArgs e)
+        {
+            if (temb3==0)
+            {
+                load();
+                temb3 = 1;
+            }
+            else if (temb3==1)
+            {
+                loadkm();
+                temb3 = 0;
+            }
         }
 
         private void Btn_Click(object? sender, EventArgs e)

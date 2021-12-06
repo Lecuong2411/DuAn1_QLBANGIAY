@@ -68,7 +68,7 @@ namespace _3_GUI_PresentationLayer
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(795, 481);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -132,6 +132,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_sua.TabIndex = 16;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btm_tao
             // 
@@ -297,6 +298,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_loc.TabIndex = 3;
             this.btn_loc.Text = "...";
             this.btn_loc.UseVisualStyleBackColor = true;
+            this.btn_loc.Click += new System.EventHandler(this.btn_loc_Click);
             // 
             // cbo_danhmuc
             // 

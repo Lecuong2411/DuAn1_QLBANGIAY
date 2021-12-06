@@ -91,8 +91,12 @@ namespace _3_GUI_PresentationLayer
                     _qlSanPham.ChiTietSanPham.MaCo = _iQlSanPhamService.GetLstLoaiCoGiay()
                         .Where(c => c.LoaiCoGiaySP == dgv.Rows[i].Cells[10].Value.ToString()).Select(c => c.MaCo).FirstOrDefault();
                     _qlSanPham.ChiTietSanPham.TrangThai = dgv.Rows[i].Cells[11].Value.ToString() == "Còn hàng" ? 1 : 0;
-                    _qlSanPham.ChiTietSanPham.MaPB = "PB2";
-                    _iQlSanPhamService.addCTSanPham(_qlSanPham.ChiTietSanPham);
+                    _qlSanPham.ChiTietSanPham.MaPB = "PB1";
+                    DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        _iQlSanPhamService.addCTSanPham(_qlSanPham.ChiTietSanPham);
+                    }
                     //History history = new History();
                     //history.MaCTSP = _qlSanPham.ChiTietSanPham.MaCTSP;
                     //history.MaHis ="His"+ _iQlSanPhamService.GetLstHistory().Count + 1;
