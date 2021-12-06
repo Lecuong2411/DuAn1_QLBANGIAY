@@ -64,7 +64,43 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            
+
+            try
+            {
+                if (txt_namevoucher.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn nhập thiếu tên Voucher", "thông báo", MessageBoxButtons.OK);
+                    txt_namevoucher.Focus();
+                    return;
+                }
+                else if (txt_soluong.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn nhập thiếu số lượng", "thông báo", MessageBoxButtons.OK);
+                    txt_soluong.Focus();
+                    return;
+                }
+                else if (txt_soluongdasudung.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn nhập thiếu số lượng đã sử dụng", "thông báo", MessageBoxButtons.OK);
+                    txt_soluongdasudung.Focus();
+                    return;
+                }
+                else if (txt_ghichu.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn nhập thiếu ghi chú", "thông báo", MessageBoxButtons.OK);
+                    txt_ghichu.Focus();
+                    return;
+                }
+                else if (rbt_ketthuc.Checked==false&&rdb_hoatdong.Checked==false)
+                {
+                    MessageBox.Show("Bạn nhập thiếu Trạng thái", "thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+                else if (nud_menhgia.Value<=0)
+                {
+                    MessageBox.Show("Mệnh giá phải lớn hơn 0", "thông báo", MessageBoxButtons.OK);
+                    return;
+                }
                 _voucher = new Voucher();
                 _voucher.MaVouCher = "VC" + _voucherService.ListvVouchers().Max(c => c.MaVouCher) + 1;
                 _voucher.Vouchers = txt_namevoucher.Text;
@@ -76,21 +112,35 @@ namespace _3_GUI_PresentationLayer
                 _voucher.GhiChu = txt_ghichu.Text;
                 _voucher.MenhGia = Convert.ToInt32(nud_menhgia.Value);
                 MessageBox.Show(_voucherService.add(_voucher), "Thông báo");
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void btn_fix_Click(object sender, EventArgs e)
         {
-            _voucher = new Voucher();
-            _voucher = _voucherService.ListvVouchers().Find(c => c.MaVouCher == _mavoucher);
-            _voucher.Vouchers = txt_namevoucher.Text;
-            _voucher.NSD = dtp_nsd.Value;
-            _voucher.HSD = dtp_hsd.Value;
-            _voucher.SoLuong = Convert.ToInt32(txt_soluong.Text);
-            _voucher.SoLuongDSD = Convert.ToInt32(txt_soluongdasudung.Text);
-            _voucher.TrangThai = rdb_hoatdong.Checked == true ? 1 : 0;
-            _voucher.GhiChu = txt_ghichu.Text;
-            _voucher.MenhGia = Convert.ToInt32(nud_menhgia.Value);
-            MessageBox.Show(_voucherService.update(_voucher), "Thông báo");
+            try
+            {
+                _voucher = new Voucher();
+                _voucher = _voucherService.ListvVouchers().Find(c => c.MaVouCher == _mavoucher);
+                _voucher.Vouchers = txt_namevoucher.Text;
+                _voucher.NSD = dtp_nsd.Value;
+                _voucher.HSD = dtp_hsd.Value;
+                _voucher.SoLuong = Convert.ToInt32(txt_soluong.Text);
+                _voucher.SoLuongDSD = Convert.ToInt32(txt_soluongdasudung.Text);
+                _voucher.TrangThai = rdb_hoatdong.Checked == true ? 1 : 0;
+                _voucher.GhiChu = txt_ghichu.Text;
+                _voucher.MenhGia = Convert.ToInt32(nud_menhgia.Value);
+                MessageBox.Show(_voucherService.update(_voucher), "Thông báo");
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void FrmThongtinVoucher_Load(object sender, EventArgs e)
