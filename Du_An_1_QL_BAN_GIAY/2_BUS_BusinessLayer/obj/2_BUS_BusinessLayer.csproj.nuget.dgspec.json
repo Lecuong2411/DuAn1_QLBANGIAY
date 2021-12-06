@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {}
+    "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+    "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
         "projectName": "1_DAL_DataAccessLayer",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
+        "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,25 +70,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
+    "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
+        "projectUniqueName": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
         "projectName": "2_BUS_BusinessLayer",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\obj\\",
+        "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\2_BUS_BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\2_BUS_BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +98,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\PC\\Desktop\\Git\\New folder\\New folder\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
+              "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj": {
+                "projectPath": "C:\\HOCFPT\\KI_4\\PRO131-DUAN1\\DuAn1_QLBANGIAY\\Du_An_1_QL_BAN_GIAY\\1_DAL_DataAccessLayer\\1_DAL_DataAccessLayer.csproj"
               }
             }
           }
@@ -136,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

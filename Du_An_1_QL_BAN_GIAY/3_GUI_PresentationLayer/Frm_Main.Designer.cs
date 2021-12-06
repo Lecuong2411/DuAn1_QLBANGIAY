@@ -58,7 +58,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.btn_dangxuat);
             this.panel1.Controls.Add(this.btn_thongke);
             this.panel1.Controls.Add(this.btn_khuyenmai);
@@ -212,7 +212,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // pal_logo
             // 
-            this.pal_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.pal_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(33)))));
             this.pal_logo.Controls.Add(this.label1);
             this.pal_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pal_logo.Location = new System.Drawing.Point(0, 0);
@@ -232,7 +232,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(100)))), ((int)(((byte)(142)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_close);

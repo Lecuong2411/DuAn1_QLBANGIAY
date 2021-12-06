@@ -92,7 +92,7 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_voucher_Click(object sender, EventArgs e)
         {
-            openchilForm(new FrmThongtinVoucher(), sender);
+            openchilForm(new Frm_Vouchers(), sender);
         }
 
         private void btn_khuyenmai_Click(object sender, EventArgs e)
