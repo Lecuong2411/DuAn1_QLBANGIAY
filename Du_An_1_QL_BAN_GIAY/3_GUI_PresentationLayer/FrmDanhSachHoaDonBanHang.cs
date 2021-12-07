@@ -172,6 +172,7 @@ namespace _3_GUI_PresentationLayer
         {
             dtgv_danhsachhoadonbanhang.ColumnCount = 6;
             dtgv_danhsachhoadonbanhang.Columns[0].Name = "ID Hóa đơn";
+            dtgv_danhsachhoadonbanhang.Columns[0].Visible = false;
             dtgv_danhsachhoadonbanhang.Columns[1].Name = "Số điện thoại khách hàng";
             dtgv_danhsachhoadonbanhang.Columns[2].Name = "Tổng tiền";
             dtgv_danhsachhoadonbanhang.Columns[3].Name = "Người lập phiếu";
@@ -207,12 +208,29 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_danhsach_Click(object sender, EventArgs e)
         {
-           loatdata(_ChucnangdanhSachHoaDonBanHang.loatdatahd());
+            try
+            {
+                loatdata(_ChucnangdanhSachHoaDonBanHang.loatdatahd());
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void txt_maphieunhap_KeyUp(object sender, KeyEventArgs e)
         {
-            loatdatatk(txt_maphieunhap.Text);
+            try
+            {
+
+                loatdatatk(txt_maphieunhap.Text);
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -242,26 +260,34 @@ namespace _3_GUI_PresentationLayer
         public void xuatExcel(string path, DataGridView dtgv_danhsachhoadonbanhang)
         {
 
-            if (dtgv_danhsachhoadonbanhang.Rows.Count > 0)
+            try
             {
-                Excel.Application application = new Excel.Application();
-                application.Application.Workbooks.Add(Type.Missing);
-                for (int i = 1; i < dtgv_danhsachhoadonbanhang.Columns.Count + 1; i++)
+                if (dtgv_danhsachhoadonbanhang.Rows.Count > 0)
                 {
-                    application.Cells[1, i] = dtgv_danhsachhoadonbanhang.Columns[i - 1].HeaderText;
-                }
-                for (int i = 0; i < dtgv_danhsachhoadonbanhang.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dtgv_danhsachhoadonbanhang.Columns.Count; j++)
+                    Excel.Application application = new Excel.Application();
+                    application.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < dtgv_danhsachhoadonbanhang.Columns.Count + 1; i++)
                     {
-                        application.Cells[i + 2, j + 1] = dtgv_danhsachhoadonbanhang.Rows[i].Cells[j].Value;
+                        application.Cells[1, i] = dtgv_danhsachhoadonbanhang.Columns[i - 1].HeaderText;
                     }
-                }
+                    for (int i = 0; i < dtgv_danhsachhoadonbanhang.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dtgv_danhsachhoadonbanhang.Columns.Count; j++)
+                        {
+                            application.Cells[i + 2, j + 1] = dtgv_danhsachhoadonbanhang.Rows[i].Cells[j].Value;
+                        }
+                    }
 
-                application.Columns.AutoFit();
-                application.Visible = true;
-                application.ActiveWorkbook.SaveCopyAs(path);
-                application.ActiveWorkbook.Saved = true;
+                    application.Columns.AutoFit();
+                    application.Visible = true;
+                    application.ActiveWorkbook.SaveCopyAs(path);
+                    application.ActiveWorkbook.Saved = true;
+                }
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
             }
 
         }
@@ -287,41 +313,73 @@ namespace _3_GUI_PresentationLayer
 
         private void txt_timkiemct_KeyUp(object sender, KeyEventArgs e)
         {
-            if (cbb_timkiem.Text == "SĐT")
+            try
             {
-                loatdatahdtimkiemsdt(txt_timkiemct.Text);
+                if (cbb_timkiem.Text == "SĐT")
+                {
+                    loatdatahdtimkiemsdt(txt_timkiemct.Text);
+                }
+                else if (cbb_timkiem.Text == "Tên khách hàng")
+                {
+                    loatdatahdtimkiemtenkh(txt_timkiemct.Text);
+                }
+                else if (cbb_timkiem.Text == "Tên Giày")
+                {
+                    loatdatahdtimkiemtg(txt_timkiemct.Text);
+                }
+                else if (cbb_timkiem.Text == "Người lập phiếu")
+                {
+                    loatdatahdtimkiemnguoilapphiep(txt_timkiemct.Text);
+                }
             }
-            else if (cbb_timkiem.Text == "Tên khách hàng")
+            catch (Exception x)
             {
-                loatdatahdtimkiemtenkh(txt_timkiemct.Text);
-            }
-            else if (cbb_timkiem.Text == "Tên Giày")
-            {
-                loatdatahdtimkiemtg(txt_timkiemct.Text);
-            }
-            else if (cbb_timkiem.Text == "Người lập phiếu")
-            {
-                loatdatahdtimkiemnguoilapphiep(txt_timkiemct.Text);
+
+                MessageBox.Show(x.Message);
             }
         }
 
         private void btn_dsct_Click(object sender, EventArgs e)
         {
-            loatdatahdct(_ChucnangdanhSachHoaDonBanHang.loatdatachitiet()); 
+            try
+            {
+                loatdatahdct(_ChucnangdanhSachHoaDonBanHang.loatdatachitiet());
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            var listtkn = _ChucnangdanhSachHoaDonBanHang.loatdatahd()
-                .Where(c => c.hoadon.thoigian.ToShortDateString().StartsWith(dtp_ngaythang.Text)).ToList();
-            loatdata(listtkn);
+            try
+            {
+                var listtkn = _ChucnangdanhSachHoaDonBanHang.loatdatahd()
+                       .Where(c => c.hoadon.thoigian.ToShortDateString().StartsWith(dtp_ngaythang.Text)).ToList();
+                loatdata(listtkn);
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void btn_hdct_Click(object sender, EventArgs e)
         {
-            var listtkn = _ChucnangdanhSachHoaDonBanHang.loatdatachitiet()
-                .Where(c => c.hoadon.thoigian.ToShortDateString().StartsWith(dtp_ct.Text)).ToList();
-            loatdatahdct(listtkn);
+            try
+            {
+                var listtkn = _ChucnangdanhSachHoaDonBanHang.loatdatachitiet()
+                       .Where(c => c.hoadon.thoigian.ToShortDateString().StartsWith(dtp_ct.Text)).ToList();
+                loatdatahdct(listtkn);
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
