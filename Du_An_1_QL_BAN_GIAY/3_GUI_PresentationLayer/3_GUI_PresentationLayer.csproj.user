@@ -13,6 +13,9 @@
     <Compile Update="Frm_BarCode.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Doimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_import.cs">
       <SubType>Form</SubType>
     </Compile>

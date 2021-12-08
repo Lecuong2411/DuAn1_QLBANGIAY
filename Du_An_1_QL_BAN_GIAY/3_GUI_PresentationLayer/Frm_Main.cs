@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _2_BUS_BusinessLayer.IService;
+using _2_BUS_BusinessLayer.Service;
 
 namespace _3_GUI_PresentationLayer
 {
     public partial class Frm_Main : Form
     {
+        private I_Login login;
+        public static string mail;
         Frm_trangchu frm_Trangchu = new Frm_trangchu();
         Frm_banhang frm_Banhang = new Frm_banhang();
         Frm_sanpham frm_Sanpham = new Frm_sanpham();
@@ -25,6 +29,7 @@ namespace _3_GUI_PresentationLayer
         public Frm_Main()
         {
             InitializeComponent();
+            login = new Login();
             btn_close.Visible = false;
             timer1.Enabled = true;
             timer1.Start();
@@ -104,7 +109,9 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            Frm_Login a = new Frm_Login();
+            a.Show();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -124,6 +131,31 @@ namespace _3_GUI_PresentationLayer
         {
             label2.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
            
+        }
+        public void trangthai()
+        {
+
+
+            btn_banhang.Enabled = true;
+            btn_hoadon.Enabled = true;
+            btn_khuyenmai.Enabled = true;
+            btn_nhanvien.Enabled = true;
+            btn_sanpham.Enabled = true;
+            btn_thongke.Enabled = true;
+            btn_voucher.Enabled = true;
+            btn_dangxuat.Enabled = true;
+            if (login.layVaitro(Frm_Main.mail) == 1)
+            {
+                btn_khuyenmai.Visible = false;
+                btn_nhanvien.Visible = false;
+                btn_voucher.Visible = false;
+            }
+
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+            trangthai();
         }
     }
 }
