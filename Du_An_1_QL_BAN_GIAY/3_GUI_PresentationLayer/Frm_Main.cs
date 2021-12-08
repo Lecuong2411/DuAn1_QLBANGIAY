@@ -44,10 +44,7 @@ namespace _3_GUI_PresentationLayer
                     corenbutton.ForeColor = Color.White;
                     btn_close.Visible = true;
 
-                }
-                  
-                
-               
+                }  
             }
         }
       private void openchilForm(Form chilform,object btnsender)
@@ -102,7 +99,7 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_thongke_Click(object sender, EventArgs e)
         {
-            
+            openchilForm(new Frm_Thongke(), sender);
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
@@ -115,9 +112,6 @@ namespace _3_GUI_PresentationLayer
             if (GetForm != null)
                 GetForm.Close();
             Reset();
-
-
-
         }
         private void Reset()
         {

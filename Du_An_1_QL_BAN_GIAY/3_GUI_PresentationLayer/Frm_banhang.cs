@@ -29,6 +29,7 @@ namespace _3_GUI_PresentationLayer
         HoaDonChiTiet hoaDonChiTiet;
         NhanVien nhanVien;
         Voucher voucher;
+        Form _f;
         private IQlSanPhamService _qlSanPhamService;
 
         public Frm_banhang()
@@ -203,36 +204,76 @@ namespace _3_GUI_PresentationLayer
             }
 
         }
-      
+
+        string barcode;
+       
         private void dtgview_thongtinsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int colum = e.ColumnIndex;
+         
             if (lbl_mahoadon.Text == "")
             {
                 MessageBox.Show("Bạn chưa có hóa đơn để thêm sản phẩm !", "Thông báo");
                 return;
             }
-
-
-           
             int RowIndex = e.RowIndex;
             if (RowIndex == _qlSanPhamService.GetSPAll().Count || RowIndex == -1) return;
-            var barcode = dtgview_thongtinsp.Rows[RowIndex].Cells[0].Value.ToString();
+             barcode = dtgview_thongtinsp.Rows[RowIndex].Cells[0].Value.ToString();
+            if (e.ColumnIndex == dtgview_thongtinsp.Columns[colum].Index)
+            {
+                
+                _f = new Form();
+                _f.Text = "Nhập số lượng";
+                TextBox textBox = new TextBox();
+                textBox.Size = new System.Drawing.Size(284, 39);
+                textBox.Location = (new Point(370, 54));
+                Button button = new Button();
+                Label label = new Label();
+                label.Location = (new Point(42, 54));
+               
+                label.Size= new System.Drawing.Size(264, 32);
+                button.Text = "OK";
+                button.Size= new System.Drawing.Size(150, 46);
+                button.Location= (new Point(100, 200));
+                _f.Controls.Add(textBox);
+                _f.Controls.Add(button);
+                _f.Controls.Add(label);
+                _f.Controls[2].Left = 10;
+                _f.Controls[2].Top = 13;
+                _f.Controls[0].Left = 80;
+                _f.Controls[1].Left = 100;
+                _f.Controls[0].Top = 10;
+                _f.Controls[1].Top = 50;
+                _f.Size = new System.Drawing.Size(700, 200);
+                _f.StartPosition=FormStartPosition.CenterScreen;
+                button.Click += Button_Click;
+                _f.ShowDialog();
 
-     
+            }
+
+           
+
+        }
+        int _soluong;
+        private void Button_Click(object sender, EventArgs e)
+        {
+
+
+       
             var giaban = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaQR == barcode).Select(c => c.ChiTietSanPham.giaban).FirstOrDefault();
             var sl = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaQR == barcode).Select(c => c.ChiTietSanPham.soluong).FirstOrDefault();
             var ctsp = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaQR == barcode).Select(c => c.ChiTietSanPham.MaCTSP).FirstOrDefault();
-            var hdct = _banhangService.viewHoadons().Where(c => c.hoaDonChiTiet.MaHd == lbl_mahoadon.Text && c.chiTietSanPham.MaQR== barcode).Select(c => c.chiTietSanPham.MaCTSP).FirstOrDefault();
+            var hdct = _banhangService.viewHoadons().Where(c => c.hoaDonChiTiet.MaHd == lbl_mahoadon.Text && c.chiTietSanPham.MaQR == barcode).Select(c => c.chiTietSanPham.MaCTSP).FirstOrDefault();
             if (sl <= 0)
             {
                 MessageBox.Show("Sản phẩm đã hết", "Thông báo");
                 return;
             }
+            _soluong = Convert.ToInt32(_f.Controls[0].Text);
             var updatects = _banhangService.loadspct().FirstOrDefault(c => c.MaCTSP == ctsp);
             if (hdct == ctsp)
             {
-                var slhdct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text && c.MaCTSP==hdct);
+                var slhdct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text && c.MaCTSP == hdct);
                 slhdct.soluong += 1;
                 updatects.soluong -= 1;
                 slhdct.Thanhtien = slhdct.soluong * slhdct.DonGia;
@@ -242,14 +283,15 @@ namespace _3_GUI_PresentationLayer
                 loadHoadon(lbl_mahoadon.Text);
                 loadSpbanhang();
                 return;
-            }     
-          
-           
+            }
+            Button button = sender as Button;
+
+
             hoaDonChiTiet.MaHd = lbl_mahoadon.Text;
             hoaDonChiTiet.MaCTSP = ctsp;
             hoaDonChiTiet.TrangThai = 1;
-            hoaDonChiTiet.soluong = Frm_soluong.soluong;
-             hoaDonChiTiet.DonGia = giaban;
+            hoaDonChiTiet.soluong = _soluong;
+            hoaDonChiTiet.DonGia = giaban;
             hoaDonChiTiet.Thanhtien = giaban * hoaDonChiTiet.soluong;
             updatects.soluong = sl - Frm_soluong.soluong;
             _banhangService.addHoadonchitiet(hoaDonChiTiet);
@@ -257,7 +299,7 @@ namespace _3_GUI_PresentationLayer
             tongtien();
             loadHoadon(lbl_mahoadon.Text);
             loadSpbanhang();
-
+            _f.Close();
         }
 
 
