@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL_DataAccessLayer.Models;
 using _2_BUS_BusinessLayer.IService;
 using _2_BUS_BusinessLayer.Service;
+using _2_BUS_BusinessLayer.Utilities;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -18,7 +20,7 @@ namespace _3_GUI_PresentationLayer
         private IBUS_VoucherService _voucherService;
         private Voucher _voucher;
         public string _mavoucher;
-       
+        private Validateform _validateform;
        
         public FrmThongtinVoucher()
         {
@@ -26,6 +28,7 @@ namespace _3_GUI_PresentationLayer
            
             _voucher = new Voucher();
             _voucherService = new BUS_VoucherService();
+            _validateform = new Validateform();
             btn_fix.Visible = false;
            
             txt_soluongdasudung.Text = "0";
@@ -37,6 +40,7 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _voucherService = new BUS_VoucherService();
+            _validateform = new Validateform();
             _voucher = new Voucher();
             txt_ghichu.Text = ghichu;
             txt_namevoucher.Text = namvoucher;
@@ -60,13 +64,16 @@ namespace _3_GUI_PresentationLayer
 
 
         }
-
-
+       
         private void btn_add_Click(object sender, EventArgs e)
         {
 
             try
             {
+                _validateform.checkSo(txt_soluongdasudung.Text);
+                _validateform.checkSo(nud_menhgia.Text);
+                _validateform.checkSo(txt_soluong.Text);
+                _validateform.checkChu(txt_ghichu.Text);
                 if (txt_namevoucher.Text.Trim().Length == 0)
                 {
                     MessageBox.Show("Bạn nhập thiếu tên Voucher", "thông báo", MessageBoxButtons.OK);

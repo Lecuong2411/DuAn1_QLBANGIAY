@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using _1_DAL_DataAccessLayer.Models;
 using _2_BUS_BusinessLayer.IService;
 using _2_BUS_BusinessLayer.Service;
+using _2_BUS_BusinessLayer.Utilities;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -17,11 +18,13 @@ namespace _3_GUI_PresentationLayer
     {
         private I_Login _chucnangLogin;
         private NhanVien _nv;
+        private Validateform _validateform;
         public static int vaitro;
         public Frm_Login()
         {
             InitializeComponent();
             _chucnangLogin = new Login();
+            _validateform = new Validateform();
             _nv = new NhanVien();
            
         }
@@ -33,6 +36,9 @@ namespace _3_GUI_PresentationLayer
 
         private void bnt_login_Click(object sender, EventArgs e)
         {
+            _validateform.checkEmail(txt_email.Text);
+            _validateform.checkNull(txt_email.Text);
+            _validateform.checkNull(txt_matkhau.Text);
             _nv.Email = txt_email.Text;
             _nv.MatKhau = _chucnangLogin.BUSMahoaPassWord(txt_matkhau.Text);
             Frm_Main.mail = txt_email.Text;
