@@ -32,7 +32,7 @@ namespace _3_GUI_PresentationLayer
             cbx_Thongke.Items.Add("HangCanNhap");
             cbx_Thongke.Items.Add("All");
             lbl_hangcannhap.Hide();
-
+            cbx_Thongke.SelectedIndex = 3;
             grid_Data.Columns[0].DefaultCellStyle.Format = "N0";
             grid_Data.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grid_Data.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -40,6 +40,7 @@ namespace _3_GUI_PresentationLayer
             grid_Data.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             lbl_Gio.Text = DateTime.Now.ToLongDateString() + "\n" + DateTime.Now.ToLongTimeString();
+            loadtheongay();
         }
 
         #region Load dữ liệu
@@ -208,6 +209,46 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
+        void loadtheongay()
+        {
+            lbl_ThongKe.Text = "0";
+            for (int i = 0; i < grid_Data.Rows.Count; i++)
+            {
+                if (cbx_Thongke.Text == "DoanhThu")
+                {
+                    Load();
+                    SumTongTien();
+                    lbl_hangcannhap.Hide();
+                    lbl_Tk_TongHD.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "TongHoaDon")
+                {
+                    CountSLHD();
+                    lbl_hangcannhap.Hide();
+                    lbl_ThongKe.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "HangCanNhap")
+                {
+                    LoadHangCanNhap();
+                    lbl_hangcannhap.Show();
+                    lbl_Tk_TongHD.Text = "0";
+                    lbl_ThongKe.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "All")
+                {
+                    Load();
+                    SumTongTien();
+                    CountSLHD();
+                    LoadHangCanNhap();
+                    lbl_hangcannhap.Show();
+                }
+                else
+                {
+                    MessageBox.Show("chọn mục cần thống kê đi ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cbx_Thongke.Focus();
+                }
+            }
+        }
         private void btn_load_Click(object sender, EventArgs e)
         {
             LoadThongTinThongKe();
@@ -227,6 +268,73 @@ namespace _3_GUI_PresentationLayer
            }
 
            sumDT = x;
+        }
+
+
+        public void Load_moth()
+        {
+            grid_Data.ColumnCount = 4;
+            grid_Data.Columns[0].Name = "doanh thu";
+            grid_Data.Columns[1].Name = "Mã hoá đơn ";
+            grid_Data.Columns[2].Name = "tên nhân viên";
+            grid_Data.Columns[3].Name = "Số lượng";
+            grid_Data.Rows.Clear();
+            foreach (var x in _service.loatdatachitiet().Where(c => c.hoadon.thoigian.Month == dateTimePicker1.Value.Month && c.hoadon.thoigian.Year == dateTimePicker1.Value.Year))
+            {
+                grid_Data.Rows.Add(x.hoadon.Tongtien, x.hoadon.MaHd, x.NhanVien.TenNv, x.hoaDonChiTiet.soluong);
+            }
+        }
+        public void CountSLHD_Moth()
+        {
+
+            lbl_Tk_TongHD.Text = _IServiceQLThongKe.LstHoaDons().Where(c => c.TrangThaiHd == 1 && c.thoigian.Month == dateTimePicker1.Value.Month && c.thoigian.Year == dateTimePicker1.Value.Year)
+                .Select(c => c.MaHd).Count().ToString();
+        }
+
+        private void btn_thongketheothang_Click(object sender, EventArgs e)
+        {
+            lbl_ThongKe.Text = "0";
+            for (int i = 0; i < grid_Data.Rows.Count; i++)
+            {
+                if (cbx_Thongke.Text == "DoanhThu")
+                {
+                    Load_moth();
+                    SumTongTien();
+                    lbl_hangcannhap.Hide();
+                    lbl_Tk_TongHD.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "TongHoaDon")
+                {
+                    CountSLHD_Moth();
+                    lbl_hangcannhap.Hide();
+                    lbl_ThongKe.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "HangCanNhap")
+                {
+                    LoadHangCanNhap();
+                    lbl_hangcannhap.Show();
+                    lbl_Tk_TongHD.Text = "0";
+                    lbl_ThongKe.Text = "0";
+                }
+                else if (cbx_Thongke.Text == "All")
+                {
+                    Load_moth();
+                    SumTongTien();
+                    CountSLHD_Moth();
+                    LoadHangCanNhap();
+                    lbl_hangcannhap.Show();
+                }
+                else
+                {
+                    MessageBox.Show("chọn mục cần thống kê đi ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cbx_Thongke.Focus();
+                }
+            }
+        }
+
+        private void lbl_hangcannhap_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -419,3 +419,4 @@ C:\Users\PC\Desktop\Git\New folder (8)\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI
 C:\Users\PC\Desktop\Git\New folder (8)\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\ref\3_GUI_PresentationLayer.dll
 C:\Users\PC\Desktop\Git\New folder (8)\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.pdb
 C:\Users\PC\Desktop\Git\New folder (8)\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\3_GUI_PresentationLayer.genruntimeconfig.cache
+C:\HOCFPT\KI_4\PRO131-DUAN1\DuAn1_QLBANGIAY\Du_An_1_QL_BAN_GIAY\3_GUI_PresentationLayer\obj\Debug\net5.0-windows\_3_GUI_PresentationLayer.Frm_Doimatkhau.resources

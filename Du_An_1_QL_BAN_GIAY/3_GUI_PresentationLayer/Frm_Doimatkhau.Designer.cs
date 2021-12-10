@@ -45,10 +45,11 @@ namespace _3_GUI_PresentationLayer
             // cbHienMK
             // 
             this.cbHienMK.AutoSize = true;
-            this.cbHienMK.Location = new System.Drawing.Point(27, 226);
-            this.cbHienMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbHienMK.ForeColor = System.Drawing.Color.White;
+            this.cbHienMK.Location = new System.Drawing.Point(50, 482);
+            this.cbHienMK.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.cbHienMK.Name = "cbHienMK";
-            this.cbHienMK.Size = new System.Drawing.Size(104, 19);
+            this.cbHienMK.Size = new System.Drawing.Size(203, 36);
             this.cbHienMK.TabIndex = 40;
             this.cbHienMK.Text = "Hiện mật khẩu";
             this.cbHienMK.UseVisualStyleBackColor = true;
@@ -61,10 +62,10 @@ namespace _3_GUI_PresentationLayer
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnThoat.Image = global::_3_GUI_PresentationLayer.Properties.Resources.icons8_close_301;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(27, 250);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Location = new System.Drawing.Point(50, 533);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(104, 42);
+            this.btnThoat.Size = new System.Drawing.Size(193, 90);
             this.btnThoat.TabIndex = 39;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -76,10 +77,10 @@ namespace _3_GUI_PresentationLayer
             this.btnDoiMatKhau.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(192, 250);
-            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(357, 533);
+            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(133, 42);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(247, 90);
             this.btnDoiMatKhau.TabIndex = 38;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -89,40 +90,40 @@ namespace _3_GUI_PresentationLayer
             // 
             // txtPassNew2
             // 
-            this.txtPassNew2.Location = new System.Drawing.Point(23, 192);
-            this.txtPassNew2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassNew2.Location = new System.Drawing.Point(43, 410);
+            this.txtPassNew2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtPassNew2.Name = "txtPassNew2";
             this.txtPassNew2.PasswordChar = 'x';
-            this.txtPassNew2.Size = new System.Drawing.Size(302, 23);
+            this.txtPassNew2.Size = new System.Drawing.Size(557, 39);
             this.txtPassNew2.TabIndex = 37;
             this.txtPassNew2.UseWaitCursor = true;
             // 
             // txtPassNew
             // 
-            this.txtPassNew.Location = new System.Drawing.Point(23, 147);
-            this.txtPassNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassNew.Location = new System.Drawing.Point(43, 314);
+            this.txtPassNew.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtPassNew.Name = "txtPassNew";
             this.txtPassNew.PasswordChar = 'x';
-            this.txtPassNew.Size = new System.Drawing.Size(302, 23);
+            this.txtPassNew.Size = new System.Drawing.Size(557, 39);
             this.txtPassNew.TabIndex = 36;
             this.txtPassNew.UseWaitCursor = true;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(23, 101);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPass.Location = new System.Drawing.Point(43, 215);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = 'x';
-            this.txtPass.Size = new System.Drawing.Size(302, 23);
+            this.txtPass.Size = new System.Drawing.Size(557, 39);
             this.txtPass.TabIndex = 31;
             this.txtPass.UseWaitCursor = true;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(23, 55);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMail.Location = new System.Drawing.Point(43, 117);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(302, 23);
+            this.txtMail.Size = new System.Drawing.Size(557, 39);
             this.txtMail.TabIndex = 30;
             this.txtMail.UseWaitCursor = true;
             // 
@@ -130,9 +131,11 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(23, 124);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(43, 265);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 21);
+            this.label3.Size = new System.Drawing.Size(247, 45);
             this.label3.TabIndex = 32;
             this.label3.Text = "Mật khẩu mới :";
             this.label3.UseWaitCursor = true;
@@ -141,9 +144,11 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(23, 169);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(43, 361);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 21);
+            this.label2.Size = new System.Drawing.Size(379, 45);
             this.label2.TabIndex = 33;
             this.label2.Text = "Nhập lại mật khẩu mới :";
             this.label2.UseWaitCursor = true;
@@ -152,30 +157,34 @@ namespace _3_GUI_PresentationLayer
             // 
             this.lblMatKhau.AutoSize = true;
             this.lblMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMatKhau.Location = new System.Drawing.Point(23, 78);
+            this.lblMatKhau.ForeColor = System.Drawing.Color.White;
+            this.lblMatKhau.Location = new System.Drawing.Point(43, 166);
+            this.lblMatKhau.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(82, 21);
+            this.lblMatKhau.Size = new System.Drawing.Size(162, 45);
             this.lblMatKhau.TabIndex = 34;
-            this.lblMatKhau.Text = "Mạt khẩu";
+            this.lblMatKhau.Text = "Mật khẩu";
             this.lblMatKhau.UseWaitCursor = true;
             // 
             // lblMail
             // 
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMail.Location = new System.Drawing.Point(23, 32);
+            this.lblMail.ForeColor = System.Drawing.Color.White;
+            this.lblMail.Location = new System.Drawing.Point(43, 68);
+            this.lblMail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(44, 21);
+            this.lblMail.Size = new System.Drawing.Size(86, 45);
             this.lblMail.TabIndex = 35;
             this.lblMail.Text = "Mail";
             this.lblMail.UseWaitCursor = true;
             // 
             // Frm_Doimatkhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(353, 319);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(656, 681);
             this.Controls.Add(this.cbHienMK);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDoiMatKhau);
@@ -187,8 +196,9 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.lblMail);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Frm_Doimatkhau";
-            this.Text = "Frm_Doimatkhau";
+            this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

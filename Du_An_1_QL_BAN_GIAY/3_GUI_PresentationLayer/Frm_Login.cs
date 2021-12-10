@@ -16,9 +16,11 @@ namespace _3_GUI_PresentationLayer
 {
     public partial class Frm_Login : Form
     {
+        public static string name;
         private I_Login _chucnangLogin;
         private NhanVien _nv;
         private Validateform _validateform;
+        private I_QLNhanVien I_QLNhanVien;
         public static int vaitro;
         public Frm_Login()
         {
@@ -26,6 +28,7 @@ namespace _3_GUI_PresentationLayer
             _chucnangLogin = new Login();
             _validateform = new Validateform();
             _nv = new NhanVien();
+            I_QLNhanVien = new Service_QLNhanVien();
            
         }
 
@@ -46,6 +49,7 @@ namespace _3_GUI_PresentationLayer
             {
                 MessageBox.Show("chúc mừng " + txt_email.Text + " đăng nhập thành công", "thông báo");
                 this.Hide();
+                name = I_QLNhanVien.GetlstNhanVien().Where(c => c.Email == txt_email.Text).Select(c => c.MaNv).FirstOrDefault();
                 Frm_Main a = new Frm_Main();
                 a.Show();
             }

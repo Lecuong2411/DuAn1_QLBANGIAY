@@ -387,6 +387,9 @@ namespace _3_GUI_PresentationLayer
 
         }
 
-       
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
