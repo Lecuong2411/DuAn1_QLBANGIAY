@@ -197,6 +197,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.dgv);
             this.Name = "Frm_import";
             this.Text = "Frm_import";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 

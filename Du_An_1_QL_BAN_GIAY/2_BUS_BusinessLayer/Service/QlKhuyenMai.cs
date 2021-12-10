@@ -248,10 +248,9 @@ namespace _2_BUS_BusinessLayer.Service
         public List<KhuyenMai_Bus> GetLstCTSP2()
         {
             List<KhuyenMai_Bus> GetLstCTSP2 = new List<KhuyenMai_Bus>();
-            GetLstCTSP2 = (from a in _lstChiTietSanPhams
-                           join b in _lstSanPhams on a.MaSP equals b.MaSp
-                           join c in _lstDanhMucs on b.MaDanhMuc equals c.MaDanhMuc
-                           join d in _lstProductBacks on a.MaPB equals d.MaPB
+            GetLstCTSP2 = (
+                           from c in _lstDanhMucs 
+                          
 
                            join f in _lstChiTietGiamGias on c.MaDanhMuc equals f.MaDanhMuc
                            //from f in CtggDm.DefaultIfEmpty()
@@ -259,18 +258,9 @@ namespace _2_BUS_BusinessLayer.Service
                            //from n in KMCTKM.DefaultIfEmpty()
                            select new KhuyenMai_Bus()
                            {
-                               ChiTietSanPham = (from km in _lstKhuyenMais
-                                                 join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
-
-                                                 join dm in _lstDanhMucs on ctkm.MaDanhMuc equals dm.MaDanhMuc
-                                                 join sp in _lstSanPhams on dm.MaDanhMuc equals sp.MaDanhMuc
-                                                 join ctsp in _lstChiTietSanPhams on sp.MaSp equals ctsp.MaSP
-                                                 where ctsp.MaPB == "PB2"
-                                                 select ctsp).FirstOrDefault()
-                                                ,
-                               SanPham = b,
+                               
                                DanhMuc = c,
-                               ProductBack = d,
+                             
                                ChiTietGiamGia = f,
                                KhuyenMai = n
                                ,

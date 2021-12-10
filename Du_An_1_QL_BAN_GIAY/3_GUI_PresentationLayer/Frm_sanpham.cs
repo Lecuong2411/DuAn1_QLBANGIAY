@@ -80,6 +80,8 @@ namespace _3_GUI_PresentationLayer
 
         void loadChatLieu()
         {
+            txt_chatLieu.Items.Clear();
+            txt_chatLieu.ResetText();
             foreach (var x in _iQlSanPhamService.GetLstChatLieu())
             {
                 txt_chatLieu.Items.Add(x.ChatLieuSP);
@@ -89,6 +91,7 @@ namespace _3_GUI_PresentationLayer
         }
         void loadChatLieuSP()
         {
+     
             cbo_chatLieu.Items.Add("Tất cả");
             foreach (var x in _iQlSanPhamService.GetLstChatLieu())
             {
@@ -101,16 +104,18 @@ namespace _3_GUI_PresentationLayer
         }
         void loadanhMucSP()
         {
+
             cbo_loadDanhMuc.Items.Add("Tất cả");
             foreach (var x in _iQlSanPhamService.GetLstDanhMuc())
             {
                 cbo_loadDanhMuc.Items.Add(x.TenDanhMuc);
             }
-
             cbo_loadDanhMuc.SelectedIndex = 0;
         }
         void loaddanhMuc()
         {
+            txt_danhmuc.Items.Clear();
+            txt_danhmuc.ResetText();
             foreach (var x in _iQlSanPhamService.GetLstDanhMuc())
             {
                 txt_danhmuc.Items.Add(x.TenDanhMuc);
@@ -131,6 +136,8 @@ namespace _3_GUI_PresentationLayer
 
         void loadSize()
         {
+            cbx_size.Items.Clear();
+            cbx_size.ResetText();
             foreach (var x in _iQlSanPhamService.GetLstSize())
             {
                 cbx_size.Items.Add(x.SizeSp);
@@ -141,6 +148,8 @@ namespace _3_GUI_PresentationLayer
 
         void loadColor()
         {
+            cbx_mau.Items.Clear();
+            cbx_mau.ResetText();
             foreach (var x in _iQlSanPhamService.GetLstColor())
             {
                 cbx_mau.Items.Add(x.ColorSP);
@@ -668,6 +677,83 @@ namespace _3_GUI_PresentationLayer
 
 
 
+        }
+
+        private void lbl_addDanhMuc_Click(object sender, EventArgs e)
+        {
+            if ((_iQlSanPhamService.GetLstDanhMuc().Where(c => c.TenDanhMuc == txt_danhmuc.Text).FirstOrDefault() == null))
+            {
+                QLSanPham qLSanPham = new QLSanPham();
+                qLSanPham.DanhMuc.TenDanhMuc = txt_danhmuc.Text;
+                qLSanPham.DanhMuc.MaDanhMuc = "DM" + (_iQlSanPhamService.GetLstDanhMuc().Count + 1);
+                qLSanPham.DanhMuc.GhiChu = "";
+                qLSanPham.DanhMuc.TrangThai = 1;
+                _iQlSanPhamService.addDanhMuc(qLSanPham.DanhMuc);
+                loaddanhMuc();
+            }
+            else
+            {
+                MessageBox.Show("Danh mục đã tồn tại", "Thông báo");
+            }
+        }
+
+        private void lbl_addtsp_Click(object sender, EventArgs e)
+        {
+            //QLSanPham qLSanPham = new QLSanPham();
+            //qLSanPham.SanPham.TenSp = txt_tsp.Text;
+            //qLSanPham.SanPham.TenSp = txt_tsp.Text;
+        }
+
+        private void lbl_addSize_Click(object sender, EventArgs e)
+        {
+            if (_iQlSanPhamService.GetLstSize().Where(c => c.SizeSp == Convert.ToInt32(cbx_size.Text)).FirstOrDefault() == null)
+            {
+                QLSanPham qLSanPham = new QLSanPham();
+                qLSanPham.Size.MaSize = "Sz" + (_iQlSanPhamService.GetLstSize().Count + 1);
+                qLSanPham.Size.SizeSp = Convert.ToInt32(cbx_size.Text);
+                qLSanPham.Size.ChieuDaiChan = Convert.ToInt32(cbx_size.Text) / 2 + 1;
+                qLSanPham.Size.TrangThai = 1;
+                _iQlSanPhamService.addSize(qLSanPham.Size);
+                loadSize();
+            }
+            else
+            {
+                MessageBox.Show("Size đã tồn tại", "Thông báo");
+            }
+        }
+
+        private void lbl_addColor_Click(object sender, EventArgs e)
+        {
+            if (_iQlSanPhamService.GetLstColor().Where(c => c.ColorSP == cbx_mau.Text).FirstOrDefault() == null)
+            {
+                QLSanPham qLSanPham = new QLSanPham();
+                qLSanPham.Color.MaClr = "Clr" + (_iQlSanPhamService.GetLstColor().Count + 1);
+                qLSanPham.Color.ColorSP = cbx_mau.Text;
+                qLSanPham.Color.TrangThai = 1;
+                _iQlSanPhamService.addColor(qLSanPham.Color);
+                loadColor();
+            }
+            else
+            {
+                MessageBox.Show("Màu đã tồn tại", "Thông báo");
+            }
+        }
+
+        private void lbl_addChatLieu_Click(object sender, EventArgs e)
+        {
+            if (_iQlSanPhamService.GetLstChatLieu().Where(c => c.ChatLieuSP == txt_chatLieu.Text).FirstOrDefault() == null)
+            {
+                QLSanPham qLSanPham = new QLSanPham();
+                qLSanPham.ChatLieu.MaChatLieu = "ChL" + (_iQlSanPhamService.GetLstChatLieu().Count + 1);
+                qLSanPham.ChatLieu.ChatLieuSP = txt_chatLieu.Text;
+                qLSanPham.ChatLieu.TrangThai = 1;
+                _iQlSanPhamService.addChatLieu(qLSanPham.ChatLieu);
+                loadChatLieu();
+            }
+            else
+            {
+                MessageBox.Show("Chất liệu đã tồn tại", "Thông báo");
+            }
         }
     }
 }

@@ -30,51 +30,13 @@ namespace _3_GUI_PresentationLayer
             rdo_hd.Checked = true;
             dgv.RowsDefaultCellStyle.BackColor = Color.LightBlue;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
+            dgv_km.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            dgv_km.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
         }
-
-
-        //void load()
-        //{
-        //    dgv.ColumnCount = 6;
-        //    dgv.Columns[0].Name = "Tên sản phẩm";
-        //    dgv.Columns[1].Name = "Thương hiệu";
-        //    dgv.Columns[2].Name = "Loại cổ giày";
-        //    dgv.Columns[3].Name = "Chất liệu";
-        //    dgv.Columns[4].Name = "Trạng thái";
-        //    dgv.Columns[5].Name = "mã";
-        //    dgv.Columns[5].Visible = false;
-        //    DataGridViewButtonColumn DTThem = new DataGridViewButtonColumn();
-        //    DTThem.Name = "btn_add";
-        //    DTThem.Text = "Ẩn";
-        //    DTThem.HeaderText = "";
-        //    DTThem.UseColumnTextForButtonValue = true;
-        //    int indexAdd = 6;
-        //    if (dgv.Columns["btn_add"] == null)
-        //    {
-        //        dgv.Columns.Insert(indexAdd, DTThem);
-        //    }
-        //    DataGridViewButtonColumn DTRemove = new DataGridViewButtonColumn();
-        //    DTRemove.Name = "btn_remove";
-        //    DTRemove.Text = "Anti ẩn";
-        //    DTRemove.HeaderText = "";
-        //    DTRemove.UseColumnTextForButtonValue = true;
-        //    int indexRemove = 7;
-        //    if (dgv.Columns["btn_remove"] == null)
-        //    {
-        //        dgv.Columns.Insert(indexRemove, DTRemove);
-        //    }
-        //    dgv.Rows.Clear();
-        //    foreach (var x in _iQlKhuyenMai.GetKhuyenMais())
-        //    {
-        //        dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu,
-        //            x.LoaiCoGiay.LoaiCoGiaySP, x.ChatLieu.ChatLieuSP,
-        //            x.ProductBack.ProductStatus == 1 ? "Đã ẩn" : "Chưa ẩn", x.ChiTietSanPham.MaCTSP);
-        //    }
-
-        //}
 
         void loadDanhMuc()
         {
+
             cbo_danhmuc.Items.Add("Tất cả");
             foreach (var x in _iQlKhuyenMai.GetDanhMucs())
             {
@@ -83,7 +45,8 @@ namespace _3_GUI_PresentationLayer
 
             cbo_danhmuc.SelectedIndex = 0;
         }
-        private int a = 30, b = 270;
+
+        private int a = 30, b = 380;
         private List<string> temb;
         private List<List<string>> _temb = new List<List<string>>();
         private void btn_danhMuc_Click(object sender, EventArgs e)
@@ -94,7 +57,7 @@ namespace _3_GUI_PresentationLayer
                 {
                     temb = new List<string>();
                     Button btn = new Button() { Name = "btn" + x.TenDanhMuc, Text = x.TenDanhMuc };
-                    btn.Size = new System.Drawing.Size(88, 37);
+                    btn.Size = new System.Drawing.Size(140, 37);
                     if (a >= tabPage1.Size.Width)
                     {
                         a = 30;
@@ -103,7 +66,7 @@ namespace _3_GUI_PresentationLayer
                     temb.Add(x.TenDanhMuc);
                     temb.Add("1");
                     btn.Location = new Point(a, b);
-                    a = a + 120;
+                    a = a + 140;
                     btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
                     btn.BackColor = Color.WhiteSmoke;
                     btn.Click += Btn_Click;
@@ -119,18 +82,49 @@ namespace _3_GUI_PresentationLayer
 
         private void btm_tao_Click(object sender, EventArgs e)
         {
+            string d = null;
+            string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
+            string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
             if (txt_ghichu.Text != null || nud_giamgia.Text != null || txt_tct.Text != null)
             {
 
-                //if (dateStart != dateEnd)
-                //{
+                foreach (var x in _tendanhMuc)
+                {
+                    var a = _iQlKhuyenMai.GetKhuyenMais().Where(c => c.DanhMuc.TenDanhMuc == x && c.KhuyenMai.NgayDau <= DateTime.Now).Select(c => c.KhuyenMai.MaKM).FirstOrDefault();
+                    var b = _iQlKhuyenMai.GetlstKhuyenMais().Where(c => c.MaKM == a).FirstOrDefault();
+                    if ((b != null && b.NgayDau <= Convert.ToDateTime(dateStart) && b.NgayHet >= Convert.ToDateTime(dateStart)) || (b != null && b.NgayDau <= Convert.ToDateTime(dateEnd) && b.NgayHet >= Convert.ToDateTime(dateEnd)))
+                    {
+                        d = x;
+                    }
+
+                }
+
+                for (int i = 0; i < _tendanhMuc.Count; i++)
+                {
+                    if (d == _tendanhMuc[i] && d != null)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Danh muc " + d + " đang được giảm giá\nBạn có muốn tiếp tục tạo khuyến mại trên\nnhưng bỏ danh mục này", "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            _tendanhMuc.Remove(d);
+                        }
+                        else
+                        {
+                            txt_tct.Text = "";
+                            txt_ghichu.Text = "";
+                            nud_giamgia.Value = 0;
+                            return;
+                        }
+                    }
+
+                }
                 KhuyenMai_Bus khuyenMai = new KhuyenMai_Bus();
                 khuyenMai.KhuyenMai.GhiChu = txt_ghichu.Text;
                 khuyenMai.KhuyenMai.GiamGia = Convert.ToInt32(nud_giamgia.Text);
                 khuyenMai.KhuyenMai.MaKM = "KM" + (_iQlKhuyenMai.GetlstKhuyenMais().Count + 1);
-                string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
+
                 khuyenMai.KhuyenMai.NgayDau = Convert.ToDateTime(dateStart);
-                string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
+
                 khuyenMai.KhuyenMai.NgayHet = Convert.ToDateTime(dateEnd);
                 khuyenMai.KhuyenMai.TenChuongTrinh = txt_tct.Text;
                 khuyenMai.KhuyenMai.TrangThai = rdo_hd.Checked ? 1 : 0;
@@ -144,12 +138,12 @@ namespace _3_GUI_PresentationLayer
                         .Select(c => c.MaDanhMuc).FirstOrDefault();
                     khuyenMai.ChiTietGiamGia.MaKM = tembKM;
                     _iQlKhuyenMai.addCTGG(khuyenMai.ChiTietGiamGia);
-                }
 
+                }
                 _tendanhMuc = new List<string>();
                 MessageBox.Show("Tạo khuyến mại thành công");
                 temb2 = 0;
-                //}
+
             }
             else
             {
@@ -159,6 +153,8 @@ namespace _3_GUI_PresentationLayer
 
         void load()
         {
+            dgv.Visible = true;
+            dgv_km.Visible = false;
             dgv.ColumnCount = 6;
             dgv.Columns[0].Name = "Tên sản phẩm";
             dgv.Columns[1].Name = "Thương hiệu";
@@ -236,59 +232,108 @@ namespace _3_GUI_PresentationLayer
         }
         void loadkm()
         {
-            dgv.ColumnCount = 6;
-            dgv.Columns[0].Name = "Tên sản phẩm";
-            dgv.Columns[1].Name = "Thương hiệu";
-            dgv.Columns[2].Name = "Danh mục";
-            dgv.Columns[3].Name = "Giảm giá";
-            dgv.Columns[4].Name = "Trạng thái";
-            dgv.Columns[5].Name = "mã";
-            dgv.Columns[5].Visible = false;
+           
+            dgv.Visible = false;
+            dgv_km.Visible = true;
+            dgv_km.ColumnCount = 6;
+
+            dgv_km.Columns[0].Name = "Danh mục";
+            dgv_km.Columns[1].Name = "Ngày bắt đầu";
+            dgv_km.Columns[2].Name = "Ngày kết thúc";
+            dgv_km.Columns[3].Name = "Giảm giá";
+            dgv_km.Columns[4].Name = "Trạng thái";
+            dgv_km.Columns[5].Name = "mã";
+            dgv_km.Columns[5].Visible = false;
             DataGridViewButtonColumn DTThem = new DataGridViewButtonColumn();
-            DTThem.Name = "btn_add";
+            DTThem.Name = "btn_updateKM";
             DTThem.Text = "Sửa";
             DTThem.HeaderText = "";
             DTThem.UseColumnTextForButtonValue = true;
             int indexAdd = 6;
-            if (dgv.Columns["btn_add"] == null)
+            if (dgv_km.Columns["btn_updateKM"] == null)
             {
-                dgv.Columns.Insert(indexAdd, DTThem);
+                dgv_km.Columns.Insert(indexAdd, DTThem);
             }
             DataGridViewButtonColumn DTRemove = new DataGridViewButtonColumn();
-            DTRemove.Name = "btn_remove";
+            DTRemove.Name = "btn_stop";
             DTRemove.Text = "Dừng";
             DTRemove.HeaderText = "";
             DTRemove.UseColumnTextForButtonValue = true;
             int indexRemove = 7;
-            if (dgv.Columns["btn_remove"] == null)
+            if (dgv_km.Columns["btn_stop"] == null)
             {
-                dgv.Columns.Insert(indexRemove, DTRemove);
+                dgv_km.Columns.Insert(indexRemove, DTRemove);
             }
-            dgv.Rows.Clear();
+            dgv_km.Rows.Clear();
             foreach (var x in _iQlKhuyenMai.GetLstCTSP2())
             {
-                dgv.Rows.Add(x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu, x.DanhMuc.TenDanhMuc, x.KhuyenMai.GiamGia, x.ChiTietSanPham.MaPB=="PB2"?"Đang Khuyến mại":"Không khuyến mại", x.ChiTietSanPham.MaCTSP);
+                dgv_km.Rows.Add(x.DanhMuc.TenDanhMuc, x.KhuyenMai.NgayDau, x.KhuyenMai.NgayHet, x.KhuyenMai.GiamGia,
+                    (x.KhuyenMai.NgayDau <= DateTime.Today && x.KhuyenMai.NgayHet >= DateTime.Today)
+                    && x.KhuyenMai.TrangThai == 1 ? "Đang Khuyến mại" : "Không Khuyến mại"
+                                        , x.KhuyenMai.MaKM);
             }
-
         }
+
+
         private void btn_sua_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage2;
+            loadkm();
         }
         int temb3 = 0;
         private void btn_loc_Click(object sender, EventArgs e)
         {
-            if (temb3==0)
+            if (temb3 == 0)
             {
                 load();
+                cbo_danhmuc.Visible = true;
+                label7.Visible = true;
                 temb3 = 1;
             }
-            else if (temb3==1)
+            else if (temb3 == 1)
             {
+                cbo_danhmuc.Visible = false;
+                label7.Visible = false;
                 loadkm();
                 temb3 = 0;
             }
         }
+
+        private void dgv_km_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int column = e.ColumnIndex;
+            int row = e.RowIndex;
+            string id = dgv_km.Rows[row].Cells[5].Value.ToString();
+            var dt = _iQlKhuyenMai.GetlstKhuyenMais().Where(c => c.MaKM == id).FirstOrDefault();
+            if (column == dgv_km.Columns["btn_updateKM"].Index)
+            {
+
+                if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện chức năng trên","Thông báo",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    string dateStart = string.Format("{0:yyyy-MM-dd}", dgv_km.Rows[row].Cells[1].Value);
+                    dt.NgayDau = Convert.ToDateTime(dateStart);
+                    string dateEnd = string.Format("{0:yyyy-MM-dd}", dgv_km.Rows[row].Cells[2].Value);
+                    dt.NgayHet = Convert.ToDateTime(dateEnd);
+                    dt.GiamGia = Convert.ToInt32(dgv_km.Rows[row].Cells[3].Value.ToString());
+                    _iQlKhuyenMai.updateKM(dt); 
+                }
+
+            }
+            if (column == dgv_km.Columns["btn_stop"].Index)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện chức năng trên", "Thông báo", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                {
+                    dt.TrangThai = 0;
+                    _iQlKhuyenMai.updateKM(dt); 
+                }
+
+            }
+            dgv.Rows.Clear();
+            loadkm();
+        }
+
+
+
 
         private void Btn_Click(object? sender, EventArgs e)
         {

@@ -104,6 +104,7 @@ namespace _2_BUS_BusinessLayer.Service
         }
         public List<SanPham> GetLstSP()
         {
+            _LstSanPham = _iSanphamServices.Getlst().ToList();
             return _LstSanPham;
         }
 
@@ -120,7 +121,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addSize(Size sanPham)
         {
-            throw new System.NotImplementedException();
+            _iSizeServices.add(sanPham);
+            return "";
         }
 
         public string updateSize(Size sanPham)
@@ -135,6 +137,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Size> GetLstSize()
         {
+            _LstSize = _iSizeServices.Getlst();
             return _LstSize;
         }
 
@@ -147,7 +150,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addNCC(NhaCungCap sanPham)
         {
-            throw new System.NotImplementedException();
+            _iNhacungcapServices.add(sanPham);
+            return "";
         }
 
         public string updateNCC(NhaCungCap sanPham)
@@ -250,7 +254,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addDanhMuc(DanhMuc sanPham)
         {
-            throw new NotImplementedException();
+            _iDanhmucServices.add(sanPham);
+            return "";
         }
 
         public string updateDanhMuc(DanhMuc sanPham)
@@ -265,7 +270,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<DanhMuc> GetLstDanhMuc()
         {
-            return _lstDanhMucs;
+            return _lstDanhMucs = _iDanhmucServices.Getlst(); ;
         }
 
         #endregion
@@ -275,7 +280,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addColor(Color sanPham)
         {
-            throw new NotImplementedException();
+            _iColorServices.add(sanPham);
+            return "";
         }
 
         public string updateColor(Color sanPham)
@@ -290,7 +296,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<Color> GetLstColor()
         {
-            return _lstColors;
+            return _lstColors = _iColorServices.Getlst(); ;
         }
 
         #endregion
@@ -329,7 +335,8 @@ namespace _2_BUS_BusinessLayer.Service
 
         public string addChatLieu(ChatLieu sanPham)
         {
-            throw new NotImplementedException();
+            _iChatlieuServices.add(sanPham);
+            return "";
         }
 
         public string updateChatLieu(ChatLieu sanPham)
@@ -344,7 +351,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<ChatLieu> GetLstChatLieu()
         {
-            return _lstChatLieus;
+            return _lstChatLieus = _iChatlieuServices.Getlst(); 
         }
 
         #endregion
@@ -374,7 +381,7 @@ namespace _2_BUS_BusinessLayer.Service
                                   NhaCungCap = c,
                                   KhuyenMai = (from km in _lstKhuyenMais
                                                join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
-                                               where ctkm.MaDanhMuc == j.MaDanhMuc
+                                               where ctkm.MaDanhMuc == j.MaDanhMuc && km.NgayDau <= DateTime.Now && km.NgayHet >= DateTime.Now  && km.TrangThai==1
                                                select km
                                      ).FirstOrDefault(),
                                   ChatLieu = e,
@@ -388,7 +395,7 @@ namespace _2_BUS_BusinessLayer.Service
             _iChitietSanPhamServices = new ChitietSanPhamServices();
             foreach (var x in _lstQlSanPhams)
             {
-                if (x.KhuyenMai != null && x.KhuyenMai.NgayDau <= DateTime.Now && x.KhuyenMai.NgayHet >= DateTime.Now && x.KhuyenMai.TrangThai == 1 && x.ProductBack.MaPB == "PB2")
+                if (x.KhuyenMai != null &&  x.ChiTietSanPham.MaPB == "PB2")
                 {
                     var dt = _iChitietSanPhamServices.Getlst().Where(c => c.MaCTSP == x.ChiTietSanPham.MaCTSP).FirstOrDefault();
                     x.ChiTietSanPham.giaban = (dt.giaban * (100 - x.KhuyenMai.GiamGia)) / 100;
