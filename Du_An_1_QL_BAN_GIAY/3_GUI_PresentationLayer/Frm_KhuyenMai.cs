@@ -28,10 +28,10 @@ namespace _3_GUI_PresentationLayer
             load();
             loadDanhMuc();
             rdo_hd.Checked = true;
-            dgv.RowsDefaultCellStyle.BackColor = Color.LightBlue;
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
-            dgv_km.RowsDefaultCellStyle.BackColor = Color.LightBlue;
-            dgv_km.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
+            //dgv.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
+            //dgv_km.RowsDefaultCellStyle.BackColor = Color.LightBlue;
+            //dgv_km.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSkyBlue;
         }
 
         void loadDanhMuc()
@@ -82,72 +82,101 @@ namespace _3_GUI_PresentationLayer
 
         private void btm_tao_Click(object sender, EventArgs e)
         {
-            string d = null;
-            string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
-            string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
-            if (txt_ghichu.Text != null || nud_giamgia.Text != null || txt_tct.Text != null)
+            try
             {
-
-                foreach (var x in _tendanhMuc)
+                string d = null;
+                string dateStart = string.Format("{0:yyyy-MM-dd}", dtp_start.Value);
+                string dateEnd = string.Format("{0:yyyy-MM-dd}", dtp_end.Value);
+                if (txt_ghichu.Text != null || nud_giamgia.Text != null || txt_tct.Text != null)
                 {
-                    var a = _iQlKhuyenMai.GetKhuyenMais().Where(c => c.DanhMuc.TenDanhMuc == x && c.KhuyenMai.NgayDau <= DateTime.Now).Select(c => c.KhuyenMai.MaKM).FirstOrDefault();
-                    var b = _iQlKhuyenMai.GetlstKhuyenMais().Where(c => c.MaKM == a).FirstOrDefault();
-                    if ((b != null && b.NgayDau <= Convert.ToDateTime(dateStart) && b.NgayHet >= Convert.ToDateTime(dateStart)) || (b != null && b.NgayDau <= Convert.ToDateTime(dateEnd) && b.NgayHet >= Convert.ToDateTime(dateEnd)))
+
+                    if (dtp_start.Value == dtp_end.Value)
                     {
-                        d = x;
+                        MessageBox.Show("Thời gian ngày bắt đầu và ngày kết thúc đang trung nhau");
+                        return;
+                    }
+                    foreach (var x in _tendanhMuc)
+                    {
+                        var a = _iQlKhuyenMai.GetLstCTSP().Where(c=>(c.KhuyenMai !=null && c.KhuyenMai.NgayDau<= dtp_start.Value && c.DanhMuc.TenDanhMuc==x && c.KhuyenMai.NgayHet>=dtp_start.Value)|| (c.KhuyenMai != null && c.KhuyenMai.NgayDau <= dtp_end.Value && c.DanhMuc.TenDanhMuc == x && c.KhuyenMai.NgayHet >= dtp_end.Value)).Select(c=>c.KhuyenMai.MaKM).FirstOrDefault();
+                        var b = _iQlKhuyenMai.GetlstKhuyenMais().Where(c => c.MaKM == a).FirstOrDefault();
+                        //if ((b != null && b.NgayDau <= Convert.ToDateTime(dateStart) && b.NgayHet >= Convert.ToDateTime(dateStart)) || (b != null && b.NgayDau <= Convert.ToDateTime(dateEnd) && b.NgayHet >= Convert.ToDateTime(dateEnd)))
+                        //{
+                        //    d = x;
+                        //}
+                        if (b != null)
+                        {
+                            d = x;
+                            if (MessageBox.Show("Danh muc " + d + " đang được giảm giá\nBạn có muốn tiếp tục tạo khuyến mại trên\nnhưng bỏ danh mục này", "Thông báo", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                            {
+                                _tendanhMuc.Remove(d);
+                            }
+                            else
+                            {
+                                txt_tct.Text = "";
+                                txt_ghichu.Text = "";
+                                nud_giamgia.Value = 0;
+                                return;
+                            }
+
+
+                        }
                     }
 
-                }
+                    //for (int i = 0; i < _tendanhMuc.Count; i++)
+                    //{
+                    //    if (d == _tendanhMuc[i] && d != null)
+                    //    {
+                    //        DialogResult dialogResult = MessageBox.Show("Danh muc " + d + " đang được giảm giá\nBạn có muốn tiếp tục tạo khuyến mại trên\nnhưng bỏ danh mục này", "Thông báo", MessageBoxButtons.YesNo);
+                    //        if (dialogResult == DialogResult.Yes)
+                    //        {
+                    //            _tendanhMuc.Remove(d);
+                    //        }
+                    //        else
+                    //        {
+                    //            txt_tct.Text = "";
+                    //            txt_ghichu.Text = "";
+                    //            nud_giamgia.Value = 0;
+                    //            return;
+                    //        }
+                    //    }
 
-                for (int i = 0; i < _tendanhMuc.Count; i++)
-                {
-                    if (d == _tendanhMuc[i] && d != null)
+                    //}
+                    KhuyenMai_Bus khuyenMai = new KhuyenMai_Bus();
+                    khuyenMai.KhuyenMai.GhiChu = txt_ghichu.Text;
+                    khuyenMai.KhuyenMai.GiamGia = Convert.ToInt32(nud_giamgia.Text);
+                    khuyenMai.KhuyenMai.MaKM = "KM" + (_iQlKhuyenMai.GetlstKhuyenMais().Count + 1);
+
+                    khuyenMai.KhuyenMai.NgayDau = Convert.ToDateTime(dateStart);
+
+                    khuyenMai.KhuyenMai.NgayHet = Convert.ToDateTime(dateEnd);
+                    khuyenMai.KhuyenMai.TenChuongTrinh = txt_tct.Text;
+                    khuyenMai.KhuyenMai.TrangThai = rdo_hd.Checked ? 1 : 0;
+                    _iQlKhuyenMai.addKM(khuyenMai.KhuyenMai);
+                    string tembKM = khuyenMai.KhuyenMai.MaKM;
+                    for (int i = 0; i < _tendanhMuc.Count; i++)
                     {
-                        DialogResult dialogResult = MessageBox.Show("Danh muc " + d + " đang được giảm giá\nBạn có muốn tiếp tục tạo khuyến mại trên\nnhưng bỏ danh mục này", "Thông báo", MessageBoxButtons.YesNo);
-                        if (dialogResult == DialogResult.Yes)
-                        {
-                            _tendanhMuc.Remove(d);
-                        }
-                        else
-                        {
-                            txt_tct.Text = "";
-                            txt_ghichu.Text = "";
-                            nud_giamgia.Value = 0;
-                            return;
-                        }
+                        khuyenMai = new KhuyenMai_Bus();
+                        khuyenMai.ChiTietGiamGia.MaCTGG = "CTGG" + (_iQlKhuyenMai.GetChiTietGiamGias().Count + 1);
+                        khuyenMai.ChiTietGiamGia.MaDanhMuc = _iQlKhuyenMai.GetDanhMucs().Where(c => c.TenDanhMuc == _tendanhMuc[i])
+                            .Select(c => c.MaDanhMuc).FirstOrDefault();
+                        khuyenMai.ChiTietGiamGia.MaKM = tembKM;
+                        _iQlKhuyenMai.addCTGG(khuyenMai.ChiTietGiamGia);
+
                     }
+                    _tendanhMuc = new List<string>();
+                    MessageBox.Show("Tạo khuyến mại thành công");
+                    temb2 = 0;
 
                 }
-                KhuyenMai_Bus khuyenMai = new KhuyenMai_Bus();
-                khuyenMai.KhuyenMai.GhiChu = txt_ghichu.Text;
-                khuyenMai.KhuyenMai.GiamGia = Convert.ToInt32(nud_giamgia.Text);
-                khuyenMai.KhuyenMai.MaKM = "KM" + (_iQlKhuyenMai.GetlstKhuyenMais().Count + 1);
-
-                khuyenMai.KhuyenMai.NgayDau = Convert.ToDateTime(dateStart);
-
-                khuyenMai.KhuyenMai.NgayHet = Convert.ToDateTime(dateEnd);
-                khuyenMai.KhuyenMai.TenChuongTrinh = txt_tct.Text;
-                khuyenMai.KhuyenMai.TrangThai = rdo_hd.Checked ? 1 : 0;
-                _iQlKhuyenMai.addKM(khuyenMai.KhuyenMai);
-                string tembKM = khuyenMai.KhuyenMai.MaKM;
-                for (int i = 0; i < _tendanhMuc.Count; i++)
+                else
                 {
-                    khuyenMai = new KhuyenMai_Bus();
-                    khuyenMai.ChiTietGiamGia.MaCTGG = "CTGG" + (_iQlKhuyenMai.GetChiTietGiamGias().Count + 1);
-                    khuyenMai.ChiTietGiamGia.MaDanhMuc = _iQlKhuyenMai.GetDanhMucs().Where(c => c.TenDanhMuc == _tendanhMuc[i])
-                        .Select(c => c.MaDanhMuc).FirstOrDefault();
-                    khuyenMai.ChiTietGiamGia.MaKM = tembKM;
-                    _iQlKhuyenMai.addCTGG(khuyenMai.ChiTietGiamGia);
-
+                    MessageBox.Show("Không được bỏ trống thông tin nào");
                 }
-                _tendanhMuc = new List<string>();
-                MessageBox.Show("Tạo khuyến mại thành công");
-                temb2 = 0;
-
             }
-            else
+            catch (Exception m)
             {
-                MessageBox.Show("Không được bỏ trống thông tin nào");
+                MessageBox.Show("Lỗi hệ thống");
+
             }
         }
 
@@ -232,7 +261,7 @@ namespace _3_GUI_PresentationLayer
         }
         void loadkm()
         {
-           
+
             dgv.Visible = false;
             dgv_km.Visible = true;
             dgv_km.ColumnCount = 6;
@@ -308,14 +337,14 @@ namespace _3_GUI_PresentationLayer
             if (column == dgv_km.Columns["btn_updateKM"].Index)
             {
 
-                if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện chức năng trên","Thông báo",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện chức năng trên", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string dateStart = string.Format("{0:yyyy-MM-dd}", dgv_km.Rows[row].Cells[1].Value);
                     dt.NgayDau = Convert.ToDateTime(dateStart);
                     string dateEnd = string.Format("{0:yyyy-MM-dd}", dgv_km.Rows[row].Cells[2].Value);
                     dt.NgayHet = Convert.ToDateTime(dateEnd);
                     dt.GiamGia = Convert.ToInt32(dgv_km.Rows[row].Cells[3].Value.ToString());
-                    _iQlKhuyenMai.updateKM(dt); 
+                    _iQlKhuyenMai.updateKM(dt);
                 }
 
             }
@@ -324,7 +353,7 @@ namespace _3_GUI_PresentationLayer
                 if (MessageBox.Show("Bạn có chắc chắn muốn thực hiện chức năng trên", "Thông báo", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
                     dt.TrangThai = 0;
-                    _iQlKhuyenMai.updateKM(dt); 
+                    _iQlKhuyenMai.updateKM(dt);
                 }
 
             }

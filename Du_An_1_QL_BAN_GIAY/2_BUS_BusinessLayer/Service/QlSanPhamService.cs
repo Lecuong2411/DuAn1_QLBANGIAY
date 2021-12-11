@@ -324,7 +324,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<ChiTietSanPham> GetLstCTSanPham()
         {
-            return _lstChiTietSanPhams;
+            return _lstChiTietSanPhams = _iChitietSanPhamServices.Getlst();
         }
 
         #endregion
@@ -410,6 +410,7 @@ namespace _2_BUS_BusinessLayer.Service
 
         public List<QLSanPham> GetSPAllLoad()
         {
+            _iChitietSanPhamServices = new ChitietSanPhamServices();
             _lstChiTietSanPhams = _iChitietSanPhamServices.Getlst();
             _lstQlSanPhams = (from a in _LstSanPham
                               join b in _lstChiTietSanPhams on a.MaSp equals b.MaSP

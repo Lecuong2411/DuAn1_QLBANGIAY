@@ -197,15 +197,16 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.MaPB = "PB1";
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
-            if (txt_tsp.Text != null || cbx_mau.Text != null || cbx_size.Text != null || txt_gianhap.Text != null ||
-                txt_giaban.Text != null || txt_soluong.Text != null || txt_tspct.Text != null || txt_chatLieu.Text != null || txt_chatLieu.Text != null
-                || cbx_coGiay.Text != null || txt_ghi.Text != null || txt_barCode.Text != null || cbx_trangThai.Text != null
+            if (qlSanPham.ChiTietSanPham.MaCTSP != null && qlSanPham.ChiTietSanPham.MaSP != null && qlSanPham.ChiTietSanPham.MaCLR != null && qlSanPham.ChiTietSanPham.GiaNhap != null &&
+                 qlSanPham.ChiTietSanPham.giaban != null && qlSanPham.ChiTietSanPham.soluong != null && qlSanPham.ChiTietSanPham.Mota != null && qlSanPham.ChiTietSanPham.MaChatLieu != null
+                && qlSanPham.ChiTietSanPham.MaCo != null && qlSanPham.ChiTietSanPham.GhiChu != null && qlSanPham.ChiTietSanPham.MaQR != null && qlSanPham.ChiTietSanPham.TrangThai != null && qlSanPham.ChiTietSanPham.MaSize != null
                 )
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     _iQlSanPhamService.addCTSanPham(qlSanPham.ChiTietSanPham);
+                    MessageBox.Show("Successful", "Thông báo");
                     load();
                 }
             }
@@ -362,15 +363,17 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
-            qlSanPham.ChiTietSanPham.MaPB = "PB2";
-            if (txt_tsp.Text != null || cbx_mau.Text != null || cbx_size.Text != null || txt_gianhap.Text != null ||
-                txt_giaban.Text != null || txt_soluong.Text != null || txt_tspct.Text != null || txt_chatLieu.Text != null || txt_chatLieu.Text != null
-                || cbx_coGiay.Text != null || txt_ghi.Text != null || txt_barCode.Text != null || cbx_trangThai.Text != null)
+            qlSanPham.ChiTietSanPham.MaPB = "PB1s";
+            if (qlSanPham.ChiTietSanPham.MaCTSP != null && qlSanPham.ChiTietSanPham.MaSP != null && qlSanPham.ChiTietSanPham.MaCLR != null && qlSanPham.ChiTietSanPham.GiaNhap != null &&
+                 qlSanPham.ChiTietSanPham.giaban != null && qlSanPham.ChiTietSanPham.soluong != null && qlSanPham.ChiTietSanPham.Mota != null && qlSanPham.ChiTietSanPham.MaChatLieu != null
+                && qlSanPham.ChiTietSanPham.MaCo != null && qlSanPham.ChiTietSanPham.GhiChu != null && qlSanPham.ChiTietSanPham.MaQR != null && qlSanPham.ChiTietSanPham.TrangThai != null && qlSanPham.ChiTietSanPham.MaSize != null
+                )
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc sẽ sử dụng chức năng trên", "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+                    MessageBox.Show("Successful", "Thông báo");
                     load();
                 }
             }
@@ -672,6 +675,7 @@ namespace _3_GUI_PresentationLayer
                 var qlSanPham = _iQlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaCTSP == temb).FirstOrDefault();
                 qlSanPham.ChiTietSanPham.TrangThai = 0;
                 _iQlSanPhamService.updateCTSanPham(qlSanPham.ChiTietSanPham);
+                MessageBox.Show("Successful", "Thông báo");
                 load();
             }
 
