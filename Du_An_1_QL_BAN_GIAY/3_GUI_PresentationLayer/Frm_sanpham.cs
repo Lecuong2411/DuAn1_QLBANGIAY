@@ -196,6 +196,7 @@ namespace _3_GUI_PresentationLayer
             qlSanPham.ChiTietSanPham.GhiChu = txt_ghi.Text;
             qlSanPham.ChiTietSanPham.MaQR = txt_barCode.Text;
             qlSanPham.ChiTietSanPham.MaPB = "PB1";
+          
             qlSanPham.ChiTietSanPham.TrangThai = (cbx_trangThai.Text == "Còn hàng" ? 1 : 0);
             if (qlSanPham.ChiTietSanPham.MaCTSP != null && qlSanPham.ChiTietSanPham.MaSP != null && qlSanPham.ChiTietSanPham.MaCLR != null && qlSanPham.ChiTietSanPham.GiaNhap != null &&
                  qlSanPham.ChiTietSanPham.giaban != null && qlSanPham.ChiTietSanPham.soluong != null && qlSanPham.ChiTietSanPham.Mota != null && qlSanPham.ChiTietSanPham.MaChatLieu != null
@@ -757,6 +758,37 @@ namespace _3_GUI_PresentationLayer
             else
             {
                 MessageBox.Show("Chất liệu đã tồn tại", "Thông báo");
+            }
+        }
+
+        private void txt_danhmuc_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var a = _iQlSanPhamService.GetLstDanhMuc().Where(c => c.TenDanhMuc == txt_danhmuc.Text).Select(c => c.MaDanhMuc).FirstOrDefault();
+                var lstdm = _iQlSanPhamService.GetLstSP().Where(c => c.MaDanhMuc == a).Select(c => c.TenSp).ToList();
+               
+                if (lstdm.Count != 0)
+                {
+                    txt_tsp.Items.Clear();
+                    txt_tsp.ResetText();
+                    foreach (var x in lstdm)
+                    {
+                        txt_tsp.Items.Add(x);
+                    }
+
+                    txt_tsp.SelectedIndex = 0;
+                }
+                else
+                {
+                    txt_tsp.Items.Clear();
+                    txt_tsp.ResetText();
+                }
+            }
+            catch (Exception)
+            {
+
+                //MessageBox.Show("Lỗi hệ thống");
             }
         }
     }
