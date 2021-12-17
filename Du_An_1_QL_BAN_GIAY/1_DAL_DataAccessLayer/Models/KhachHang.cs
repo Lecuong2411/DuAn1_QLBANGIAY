@@ -21,5 +21,7 @@ namespace _1_DAL_DataAccessLayer.Models
         [StringLength(100)]
         [Required]
         public string Sdt { get; set; }
+        [StringLength(100)]
+        public string Diachi { get; set; }
     }
 }

@@ -379,7 +379,7 @@ namespace _2_BUS_BusinessLayer.Service
                                   SanPham = a,
                                   ChiTietSanPham = b,
                                   NhaCungCap = c,
-                                  KhuyenMai = (from km in _lstKhuyenMais
+                                 KhuyenMai = (from km in _lstKhuyenMais
                                                join ctkm in _lstChiTietGiamGias on km.MaKM equals ctkm.MaKM
                                                where ctkm.MaDanhMuc == j.MaDanhMuc && km.NgayDau <= DateTime.Now && km.NgayHet >= DateTime.Now  && km.TrangThai==1
                                                select km
@@ -406,7 +406,7 @@ namespace _2_BUS_BusinessLayer.Service
 
 
         }
-
+        static string makm;
 
         public List<QLSanPham> GetSPAllLoad()
         {

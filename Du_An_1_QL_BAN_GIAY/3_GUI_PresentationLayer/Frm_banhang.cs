@@ -16,6 +16,8 @@ using _2_BUS_BusinessLayer.Models;
 using Microsoft.VisualBasic;
 using System.Threading;
 using System.Drawing.Drawing2D;
+using _2_BUS_BusinessLayer.Utilities;
+using System.Globalization;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -31,6 +33,7 @@ namespace _3_GUI_PresentationLayer
         NhanVien nhanVien;
         Voucher voucher;
         Form _f;
+        Validateform _Validateform;
         private IQlSanPhamService _qlSanPhamService;
 
         public Frm_banhang()
@@ -44,6 +47,7 @@ namespace _3_GUI_PresentationLayer
             nhanVien = new NhanVien();
             voucher = new Voucher();
             _qlSanPhamService = new QlSanPhamService();
+            _Validateform = new Validateform();
             loadSpbanhang();
 
             loadhdchuathanhthoan();
@@ -93,9 +97,18 @@ namespace _3_GUI_PresentationLayer
             dtgview_hoadon.Rows.Clear();
             foreach (var x in _banhangService.viewHoadons().Where(c => c.hoaDon.MaHd == mahd))
             {
-                var doanhmuc = _banhangService.loadsp().Where(c => c.TenSp == x.sanPham.TenSp).Select(c => c.MaDanhMuc);
-                dtgview_hoadon.Rows.Add(x.sanPham.TenSp , x.hoaDonChiTiet.soluong, x.hoaDonChiTiet.DonGia, _qlSanPhamService.GetSPAll().Where(c=>c.ChiTietGiamGia.MaDanhMuc==doanhmuc.ToString()).Select(c=>c.ChiTietGiamGia.khuyenMai).FirstOrDefault(), x.hoaDonChiTiet.Thanhtien, x.chiTietSanPham.MaQR);
+                string makm = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietGiamGia.MaDanhMuc == x.sanPham.MaDanhMuc).Select(c => c.ChiTietGiamGia.MaKM).FirstOrDefault();
+               
+                dtgview_hoadon.Rows.Add(x.sanPham.TenSp+" "+x.chiTietSanPham.Mota , x.hoaDonChiTiet.soluong,x.hoaDonChiTiet.DonGia,/*_qlSanPhamService.GetSPAll().Where(c=>c.KhuyenMai.MaKM==makm).Select(c=>c.KhuyenMai.GiamGia).FirstOrDefault()+ */" %", x.hoaDonChiTiet.Thanhtien, x.chiTietSanPham.MaQR);
+               
             }
+            //if (dtgview_hoadon.Rows[0].Cells[6].Value.ToString() == null)
+            //{
+            //    dtdelete.Visible = false;
+            //    return;
+            //}
+
+            //    dtgview_hoadon.Rows[3].Cells[0].ReadOnly = false;
         }
 
 
@@ -116,7 +129,7 @@ namespace _3_GUI_PresentationLayer
             dtgview_thongtinsp.Rows.Clear();
             foreach (var x in _qlSanPhamService.GetSPAll())
             {
-                dtgview_thongtinsp.Rows.Add(x.ChiTietSanPham.MaQR, x.SanPham.TenSp, x.SanPham.ThuongHieu, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.LoaiCoGiay.LoaiCoGiaySP, x.ChiTietSanPham.soluong);
+                dtgview_thongtinsp.Rows.Add(x.ChiTietSanPham.MaQR, x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.LoaiCoGiay.LoaiCoGiaySP, x.ChiTietSanPham.soluong);
             }
         }
         void loadSpbanhang(string tk)
@@ -134,7 +147,7 @@ namespace _3_GUI_PresentationLayer
             dtgview_thongtinsp.Rows.Clear();
             foreach (var x in _qlSanPhamService.GetSPAll().Where(c => c.SanPham.TenSp.ToLower().StartsWith(tk)).ToList())
             {
-                dtgview_thongtinsp.Rows.Add(x.ChiTietSanPham.MaQR, x.SanPham.TenSp, x.SanPham.ThuongHieu, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.LoaiCoGiay.LoaiCoGiaySP, x.ChiTietSanPham.soluong);
+                dtgview_thongtinsp.Rows.Add(x.ChiTietSanPham.MaQR, x.SanPham.TenSp + " " + x.ChiTietSanPham.Mota, x.SanPham.ThuongHieu, x.Size.SizeSp, x.Color.ColorSP, x.ChatLieu.ChatLieuSP, x.LoaiCoGiay.LoaiCoGiaySP, x.ChiTietSanPham.soluong);
             }
         }
 
@@ -166,7 +179,11 @@ namespace _3_GUI_PresentationLayer
                   var sl = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaQR == tbx_barcode.Text).Select(c => c.ChiTietSanPham.soluong).FirstOrDefault();
                   var giaban = _qlSanPhamService.GetSPAll().Where(c => c.ChiTietSanPham.MaQR == tbx_barcode.Text).Select(c => c.ChiTietSanPham.giaban).FirstOrDefault();
                   var updatects = _banhangService.loadspct().FirstOrDefault(c => c.MaCTSP == ctsp);
-                  if (hdct == ctsp) return;
+                  if (hdct == ctsp)
+                  {
+                      MessageBox.Show("Sản phẩm đẫ có trên hóa đơn", "Thông báo");
+                      return;
+                  }
                   if (sl <= 0)
                   {
                       MessageBox.Show("Sản phẩm đã hết", "Thông báo");
@@ -247,6 +264,7 @@ namespace _3_GUI_PresentationLayer
                 _f.Controls[1].Top = 50;
                 _f.Size = new System.Drawing.Size(700, 200);
                 _f.StartPosition=FormStartPosition.CenterScreen;
+                _f.ControlBox = false;
                 button.Click += Button_Click;
                 _f.ShowDialog();
 
@@ -270,19 +288,37 @@ namespace _3_GUI_PresentationLayer
                 MessageBox.Show("Sản phẩm đã hết", "Thông báo");
                 return;
             }
+            if (_f.Controls[0].Text=="")
+            {
+                MessageBox.Show("Yêu cầu bạn nhập số lượng");
+                return;
+            }
+            if (Convert.ToInt32(_f.Controls[0].Text)<=0)
+            {
+                MessageBox.Show("Yêu cầu bạn nhập số lớn hơn 0");
+                return;
+            }
+            if (_Validateform.checkSo(_f.Controls[0].Text))
+            {
+
+                MessageBox.Show("Yêu cầu bạn nhập số !");
+                return;
+            }
             _soluong = Convert.ToInt32(_f.Controls[0].Text);
             var updatects = _banhangService.loadspct().FirstOrDefault(c => c.MaCTSP == ctsp);
             if (hdct == ctsp)
             {
-                var slhdct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text && c.MaCTSP == hdct);
-                slhdct.soluong += 1;
-                updatects.soluong -= 1;
-                slhdct.Thanhtien = slhdct.soluong * slhdct.DonGia;
-                _banhangService.updatectsp(updatects);
-                _banhangService.updatehoadonchitiet(slhdct);
-                tongtien();
-                loadHoadon(lbl_mahoadon.Text);
-                loadSpbanhang();
+                //var slhdct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text && c.MaCTSP == hdct);
+                //slhdct.soluong += 1;
+                //updatects.soluong -= 1;
+                //slhdct.Thanhtien = slhdct.soluong * slhdct.DonGia;
+                //_banhangService.updatectsp(updatects);
+                //_banhangService.updatehoadonchitiet(slhdct);
+                //tongtien();
+                //loadHoadon(lbl_mahoadon.Text);
+                //loadSpbanhang();
+                MessageBox.Show("Bạn đã chọn sản phẩm");
+                _f.Close();
                 return;
             }
             Button button = sender as Button;
@@ -294,7 +330,7 @@ namespace _3_GUI_PresentationLayer
             hoaDonChiTiet.soluong = _soluong;
             hoaDonChiTiet.DonGia = giaban;
             hoaDonChiTiet.Thanhtien = giaban * hoaDonChiTiet.soluong;
-            updatects.soluong = sl - Frm_soluong.soluong;
+            updatects.soluong = sl - _soluong;
             _banhangService.addHoadonchitiet(hoaDonChiTiet);
             _banhangService.updatectsp(updatects);
             tongtien();
@@ -307,6 +343,7 @@ namespace _3_GUI_PresentationLayer
         int hoadont = 50;
         int so = 1;
         Button button;
+        string _Makhachhang;
         private void btn_themhoadon_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn tạo hóa đơn ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -323,6 +360,7 @@ namespace _3_GUI_PresentationLayer
                 so += 1;
                 button.Click += new EventHandler(this.buttun_click);
                 khachHang.MaKh = "KH" + _banhangService.loadkh().Count() + 10;
+                _Makhachhang = khachHang.MaKh;
                 khachHang.TenKh = tbx_tenkh.Text;
                 khachHang.Sdt = tbx_sdtkh.Text;
                 hoaDon.MaHd = "HD" + _banhangService.loadhd().Count() + 10;
@@ -336,9 +374,10 @@ namespace _3_GUI_PresentationLayer
                 loadHoadon(lbl_mahoadon.Text); 
             }
         }
-
+      
         void buttun_click(object sender, EventArgs e)
         {
+             
             Button button = sender as Button;
             loadHoadon(button.Text);
             foreach (var x in pnl_newhoadon.Controls)
@@ -347,7 +386,15 @@ namespace _3_GUI_PresentationLayer
             }
             lbl_mahoadon.Text = button.Text;
             tbx_magiamgia.Text = null;
+            _Makhachhang = _banhangService.viewHoadons().Where(c => c.hoaDon.MaHd == lbl_mahoadon.Text).Select(c => c.hoaDon.MaKH).FirstOrDefault();
+            var tenkh = _banhangService.loadkh().Where(c => c.MaKh == _Makhachhang).Select(c => c.TenKh).FirstOrDefault();
+            var sdt = _banhangService.loadkh().Where(c => c.MaKh == _Makhachhang).Select(c => c.Sdt).FirstOrDefault();
+            var diachi = _banhangService.loadkh().Where(c => c.MaKh == _Makhachhang).Select(c => c.Diachi).FirstOrDefault();
+            tbx_tenkh.Text = tenkh;
+            tbx_sdtkh.Text = sdt;
+            tbx_diachi.Text = diachi;
             tongtien();
+           
         }
         void loadhdchuathanhthoan()
         {
@@ -367,23 +414,20 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        void loadcbx()
-        {
-            cbx_color.Items.Add("vàng");
-            cbx_color.Items.Add("đỏ");
-            cbx_color.Items.Add("xanh");
-            cbx_doanhmuc.Items.Add("Bóng đá");
-            cbx_doanhmuc.Items.Add("Bóng rổ");
-            
-        }
+  
 
         private void btn_thanhtoan_Click(object sender, EventArgs e)
         {
 
             if (MessageBox.Show("Bạn có muốn thanh toán ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (Convert.ToInt32(tbx_tienthua.Text) < 0) return;
+                if (Convert.ToDouble(tbx_tienthua.Text) < 0) return;
                 dtgview_hoadon.Rows.Clear();
+                if (MessageBox.Show("Bạn có muốn in hóa đơn không ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    printPreviewDialog1.Document = printDocument1;
+                    printPreviewDialog1.ShowDialog();
+                }
                 var hd = _banhangService.loadhd().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text);
                 hd.TrangThaiHd = 1;
                 hd.GhiChu = tbx_ghichu.Text;
@@ -404,6 +448,8 @@ namespace _3_GUI_PresentationLayer
                     frm.ShowDialog(this);
                 }
                 loadhdchuathanhthoan();
+               
+
 
             }
 
@@ -427,6 +473,17 @@ namespace _3_GUI_PresentationLayer
             _banhangService.updatehoadon(hd);
             tbx_tongtien.Text = (hd.Tongtien).ToString();
             tbx_giamgia.Text = (menhgia).ToString();
+            tbx_tongtien.Text =   String.Format("{0:#,##0.##}", int.Parse(tbx_tongtien.Text)); // 0
+            tbx_giamgia.Text =   String.Format("{0:#,##0.##}", int.Parse(tbx_giamgia.Text)); // 0
+            tbx_tongtiendathang.Text = tbx_tongtien.Text;
+            //String.Format("{0:#,##0.##}", tbx_tongtien.Text); // 0.5 - some of the formats above fail here. 
+            //String.Format("{0:#,##0.##}", tbx_tongtien.Text); // 12,314
+            //String.Format("{0:#,##0.##}", tbx_tongtien.Text); // 12,314.23
+            //String.Format("{0:#,##0.##}", tbx_tongtien.Text); // 12,314.2
+            //String.Format("{0:#,##0.##}", tbx_tongtien.Text); // 1,231,412,314.2
+
+       
+            //  string.Format(CultureInfo.InvariantCulture, "{0:N0}",int.Parse( tbx_tongtien.Text));
         }
 
 
@@ -437,12 +494,14 @@ namespace _3_GUI_PresentationLayer
                 var column = e.ColumnIndex;
                 var Row = e.RowIndex;
                 if (Row == _banhangService.viewHoadons().Count || Row == -1) return;
+             
                 string mahd = lbl_mahoadon.Text;
                 string qr = dtgview_hoadon.Rows[Row].Cells[5].Value.ToString();
                 string soluong = dtgview_hoadon.Rows[Row].Cells[1].Value.ToString();
                 var mactsp = _banhangService.viewHoadons().Where(c => c.chiTietSanPham.MaQR == qr).Select(c => c.chiTietSanPham.MaCTSP).FirstOrDefault();
                 // var soluong = _banhangService.viewHoadons().Where(c => c.hoaDonChiTiet.MaHd == mahd && c.hoaDonChiTiet.MaCTSP == mactsp).Select(c => c.hoaDonChiTiet.soluong).FirstOrDefault();
                 var soluongctsp = _banhangService.loadspct().FirstOrDefault(c => c.MaCTSP == mactsp);
+                
                 if (column == dtgview_hoadon.Columns["dt_btn_delete"].Index)
                 {
                     if (MessageBox.Show("Bạn có chắc muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -472,34 +531,57 @@ namespace _3_GUI_PresentationLayer
                 btn_thanhtoan.Enabled = false;
                 return;
             }
+            if (_Validateform.checkSo(tbx_khachtra.Text))
+            {
+                btn_thanhtoan.Enabled = false;
+                return;
+            }
             else
             {
                 btn_thanhtoan.Enabled = true;
             }
+
+           
             var hd = _banhangService.loadhd().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text);
             tbx_tienthua.Text = (Convert.ToDouble(tbx_khachtra.Text) - Convert.ToDouble(tbx_tongtien.Text)).ToString();
+            tbx_tienthua.Text = String.Format("{0:#,##0.##}", Convert.ToDouble(tbx_tienthua.Text)); // 0
             hd.TienNhan = Convert.ToDouble(tbx_khachtra.Text);
             _banhangService.updatehoadon(hd);
 
         }
+        int xuong = 0;
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString("Hóa đơn " + lbl_mahoadon.Text, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(185, 10));
-            e.Graphics.DrawString("sale receipt", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(240, 40));
-            e.Graphics.DrawString("____________________________________________________________________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(540, 40));
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn thật sự muốn IN phải không ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            e.Graphics.DrawString("Hóa đơn", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(400, 10));
+            e.Graphics.DrawString("Mã hóa đơn " + lbl_mahoadon.Text, new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(100, 40));    
+            e.Graphics.DrawString("____________________________________________________________________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(0, 40));
+            e.Graphics.DrawString((DateTime.Now).ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(700, 40));
+            e.Graphics.DrawString("Sản phẩm", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 90));
+            e.Graphics.DrawString("Đơn giá", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, 90));
+            e.Graphics.DrawString("Số lượng", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, 90));
+            e.Graphics.DrawString("Thành tiền", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(500, 90));
+            foreach (var x in _banhangService.viewHoadons().Where(c => c.hoaDon.MaHd == lbl_mahoadon.Text))
             {
-                printPreviewDialog1.Document = printDocument1;
-                printPreviewDialog1.ShowDialog(); 
+
+            
+                e.Graphics.DrawString(x.sanPham.TenSp, new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(50, xuong+140));
+                e.Graphics.DrawString((x.hoaDonChiTiet.DonGia).ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(200, xuong+140));
+                e.Graphics.DrawString((x.hoaDonChiTiet.soluong).ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(350, xuong+140));
+                e.Graphics.DrawString((x.hoaDonChiTiet.Thanhtien).ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(500, xuong+140));
+                xuong += 50;
             }
+            e.Graphics.DrawString("Tổng tiền : ", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(400, 140+xuong));
+            e.Graphics.DrawString(tbx_tongtien.Text, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(600, 140+xuong));
+            e.Graphics.DrawString("Khách trả : ", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(400, 190+xuong));
+            e.Graphics.DrawString(tbx_khachtra.Text, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(600, 190+xuong));
+            e.Graphics.DrawString("Tiền thừa :", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(400, 240+xuong));
+            e.Graphics.DrawString(tbx_tienthua.Text, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(600, 240+xuong));
+
 
         }
+
+
 
         private void btn_timgiamgia_Click(object sender, EventArgs e)
         {
@@ -538,19 +620,24 @@ namespace _3_GUI_PresentationLayer
 
             }
         }
-        int soluong=Frm_soluong.soluong;  
+    
         private void dtgview_hoadon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var column = e.ColumnIndex;
             var Row = e.RowIndex;
             if (Row == _banhangService.viewHoadons().Count || Row == -1) return;
+            if (_Validateform.checkSo(dtgview_hoadon.Rows[Row].Cells[column].Value.ToString()))
+            {
+                MessageBox.Show("Bạn phải nhập số để dũ liệu có thể sử lý", "Thông báo");
+                return;
+            }
             var barcode = dtgview_hoadon.Rows[Row].Cells[5].Value.ToString();
-            var hoadonct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text);
+            var ma_ctsp = _banhangService.loadspct().Where(c => c.MaQR == barcode).Select(c => c.MaCTSP).FirstOrDefault();
+            var hoadonct = _banhangService.loadhdct().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text && c.MaCTSP==ma_ctsp);
             var ctsp = _banhangService.loadspct().FirstOrDefault(c=>c.MaQR== barcode);
             hoadonct.soluong = Convert.ToInt32(dtgview_hoadon.Rows[Row].Cells[column].Value.ToString());
-            var sl = soluong;
-            ctsp.soluong -= Convert.ToInt32(dtgview_hoadon.Rows[Row].Cells[1].Value.ToString());
-            ctsp.soluong += soluong;
+            ctsp.soluong -= Convert.ToInt32(dtgview_hoadon.Rows[Row].Cells[column].Value.ToString());
+              ctsp.soluong += _soluonghientai;
             hoadonct.Thanhtien = hoadonct.soluong * hoadonct.DonGia;
             _banhangService.updatehoadonchitiet(hoadonct);
             _banhangService.updatectsp(ctsp);
@@ -615,6 +702,84 @@ namespace _3_GUI_PresentationLayer
                     e.Graphics.DrawPath(pen, GraphPath);
                 }
             }
+        }
+
+        int _soluonghientai;
+        private void dtgview_hoadon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int RowIndex = e.RowIndex;
+            int colum = e.ColumnIndex;
+            if (RowIndex == _banhangService.viewHoadons().Count(c=>c.hoaDonChiTiet.MaHd==lbl_mahoadon.Text) || RowIndex == -1) return;
+            if (_Validateform.checkSo(dtgview_hoadon.Rows[RowIndex].Cells[1].Value.ToString())) return;
+       
+           _soluonghientai = int.Parse(dtgview_hoadon.Rows[RowIndex].Cells[1].Value.ToString());
+        }
+
+        private void tbx_khachtra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_dathang_Click(object sender, EventArgs e)
+        {
+            if (_Validateform.checkNull(tbx_tenkh.Text))
+            {
+                MessageBox.Show("Không được để trống", "Thông báo");
+                return;
+
+            } 
+            if (_Validateform.checkNull(tbx_sdtkh.Text))
+            {
+                MessageBox.Show("Không được để trống", "Thông báo");
+                return;
+
+            }   if (_Validateform.checkNull(tbx_diachi.Text))
+            {
+                MessageBox.Show("Không được để trống", "Thông báo");
+                return;
+
+            }
+            if (_Validateform.checkSDT(tbx_sdtkh.Text))
+            {
+                MessageBox.Show("yêu cầu nhập số điện thoại đúng", "Thông báo");
+                return;
+            }
+            var kh = _banhangService.loadkh().FirstOrDefault(c => c.MaKh == _Makhachhang);
+            var mhd = _banhangService.loadhd().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text);
+            mhd.TienNhan = Convert.ToDouble(tbx_tongtiendathang.Text);
+            kh.TenKh =tbx_tenkh.Text;
+            kh.Sdt = tbx_sdtkh.Text;
+            kh.Diachi = tbx_diachi.Text;
+
+            MessageBox.Show(_banhangService.updatekhachhang(kh), "Thông báo");
+            var hd = _banhangService.loadhd().FirstOrDefault(c => c.MaHd == lbl_mahoadon.Text);
+            hd.TrangThaiHd = 1;
+            hd.GhiChu = tbx_ghichu.Text;
+            _banhangService.updatehoadon(hd);
+            tbx_date.Text = null;
+            tbx_tongtien.Text = null;
+            tbx_diachi.Text = null;
+            tbx_khachtra.Text = null;
+            tbx_tienthua.Text = null;
+            tbx_ghichu.Text = null;
+            tbx_magiamgia.Text = null;
+            tbx_giamgia.Text = null;
+            tbx_tenkh.Text = null;
+            tbx_sdtkh.Text = null;
+            lbl_mahoadon.Text = null;
+            button.Visible = false;
+            dtgview_hoadon.Rows.Clear();
+            tbx_tongtiendathang.Text = null;
         }
     }
 }

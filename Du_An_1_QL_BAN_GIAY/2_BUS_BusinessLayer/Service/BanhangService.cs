@@ -143,9 +143,15 @@ namespace _2_BUS_BusinessLayer.Service
                                   chiTietSanPham=b,
                                   hoaDonChiTiet=c,
                                   hoaDon=d
+
+
                               }).ToList();
+          
             return _lstaddHoadons;
         }
+
+
+
 
         public List<SanphambanViewModel> SanphambanViews()
         {
@@ -209,6 +215,11 @@ namespace _2_BUS_BusinessLayer.Service
         {
             _chitietSanPhamServices.update(chiTietSanPham);
             return null;
+        } 
+        public string updatekhachhang(KhachHang khachHang)
+        {
+            _khachhangServices.update(khachHang);
+            return "Đặt hàng thành công";
         }
         public string updatevoucher(Voucher voucher)
         {

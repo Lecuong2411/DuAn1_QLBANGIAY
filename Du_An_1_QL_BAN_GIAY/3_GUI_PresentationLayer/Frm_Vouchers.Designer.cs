@@ -95,7 +95,7 @@ namespace _3_GUI_PresentationLayer
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Frm_Vouchers";
-            this.Text = "Frm_Voucher";
+            this.Text = "Danh sách voucher";
             this.Load += new System.EventHandler(this.Frm_Vouchers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_vorcher)).EndInit();
             this.ResumeLayout(false);

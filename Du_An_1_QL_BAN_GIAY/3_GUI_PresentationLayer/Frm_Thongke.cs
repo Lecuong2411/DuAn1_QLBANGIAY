@@ -56,7 +56,7 @@ namespace _3_GUI_PresentationLayer
             grid_Data.Rows.Clear();
             foreach (var x in _service.loatdatachitiet())
             {
-                grid_Data.Rows.Add(x.hoadon.TienNhan, x.hoadon.MaHd, x.SanPham.TenSp, x.ChiTietSanPham.soluong, x.hoadon.thoigian);
+                grid_Data.Rows.Add(x.hoaDonChiTiet.soluong * x.hoaDonChiTiet.DonGia, x.hoadon.MaHd, x.SanPham.TenSp, x.ChiTietSanPham.soluong, x.hoadon.thoigian);
             }
         }
         public void Load()
@@ -69,7 +69,7 @@ namespace _3_GUI_PresentationLayer
             grid_Data.Rows.Clear();
             foreach (var x in _service.loatdatachitiet().Where(c => c.hoadon.thoigian.Day == dateTimePicker1.Value.Day && c.hoadon.thoigian.Month == dateTimePicker1.Value.Month && c.hoadon.thoigian.Year == dateTimePicker1.Value.Year))
             {
-                grid_Data.Rows.Add(x.hoadon.TienNhan, x.hoadon.MaHd, x.NhanVien.TenNv, x.hoaDonChiTiet.soluong);
+                grid_Data.Rows.Add(x.hoaDonChiTiet.soluong * x.hoaDonChiTiet.DonGia, x.hoadon.MaHd, x.NhanVien.TenNv, x.hoaDonChiTiet.soluong);
             }
         }
         public void LoadHangCanNhap()
@@ -97,7 +97,8 @@ namespace _3_GUI_PresentationLayer
                 total += Convert.ToInt32(grid_Data.Rows[i].Cells[0].Value);
             }
 
-            lbl_ThongKe.Text = total + " .VNĐ";
+            lbl_ThongKe.Text = total+ " VND";
+            lbl_ThongKe.Text = (String.Format("{0:#,##0.##}", Convert.ToDouble(total)))+" VND"; // 0
         }
 
         public void GuiMail_ThongKe(string email, string soluongHD, string TongTien,DataGridView GridHangCanNhap)
@@ -281,7 +282,7 @@ namespace _3_GUI_PresentationLayer
             grid_Data.Rows.Clear();
             foreach (var x in _service.loatdatachitiet().Where(c => c.hoadon.thoigian.Month == dateTimePicker1.Value.Month && c.hoadon.thoigian.Year == dateTimePicker1.Value.Year))
             {
-                grid_Data.Rows.Add(x.hoadon.Tongtien, x.hoadon.MaHd, x.NhanVien.TenNv, x.hoaDonChiTiet.soluong);
+                grid_Data.Rows.Add(x.hoaDonChiTiet.soluong* x.hoaDonChiTiet.DonGia, x.hoadon.MaHd, x.NhanVien.TenNv, x.hoaDonChiTiet.soluong);
             }
         }
         public void CountSLHD_Moth()

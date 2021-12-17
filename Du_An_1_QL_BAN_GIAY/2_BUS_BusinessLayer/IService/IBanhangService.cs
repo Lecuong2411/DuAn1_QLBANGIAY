@@ -33,6 +33,7 @@ namespace _2_BUS_BusinessLayer.IService
         string addHoadonchitiet(HoaDonChiTiet hoaDonChiTiet);
         string updatehoadonchitiet(HoaDonChiTiet hoaDonChiTiet);
         string deletedhoadonchitiet(string hd, string msp);
+        public string updatekhachhang(KhachHang khachHang);
 
     }
 }

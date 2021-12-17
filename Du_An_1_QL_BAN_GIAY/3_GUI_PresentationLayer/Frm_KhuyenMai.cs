@@ -46,7 +46,7 @@ namespace _3_GUI_PresentationLayer
             cbo_danhmuc.SelectedIndex = 0;
         }
 
-        private int a = 30, b = 380;
+        private int a = 30, b = 800;
         private List<string> temb;
         private List<List<string>> _temb = new List<List<string>>();
         private void btn_danhMuc_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace _3_GUI_PresentationLayer
                 {
                     temb = new List<string>();
                     Button btn = new Button() { Name = "btn" + x.TenDanhMuc, Text = x.TenDanhMuc };
-                    btn.Size = new System.Drawing.Size(140, 37);
+                    btn.Size = new System.Drawing.Size(180, 50);
                     if (a >= tabPage1.Size.Width)
                     {
                         a = 30;

@@ -40,6 +40,7 @@ namespace _2_BUS_BusinessLayer.Models
         public LoaiCoGiay loaiCoGiay { get; set; }
         public Color color { get; set; }
         public DanhMuc danhMuc { get; set; }
+        public KhuyenMai khuyenMai { get; set; }
 
     }
 }
